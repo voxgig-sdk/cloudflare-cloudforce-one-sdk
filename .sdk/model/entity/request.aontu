@@ -1,0 +1,331 @@
+# Entity: request
+
+main: kit: entity: request: {
+
+  alias: field: {}
+
+  fields: {
+    completed_after: {
+      h: "Completed After"
+      n: "completed_after"
+      r: false
+      sh: "Retrieve requests completed after this time."
+      t: "`$ANY`"
+    }
+    completed_before: {
+      h: "Completed Before"
+      n: "completed_before"
+      r: false
+      sh: "Retrieve requests completed before this time."
+      t: "`$ANY`"
+    }
+    content: {
+      h: "Content"
+      n: "content"
+      r: false
+      sh: "Request content."
+      t: "`$STRING`"
+    }
+    created_after: {
+      h: "Created After"
+      n: "created_after"
+      r: false
+      sh: "Retrieve requests created after this time."
+      t: "`$ANY`"
+    }
+    created_before: {
+      h: "Created Before"
+      n: "created_before"
+      r: false
+      sh: "Retrieve requests created before this time."
+      t: "`$ANY`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+    }
+    page: {
+      h: "Page"
+      n: "page"
+      r: true
+      sh: "Page number of results."
+      t: "`$INTEGER`"
+    }
+    per_page: {
+      h: "Per Page"
+      n: "per_page"
+      r: true
+      sh: "Number of results per page."
+      t: "`$INTEGER`"
+    }
+    priority: {
+      h: "Priority"
+      n: "priority"
+      r: false
+      sh: "Priority for analyzing the request."
+      t: "`$STRING`"
+    }
+    request_type: {
+      h: "Request Type"
+      n: "request_type"
+      r: false
+      sh: "Requested information from request."
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sort_by: {
+      h: "Sort By"
+      n: "sort_by"
+      r: false
+      sh: "Field to sort results by."
+      t: "`$STRING`"
+    }
+    sort_order: {
+      h: "Sort Order"
+      n: "sort_order"
+      r: false
+      sh: "Sort order (asc or desc)."
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: false
+      sh: "Request Status."
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the API call was successful."
+      t: "`$BOOLEAN`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      r: false
+      sh: "Brief description of the request."
+      t: "`$STRING`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      r: false
+      sh: "The CISA defined Traffic Light Protocol (TLP)."
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "request"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/requests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/requests"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/requests/{request_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/requests/{request_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              request_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/requests/{request_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              request_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,3064 @@
+# Entity: event
+
+main: kit: entity: event: {
+
+  alias: field: {}
+
+  fields: {
+    accountId: {
+      h: "Account Id"
+      n: "accountId"
+      r: true
+      t: "`$NUMBER`"
+    }
+    account_id: {
+      h: "Account Id"
+      n: "account_id"
+      r: true
+      sh: "Account ID"
+      t: "`$INTEGER`"
+    }
+    alert_enabled: {
+      h: "Alert Enabled"
+      n: "alert_enabled"
+      op: {
+        create: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      sh: "Whether alerts are enabled"
+      t: "`$BOOLEAN`"
+    }
+    alert_rollup_enabled: {
+      h: "Alert Rollup Enabled"
+      n: "alert_rollup_enabled"
+      op: {
+        create: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      sh: "Whether alert rollup is enabled"
+      t: "`$BOOLEAN`"
+    }
+    attacker: {
+      h: "Attacker"
+      n: "attacker"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    attackerCountry: {
+      h: "Attacker Country"
+      n: "attackerCountry"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    attackerCountryAlpha3: {
+      h: "Attacker Country Alpha3"
+      n: "attackerCountryAlpha3"
+      r: true
+      t: "`$STRING`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    childIds: {
+      h: "Child Ids"
+      n: "childIds"
+      op: {
+        create: {
+          req: true
+          type: "`$ARRAY`"
+        }
+      }
+      r: false
+      sh: "Array of child event UUIDs that were processed"
+      t: "`$ARRAY`"
+    }
+    created: {
+      h: "Created"
+      n: "created"
+      r: true
+      t: "`$STRING`"
+    }
+    createdAt: {
+      fo: "date-time"
+      h: "Created At"
+      n: "createdAt"
+      r: false
+      t: "`$STRING`"
+    }
+    createdEventsCount: {
+      h: "Created Events Count"
+      n: "createdEventsCount"
+      r: true
+      sh: "Number of events created"
+      t: "`$NUMBER`"
+    }
+    createdIndicatorsCount: {
+      h: "Created Indicators Count"
+      n: "createdIndicatorsCount"
+      r: true
+      sh: "Number of indicators created"
+      t: "`$NUMBER`"
+    }
+    createdRelationshipsCount: {
+      h: "Created Relationships Count"
+      n: "createdRelationshipsCount"
+      r: true
+      sh: "Number of relationships created"
+      t: "`$NUMBER`"
+    }
+    created_at: {
+      h: "Created At"
+      n: "created_at"
+      r: true
+      sh: "Creation timestamp"
+      t: "`$STRING`"
+    }
+    cursor: {
+      h: "Cursor"
+      n: "cursor"
+      r: false
+      sh: "Cursor for pagination."
+      t: "`$STRING`"
+    }
+    custom_threat_feed_id: {
+      h: "Custom Threat Feed Id"
+      n: "custom_threat_feed_id"
+      r: false
+      sh: "Intel Indicator Feed ID (numeric)"
+      t: "`$INTEGER`"
+    }
+    data: {
+      h: "Data"
+      n: "data"
+      op: {
+        create: {
+          req: false
+          type: "`$OBJECT`"
+        }
+        update: {
+          req: false
+          type: "`$OBJECT`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    datasetId: {
+      h: "Dataset Id"
+      n: "datasetId"
+      op: {
+        create: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      sh: "Dataset UUIDs to query, or one standalone scope value: 'all'/'*' for the legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets."
+      t: "`$STRING`"
+    }
+    date: {
+      fo: "date-time"
+      h: "Date"
+      n: "date"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    errorCount: {
+      h: "Error Count"
+      n: "errorCount"
+      r: true
+      sh: "Number of errors encountered"
+      t: "`$NUMBER`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: false
+      sh: "Array of error details"
+      t: "`$ARRAY`"
+    }
+    event: {
+      h: "Event"
+      n: "event"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    eventIds: {
+      h: "Event Ids"
+      n: "eventIds"
+      r: true
+      sh: "List of event UUIDs to update (1-100)"
+      t: "`$ARRAY`"
+    }
+    failedCount: {
+      h: "Failed Count"
+      n: "failedCount"
+      r: true
+      t: "`$NUMBER`"
+    }
+    failures: {
+      h: "Failures"
+      n: "failures"
+      r: false
+      sh: "List of events that failed to update with error messages"
+      t: "`$ARRAY`"
+    }
+    hasChildren: {
+      h: "Has Children"
+      n: "hasChildren"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique identifier for the saved query"
+      t: "`$NUMBER`"
+    }
+    includeCreatedEvents: {
+      h: "Include Created Events"
+      n: "includeCreatedEvents"
+      r: false
+      sh: "When true, response includes array of created event UUIDs and shard IDs."
+      t: "`$BOOLEAN`"
+    }
+    indicator: {
+      h: "Indicator"
+      n: "indicator"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    indicatorType: {
+      h: "Indicator Type"
+      n: "indicatorType"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    indicatorTypeId: {
+      h: "Indicator Type Id"
+      n: "indicatorTypeId"
+      r: true
+      t: "`$NUMBER`"
+    }
+    insight: {
+      h: "Insight"
+      n: "insight"
+      r: false
+      t: "`$STRING`"
+    }
+    killChain: {
+      h: "Kill Chain"
+      n: "killChain"
+      r: true
+      t: "`$NUMBER`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      sh: "Human-readable message describing the operation result"
+      t: "`$STRING`"
+    }
+    mitreAttack: {
+      h: "Mitre Attack"
+      n: "mitreAttack"
+      r: true
+      t: "`$ARRAY`"
+    }
+    mitreCapec: {
+      h: "Mitre Capec"
+      n: "mitreCapec"
+      r: true
+      t: "`$ARRAY`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Name of the saved query"
+      t: "`$STRING`"
+    }
+    numReferenced: {
+      h: "Num Referenced"
+      n: "numReferenced"
+      r: true
+      t: "`$NUMBER`"
+    }
+    numReferences: {
+      h: "Num References"
+      n: "numReferences"
+      r: true
+      t: "`$NUMBER`"
+    }
+    order: {
+      h: "Order"
+      n: "order"
+      r: false
+      t: "`$STRING`"
+    }
+    orderBy: {
+      h: "Order By"
+      n: "orderBy"
+      r: false
+      t: "`$STRING`"
+    }
+    page: {
+      h: "Page"
+      n: "page"
+      r: false
+      t: "`$NUMBER`"
+    }
+    pageSize: {
+      h: "Page Size"
+      n: "pageSize"
+      r: false
+      t: "`$NUMBER`"
+    }
+    parentId: {
+      fo: "uuid"
+      h: "Parent Id"
+      n: "parentId"
+      r: true
+      sh: "UUID of the parent event that will be the source of the relationship"
+      t: "`$STRING`"
+    }
+    query_json: {
+      h: "Query Json"
+      n: "query_json"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "JSON string containing the query parameters"
+      t: "`$STRING`"
+    }
+    raw: {
+      h: "Raw"
+      n: "raw"
+      r: false
+      t: "`$OBJECT`"
+    }
+    rawId: {
+      h: "Raw Id"
+      n: "rawId"
+      r: true
+      t: "`$STRING`"
+    }
+    referenced: {
+      h: "Referenced"
+      n: "referenced"
+      r: true
+      t: "`$ARRAY`"
+    }
+    referencedIds: {
+      h: "Referenced Ids"
+      n: "referencedIds"
+      r: true
+      t: "`$ARRAY`"
+    }
+    references: {
+      h: "References"
+      n: "references"
+      r: true
+      t: "`$ARRAY`"
+    }
+    referencesIds: {
+      h: "References Ids"
+      n: "referencesIds"
+      r: true
+      t: "`$ARRAY`"
+    }
+    relationshipType: {
+      h: "Relationship Type"
+      n: "relationshipType"
+      r: true
+      sh: "Type of relationship to create between parent and child events"
+      t: "`$STRING`"
+    }
+    relationships: {
+      h: "Relationships"
+      n: "relationships"
+      r: true
+      sh: "Array of successfully created relationship objects"
+      t: "`$ARRAY`"
+    }
+    relationshipsCreated: {
+      h: "Relationships Created"
+      n: "relationshipsCreated"
+      r: false
+      sh: "Number of relationships that were successfully created"
+      t: "`$NUMBER`"
+    }
+    releasabilityId: {
+      h: "Releasability Id"
+      n: "releasabilityId"
+      r: false
+      t: "`$STRING`"
+    }
+    rule_enabled: {
+      h: "Rule Enabled"
+      n: "rule_enabled"
+      op: {
+        create: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+        update: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      sh: "Whether rule is enabled"
+      t: "`$BOOLEAN`"
+    }
+    rule_list_id: {
+      h: "Rule List Id"
+      n: "rule_list_id"
+      r: false
+      sh: "WAF rules list ID for blocking"
+      t: "`$STRING`"
+    }
+    rule_scope: {
+      h: "Rule Scope"
+      n: "rule_scope"
+      r: false
+      sh: "Scope for the rule"
+      t: "`$STRING`"
+    }
+    search: {
+      h: "Search"
+      n: "search"
+      r: false
+      sh: "Structured search as a JSON array of {field, op, value} objects."
+      t: "`$ARRAY`"
+      union: {
+        branches: 7
+        count: 5
+        depth: 6
+      }
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      sh: "Whether the relationship creation operation completed successfully"
+      t: "`$BOOLEAN`"
+    }
+    tags: {
+      h: "Tags"
+      n: "tags"
+      r: true
+      t: "`$ARRAY`"
+    }
+    targetCountry: {
+      h: "Target Country"
+      n: "targetCountry"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    targetCountryAlpha3: {
+      h: "Target Country Alpha3"
+      n: "targetCountryAlpha3"
+      r: true
+      t: "`$STRING`"
+    }
+    targetIndustry: {
+      h: "Target Industry"
+      n: "targetIndustry"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    updatedCount: {
+      h: "Updated Count"
+      n: "updatedCount"
+      r: true
+      t: "`$NUMBER`"
+    }
+    updated_at: {
+      h: "Updated At"
+      n: "updated_at"
+      r: true
+      sh: "Last update timestamp"
+      t: "`$STRING`"
+    }
+    updates: {
+      h: "Updates"
+      n: "updates"
+      r: true
+      sh: "Fields to update on all specified events."
+      t: "`$OBJECT`"
+    }
+    user_email: {
+      h: "User Email"
+      n: "user_email"
+      r: true
+      sh: "Email of the user who created the query"
+      t: "`$STRING`"
+    }
+    uuid: {
+      h: "Uuid"
+      n: "uuid"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "event"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cache"
+                or: "cache"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "force_refresh"
+                or: "force_refresh"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events"
+          q: {
+            exist: [
+              "account_id"
+              "cache"
+              "force_refresh"
+              "format"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "raw_id"
+                or: "raw_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "raw_id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "raw"
+            }
+            {
+              var: "raw_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "event_tag_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create"
+          q: {
+            "$action": "create"
+            exist: [
+              "account_id"
+              "event_tag_id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "event_tag_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "event_tag"
+            }
+            {
+              var: "event_tag_id"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: {
+              event: "`reqdata`"
+            }
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "relate_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create"
+          q: {
+            "$action": "create"
+            exist: [
+              "account_id"
+              "relate_id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "relate_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "relate"
+            }
+            {
+              var: "relate_id"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/create"
+          q: {
+            "$action": "create"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: {
+              event: "`reqdata`"
+            }
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/create/bulk"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/create/bulk"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "create"
+            }
+            {
+              lit: "bulk"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/create/bulk/relationships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/create/bulk/relationships"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "create"
+            }
+            {
+              lit: "bulk"
+            }
+            {
+              lit: "relationships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/graphql"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/graphql"
+          q: {
+            "$action": "graphql"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "graphql"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/queries/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries/create"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/relationships/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/relationships/create"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "relationships"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/events/graphql"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/events/graphql"
+          q: {
+            "$action": "graphql"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "graphql"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cache"
+                or: "cache"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "eyJ2ZXJzaW9uIjoxLCJwb3NpdGlvbiI6eyJkYXRlIjoiMjAyNC0wMS0xMlQxMDowMDowMFoiLCJ1dWlkIjoiYWJjMTIzIn19"
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "force_refresh"
+                or: "force_refresh"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events"
+          q: {
+            exist: [
+              "account_id"
+              "cache"
+              "cursor"
+              "dataset_id"
+              "force_refresh"
+              "format"
+              "order"
+              "order_by"
+              "page"
+              "page_size"
+              "search"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "by_id_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "both"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "include_parent"
+                or: "include_parent"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "indicator_type_id"
+                or: "indicator_type_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "max_depth"
+                or: "max_depth"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "relationship_type"
+                or: "relationship_type"
+                r: false
+                t: "`$ANY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships"
+          q: {
+            exist: [
+              "account_id"
+              "by_id_id"
+              "dataset_id"
+              "direction"
+              "include_parent"
+              "indicator_type_id"
+              "max_depth"
+              "page"
+              "page_size"
+              "relationship_type"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "by_id_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "by-id"
+            }
+            {
+              var: "by_id_id"
+            }
+            {
+              lit: "relationships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/graph"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "hydration"
+                or: "hydration"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "max_node"
+                or: "max_node"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "relationship_type"
+                or: "relationship_type"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "seed"
+                or: "seed"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/graph"
+          q: {
+            "$action": "graph"
+            exist: [
+              "account_id"
+              "cursor"
+              "dataset_id"
+              "direction"
+              "expand"
+              "hydration"
+              "limit"
+              "max_node"
+              "relationship_type"
+              "seed"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "graph"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "both"
+                k: "query"
+                n: "direction"
+                or: "direction"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: true
+                k: "query"
+                n: "include_parent"
+                or: "include_parent"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                k: "query"
+                n: "indicator_type_id"
+                or: "indicator_type_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "max_depth"
+                or: "max_depth"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "relationship_type"
+                or: "relationship_type"
+                r: false
+                t: "`$ANY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}/relationships"
+          q: {
+            "$action": "relationship"
+            exist: [
+              "account_id"
+              "dataset_id"
+              "direction"
+              "id"
+              "include_parent"
+              "indicator_type_id"
+              "max_depth"
+              "page"
+              "page_size"
+              "relationship_type"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relationships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/aggregate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "aggregate_by"
+                or: "aggregate_by"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "end_date"
+                or: "end_date"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "group_by_date"
+                or: "group_by_date"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 100
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "start_date"
+                or: "start_date"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/aggregate"
+          q: {
+            "$action": "aggregate"
+            exist: [
+              "account_id"
+              "aggregate_by"
+              "dataset_id"
+              "end_date"
+              "group_by_date"
+              "limit"
+              "start_date"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "aggregate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries"
+          q: {
+            "$action": "query"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "event_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "event_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "raw"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              var: "event_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw"
+          q: {
+            "$action": "raw"
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "raw"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "raw_id"
+                or: "raw_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "raw_id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "raw"
+            }
+            {
+              var: "raw_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "event_id"
+                or: "event_id"
+                r: true
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "event_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "datasets"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "events"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "event_id"
+                or: "event_id"
+                r: true
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete"
+          q: {
+            "$action": "delete"
+            exist: [
+              "account_id"
+              "event_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              dataset_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "delete"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "event_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "event_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "event_tag"
+            }
+            {
+              var: "event_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/relate/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "event_id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/relate/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "event_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "relate"
+            }
+            {
+              var: "event_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "raw_id"
+                or: "raw_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "raw_id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "raw"
+            }
+            {
+              var: "raw_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "event_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/{event_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              event_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: {
+              event: "`reqdata`"
+            }
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/update/bulk"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/update/bulk"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "update"
+            }
+            {
+              lit: "bulk"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.dataset")]
+  ]
+
+}

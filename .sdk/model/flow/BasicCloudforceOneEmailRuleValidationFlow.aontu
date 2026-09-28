@@ -1,0 +1,22 @@
+# BasicCloudforceOneEmailRuleValidationFlow
+
+main: kit: flow: BasicCloudforceOneEmailRuleValidationFlow:
+{
+  entity: "cloudforce_one_email_rule_validation",
+  kind: "basic",
+  name: "BasicCloudforceOneEmailRuleValidationFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_email_rule_validation_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCloudforceOneEmailRuleValidationFlow"
+}

@@ -1,0 +1,2138 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>ThreatSignal | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a aria-current="page" href="../api/threat_signal.html">ThreatSignal</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_iddiagnostic">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtag">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtags">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsfeedspoll">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsbulk">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsfeeds">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2threat-signalsskills">POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticles">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsindicators">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalscategories">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/categories</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeeds">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idcontent">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_idoutput">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idraw">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsskills">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2threat-signalshealth">GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/health</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalsarticles">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsopt-out">PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtagstag_id">DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id">DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id">DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id">DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills">PUT /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories">PUT /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</a></div></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="threatsignal">ThreatSignal</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_iddiagnostic"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtag"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtags"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsfeedspoll"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsbulk"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsfeeds"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2threat-signalsskills"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</code></a></td>
+<td><code>create</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticles"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</code></a></td>
+<td><code>list</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsindicators"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators</code></a></td>
+<td><code>list</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</code></a></td>
+<td><code>list</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalscategories"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/categories</code></a></td>
+<td><code>list</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeeds"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idcontent"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_idoutput"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idraw"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsskills"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2threat-signalshealth"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/health</code></a></td>
+<td><code>load</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalsarticles"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsopt-out"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out</code></a></td>
+<td><code>patch</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtagstag_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</code></a></td>
+<td><code>update</code></td>
+<td>Threat Signals response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories"><code>/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</code></a></td>
+<td><code>update</code></td>
+<td>Threat Signals response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">threat_signals, err := client.ThreatSignal(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;skill_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(threat_signals)
+threat_signal, err := client.ThreatSignal(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(threat_signal)
+created, err := client.ThreatSignal(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;category_uuids&quot;: []any{}, &quot;errors&quot;: []any{}, &quot;feeds&quot;: []any{}, &quot;message&quot;: &quot;example&quot;, &quot;messages&quot;: []any{}, &quot;opted_out&quot;: true, &quot;read&quot;: true, &quot;result&quot;: &quot;example&quot;, &quot;skill_ids&quot;: []any{}, &quot;success&quot;: true, &quot;tag_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.ThreatSignal(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;feed_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.ThreatSignal(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local threat_signals, err = client:ThreatSignal():list({ account_id = &quot;example&quot;, skill_id = &quot;example&quot; })
+local threat_signal, err = client:ThreatSignal():load({ account_id = &quot;example&quot; })
+local created, err = client:ThreatSignal():create({ account_id = &quot;example&quot;, category_uuids = {}, errors = {}, feeds = {}, message = &quot;example&quot;, messages = {}, opted_out = true, read = true, result = &quot;example&quot;, skill_ids = {}, success = true, tag_id = &quot;example&quot; })
+local updated, err = client:ThreatSignal():update({ account_id = &quot;example&quot;, feed_id = &quot;example&quot; })
+local removed, err = client:ThreatSignal():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$threat_signals = $client-&gt;ThreatSignal()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;skill_id&quot; =&gt; &quot;example&quot;]);
+$threat_signal = $client-&gt;ThreatSignal()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;ThreatSignal()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_uuids&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;feeds&quot; =&gt; [], &quot;message&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;opted_out&quot; =&gt; true, &quot;read&quot; =&gt; true, &quot;result&quot; =&gt; &quot;example&quot;, &quot;skill_ids&quot; =&gt; [], &quot;success&quot; =&gt; true, &quot;tag_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;ThreatSignal()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;feed_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;ThreatSignal()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">threat_signals = client.ThreatSignal().list({&quot;account_id&quot;: &quot;example&quot;, &quot;skill_id&quot;: &quot;example&quot;})
+threat_signal = client.ThreatSignal().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.ThreatSignal().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;category_uuids&quot;: [], &quot;errors&quot;: [], &quot;feeds&quot;: [], &quot;message&quot;: &quot;example&quot;, &quot;messages&quot;: [], &quot;opted_out&quot;: True, &quot;read&quot;: True, &quot;result&quot;: &quot;example&quot;, &quot;skill_ids&quot;: [], &quot;success&quot;: True, &quot;tag_id&quot;: &quot;example&quot; })
+updated = client.ThreatSignal().update({&quot;account_id&quot;: &quot;example&quot;, &quot;feed_id&quot;: &quot;example&quot;})
+client.ThreatSignal().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">threat_signals = client.ThreatSignal.list({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;skill_id&quot; =&gt; &quot;example&quot; })
+threat_signal = client.ThreatSignal.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.ThreatSignal.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_uuids&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;feeds&quot; =&gt; [], &quot;message&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;opted_out&quot; =&gt; true, &quot;read&quot; =&gt; true, &quot;result&quot; =&gt; &quot;example&quot;, &quot;skill_ids&quot; =&gt; [], &quot;success&quot; =&gt; true, &quot;tag_id&quot; =&gt; &quot;example&quot; })
+updated = client.ThreatSignal.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;feed_id&quot; =&gt; &quot;example&quot; })
+client.ThreatSignal.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const threat_signals = await client.ThreatSignal().list({ account_id: &quot;example&quot;, skill_id: &quot;example&quot; })
+const threat_signal = await client.ThreatSignal().load({ account_id: &quot;example&quot; })
+const created = await client.ThreatSignal().create({ account_id: &quot;example&quot;, category_uuids: [], errors: [], feeds: [], message: &quot;example&quot;, messages: [], opted_out: true, read: true, result: &quot;example&quot;, skill_ids: [], success: true, tag_id: &quot;example&quot; })
+const updated = await client.ThreatSignal().update({ account_id: &quot;example&quot;, feed_id: &quot;example&quot; })
+await client.ThreatSignal().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>category_uuids</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Category Uuids</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Config</td>
+</tr>
+<tr>
+<td><code>display_name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Display Name</td>
+</tr>
+<tr>
+<td><code>display_order</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Display Order</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>feeds</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Feeds</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Is Active</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Message</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>opted_out</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Opted Out</td>
+</tr>
+<tr>
+<td><code>output_schema</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Output Schema</td>
+</tr>
+<tr>
+<td><code>poll_interval_s</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Poll Interval S</td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Prompt</td>
+</tr>
+<tr>
+<td><code>read</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Read</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>skill_ids</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Skill Ids</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>tag_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Tag Id</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Title</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Url</td>
+</tr>
+<tr>
+<td><code>why_valuable</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Why Valuable</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_iddiagnostic" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic</h3>
+<p>Operation ID: <code>rssArticleTagDiagnostic</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>enum: default-tagging-skill</code> | Yes |  |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-threat-signals-response" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].expected</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].path</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtag" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag</h3>
+<p>Operation ID: <code>rssArticleTagGenerate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-threat-signals-response-1" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].expected</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].path</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tag_skill_version</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tags</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Final hydrated assignment set; may be empty when no applicable tags are selected.</td>
+</tr>
+<tr>
+<td><code>result.tags[].applied_by</code></td>
+<td><code>enum: ai, analyst, system</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tags[].categoryId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tags[].uuid</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tags[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-1">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtags" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags</h3>
+<p>Operation ID: <code>rssArticleTagAdd</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tag_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-threat-signals-response-2" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-2">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsfeedspoll" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll</h3>
+<p>Operation ID: <code>rssFeedPoll</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>query</code> | <code>string (uuid) or enum: all</code> | No |  |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-threat-signals-response-3" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.errors</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.feeds</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.feeds[].feed_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.feeds[].feed_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.feeds[].status</code></td>
+<td><code>enum: workflow_created, error</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.feeds[].workflow_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.triggered</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-3">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</h3>
+<p>Operation ID: <code>rssCuratedFeedCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>enum: b12a0fd6-f7b9-5393-9ef3-f888d506c550, d5b70eaa-626f-5761-b55b-6d9590df49fb, 3b572d2b-890d-5286-9433-f18c85079030, 17f90d3b-37d3-5241-8ad4-7d6abbc2006c, c68f28e9-7e8f-5d4b-853b-f3076893a9ee, bb0e4a94-38ab-5c14-80a7-28cee9f4b139, ...</code></td>
+<td>Yes</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>display_order</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string (uri)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>why_valuable</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-threat-signals-response-4" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-4">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsbulk" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk</h3>
+<p>Operation ID: <code>rssCuratedFeedBulkCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>feeds</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>feeds[].category_id</code></td>
+<td><code>enum: b12a0fd6-f7b9-5393-9ef3-f888d506c550, d5b70eaa-626f-5761-b55b-6d9590df49fb, 3b572d2b-890d-5286-9433-f18c85079030, 17f90d3b-37d3-5241-8ad4-7d6abbc2006c, c68f28e9-7e8f-5d4b-853b-f3076893a9ee, bb0e4a94-38ab-5c14-80a7-28cee9f4b139, ...</code></td>
+<td>Yes</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>feeds[].display_order</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>feeds[].is_active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>feeds[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>feeds[].url</code></td>
+<td><code>string (uri)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>feeds[].why_valuable</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-threat-signals-response-5" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-5">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsfeeds" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</h3>
+<p>Operation ID: <code>rssFeedCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>enum: b12a0fd6-f7b9-5393-9ef3-f888d506c550, d5b70eaa-626f-5761-b55b-6d9590df49fb, 3b572d2b-890d-5286-9433-f18c85079030, 17f90d3b-37d3-5241-8ad4-7d6abbc2006c, c68f28e9-7e8f-5d4b-853b-f3076893a9ee, bb0e4a94-38ab-5c14-80a7-28cee9f4b139, ...</code></td>
+<td>No</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>curated_feed_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>display_name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>poll_interval_s</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-threat-signals-response-6" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-6">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2threat-signalsskills" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</h3>
+<p>Operation ID: <code>rssSkillCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_schema</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum: summary, tags</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-threat-signals-response-7" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-7">4XX: Client error response</h5>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsarticles" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</h3>
+<p>Operation ID: <code>rssArticleList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Opaque cursor from a previous response's <code>next_cursor</code>. When provided, pagination, ordering, totals, and article filters come from the cursor. Sending <code>per_page</code>, <code>sort</code>, <code>include_total</code>, or any article filter alongside it returns a 400 <code>CursorFilterConflictError</code>. |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>feed_id</code> | <code>query</code> | <code>string (uuid)</code> | No |  |
+| <code>article_id</code> | <code>query</code> | <code>array of string (uuid)</code> | No |  |
+| <code>read</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>tag_id</code> | <code>query</code> | <code>array of string (uuid)</code> | No |  |
+| <code>tag_category_id</code> | <code>query</code> | <code>array of string (uuid)</code> | No |  |
+| <code>tag</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>tag_category</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>include_total</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>published_after</code> | <code>query</code> | <code>string (date-time)</code> | No |  |
+| <code>published_before</code> | <code>query</code> | <code>string (date-time)</code> | No |  |
+| <code>fetched_after</code> | <code>query</code> | <code>string (date-time)</code> | No |  |
+| <code>fetched_before</code> | <code>query</code> | <code>string (date-time)</code> | No |  |
+| <code>feed_category</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>source_type</code> | <code>query</code> | <code>enum: curated, custom</code> | No |  |
+| <code>tag_applied_by</code> | <code>query</code> | <code>enum: ai, analyst, system</code> | No |  |
+| <code>sort</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-threat-signals-response-8" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].dataset_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Threat Events dataset identifier for the article redirect. Null when the account feeds dataset mapping is unavailable.</td>
+</tr>
+<tr>
+<td><code>result.articles[].event_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Threat Events event identifier associated with this article for a UI redirect. Null when no event has been linked.</td>
+</tr>
+<tr>
+<td><code>result.articles[].feed_display_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].feed_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].fetched_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].link</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].published_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].read</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].read_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].summary</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Persisted enrichment summary. Null until enrichment produces a summary.</td>
+</tr>
+<tr>
+<td><code>result.articles[].tags</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].tags[].applied_by</code></td>
+<td><code>enum: ai, analyst, system</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].tags[].categoryId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].tags[].uuid</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].tags[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.articles[].title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.has_more</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.next_cursor</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.total_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.total_count_is_exact</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-8">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsindicators" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators</h3>
+<p>Operation ID: <code>rssArticleIndicatorList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>query</code> | <code>string (uuid)</code> | No |  |
+| <code>article_id</code> | <code>query</code> | <code>string (uuid)</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>sort</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>include_total</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-threat-signals-response-9" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].article_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].article_title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].dataset_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Threat Events dataset identifier for navigating from this indicator. Null when the account feeds dataset mapping is unavailable.</td>
+</tr>
+<tr>
+<td><code>result.indicators[].feed_display_name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].feed_id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.cursor</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.has_more</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Ordinal of this cursor page; not a total-results offset.</td>
+</tr>
+<tr>
+<td><code>result.pagination.per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.total_count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.pagination.total_count_is_exact</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-9">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</h3>
+<p>Operation ID: <code>rssSkillTagCategoriesGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>enum: default-tagging-skill</code> | Yes |  |</p>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-threat-signals-response-10" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.category_uuids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.skill_id</code></td>
+<td><code>enum: default-tagging-skill</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-10">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalscategories" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/categories</h3>
+<p>Operation ID: <code>rssFeedCategoryList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-threat-signals-response-11" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.categories</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.categories[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Plain-language description of the category.</td>
+</tr>
+<tr>
+<td><code>result.categories[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Wire value accepted by the feed <code>category_id</code> field.</td>
+</tr>
+<tr>
+<td><code>result.categories[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable display label.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-11">4XX: Client error response</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsfeeds" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds</h3>
+<p>Operation ID: <code>rssFeedList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>limit</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>sort</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>category</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>source_type</code> | <code>query</code> | <code>enum: curated, custom</code> | No |  |
+| <code>enabled</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>status</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-threat-signals-response-12" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-12">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idcontent" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content</h3>
+<p>Operation ID: <code>rssArticleContentGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |
+| <code>format</code> | <code>query</code> | <code>enum: text, html</code> | No |  |</p>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-threat-signals-response-13" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-13">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idskillsskill_idoutput" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output</h3>
+<p>Operation ID: <code>rssArticleSkillOutputGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-14">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-14">Responses</h4>
+<h5 id="200-threat-signals-response-14" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-14">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalscurated-feeds" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds</h3>
+<p>Operation ID: <code>rssCuratedFeedList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-15">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>category</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>include_inactive</code> | <code>query</code> | <code>boolean</code> | No |  |</p>
+<h4 id="responses-15">Responses</h4>
+<h5 id="200-threat-signals-response-15" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-15">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idraw" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw</h3>
+<p>Operation ID: <code>rssFeedRawGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-16">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |
+| <code>format</code> | <code>query</code> | <code>enum: xml</code> | No |  |</p>
+<h4 id="responses-16">Responses</h4>
+<h5 id="200-threat-signals-response-16" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-16">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsskills" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills</h3>
+<p>Operation ID: <code>rssSkillList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-17">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No |  |</p>
+<h4 id="responses-17">Responses</h4>
+<h5 id="200-threat-signals-response-17" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-17">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</h3>
+<p>Operation ID: <code>rssArticleGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-18">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-18">Responses</h4>
+<h5 id="200-threat-signals-response-18" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-18">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</h3>
+<p>Operation ID: <code>rssFeedSkillsGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-19">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-19">Responses</h4>
+<h5 id="200-threat-signals-response-19" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-19">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</h3>
+<p>Operation ID: <code>rssSkillGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-20">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-20">Responses</h4>
+<h5 id="200-threat-signals-response-20" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-20">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2threat-signalshealth" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/health</h3>
+<p>Operation ID: <code>rssHealth</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-21">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-21">Responses</h4>
+<h5 id="200-threat-signals-response-21" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-21">4XX: Client error response</h5>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}</h3>
+<p>Operation ID: <code>rssArticleMarkRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-22">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>read</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-22">Responses</h4>
+<h5 id="200-threat-signals-response-22" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-22">4XX: Client error response</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</h3>
+<p>Operation ID: <code>rssCuratedFeedUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-23">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>curated_feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-6">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>enum: b12a0fd6-f7b9-5393-9ef3-f888d506c550, d5b70eaa-626f-5761-b55b-6d9590df49fb, 3b572d2b-890d-5286-9433-f18c85079030, 17f90d3b-37d3-5241-8ad4-7d6abbc2006c, c68f28e9-7e8f-5d4b-853b-f3076893a9ee, bb0e4a94-38ab-5c14-80a7-28cee9f4b139, ...</code></td>
+<td>No</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>display_order</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td><code>string (uri)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>why_valuable</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-23">Responses</h4>
+<h5 id="200-threat-signals-response-23" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-23">4XX: Client error response</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</h3>
+<p>Operation ID: <code>rssFeedUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-24">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-7">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_id</code></td>
+<td><code>enum: b12a0fd6-f7b9-5393-9ef3-f888d506c550, d5b70eaa-626f-5761-b55b-6d9590df49fb, 3b572d2b-890d-5286-9433-f18c85079030, 17f90d3b-37d3-5241-8ad4-7d6abbc2006c, c68f28e9-7e8f-5d4b-853b-f3076893a9ee, bb0e4a94-38ab-5c14-80a7-28cee9f4b139, ...</code></td>
+<td>No</td>
+<td>One of the predefined Threat Signals feed categories; see GET /:<code>account_id</code>/v2/threat-signals/categories.</td>
+</tr>
+<tr>
+<td><code>display_name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>poll_interval_s</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-24">Responses</h4>
+<h5 id="200-threat-signals-response-24" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-24">4XX: Client error response</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</h3>
+<p>Operation ID: <code>rssSkillUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-25">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-8">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>output_schema</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>prompt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-25">Responses</h4>
+<h5 id="200-threat-signals-response-25" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-25">4XX: Client error response</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalsarticles" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles</h3>
+<p>Operation ID: <code>rssArticleBulkMarkRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-26">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-9">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>article_ids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>read</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-26">Responses</h4>
+<h5 id="200-threat-signals-response-26" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-26">4XX: Client error response</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2threat-signalscurated-feedsopt-out" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out</h3>
+<p>Operation ID: <code>rssCuratedFeedOptOut</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-27">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-10">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>opted_out</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-27">Responses</h4>
+<h5 id="200-threat-signals-response-27" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-27">4XX: Client error response</h5>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-onev2threat-signalsarticlesarticle_idtagstag_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}</h3>
+<p>Operation ID: <code>rssArticleTagRemove</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-28">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>article_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |
+| <code>tag_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-28">Responses</h4>
+<h5 id="200-threat-signals-response-28" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-28">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2threat-signalscurated-feedscurated_feed_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}</h3>
+<p>Operation ID: <code>rssCuratedFeedDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-29">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>curated_feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-29">Responses</h4>
+<h5 id="200-threat-signals-response-29" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-29">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}</h3>
+<p>Operation ID: <code>rssFeedDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-30">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="responses-30">Responses</h4>
+<h5 id="200-threat-signals-response-30" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-30">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}</h3>
+<p>Operation ID: <code>rssSkillDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-31">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-31">Responses</h4>
+<h5 id="200-threat-signals-response-31" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-31">4XX: Client error response</h5>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onev2threat-signalsfeedsfeed_idskills" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills</h3>
+<p>Operation ID: <code>rssFeedSkillsSet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-32">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>feed_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes |  |</p>
+<h4 id="request-body-11">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>skill_ids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-32">Responses</h4>
+<h5 id="200-threat-signals-response-32" class="status" data-status="2xx">200: Threat Signals response</h5>
+<h5 id="4xx-client-error-response-32">4XX: Client error response</h5>
+<h3 id="put-accountsaccount_idcloudforce-onev2threat-signalsskillsskill_idtag-categories" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories</h3>
+<p>Operation ID: <code>rssSkillTagCategoriesReplace</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-33">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>skill_id</code> | <code>path</code> | <code>enum: default-tagging-skill</code> | Yes |  |</p>
+<h4 id="request-body-12">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>category_uuids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-33">Responses</h4>
+<h5 id="200-threat-signals-response-33" class="status" data-status="2xx">200: Threat Signals response</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.category_uuids</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.skill_id</code></td>
+<td><code>enum: default-tagging-skill</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-33">4XX: Client error response</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

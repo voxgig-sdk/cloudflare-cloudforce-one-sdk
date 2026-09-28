@@ -1,0 +1,22 @@
+# BasicCloudforceOneValidationFlow
+
+main: kit: flow: BasicCloudforceOneValidationFlow:
+{
+  entity: "cloudforce_one_validation",
+  kind: "basic",
+  name: "BasicCloudforceOneValidationFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_validation_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCloudforceOneValidationFlow"
+}

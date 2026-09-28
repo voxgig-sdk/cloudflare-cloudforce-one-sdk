@@ -1,0 +1,495 @@
+# Entity: requests_dashboard
+
+main: kit: entity: requests_dashboard: {
+
+  alias: field: {}
+
+  fields: {
+    created: {
+      h: "Created"
+      n: "created"
+      r: true
+      t: "`$STRING`"
+    }
+    defaultValue: {
+      h: "Default Value"
+      n: "defaultValue"
+      r: false
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      t: "`$STRING`"
+    }
+    displayOrder: {
+      h: "Display Order"
+      n: "displayOrder"
+      r: true
+      t: "`$NUMBER`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      sh: "Always empty on success"
+      t: "`$ARRAY`"
+    }
+    fieldLabel: {
+      h: "Field Label"
+      n: "fieldLabel"
+      r: true
+      t: "`$STRING`"
+    }
+    fieldName: {
+      h: "Field Name"
+      n: "fieldName"
+      r: true
+      t: "`$STRING`"
+    }
+    fieldType: {
+      h: "Field Type"
+      n: "fieldType"
+      r: true
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      sh: "Always empty on success"
+      t: "`$ARRAY`"
+    }
+    options: {
+      h: "Options"
+      n: "options"
+      r: false
+      t: "`$ARRAY`"
+    }
+    projectType: {
+      h: "Project Type"
+      n: "projectType"
+      r: true
+      t: "`$STRING`"
+    }
+    project_type: {
+      h: "Project Type"
+      n: "project_type"
+      r: true
+      t: "`$STRING`"
+    }
+    public: {
+      h: "Public"
+      n: "public"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    request_types: {
+      h: "Request Types"
+      n: "request_types"
+      r: true
+      t: "`$ARRAY`"
+    }
+    required: {
+      h: "Required"
+      n: "required"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$OBJECT`"
+    }
+    sectionID: {
+      h: "Section Id"
+      n: "sectionID"
+      r: false
+      t: "`$STRING`"
+    }
+    sectionLabel: {
+      h: "Section Label"
+      n: "sectionLabel"
+      r: false
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$OBJECT`"
+    }
+    total: {
+      h: "Total"
+      n: "total"
+      r: true
+      t: "`$NUMBER`"
+    }
+    updated: {
+      h: "Updated"
+      n: "updated"
+      r: true
+      t: "`$STRING`"
+    }
+    validation: {
+      h: "Validation"
+      n: "validation"
+      r: false
+      t: "`$OBJECT`"
+      union: {
+        branches: 4
+        count: 4
+        depth: 6
+      }
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "requests_dashboard"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "country"
+                or: "country"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "request_type"
+                or: "request_type"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata"
+          q: {
+            exist: [
+              "account_id"
+              "country"
+              "project_type"
+              "request_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              lit: "metadata"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.data`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              lit: "legal-response"
+            }
+            {
+              lit: "access-check"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              lit: "constants"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.properties`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              lit: "quota"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              lit: "types"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

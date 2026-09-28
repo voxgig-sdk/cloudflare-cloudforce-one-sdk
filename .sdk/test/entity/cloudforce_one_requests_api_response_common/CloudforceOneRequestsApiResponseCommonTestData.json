@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "cloudforce_one_requests_api_response_common": {
+      "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON00": {
+        "account_id": "ACCOUNT01",
+        "asset_id": "ASSET01",
+        "request_id": "REQUEST01",
+        "message_id": "MESSAGE01",
+        "priority_id": "PRIORITY01",
+        "id": "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON00"
+      },
+      "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON01": {
+        "account_id": "ACCOUNT01",
+        "asset_id": "ASSET01",
+        "request_id": "REQUEST01",
+        "message_id": "MESSAGE01",
+        "priority_id": "PRIORITY01",
+        "id": "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON01"
+      },
+      "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON02": {
+        "account_id": "ACCOUNT01",
+        "asset_id": "ASSET01",
+        "request_id": "REQUEST01",
+        "message_id": "MESSAGE01",
+        "priority_id": "PRIORITY01",
+        "id": "CLOUDFORCE_ONE_REQUESTS_API_RESPONSE_COMMON02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_requests_api_response_common": {
+      "cloudforce_one_requests_api_response_common_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

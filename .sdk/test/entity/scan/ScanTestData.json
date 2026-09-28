@@ -1,0 +1,87 @@
+{
+  "existing": {
+    "scan": {
+      "SCAN00": {
+        "errors": [],
+        "frequency": 71,
+        "ips": [],
+        "messages": [],
+        "ports": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "config_id": "CONFIG01",
+        "id": "SCAN00"
+      },
+      "SCAN01": {
+        "errors": [],
+        "frequency": 141,
+        "ips": [],
+        "messages": [],
+        "ports": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "config_id": "CONFIG01",
+        "id": "SCAN01"
+      },
+      "SCAN02": {
+        "errors": [],
+        "frequency": 211,
+        "ips": [],
+        "messages": [],
+        "ports": [],
+        "result": {},
+        "success": true,
+        "account_id": "ACCOUNT01",
+        "config_id": "CONFIG01",
+        "id": "SCAN02"
+      }
+    }
+  },
+  "new": {
+    "scan": {
+      "scan_ref01": {
+        "errors": [],
+        "frequency": 281,
+        "ips": [],
+        "messages": [],
+        "ports": [],
+        "result": {},
+        "success": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/scans/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/scans/config": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/banner/{config_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

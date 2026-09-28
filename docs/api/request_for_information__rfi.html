@@ -1,0 +1,667 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>RequestForInformationRfi | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a aria-current="page" href="../api/request_for_information__rfi.html">RequestForInformationRfi</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestsrequest_idasset">POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestsrequest_idmessage">POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestsrequest_idassetnew">POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestsrequest_idmessagenew">POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestsnew">POST /accounts/{account_id}/cloudforce-one/requests/new</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerequestsconstants">GET /accounts/{account_id}/cloudforce-one/requests/constants</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerequestsquota">GET /accounts/{account_id}/cloudforce-one/requests/quota</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerequeststypes">GET /accounts/{account_id}/cloudforce-one/requests/types</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id">GET /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id">PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerequestsrequest_idmessagemessage_id">PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}</a></div>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="requestforinformationrfi">RequestForInformationRfi</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestsrequest_idasset"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset</code></a></td>
+<td><code>create</code></td>
+<td>List request assets response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestsrequest_idmessage"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/message</code></a></td>
+<td><code>create</code></td>
+<td>List request messages response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestsrequest_idassetnew"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new</code></a></td>
+<td><code>create</code></td>
+<td>Create request asset response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestsrequest_idmessagenew"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new</code></a></td>
+<td><code>create</code></td>
+<td>Create request message response</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestsnew"><code>/accounts/{account_id}/cloudforce-one/requests/new</code></a></td>
+<td><code>create</code></td>
+<td>Create request response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerequestsconstants"><code>/accounts/{account_id}/cloudforce-one/requests/constants</code></a></td>
+<td><code>list</code></td>
+<td>Get request constants response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerequestsquota"><code>/accounts/{account_id}/cloudforce-one/requests/quota</code></a></td>
+<td><code>list</code></td>
+<td>Get request quota response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerequeststypes"><code>/accounts/{account_id}/cloudforce-one/requests/types</code></a></td>
+<td><code>list</code></td>
+<td>Get request types response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get request asset response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update request asset response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerequestsrequest_idmessagemessage_id"><code>/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update request message response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">request_for_information__rfis, err := client.RequestForInformationRfi(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(request_for_information__rfis)
+request_for_information__rfi, err := client.RequestForInformationRfi(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;asset_id&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(request_for_information__rfi)
+created, err := client.RequestForInformationRfi(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.RequestForInformationRfi(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local request_for_information__rfis, err = client:RequestForInformationRfi():list({ account_id = &quot;example&quot; })
+local request_for_information__rfi, err = client:RequestForInformationRfi():load({ account_id = &quot;example&quot;, asset_id = &quot;example&quot;, request_id = &quot;example&quot; })
+local created, err = client:RequestForInformationRfi():create({ account_id = &quot;example&quot;, errors = {}, messages = {}, success = true })
+local updated, err = client:RequestForInformationRfi():update({ account_id = &quot;example&quot;, request_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$request_for_information__rfis = $client-&gt;RequestForInformationRfi()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$request_for_information__rfi = $client-&gt;RequestForInformationRfi()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;asset_id&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;RequestForInformationRfi()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;RequestForInformationRfi()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">request_for_information__rfis = client.RequestForInformationRfi().list({&quot;account_id&quot;: &quot;example&quot;})
+request_for_information__rfi = client.RequestForInformationRfi().load({&quot;account_id&quot;: &quot;example&quot;, &quot;asset_id&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;})
+created = client.RequestForInformationRfi().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;messages&quot;: [], &quot;success&quot;: True })
+updated = client.RequestForInformationRfi().update({&quot;account_id&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">request_for_information__rfis = client.RequestForInformationRfi.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+request_for_information__rfi = client.RequestForInformationRfi.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;asset_id&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot; })
+created = client.RequestForInformationRfi.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;success&quot; =&gt; true })
+updated = client.RequestForInformationRfi.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const request_for_information__rfis = await client.RequestForInformationRfi().list({ account_id: &quot;example&quot; })
+const request_for_information__rfi = await client.RequestForInformationRfi().load({ account_id: &quot;example&quot;, asset_id: &quot;example&quot;, request_id: &quot;example&quot; })
+const created = await client.RequestForInformationRfi().create({ account_id: &quot;example&quot;, errors: [], messages: [], success: true })
+const updated = await client.RequestForInformationRfi().update({ account_id: &quot;example&quot;, request_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Content of message.</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Priority for analyzing the request.</td>
+</tr>
+<tr>
+<td><code>request_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Requested information from request.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Asset file to upload.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Brief description of the request.</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The CISA defined Traffic Light Protocol (TLP).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onerequestsrequest_idasset" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset</h3>
+<p>Operation ID: <code>cloudforce-one-request-asset-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Page number of results.</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of results per page.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-list-request-assets-response" class="status" data-status="2xx">200: List request assets response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-request-assets-response-failure">4XX: List request assets response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="post-accountsaccount_idcloudforce-onerequestsrequest_idmessage" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/message</h3>
+<p>Operation ID: <code>cloudforce-one-request-message-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>after</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Retrieve mes ges created after this time.</td>
+</tr>
+<tr>
+<td><code>before</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td>Retrieve messages created before this time.</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Page number of results.</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of results per page.</td>
+</tr>
+<tr>
+<td><code>sort_by</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Field to sort results by.</td>
+</tr>
+<tr>
+<td><code>sort_order</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>No</td>
+<td>Sort order (asc or desc).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-list-request-messages-response" class="status" data-status="2xx">200: List request messages response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-request-messages-response-failure">4XX: List request messages response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="post-accountsaccount_idcloudforce-onerequestsrequest_idassetnew" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new</h3>
+<p>Operation ID: <code>cloudforce-one-request-asset-new</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>multipart/form-data</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Asset file to upload.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-create-request-asset-response" class="status" data-status="2xx">200: Create request asset response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-request-asset-response-failure">4XX: Create request asset response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="post-accountsaccount_idcloudforce-onerequestsrequest_idmessagenew" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new</h3>
+<p>Operation ID: <code>cloudforce-one-request-message-new</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Content of message.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-create-request-message-response" class="status" data-status="2xx">200: Create request message response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-request-message-response-failure">4XX: Create request message response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="post-accountsaccount_idcloudforce-onerequestsnew" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/new</h3>
+<p>Operation ID: <code>cloudforce-one-request-new</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Request content.</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Priority for analyzing the request.</td>
+</tr>
+<tr>
+<td><code>request_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Requested information from request.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Brief description of the request.</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, amber, amber-strict, green, red</code></td>
+<td>No</td>
+<td>The CISA defined Traffic Light Protocol (TLP).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-create-request-response" class="status" data-status="2xx">200: Create request response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-response-failure">4XX: Create response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onerequestsconstants" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/requests/constants</h3>
+<p>Operation ID: <code>cloudforce-one-request-constants</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-get-request-constants-response" class="status" data-status="2xx">200: Get request constants response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-request-constants-response-failure">4XX: Get request constants response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="get-accountsaccount_idcloudforce-onerequestsquota" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/requests/quota</h3>
+<p>Operation ID: <code>cloudforce-one-request-quota</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-get-request-quota-response" class="status" data-status="2xx">200: Get request quota response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-request-quota-response-failure">4XX: Get request quota response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="get-accountsaccount_idcloudforce-onerequeststypes" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/requests/types</h3>
+<p>Operation ID: <code>cloudforce-one-request-types</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-get-request-types-response" class="status" data-status="2xx">200: Get request types response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-request-types-response-failure">4XX: Get request types response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</h3>
+<p>Operation ID: <code>cloudforce-one-request-asset-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>asset_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-get-request-asset-response" class="status" data-status="2xx">200: Get request asset response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-request-asset-response-failure">4XX: Get request asset response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onerequestsrequest_idassetasset_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}</h3>
+<p>Operation ID: <code>cloudforce-one-request-asset-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>asset_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Asset file to upload.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-update-request-asset-response" class="status" data-status="2xx">200: Update request asset response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-request-asset-response-failure">4XX: Update request asset response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="put-accountsaccount_idcloudforce-onerequestsrequest_idmessagemessage_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}</h3>
+<p>Operation ID: <code>cloudforce-one-request-message-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>message_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="request-body-6">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Content of message.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-update-request-message-response" class="status" data-status="2xx">200: Update request message response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-request-message-response-failure">4XX: Update request message response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

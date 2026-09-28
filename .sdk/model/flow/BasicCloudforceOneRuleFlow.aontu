@@ -1,0 +1,22 @@
+# BasicCloudforceOneRuleFlow
+
+main: kit: flow: BasicCloudforceOneRuleFlow:
+{
+  entity: "cloudforce_one_rule",
+  kind: "basic",
+  name: "BasicCloudforceOneRuleFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_rule_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCloudforceOneRuleFlow"
+}

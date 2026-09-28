@@ -1,0 +1,58 @@
+{
+  "existing": {
+    "cloudforce_one_account_exemption": {
+      "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION00": {
+        "namespace": [],
+        "tag_match": [],
+        "worker_name": [],
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION00"
+      },
+      "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION01": {
+        "namespace": [],
+        "tag_match": [],
+        "worker_name": [],
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION01"
+      },
+      "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION02": {
+        "namespace": [],
+        "tag_match": [],
+        "worker_name": [],
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_ACCOUNT_EXEMPTION02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_account_exemption": {
+      "cloudforce_one_account_exemption_ref01": {
+        "namespace": [],
+        "tag_match": [],
+        "worker_name": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/exemptions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/rules/exemptions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/rules/exemptions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/rules/exemptions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

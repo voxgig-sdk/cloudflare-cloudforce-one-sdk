@@ -1,0 +1,55 @@
+{
+  "existing": {
+    "bin_db": {
+      "BIN_DB00": {
+        "content_type": "s28",
+        "md5": "s29",
+        "sha1": "s2a",
+        "sha256": "s2b",
+        "account_id": "ACCOUNT01",
+        "hash": "HASH01",
+        "id": "BIN_DB00"
+      },
+      "BIN_DB01": {
+        "content_type": "s50",
+        "md5": "s51",
+        "sha1": "s52",
+        "sha256": "s53",
+        "account_id": "ACCOUNT01",
+        "hash": "HASH01",
+        "id": "BIN_DB01"
+      },
+      "BIN_DB02": {
+        "content_type": "s78",
+        "md5": "s79",
+        "sha1": "s7a",
+        "sha256": "s7b",
+        "account_id": "ACCOUNT01",
+        "hash": "HASH01",
+        "id": "BIN_DB02"
+      }
+    }
+  },
+  "new": {
+    "bin_db": {
+      "bin_db_ref01": {
+        "content_type": "sa0",
+        "md5": "sa1",
+        "sha1": "sa2",
+        "sha256": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/binary": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/binary/{hash}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

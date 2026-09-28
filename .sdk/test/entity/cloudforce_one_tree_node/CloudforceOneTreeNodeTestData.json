@@ -1,0 +1,44 @@
+{
+  "existing": {
+    "cloudforce_one_tree_node": {
+      "CLOUDFORCE_ONE_TREE_NODE00": {
+        "children": [],
+        "count": 41,
+        "name": "s2a",
+        "path": "s2b",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_TREE_NODE01": {
+        "children": [],
+        "count": 81,
+        "name": "s52",
+        "path": "s53",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_TREE_NODE02": {
+        "children": [],
+        "count": 121,
+        "name": "s7a",
+        "path": "s7b",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_tree_node": {
+      "cloudforce_one_tree_node_ref01": {
+        "children": [],
+        "count": 161,
+        "name": "sa2",
+        "path": "sa3"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/tree": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

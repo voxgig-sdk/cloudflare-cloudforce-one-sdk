@@ -1,0 +1,1515 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Category | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a aria-current="page" href="../api/category.html">Category</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id">POST /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventscategoriescategory_id">POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventscategoriescreate">POST /accounts/{account_id}/cloudforce-one/events/categories/create</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventscategories">GET /accounts/{account_id}/cloudforce-one/events/categories</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventscategoriescatalog">GET /accounts/{account_id}/cloudforce-one/events/categories/catalog</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id">GET /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventscategoriescategory_id">GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id">DELETE /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventscategoriescategory_id">DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id">PATCH /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventscategoriescategory_id">PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</a></div>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="category">Category</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id"><code>/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the updated category</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventscategoriescategory_id"><code>/accounts/{account_id}/cloudforce-one/events/categories/{category_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the updated category</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventscategoriescreate"><code>/accounts/{account_id}/cloudforce-one/events/categories/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created category</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventscategories"><code>/accounts/{account_id}/cloudforce-one/events/categories</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of categories</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventscategoriescatalog"><code>/accounts/{account_id}/cloudforce-one/events/categories/catalog</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of categories</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id"><code>/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns a category</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventscategoriescategory_id"><code>/accounts/{account_id}/cloudforce-one/events/categories/{category_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns a category</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id"><code>/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the uuid of the deleted category</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventscategoriescategory_id"><code>/accounts/{account_id}/cloudforce-one/events/categories/{category_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the uuid of the deleted category</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id"><code>/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated category</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventscategoriescategory_id"><code>/accounts/{account_id}/cloudforce-one/events/categories/{category_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated category</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">categorys, err := client.Category(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(categorys)
+category, err := client.Category(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(category)
+created, err := client.Category(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;killChain&quot;: 1, &quot;name&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Category(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Category(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local categorys, err = client:Category():list({ account_id = &quot;example&quot; })
+local category, err = client:Category():load({ account_id = &quot;example&quot; })
+local created, err = client:Category():create({ account_id = &quot;example&quot;, killChain = 1, name = &quot;example&quot;, uuid = &quot;example&quot; })
+local updated, err = client:Category():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, category_id = &quot;example&quot; })
+local removed, err = client:Category():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$categorys = $client-&gt;Category()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$category = $client-&gt;Category()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;Category()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;killChain&quot; =&gt; 1, &quot;name&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Category()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Category()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">categorys = client.Category().list({&quot;account_id&quot;: &quot;example&quot;})
+category = client.Category().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.Category().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;killChain&quot;: 1, &quot;name&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot; })
+updated = client.Category().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;category_id&quot;: &quot;example&quot;})
+client.Category().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">categorys = client.Category.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+category = client.Category.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.Category.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;killChain&quot; =&gt; 1, &quot;name&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot; })
+updated = client.Category.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;category_id&quot; =&gt; &quot;example&quot; })
+client.Category.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const categorys = await client.Category().list({ account_id: &quot;example&quot; })
+const category = await client.Category().load({ account_id: &quot;example&quot; })
+const created = await client.Category().create({ account_id: &quot;example&quot;, killChain: 1, name: &quot;example&quot;, uuid: &quot;example&quot; })
+const updated = await client.Category().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, category_id: &quot;example&quot; })
+await client.Category().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Kill Chain</td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Mitre Attack</td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Mitre Capec</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Shortname</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uuid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</h3>
+<p>Operation ID: <code>post_CategoryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-the-updated-category" class="status" data-status="2xx">200: Returns the updated category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventscategoriescategory_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</h3>
+<p>Operation ID: <code>post_LegacyCategoryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-the-updated-category-1" class="status" data-status="2xx">200: Returns the updated category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventscategoriescreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/categories/create</h3>
+<p>Operation ID: <code>post_CategoryCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-the-created-category" class="status" data-status="2xx">200: Returns the created category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventscategories" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/categories</h3>
+<p>Operation ID: <code>get_CategoryList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>datasetIds</code> | <code>query</code> | <code>array of string</code> | No | Array of dataset IDs to query categories from. If not provided, uses the default dataset. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-a-list-of-categories" class="status" data-status="2xx">200: Returns a list of categories</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventscategoriescatalog" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/categories/catalog</h3>
+<p>Operation ID: <code>get_CategoryListComplete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-returns-a-list-of-categories-1" class="status" data-status="2xx">200: Returns a list of categories</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-4" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</h3>
+<p>Operation ID: <code>get_CategoryRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-a-category" class="status" data-status="2xx">200: Returns a category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-5" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventscategoriescategory_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</h3>
+<p>Operation ID: <code>get_LegacyCategoryRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-returns-a-category-1" class="status" data-status="2xx">200: Returns a category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-6" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</h3>
+<p>Operation ID: <code>delete_CategoryDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-returns-the-uuid-of-the-deleted-category" class="status" data-status="2xx">200: Returns the uuid of the deleted category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-7" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventscategoriescategory_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</h3>
+<p>Operation ID: <code>delete_LegacyCategoryDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-returns-the-uuid-of-the-deleted-category-1" class="status" data-status="2xx">200: Returns the uuid of the deleted category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-8" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsevent-categoriesby-idcategory_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}</h3>
+<p>Operation ID: <code>patch_CategoryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-returns-the-updated-category-2" class="status" data-status="2xx">200: Returns the updated category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-9" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventscategoriescategory_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/categories/{category_id}</h3>
+<p>Operation ID: <code>patch_LegacyCategoryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>category_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Category UUID. |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-returns-the-updated-category-3" class="status" data-status="2xx">200: Returns the updated category</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>shortname</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-10" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

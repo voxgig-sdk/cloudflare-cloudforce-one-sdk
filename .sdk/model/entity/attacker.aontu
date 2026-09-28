@@ -1,0 +1,83 @@
+# Entity: attacker
+
+main: kit: entity: attacker: {
+
+  alias: field: {}
+
+  fields: {
+    type: {
+      h: "Type"
+      n: "type"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "attacker"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/attackers"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/attackers"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "attackers"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.items`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

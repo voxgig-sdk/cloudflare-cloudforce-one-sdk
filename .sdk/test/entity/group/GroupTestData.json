@@ -1,0 +1,93 @@
+{
+  "existing": {
+    "group": {
+      "GROUP00": {
+        "createdAt": "s46",
+        "description": "s47",
+        "id": "GROUP00",
+        "members": [],
+        "name": "s4a",
+        "updatedAt": "s4b",
+        "uuid": "s4c",
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01"
+      },
+      "GROUP01": {
+        "createdAt": "s8c",
+        "description": "s8d",
+        "id": "GROUP01",
+        "members": [],
+        "name": "s90",
+        "updatedAt": "s91",
+        "uuid": "s92",
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01"
+      },
+      "GROUP02": {
+        "createdAt": "sd2",
+        "description": "sd3",
+        "id": "GROUP02",
+        "members": [],
+        "name": "sd6",
+        "updatedAt": "sd7",
+        "uuid": "sd8",
+        "account_id": "ACCOUNT01",
+        "member_id": "MEMBER01"
+      }
+    }
+  },
+  "new": {
+    "group": {
+      "group_ref01": {
+        "createdAt": "s118",
+        "description": "s119",
+        "members": [],
+        "name": "s11c",
+        "updatedAt": "s11d",
+        "uuid": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/-/groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,2237 @@
+-- Typed models for the CloudflareCloudforceOne SDK (LuaLS annotations).
+--
+-- GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+-- params (op.<name>.points[].g.params[]). Field/param types come from the
+-- canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+-- @voxgig/apidef VALID_CANON). Annotations only — no runtime effect. Do not
+-- edit by hand.
+
+---@class Attacker
+---@field type string
+
+---@class AttackerLoadMatch
+---@field account_id string
+---@field dataset_id? table
+
+---@class BinDb
+---@field content_type string
+---@field md5 string
+---@field sha1 string
+---@field sha256 string
+
+---@class BinDbLoadMatch
+---@field account_id string
+---@field hash string
+
+---@class BinDbCreateData
+---@field account_id string
+---@field content_type string
+---@field md5 string
+---@field sha1 string
+---@field sha256 string
+
+---@class BrandProtection
+---@field action string
+---@field body string
+---@field brand string
+---@field category string
+---@field content_type? string
+---@field createNotice? boolean
+---@field createdAt string
+---@field description string
+---@field dismissed boolean
+---@field domain string
+---@field domain_id number
+---@field domains table
+---@field errors table
+---@field fields table
+---@field first_seen string
+---@field format? string
+---@field id number
+---@field image_data string
+---@field letterText string
+---@field letterType string
+---@field matchId number
+---@field matchType string
+---@field match_details? table
+---@field match_ids? table
+---@field matched_at string
+---@field matches table
+---@field max_time? string
+---@field message string
+---@field messages table
+---@field min_time? string
+---@field name string
+---@field noticeParams table
+---@field notices table
+---@field public_scans table
+---@field queryId number
+---@field queryIds? table
+---@field query_id number
+---@field r2_path string
+---@field registrar string
+---@field result any
+---@field result_info table
+---@field scan? boolean
+---@field scan_matches? boolean
+---@field scan_status string
+---@field scan_submission_id number
+---@field score_threshold? number
+---@field search_lookback? boolean
+---@field similarity_score number
+---@field similarity_threshold number
+---@field source string
+---@field status string
+---@field string_matches table
+---@field success boolean
+---@field tag string
+---@field takedownNoticeId number
+---@field templateId string
+---@field top_k? number
+---@field total_analyzed number
+---@field total_matches number
+---@field truncated boolean
+---@field updatedAt string
+---@field uploaded_at string
+---@field url_scan_id string
+
+---@class BrandProtectionLoadMatch
+---@field account_id string
+---@field letter_id? number
+---@field takedown_notice_id? number
+---@field notice_id? number
+---@field template_id? string
+
+---@class BrandProtectionListMatch
+---@field account_id string
+---@field domain_search? string
+---@field include_dismissed? string
+---@field include_domain_id? string
+---@field limit? string
+---@field offset? string
+---@field order? string
+---@field order_by? string
+---@field query_id? table
+---@field download? string
+---@field id? string
+---@field page? number
+---@field per_page? number
+---@field takedown_notice_id? number
+
+---@class BrandProtectionCreateData
+---@field account_id string
+---@field download? string
+---@field show_historic? string
+---@field match_id? number
+---@field query_id? number
+---@field takedown_notice_id? number
+---@field action string
+---@field body string
+---@field brand string
+---@field category string
+---@field content_type? string
+---@field createNotice? boolean
+---@field createdAt string
+---@field description string
+---@field dismissed boolean
+---@field domain string
+---@field domain_id number
+---@field domains table
+---@field errors table
+---@field fields table
+---@field first_seen string
+---@field format? string
+---@field id number
+---@field image_data string
+---@field letterText string
+---@field letterType string
+---@field matchId number
+---@field matchType string
+---@field match_details? table
+---@field match_ids? table
+---@field matched_at string
+---@field matches table
+---@field max_time? string
+---@field message string
+---@field messages table
+---@field min_time? string
+---@field name string
+---@field noticeParams table
+---@field notices table
+---@field public_scans table
+---@field queryId number
+---@field queryIds? table
+---@field r2_path string
+---@field registrar string
+---@field result any
+---@field result_info table
+---@field scan? boolean
+---@field scan_matches? boolean
+---@field scan_status string
+---@field scan_submission_id number
+---@field score_threshold? number
+---@field search_lookback? boolean
+---@field similarity_score number
+---@field similarity_threshold number
+---@field source string
+---@field status string
+---@field string_matches table
+---@field success boolean
+---@field tag string
+---@field takedownNoticeId number
+---@field templateId string
+---@field top_k? number
+---@field total_analyzed number
+---@field total_matches number
+---@field truncated boolean
+---@field updatedAt string
+---@field uploaded_at string
+---@field url_scan_id string
+
+---@class BrandProtectionUpdateData
+---@field account_id string
+---@field notice_id? number
+---@field template_id? string
+---@field action? string
+---@field body? string
+---@field brand? string
+---@field category? string
+---@field content_type? string
+---@field createNotice? boolean
+---@field createdAt? string
+---@field description? string
+---@field dismissed? boolean
+---@field domain? string
+---@field domain_id? number
+---@field domains? table
+---@field errors? table
+---@field fields? table
+---@field first_seen? string
+---@field format? string
+---@field id? number
+---@field image_data? string
+---@field letterText? string
+---@field letterType? string
+---@field matchId? number
+---@field matchType? string
+---@field match_details? table
+---@field match_ids? table
+---@field matched_at? string
+---@field matches? table
+---@field max_time? string
+---@field message? string
+---@field messages? table
+---@field min_time? string
+---@field name? string
+---@field noticeParams? table
+---@field notices? table
+---@field public_scans? table
+---@field queryId? number
+---@field queryIds? table
+---@field query_id? number
+---@field r2_path? string
+---@field registrar? string
+---@field result? any
+---@field result_info? table
+---@field scan? boolean
+---@field scan_matches? boolean
+---@field scan_status? string
+---@field scan_submission_id? number
+---@field score_threshold? number
+---@field search_lookback? boolean
+---@field similarity_score? number
+---@field similarity_threshold? number
+---@field source? string
+---@field status? string
+---@field string_matches? table
+---@field success? boolean
+---@field tag? string
+---@field takedownNoticeId? number
+---@field templateId? string
+---@field top_k? number
+---@field total_analyzed? number
+---@field total_matches? number
+---@field truncated? boolean
+---@field updatedAt? string
+---@field uploaded_at? string
+---@field url_scan_id? string
+
+---@class BrandProtectionRemoveMatch
+---@field account_id string
+---@field letter_id? number
+---@field takedown_notice_id? number
+---@field notice_id? number
+---@field query_id? string
+---@field template_id? string
+
+---@class Category
+---@field id? string
+---@field killChain number
+---@field mitreAttack? table
+---@field mitreCapec? table
+---@field name string
+---@field shortname? string
+---@field uuid string
+
+---@class CategoryLoadMatch
+---@field account_id string
+---@field category_id? string
+---@field id? string
+
+---@class CategoryListMatch
+---@field account_id string
+---@field dataset_id? table
+
+---@class CategoryCreateData
+---@field account_id string
+---@field category_id? string
+---@field id? string
+---@field killChain number
+---@field mitreAttack? table
+---@field mitreCapec? table
+---@field name string
+---@field shortname? string
+---@field uuid string
+
+---@class CategoryUpdateData
+---@field account_id string
+---@field category_id? string
+---@field id? string
+---@field killChain? number
+---@field mitreAttack? table
+---@field mitreCapec? table
+---@field name? string
+---@field shortname? string
+---@field uuid? string
+
+---@class CategoryRemoveMatch
+---@field account_id string
+---@field category_id? string
+---@field id? string
+
+---@class CloudforceOneAccountExemption
+---@field namespace table
+---@field tag_match table
+---@field worker_name table
+
+---@class CloudforceOneAccountExemptionListMatch
+---@field account_id string
+
+---@class CloudforceOneAccountExemptionCreateData
+---@field account_id string
+---@field namespace table
+---@field tag_match table
+---@field worker_name table
+
+---@class CloudforceOneAccountExemptionUpdateData
+---@field account_id string
+---@field namespace? table
+---@field tag_match? table
+---@field worker_name? table
+
+---@class CloudforceOneAccountExemptionRemoveMatch
+---@field account_id string
+
+---@class CloudforceOneDeleteAll
+
+---@class CloudforceOneDeleteAllRemoveMatch
+---@field account_id string
+
+---@class CloudforceOneEditApproval
+---@field condition table
+---@field description? string
+---@field enabled? boolean
+---@field id? string
+---@field meta? table
+---@field name string
+---@field status? string
+---@field strings? table
+
+---@class CloudforceOneEditApprovalCreateData
+---@field account_id string
+---@field approval_id string
+---@field module? string
+---@field condition table
+---@field description? string
+---@field enabled? boolean
+---@field id? string
+---@field meta? table
+---@field name string
+---@field status? string
+---@field strings? table
+
+---@class CloudforceOneEditApprovalUpdateData
+---@field account_id string
+---@field id string
+---@field module? string
+---@field condition? table
+---@field description? string
+---@field enabled? boolean
+---@field meta? table
+---@field name? string
+---@field status? string
+---@field strings? table
+
+---@class CloudforceOneEmailRuleValidation
+---@field compiled_yara? string
+---@field condition table
+---@field description? string
+---@field enabled? boolean
+---@field error? string
+---@field existing_rule_id? string
+---@field meta? table
+---@field name string
+---@field status? string
+---@field strings? table
+---@field valid boolean
+
+---@class CloudforceOneEmailRuleValidationCreateData
+---@field account_id string
+---@field compiled_yara? string
+---@field condition table
+---@field description? string
+---@field enabled? boolean
+---@field error? string
+---@field existing_rule_id? string
+---@field meta? table
+---@field name string
+---@field status? string
+---@field strings? table
+---@field valid boolean
+
+---@class CloudforceOneEmailRulesList
+---@field content? string
+---@field created_at number
+---@field created_by string
+---@field description string
+---@field enabled boolean
+---@field id string
+---@field is_public boolean
+---@field meta? table
+---@field name string
+---@field namespaces table
+---@field path string
+---@field pending_approval_id number
+---@field pending_change table
+---@field structured_source? string
+---@field updated_at number
+---@field updated_by string
+
+---@class CloudforceOneEmailRulesListListMatch
+---@field account_id string
+---@field limit? number
+---@field offset? number
+---@field search? string
+
+---@class CloudforceOneRequestsApiResponseCommon
+
+---@class CloudforceOneRequestsApiResponseCommonRemoveMatch
+---@field account_id string
+---@field asset_id? string
+---@field request_id? string
+---@field message_id? number
+---@field priority_id? string
+
+---@class CloudforceOneRule
+---@field actions? table
+---@field commit_message? string
+---@field content string
+---@field description? string
+---@field enabled? boolean
+---@field is_public? boolean
+---@field meta? table
+---@field name string
+---@field namespaces? table
+---@field path string
+
+---@class CloudforceOneRuleCreateData
+---@field account_id string
+---@field actions? table
+---@field commit_message? string
+---@field content string
+---@field description? string
+---@field enabled? boolean
+---@field is_public? boolean
+---@field meta? table
+---@field name string
+---@field namespaces? table
+---@field path string
+
+---@class CloudforceOneRuleApprovalDetail
+---@field audit_log_id number
+---@field can_review boolean
+---@field cancelled_at number
+---@field cancelled_by string
+---@field change_description string
+---@field change_type string
+---@field commit_message string
+---@field compiler_warnings? table
+---@field current_rule any
+---@field id number
+---@field proposed_changes any
+---@field rejection_reason string
+---@field requested_at number
+---@field requested_by string
+---@field reviewed_at number
+---@field reviewer_scope string
+---@field revision_number number
+---@field rule_id string
+---@field rule_name string
+---@field status string
+---@field superseded_by_approval_id number
+---@field supersedes_approval_id number
+
+---@class CloudforceOneRuleApprovalDetailLoadMatch
+---@field account_id string
+---@field id string
+
+---@class CloudforceOneRuleApprovalDetailCreateData
+---@field account_id string
+---@field approval_id string
+---@field audit_log_id number
+---@field can_review boolean
+---@field cancelled_at number
+---@field cancelled_by string
+---@field change_description string
+---@field change_type string
+---@field commit_message string
+---@field compiler_warnings? table
+---@field current_rule any
+---@field id number
+---@field proposed_changes any
+---@field rejection_reason string
+---@field requested_at number
+---@field requested_by string
+---@field reviewed_at number
+---@field reviewer_scope string
+---@field revision_number number
+---@field rule_id string
+---@field rule_name string
+---@field status string
+---@field superseded_by_approval_id number
+---@field supersedes_approval_id number
+
+---@class CloudforceOneRuleApprovalsList
+---@field audit_log_id number
+---@field can_review boolean
+---@field cancelled_at number
+---@field cancelled_by string
+---@field change_description string
+---@field change_type string
+---@field commit_message string
+---@field id number
+---@field proposed_changes any
+---@field rejection_reason string
+---@field requested_at number
+---@field requested_by string
+---@field reviewed_at number
+---@field reviewer_scope string
+---@field revision_number number
+---@field rule_id string
+---@field rule_name string
+---@field status string
+---@field superseded_by_approval_id number
+---@field supersedes_approval_id number
+
+---@class CloudforceOneRuleApprovalsListListMatch
+---@field account_id string
+---@field change_type? string
+---@field latest_only? string
+---@field limit? number
+---@field offset? number
+---@field reviewer_scope? string
+---@field rule_id? string
+---@field status? any
+
+---@class CloudforceOneRulePreview
+---@field commit_message? string
+---@field condition table
+---@field content? string
+---@field created_at number
+---@field created_by string
+---@field description string
+---@field enabled boolean
+---@field id string
+---@field is_public boolean
+---@field meta? table
+---@field name string
+---@field namespaces table
+---@field path string
+---@field pending_approval_id number
+---@field pending_change table
+---@field status? string
+---@field strings? table
+---@field structured_source? string
+---@field updated_at number
+---@field updated_by string
+
+---@class CloudforceOneRulePreviewLoadMatch
+---@field account_id string
+---@field id string
+
+---@class CloudforceOneRulePreviewCreateData
+---@field account_id string
+---@field commit_message? string
+---@field condition table
+---@field content? string
+---@field created_at number
+---@field created_by string
+---@field description string
+---@field enabled boolean
+---@field id string
+---@field is_public boolean
+---@field meta? table
+---@field name string
+---@field namespaces table
+---@field path string
+---@field pending_approval_id number
+---@field pending_change table
+---@field status? string
+---@field strings? table
+---@field structured_source? string
+---@field updated_at number
+---@field updated_by string
+
+---@class CloudforceOneRulePreviewUpdateData
+---@field account_id string
+---@field id string
+---@field commit_message? string
+---@field condition? table
+---@field content? string
+---@field created_at? number
+---@field created_by? string
+---@field description? string
+---@field enabled? boolean
+---@field is_public? boolean
+---@field meta? table
+---@field name? string
+---@field namespaces? table
+---@field path? string
+---@field pending_approval_id? number
+---@field pending_change? table
+---@field status? string
+---@field strings? table
+---@field structured_source? string
+---@field updated_at? number
+---@field updated_by? string
+
+---@class CloudforceOneRulesPreviewList
+---@field content? string
+---@field created_at number
+---@field created_by string
+---@field description string
+---@field enabled boolean
+---@field id string
+---@field is_public boolean
+---@field meta? table
+---@field name string
+---@field namespaces table
+---@field path string
+---@field pending_approval_id number
+---@field pending_change table
+---@field structured_source? string
+---@field updated_at number
+---@field updated_by string
+
+---@class CloudforceOneRulesPreviewListListMatch
+---@field account_id string
+---@field is_public? boolean
+---@field limit? number
+---@field namespace? any
+---@field offset? number
+---@field path? string
+---@field recursive? string
+---@field search? string
+
+---@class CloudforceOneRulesSearch
+---@field content? string
+---@field created_at number
+---@field created_by string
+---@field description string
+---@field enabled boolean
+---@field id string
+---@field is_public boolean
+---@field meta? table
+---@field name string
+---@field namespaces table
+---@field path string
+---@field pending_approval_id number
+---@field pending_change table
+---@field score? number
+---@field scoring_details? table
+---@field structured_source? string
+---@field updated_at number
+---@field updated_by string
+
+---@class CloudforceOneRulesSearchListMatch
+---@field account_id string
+---@field is_public? boolean
+---@field language? string
+---@field limit? number
+---@field mode? string
+---@field namespace? any
+---@field offset? number
+---@field path? string
+---@field query string
+---@field recursive? string
+---@field search? string
+
+---@class CloudforceOneStat
+
+---@class CloudforceOneStatLoadMatch
+---@field account_id string
+
+---@class CloudforceOneSuccess
+---@field id? string
+---@field success boolean
+
+---@class CloudforceOneSuccessCreateData
+---@field account_id string
+---@field approval_id string
+---@field id? string
+---@field success boolean
+
+---@class CloudforceOneSuccessRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class CloudforceOneTreeNode
+---@field children table
+---@field count number
+---@field name string
+---@field path string
+
+---@class CloudforceOneTreeNodeListMatch
+---@field account_id string
+
+---@class CloudforceOneValidation
+---@field content string
+---@field error? string
+---@field excludeRuleId? string
+---@field name string
+---@field namespaces? table
+---@field path? string
+---@field valid boolean
+
+---@class CloudforceOneValidationCreateData
+---@field account_id string
+---@field content string
+---@field error? string
+---@field excludeRuleId? string
+---@field name string
+---@field namespaces? table
+---@field path? string
+---@field valid boolean
+
+---@class Collection
+---@field columns table
+---@field created_at string
+---@field created_by string
+---@field data table
+---@field id string
+---@field item_count number
+---@field metadata? table
+---@field name string
+---@field position number
+---@field required boolean
+---@field status string
+---@field type string
+---@field updated_at string
+
+---@class CollectionLoadMatch
+---@field account_id string
+---@field id string
+---@field item_id? string
+
+---@class CollectionListMatch
+---@field account_id string
+---@field limit? number
+---@field page? number
+
+---@class CollectionCreateData
+---@field account_id string
+---@field columns table
+---@field created_at string
+---@field created_by string
+---@field data table
+---@field id string
+---@field item_count number
+---@field metadata? table
+---@field name string
+---@field position number
+---@field required boolean
+---@field status string
+---@field type string
+---@field updated_at string
+
+---@class CollectionUpdateData
+---@field account_id string
+---@field column_id? string
+---@field id string
+---@field item_id? string
+---@field columns? table
+---@field created_at? string
+---@field created_by? string
+---@field data? table
+---@field item_count? number
+---@field metadata? table
+---@field name? string
+---@field position? number
+---@field required? boolean
+---@field status? string
+---@field type? string
+---@field updated_at? string
+
+---@class CollectionRemoveMatch
+---@field account_id string
+---@field column_id? string
+---@field id string
+---@field item_id? string
+
+---@class CollectionsItem
+
+---@class CollectionsItemCreateData
+---@field account_id string
+---@field collection_id string
+
+---@class Country
+---@field result table
+---@field success string
+
+---@class CountryListMatch
+---@field account_id string
+
+---@class DashboardAsset
+---@field assets table
+---@field contentType table
+---@field count table
+---@field downloadable table
+---@field expiresAt table
+---@field fileName table
+---@field fileSize table
+---@field id table
+---@field is_cloudflare_team table
+---@field metadata table
+---@field origin table
+---@field state table
+---@field tlp table
+---@field uploadedAt table
+
+---@class DashboardAssetLoadMatch
+---@field account_id string
+---@field asset_id? string
+---@field project_type string
+---@field request_id string
+
+---@class DashboardAssetCreateData
+---@field account_id string
+---@field project_type string
+---@field request_id string
+---@field assets table
+---@field contentType table
+---@field count table
+---@field downloadable table
+---@field expiresAt table
+---@field fileName table
+---@field fileSize table
+---@field id table
+---@field is_cloudflare_team table
+---@field metadata table
+---@field origin table
+---@field state table
+---@field tlp table
+---@field uploadedAt table
+
+---@class DashboardUser
+---@field display_name? string
+---@field id string
+
+---@class DashboardUserLoadMatch
+---@field account_id string
+---@field request_id string
+
+---@class Dataset
+---@field deletedAt? string
+---@field id? string
+---@field indicatorWriteMode string
+---@field isAnalytics boolean
+---@field isPublic boolean
+---@field name string
+---@field uuid string
+
+---@class DatasetLoadMatch
+---@field account_id string
+---@field id string
+
+---@class DatasetListMatch
+---@field account_id string
+---@field include_deleted? boolean
+
+---@class DatasetCreateData
+---@field account_id string
+---@field id string
+---@field deletedAt? string
+---@field indicatorWriteMode string
+---@field isAnalytics boolean
+---@field isPublic boolean
+---@field name string
+---@field uuid string
+
+---@class DatasetUpdateData
+---@field account_id string
+---@field id string
+---@field deletedAt? string
+---@field indicatorWriteMode? string
+---@field isAnalytics? boolean
+---@field isPublic? boolean
+---@field name? string
+---@field uuid? string
+
+---@class DatasetRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class Event
+---@field accountId number
+---@field account_id number
+---@field alert_enabled boolean
+---@field alert_rollup_enabled boolean
+---@field attacker string
+---@field attackerCountry string
+---@field attackerCountryAlpha3 string
+---@field category string
+---@field childIds? table
+---@field created string
+---@field createdAt? string
+---@field createdEventsCount number
+---@field createdIndicatorsCount number
+---@field createdRelationshipsCount number
+---@field created_at string
+---@field cursor? string
+---@field custom_threat_feed_id? number
+---@field data string
+---@field datasetId string
+---@field date string
+---@field errorCount number
+---@field errors? table
+---@field event string
+---@field eventIds table
+---@field failedCount number
+---@field failures? table
+---@field hasChildren boolean
+---@field id number
+---@field includeCreatedEvents? boolean
+---@field indicator string
+---@field indicatorType string
+---@field indicatorTypeId number
+---@field insight? string
+---@field killChain number
+---@field message string
+---@field mitreAttack table
+---@field mitreCapec table
+---@field name string
+---@field numReferenced number
+---@field numReferences number
+---@field order? string
+---@field orderBy? string
+---@field page? number
+---@field pageSize? number
+---@field parentId string
+---@field query_json string
+---@field raw? table
+---@field rawId string
+---@field referenced table
+---@field referencedIds table
+---@field references table
+---@field referencesIds table
+---@field relationshipType string
+---@field relationships table
+---@field relationshipsCreated? number
+---@field releasabilityId? string
+---@field rule_enabled boolean
+---@field rule_list_id? string
+---@field rule_scope? string
+---@field search? table
+---@field source string
+---@field success boolean
+---@field tags table
+---@field targetCountry string
+---@field targetCountryAlpha3 string
+---@field targetIndustry string
+---@field tlp string
+---@field updatedCount number
+---@field updated_at string
+---@field updates table
+---@field user_email string
+---@field uuid string
+
+---@class EventLoadMatch
+---@field account_id string
+---@field dataset_id? string
+---@field event_id? string
+---@field id? string
+---@field raw_id? string
+---@field query_id? number
+
+---@class EventListMatch
+---@field account_id string
+---@field cache? string
+---@field cursor? string
+---@field dataset_id? table
+---@field force_refresh? boolean
+---@field format? string
+---@field order? string
+---@field order_by? string
+---@field page? number
+---@field page_size? number
+---@field search? table
+---@field by_id_id? string
+---@field direction? string
+---@field include_parent? boolean
+---@field indicator_type_id? table
+---@field max_depth? number
+---@field relationship_type? any
+
+---@class EventCreateData
+---@field account_id string
+---@field cache? string
+---@field force_refresh? boolean
+---@field format? string
+---@field id? string
+---@field raw_id? string
+---@field query_id? number
+---@field accountId number
+---@field alert_enabled boolean
+---@field alert_rollup_enabled boolean
+---@field attacker string
+---@field attackerCountry string
+---@field attackerCountryAlpha3 string
+---@field category string
+---@field childIds? table
+---@field created string
+---@field createdAt? string
+---@field createdEventsCount number
+---@field createdIndicatorsCount number
+---@field createdRelationshipsCount number
+---@field created_at string
+---@field cursor? string
+---@field custom_threat_feed_id? number
+---@field data string
+---@field datasetId string
+---@field date string
+---@field errorCount number
+---@field errors? table
+---@field event string
+---@field eventIds table
+---@field failedCount number
+---@field failures? table
+---@field hasChildren boolean
+---@field includeCreatedEvents? boolean
+---@field indicator string
+---@field indicatorType string
+---@field indicatorTypeId number
+---@field insight? string
+---@field killChain number
+---@field message string
+---@field mitreAttack table
+---@field mitreCapec table
+---@field name string
+---@field numReferenced number
+---@field numReferences number
+---@field order? string
+---@field orderBy? string
+---@field page? number
+---@field pageSize? number
+---@field parentId string
+---@field query_json string
+---@field raw? table
+---@field rawId string
+---@field referenced table
+---@field referencedIds table
+---@field references table
+---@field referencesIds table
+---@field relationshipType string
+---@field relationships table
+---@field relationshipsCreated? number
+---@field releasabilityId? string
+---@field rule_enabled boolean
+---@field rule_list_id? string
+---@field rule_scope? string
+---@field search? table
+---@field source string
+---@field success boolean
+---@field tags table
+---@field targetCountry string
+---@field targetCountryAlpha3 string
+---@field targetIndustry string
+---@field tlp string
+---@field updatedCount number
+---@field updated_at string
+---@field updates table
+---@field user_email string
+---@field uuid string
+
+---@class EventUpdateData
+---@field account_id string
+---@field id? string
+---@field raw_id? string
+---@field query_id? number
+---@field accountId? number
+---@field alert_enabled? boolean
+---@field alert_rollup_enabled? boolean
+---@field attacker? string
+---@field attackerCountry? string
+---@field attackerCountryAlpha3? string
+---@field category? string
+---@field childIds? table
+---@field created? string
+---@field createdAt? string
+---@field createdEventsCount? number
+---@field createdIndicatorsCount? number
+---@field createdRelationshipsCount? number
+---@field created_at? string
+---@field cursor? string
+---@field custom_threat_feed_id? number
+---@field data? string
+---@field datasetId? string
+---@field date? string
+---@field errorCount? number
+---@field errors? table
+---@field event? string
+---@field eventIds? table
+---@field failedCount? number
+---@field failures? table
+---@field hasChildren? boolean
+---@field includeCreatedEvents? boolean
+---@field indicator? string
+---@field indicatorType? string
+---@field indicatorTypeId? number
+---@field insight? string
+---@field killChain? number
+---@field message? string
+---@field mitreAttack? table
+---@field mitreCapec? table
+---@field name? string
+---@field numReferenced? number
+---@field numReferences? number
+---@field order? string
+---@field orderBy? string
+---@field page? number
+---@field pageSize? number
+---@field parentId? string
+---@field query_json? string
+---@field raw? table
+---@field rawId? string
+---@field referenced? table
+---@field referencedIds? table
+---@field references? table
+---@field referencesIds? table
+---@field relationshipType? string
+---@field relationships? table
+---@field relationshipsCreated? number
+---@field releasabilityId? string
+---@field rule_enabled? boolean
+---@field rule_list_id? string
+---@field rule_scope? string
+---@field search? table
+---@field source? string
+---@field success? boolean
+---@field tags? table
+---@field targetCountry? string
+---@field targetCountryAlpha3? string
+---@field targetIndustry? string
+---@field tlp? string
+---@field updatedCount? number
+---@field updated_at? string
+---@field updates? table
+---@field user_email? string
+---@field uuid? string
+
+---@class EventRemoveMatch
+---@field account_id string
+---@field dataset_id? string
+---@field event_id? table
+---@field query_id? number
+
+---@class Group
+---@field createdAt string
+---@field description string
+---@field id? string
+---@field members table
+---@field name string
+---@field updatedAt string
+---@field uuid string
+
+---@class GroupLoadMatch
+---@field account_id string
+---@field id string
+
+---@class GroupListMatch
+---@field account_id string
+
+---@class GroupCreateData
+---@field account_id string
+---@field createdAt string
+---@field description string
+---@field id? string
+---@field members table
+---@field name string
+---@field updatedAt string
+---@field uuid string
+
+---@class GroupUpdateData
+---@field account_id string
+---@field id string
+---@field createdAt? string
+---@field description? string
+---@field members? table
+---@field name? string
+---@field updatedAt? string
+---@field uuid? string
+
+---@class GroupRemoveMatch
+---@field account_id string
+---@field id string
+---@field member_id? string
+
+---@class Indicator
+---@field completeness table
+---@field confidence? number
+---@field createdAt string
+---@field datasetId? string
+---@field description? string
+---@field durableObjectId string
+---@field id? string
+---@field indicatorType string
+---@field indicators table
+---@field message string
+---@field metadata? table
+---@field pagination table
+---@field relatedEvents? table
+---@field sources table
+---@field tags? table
+---@field tlp? string
+---@field type? string
+---@field updatedAt string
+---@field uuid string
+---@field value string
+
+---@class IndicatorLoadMatch
+---@field account_id string
+---@field cache? string
+---@field created_after? string
+---@field created_before? string
+---@field cursor? string
+---@field dataset_id? table
+---@field format? string
+---@field include_tag? boolean
+---@field include_total_count? boolean
+---@field indicator_type? string
+---@field name? string
+---@field page? number
+---@field page_size? number
+---@field related_event? table
+---@field related_events_limit? number
+---@field search? table
+---@field tag? table
+---@field tag_search? table
+---@field id? string
+
+---@class IndicatorListMatch
+---@field account_id string
+---@field dataset_id string
+---@field indicator_type? string
+---@field name? string
+---@field page? number
+---@field page_size? number
+---@field related_event? table
+
+---@class IndicatorCreateData
+---@field account_id string
+---@field dataset_id string
+---@field completeness table
+---@field confidence? number
+---@field createdAt string
+---@field datasetId? string
+---@field description? string
+---@field durableObjectId string
+---@field id? string
+---@field indicatorType string
+---@field indicators table
+---@field message string
+---@field metadata? table
+---@field pagination table
+---@field relatedEvents? table
+---@field sources table
+---@field tags? table
+---@field tlp? string
+---@field type? string
+---@field updatedAt string
+---@field uuid string
+---@field value string
+
+---@class IndicatorUpdateData
+---@field account_id string
+---@field dataset_id string
+---@field id string
+---@field rel_uuid? string
+---@field completeness? table
+---@field confidence? number
+---@field createdAt? string
+---@field datasetId? string
+---@field description? string
+---@field durableObjectId? string
+---@field indicatorType? string
+---@field indicators? table
+---@field message? string
+---@field metadata? table
+---@field pagination? table
+---@field relatedEvents? table
+---@field sources? table
+---@field tags? table
+---@field tlp? string
+---@field type? string
+---@field updatedAt? string
+---@field uuid? string
+---@field value? string
+
+---@class IndicatorRemoveMatch
+---@field account_id string
+---@field dataset_id string
+---@field id string
+---@field rel_uuid? string
+
+---@class IndicatorType
+---@field type string
+
+---@class IndicatorTypeLoadMatch
+---@field account_id string
+---@field dataset_id? table
+
+---@class Permission
+---@field createdAt string
+---@field id? string
+---@field message? string
+---@field resourceId? string
+---@field resourceType string
+---@field role string
+---@field subjectId string
+---@field subjectType string
+---@field success? boolean
+---@field updatedAt string
+---@field uuid string
+
+---@class PermissionListMatch
+---@field account_id string
+---@field dataset_id string
+
+---@class PermissionCreateData
+---@field account_id string
+---@field dataset_id string
+---@field createdAt string
+---@field id? string
+---@field message? string
+---@field resourceId? string
+---@field resourceType string
+---@field role string
+---@field subjectId string
+---@field subjectType string
+---@field success? boolean
+---@field updatedAt string
+---@field uuid string
+
+---@class PermissionUpdateData
+---@field account_id string
+---@field dataset_id string
+---@field id string
+---@field createdAt? string
+---@field message? string
+---@field resourceId? string
+---@field resourceType? string
+---@field role? string
+---@field subjectId? string
+---@field subjectType? string
+---@field success? boolean
+---@field updatedAt? string
+---@field uuid? string
+
+---@class PermissionRemoveMatch
+---@field account_id string
+---@field dataset_id string
+---@field id string
+
+---@class Priority
+---@field errors table
+---@field id? string
+---@field labels table
+---@field messages table
+---@field page number
+---@field per_page number
+---@field priority number
+---@field requirement string
+---@field result? any
+---@field success boolean
+---@field tlp string
+
+---@class PriorityLoadMatch
+---@field account_id string
+---@field id string
+
+---@class PriorityCreateData
+---@field account_id string
+---@field errors table
+---@field id? string
+---@field labels table
+---@field messages table
+---@field page number
+---@field per_page number
+---@field priority number
+---@field requirement string
+---@field result? any
+---@field success boolean
+---@field tlp string
+
+---@class PriorityUpdateData
+---@field account_id string
+---@field id string
+---@field errors? table
+---@field labels? table
+---@field messages? table
+---@field page? number
+---@field per_page? number
+---@field priority? number
+---@field requirement? string
+---@field result? any
+---@field success? boolean
+---@field tlp? string
+
+---@class PriorityIntelligence
+---@field id? string
+---@field labels? table
+---@field priority? number
+---@field requirement string
+---@field tlp? string
+
+---@class PriorityIntelligenceLoadMatch
+---@field account_id string
+---@field page? number
+---@field per_page? number
+---@field id? string
+
+---@class PriorityIntelligenceCreateData
+---@field account_id string
+---@field id? string
+---@field labels? table
+---@field priority? number
+---@field requirement string
+---@field tlp? string
+
+---@class PriorityIntelligenceUpdateData
+---@field account_id string
+---@field id string
+---@field labels? table
+---@field priority? number
+---@field requirement? string
+---@field tlp? string
+
+---@class PriorityIntelligenceRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class PriorityIntelligenceRequirement
+---@field as_of? string
+---@field backtest_days? number
+---@field candidate_limit? number
+---@field dataset_ids? table
+---@field dimension string
+---@field emerging_min_current_count? number
+---@field enabled? boolean
+---@field established_min_absolute_delta? number
+---@field established_min_prior_count? number
+---@field established_min_relative_delta? number
+---@field value string
+---@field window_days? number
+
+---@class PriorityIntelligenceRequirementLoadMatch
+---@field account_id string
+---@field enabled? boolean
+---@field page? number
+---@field per_page? number
+---@field backtest_id? string
+---@field evaluation_id? string
+
+---@class PriorityIntelligenceRequirementCreateData
+---@field account_id string
+---@field as_of? string
+---@field backtest_days? number
+---@field candidate_limit? number
+---@field dataset_ids? table
+---@field dimension string
+---@field emerging_min_current_count? number
+---@field enabled? boolean
+---@field established_min_absolute_delta? number
+---@field established_min_prior_count? number
+---@field established_min_relative_delta? number
+---@field value string
+---@field window_days? number
+
+---@class PriorityIntelligenceRequirementUpdateData
+---@field account_id string
+---@field interest_id string
+---@field as_of? string
+---@field backtest_days? number
+---@field candidate_limit? number
+---@field dataset_ids? table
+---@field dimension? string
+---@field emerging_min_current_count? number
+---@field enabled? boolean
+---@field established_min_absolute_delta? number
+---@field established_min_prior_count? number
+---@field established_min_relative_delta? number
+---@field value? string
+---@field window_days? number
+
+---@class PriorityIntelligenceRequirementRemoveMatch
+---@field account_id string
+---@field interest_id string
+
+---@class PriorityIntelligenceRequirementsPir
+---@field errors table
+---@field labels table
+---@field messages table
+---@field priority number
+---@field requirement string
+---@field result? any
+---@field success boolean
+---@field tlp string
+
+---@class PriorityIntelligenceRequirementsPirListMatch
+---@field account_id string
+
+---@class PriorityIntelligenceRequirementsPirCreateData
+---@field account_id string
+---@field errors table
+---@field labels table
+---@field messages table
+---@field priority number
+---@field requirement string
+---@field result? any
+---@field success boolean
+---@field tlp string
+
+---@class PublicCredentialMonitor
+---@field created_at string
+---@field domain string
+---@field id number
+---@field matched_at string
+---@field username string
+
+---@class PublicCredentialMonitorListMatch
+---@field account_id string
+---@field domain? string
+---@field page? number
+---@field per_page? number
+---@field username? string
+
+---@class PublicCredentialMonitorCreateData
+---@field account_id string
+---@field created_at string
+---@field domain string
+---@field id number
+---@field matched_at string
+---@field username string
+
+---@class PublicCredentialMonitorRemoveMatch
+---@field account_id string
+---@field id number
+
+---@class Request
+---@field completed_after? any
+---@field completed_before? any
+---@field content? string
+---@field created_after? any
+---@field created_before? any
+---@field errors table
+---@field id? string
+---@field messages table
+---@field page number
+---@field per_page number
+---@field priority? string
+---@field request_type? string
+---@field result table
+---@field sort_by? string
+---@field sort_order? string
+---@field status? string
+---@field success boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestLoadMatch
+---@field account_id string
+---@field id string
+
+---@class RequestCreateData
+---@field account_id string
+---@field completed_after? any
+---@field completed_before? any
+---@field content? string
+---@field created_after? any
+---@field created_before? any
+---@field errors table
+---@field id? string
+---@field messages table
+---@field page number
+---@field per_page number
+---@field priority? string
+---@field request_type? string
+---@field result table
+---@field sort_by? string
+---@field sort_order? string
+---@field status? string
+---@field success boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestUpdateData
+---@field account_id string
+---@field id string
+---@field completed_after? any
+---@field completed_before? any
+---@field content? string
+---@field created_after? any
+---@field created_before? any
+---@field errors? table
+---@field messages? table
+---@field page? number
+---@field per_page? number
+---@field priority? string
+---@field request_type? string
+---@field result? table
+---@field sort_by? string
+---@field sort_order? string
+---@field status? string
+---@field success? boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestForInformationRfi
+---@field content? string
+---@field errors table
+---@field id? string
+---@field messages table
+---@field priority? string
+---@field request_type? string
+---@field result? table
+---@field source? string
+---@field success boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestForInformationRfiLoadMatch
+---@field account_id string
+---@field asset_id string
+---@field request_id string
+
+---@class RequestForInformationRfiListMatch
+---@field account_id string
+
+---@class RequestForInformationRfiCreateData
+---@field account_id string
+---@field request_id? string
+---@field content? string
+---@field errors table
+---@field id? string
+---@field messages table
+---@field priority? string
+---@field request_type? string
+---@field result? table
+---@field source? string
+---@field success boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestForInformationRfiUpdateData
+---@field account_id string
+---@field asset_id? string
+---@field request_id string
+---@field message_id? number
+---@field content? string
+---@field errors? table
+---@field id? string
+---@field messages? table
+---@field priority? string
+---@field request_type? string
+---@field result? table
+---@field source? string
+---@field success? boolean
+---@field summary? string
+---@field tlp? string
+
+---@class RequestsDashboard
+---@field created string
+---@field defaultValue? any
+---@field description? string
+---@field displayOrder number
+---@field errors table
+---@field fieldLabel string
+---@field fieldName string
+---@field fieldType string
+---@field id string
+---@field messages table
+---@field options? table
+---@field projectType string
+---@field project_type string
+---@field public boolean
+---@field request_types table
+---@field required boolean
+---@field result table
+---@field sectionID? string
+---@field sectionLabel? string
+---@field success table
+---@field total number
+---@field updated string
+---@field validation? table
+
+---@class RequestsDashboardLoadMatch
+---@field account_id string
+---@field project_type string
+
+---@class RequestsDashboardListMatch
+---@field account_id string
+---@field project_type? string
+---@field country? string
+---@field request_type? string
+
+---@class Rfi
+---@field account table
+---@field assignee string
+---@field completed string
+---@field created string
+---@field description? string
+---@field eventId? string
+---@field id string
+---@field investigation_id string
+---@field is_free_request boolean
+---@field message_tokens number
+---@field metadata? table
+---@field pagination table
+---@field priority string
+---@field readable_id string
+---@field release_entitlements string
+---@field report_id string
+---@field request table
+---@field request_type? string
+---@field result table
+---@field status string
+---@field subtypeId? string
+---@field success string
+---@field summary string
+---@field title? string
+---@field tlp string
+---@field tokens number
+---@field updated string
+
+---@class RfiLoadMatch
+---@field account_id? string
+---@field project_type string
+---@field assignee? string
+---@field created_by? string
+---@field id? string
+---@field metadata? string
+---@field order? string
+---@field order_by? string
+---@field page? number
+---@field page_size? number
+---@field priority? string
+---@field readable_id? string
+---@field request_type? string
+---@field search? string
+---@field status? string
+---@field summary? string
+---@field tlp? string
+---@field request_id? string
+
+---@class RfiCreateData
+---@field account_id string
+---@field project_type string
+---@field account table
+---@field assignee string
+---@field completed string
+---@field created string
+---@field description? string
+---@field eventId? string
+---@field id string
+---@field investigation_id string
+---@field is_free_request boolean
+---@field message_tokens number
+---@field metadata? table
+---@field pagination table
+---@field priority string
+---@field readable_id string
+---@field release_entitlements string
+---@field report_id string
+---@field request table
+---@field request_type? string
+---@field result table
+---@field status string
+---@field subtypeId? string
+---@field success string
+---@field summary string
+---@field title? string
+---@field tlp string
+---@field tokens number
+---@field updated string
+
+---@class RfiUpdateData
+---@field account_id string
+---@field project_type string
+---@field request_id string
+---@field account? table
+---@field assignee? string
+---@field completed? string
+---@field created? string
+---@field description? string
+---@field eventId? string
+---@field id? string
+---@field investigation_id? string
+---@field is_free_request? boolean
+---@field message_tokens? number
+---@field metadata? table
+---@field pagination? table
+---@field priority? string
+---@field readable_id? string
+---@field release_entitlements? string
+---@field report_id? string
+---@field request? table
+---@field request_type? string
+---@field result? table
+---@field status? string
+---@field subtypeId? string
+---@field success? string
+---@field summary? string
+---@field title? string
+---@field tlp? string
+---@field tokens? number
+---@field updated? string
+
+---@class RfiMessage
+---@field attachment_asset_ids? table
+---@field attachments table
+---@field author_id? string
+---@field author_name? string
+---@field content string
+---@field created string
+---@field id number
+---@field is_cloudflare_team boolean
+---@field is_published boolean
+---@field publish? boolean
+---@field published string
+---@field tlp string
+---@field updated string
+
+---@class RfiMessageLoadMatch
+---@field account_id string
+---@field id string
+---@field project_type string
+---@field request_id string
+
+---@class RfiMessageListMatch
+---@field account_id string
+---@field project_type string
+---@field request_id string
+---@field page? string
+---@field per_page? string
+
+---@class RfiMessageCreateData
+---@field account_id string
+---@field project_type string
+---@field request_id string
+---@field attachment_asset_ids? table
+---@field attachments table
+---@field author_id? string
+---@field author_name? string
+---@field content string
+---@field created string
+---@field id number
+---@field is_cloudflare_team boolean
+---@field is_published boolean
+---@field publish? boolean
+---@field published string
+---@field tlp string
+---@field updated string
+
+---@class RfiMessageUpdateData
+---@field account_id string
+---@field id string
+---@field project_type string
+---@field request_id string
+---@field attachment_asset_ids? table
+---@field attachments? table
+---@field author_id? string
+---@field author_name? string
+---@field content? string
+---@field created? string
+---@field is_cloudflare_team? boolean
+---@field is_published? boolean
+---@field publish? boolean
+---@field published? string
+---@field tlp? string
+---@field updated? string
+
+---@class Rule
+---@field arrays table
+---@field headers table
+---@field operators table
+---@field scalars table
+---@field string_arrays table
+---@field structs table
+
+---@class RuleListMatch
+---@field account_id string
+
+---@class Scan
+---@field errors table
+---@field frequency? number
+---@field ips? table
+---@field messages table
+---@field ports? table
+---@field result table
+---@field success boolean
+
+---@class ScanLoadMatch
+---@field account_id string
+---@field config_id string
+
+---@class ScanListMatch
+---@field account_id string
+
+---@class ScanCreateData
+---@field account_id string
+---@field errors table
+---@field frequency? number
+---@field ips? table
+---@field messages table
+---@field ports? table
+---@field result table
+---@field success boolean
+
+---@class ScanUpdateData
+---@field account_id string
+---@field config_id string
+---@field errors? table
+---@field frequency? number
+---@field ips? table
+---@field messages? table
+---@field ports? table
+---@field result? table
+---@field success? boolean
+
+---@class ScanRemoveMatch
+---@field account_id string
+---@field config_id string
+
+---@class Tag
+---@field activeDuration? string
+---@field activeDuration_annotated table
+---@field actorCategory? string
+---@field actorCategory_annotated table
+---@field aliasGroupNames? table
+---@field aliasGroupNamesInternal? table
+---@field aliases? table
+---@field attributionOrganization? string
+---@field attributionOrganization_annotated table
+---@field categoryName? string
+---@field categoryUuid? string
+---@field confidence? number
+---@field createdAt? string
+---@field dateOfDiscovery? string
+---@field description? string
+---@field externalReferenceLinks? table
+---@field externalReferences? table
+---@field externalReferences_annotated? table
+---@field id? string
+---@field internalAliases? table
+---@field internalDescription? string
+---@field lastSeen? string
+---@field metadata? table
+---@field motive? string
+---@field motive_annotated table
+---@field opsecLevel? string
+---@field opsecLevel_annotated table
+---@field originCountryISO? string
+---@field originCountryISO_annotated table
+---@field priority? number
+---@field priority_annotated table
+---@field properties? table
+---@field sophisticationLevel? string
+---@field sophisticationLevel_annotated table
+---@field tlp? string
+---@field type? string
+---@field updatedAt? string
+---@field uuid string
+---@field value string
+---@field version? number
+
+---@class TagLoadMatch
+---@field account_id string
+---@field id string
+
+---@class TagListMatch
+---@field account_id string
+---@field cache? string
+---@field category_uuid? string
+---@field filter? table
+---@field page? number
+---@field page_size? number
+---@field search? string
+---@field value? string
+
+---@class TagCreateData
+---@field account_id string
+---@field id? string
+---@field activeDuration? string
+---@field activeDuration_annotated table
+---@field actorCategory? string
+---@field actorCategory_annotated table
+---@field aliasGroupNames? table
+---@field aliasGroupNamesInternal? table
+---@field aliases? table
+---@field attributionOrganization? string
+---@field attributionOrganization_annotated table
+---@field categoryName? string
+---@field categoryUuid? string
+---@field confidence? number
+---@field createdAt? string
+---@field dateOfDiscovery? string
+---@field description? string
+---@field externalReferenceLinks? table
+---@field externalReferences? table
+---@field externalReferences_annotated? table
+---@field internalAliases? table
+---@field internalDescription? string
+---@field lastSeen? string
+---@field metadata? table
+---@field motive? string
+---@field motive_annotated table
+---@field opsecLevel? string
+---@field opsecLevel_annotated table
+---@field originCountryISO? string
+---@field originCountryISO_annotated table
+---@field priority? number
+---@field priority_annotated table
+---@field properties? table
+---@field sophisticationLevel? string
+---@field sophisticationLevel_annotated table
+---@field tlp? string
+---@field type? string
+---@field updatedAt? string
+---@field uuid string
+---@field value string
+---@field version? number
+
+---@class TagUpdateData
+---@field account_id string
+---@field id string
+---@field rel_uuid? string
+---@field dataset_id? string
+---@field activeDuration? string
+---@field activeDuration_annotated? table
+---@field actorCategory? string
+---@field actorCategory_annotated? table
+---@field aliasGroupNames? table
+---@field aliasGroupNamesInternal? table
+---@field aliases? table
+---@field attributionOrganization? string
+---@field attributionOrganization_annotated? table
+---@field categoryName? string
+---@field categoryUuid? string
+---@field confidence? number
+---@field createdAt? string
+---@field dateOfDiscovery? string
+---@field description? string
+---@field externalReferenceLinks? table
+---@field externalReferences? table
+---@field externalReferences_annotated? table
+---@field internalAliases? table
+---@field internalDescription? string
+---@field lastSeen? string
+---@field metadata? table
+---@field motive? string
+---@field motive_annotated? table
+---@field opsecLevel? string
+---@field opsecLevel_annotated? table
+---@field originCountryISO? string
+---@field originCountryISO_annotated? table
+---@field priority? number
+---@field priority_annotated? table
+---@field properties? table
+---@field sophisticationLevel? string
+---@field sophisticationLevel_annotated? table
+---@field tlp? string
+---@field type? string
+---@field updatedAt? string
+---@field uuid? string
+---@field value? string
+---@field version? number
+
+---@class TagRemoveMatch
+---@field account_id string
+---@field id string
+---@field rel_uuid? string
+---@field dataset_id? string
+
+---@class TagCategory
+---@field createdAt? string
+---@field description? string
+---@field id? string
+---@field name string
+---@field schema? table
+---@field updatedAt? string
+---@field uuid string
+
+---@class TagCategoryLoadMatch
+---@field account_id string
+---@field id string
+
+---@class TagCategoryListMatch
+---@field account_id string
+---@field search? string
+
+---@class TagCategoryCreateData
+---@field account_id string
+---@field createdAt? string
+---@field description? string
+---@field id? string
+---@field name string
+---@field schema? table
+---@field updatedAt? string
+---@field uuid string
+
+---@class TagCategoryUpdateData
+---@field account_id string
+---@field id string
+---@field createdAt? string
+---@field description? string
+---@field name? string
+---@field schema? table
+---@field updatedAt? string
+---@field uuid? string
+
+---@class TagCategoryRemoveMatch
+---@field account_id string
+---@field id string
+
+---@class TargetIndustry
+---@field type string
+
+---@class TargetIndustryLoadMatch
+---@field account_id string
+---@field dataset_id? string
+
+---@class ThreatSignal
+---@field category_id? string
+---@field category_uuids table
+---@field config? string
+---@field display_name? string
+---@field display_order? number
+---@field enabled? boolean
+---@field errors table
+---@field feeds table
+---@field is_active? boolean
+---@field message string
+---@field messages table
+---@field name? string
+---@field opted_out boolean
+---@field output_schema? string
+---@field poll_interval_s? number
+---@field prompt? string
+---@field read boolean
+---@field result any
+---@field skill_ids table
+---@field success boolean
+---@field tag_id string
+---@field title? string
+---@field url? string
+---@field why_valuable? string
+
+---@class ThreatSignalLoadMatch
+---@field account_id string
+---@field article_id? string
+---@field format? string
+---@field skill_id? string
+---@field feed_id? string
+
+---@class ThreatSignalListMatch
+---@field account_id string
+---@field skill_id string
+
+---@class ThreatSignalCreateData
+---@field account_id string
+---@field article_id? string
+---@field skill_id? string
+---@field feed_id? string
+---@field category_id? string
+---@field category_uuids table
+---@field config? string
+---@field display_name? string
+---@field display_order? number
+---@field enabled? boolean
+---@field errors table
+---@field feeds table
+---@field is_active? boolean
+---@field message string
+---@field messages table
+---@field name? string
+---@field opted_out boolean
+---@field output_schema? string
+---@field poll_interval_s? number
+---@field prompt? string
+---@field read boolean
+---@field result any
+---@field skill_ids table
+---@field success boolean
+---@field tag_id string
+---@field title? string
+---@field url? string
+---@field why_valuable? string
+
+---@class ThreatSignalUpdateData
+---@field account_id string
+---@field feed_id? string
+---@field skill_id? string
+---@field category_id? string
+---@field category_uuids? table
+---@field config? string
+---@field display_name? string
+---@field display_order? number
+---@field enabled? boolean
+---@field errors? table
+---@field feeds? table
+---@field is_active? boolean
+---@field message? string
+---@field messages? table
+---@field name? string
+---@field opted_out? boolean
+---@field output_schema? string
+---@field poll_interval_s? number
+---@field prompt? string
+---@field read? boolean
+---@field result? any
+---@field skill_ids? table
+---@field success? boolean
+---@field tag_id? string
+---@field title? string
+---@field url? string
+---@field why_valuable? string
+
+---@class ThreatSignalRemoveMatch
+---@field account_id string
+---@field article_id? string
+---@field tag_id? string
+---@field curated_feed_id? string
+---@field feed_id? string
+---@field skill_id? string
+
+local M = {}
+
+return M

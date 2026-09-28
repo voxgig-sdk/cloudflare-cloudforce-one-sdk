@@ -1,0 +1,2854 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Indicator | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a aria-current="page" href="../api/indicator.html">Indicator</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatortypescreate">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsbulk">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorscreate">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsindicatorsaggregate">GET /accounts/{account_id}/cloudforce-one/events/indicators/aggregate</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicators">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorstags">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsindicators">GET /accounts/{account_id}/cloudforce-one/events/indicators</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid">DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id">DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid">PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id">PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</a></div>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="indicator">Indicator</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created relationship</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatortypescreate"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create</code></a></td>
+<td><code>create</code></td>
+<td>Indicator type created successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsbulk"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk</code></a></td>
+<td><code>create</code></td>
+<td>Returns the number of created indicators</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorscreate"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created indicator</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsindicatorsaggregate"><code>/accounts/{account_id}/cloudforce-one/events/indicators/aggregate</code></a></td>
+<td><code>list</code></td>
+<td>Returns aggregated indicator data</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicators"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of indicators</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorstags"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags</code></a></td>
+<td><code>list</code></td>
+<td>Returns an array of mirrored tags</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsindicators"><code>/accounts/{account_id}/cloudforce-one/events/indicators</code></a></td>
+<td><code>load</code></td>
+<td>Returns a paginated list of indicators</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</code></a></td>
+<td><code>load</code></td>
+<td>Returns edges, optional hydrated entities, counts, and pagination</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the indicator</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns whether the relationship was deleted</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Indicator deleted successfully</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated relationship</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated indicator</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">indicators, err := client.Indicator(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(indicators)
+indicator, err := client.Indicator(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(indicator)
+created, err := client.Indicator(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;, &quot;completeness&quot;: map[string]any{}, &quot;createdAt&quot;: &quot;example&quot;, &quot;durableObjectId&quot;: &quot;example&quot;, &quot;indicatorType&quot;: &quot;example&quot;, &quot;indicators&quot;: map[string]any{}, &quot;message&quot;: &quot;example&quot;, &quot;pagination&quot;: map[string]any{}, &quot;sources&quot;: []any{}, &quot;updatedAt&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot;, &quot;value&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Indicator(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Indicator(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local indicators, err = client:Indicator():list({ account_id = &quot;example&quot;, dataset_id = &quot;example&quot; })
+local indicator, err = client:Indicator():load({ account_id = &quot;example&quot; })
+local created, err = client:Indicator():create({ account_id = &quot;example&quot;, dataset_id = &quot;example&quot;, completeness = {}, createdAt = &quot;example&quot;, durableObjectId = &quot;example&quot;, indicatorType = &quot;example&quot;, indicators = {}, message = &quot;example&quot;, pagination = {}, sources = {}, updatedAt = &quot;example&quot;, uuid = &quot;example&quot;, value = &quot;example&quot; })
+local updated, err = client:Indicator():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, dataset_id = &quot;example&quot; })
+local removed, err = client:Indicator():remove({ account_id = &quot;example&quot;, dataset_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$indicators = $client-&gt;Indicator()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;]);
+$indicator = $client-&gt;Indicator()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;Indicator()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;, &quot;completeness&quot; =&gt; [], &quot;createdAt&quot; =&gt; &quot;example&quot;, &quot;durableObjectId&quot; =&gt; &quot;example&quot;, &quot;indicatorType&quot; =&gt; &quot;example&quot;, &quot;indicators&quot; =&gt; [], &quot;message&quot; =&gt; &quot;example&quot;, &quot;pagination&quot; =&gt; [], &quot;sources&quot; =&gt; [], &quot;updatedAt&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot;, &quot;value&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Indicator()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Indicator()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">indicators = client.Indicator().list({&quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;})
+indicator = client.Indicator().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.Indicator().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;, &quot;completeness&quot;: {}, &quot;createdAt&quot;: &quot;example&quot;, &quot;durableObjectId&quot;: &quot;example&quot;, &quot;indicatorType&quot;: &quot;example&quot;, &quot;indicators&quot;: {}, &quot;message&quot;: &quot;example&quot;, &quot;pagination&quot;: {}, &quot;sources&quot;: [], &quot;updatedAt&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot;, &quot;value&quot;: &quot;example&quot; })
+updated = client.Indicator().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;})
+client.Indicator().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;dataset_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">indicators = client.Indicator.list({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot; })
+indicator = client.Indicator.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.Indicator.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;, &quot;completeness&quot; =&gt; {}, &quot;createdAt&quot; =&gt; &quot;example&quot;, &quot;durableObjectId&quot; =&gt; &quot;example&quot;, &quot;indicatorType&quot; =&gt; &quot;example&quot;, &quot;indicators&quot; =&gt; {}, &quot;message&quot; =&gt; &quot;example&quot;, &quot;pagination&quot; =&gt; {}, &quot;sources&quot; =&gt; [], &quot;updatedAt&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot;, &quot;value&quot; =&gt; &quot;example&quot; })
+updated = client.Indicator.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot; })
+client.Indicator.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;dataset_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const indicators = await client.Indicator().list({ account_id: &quot;example&quot;, dataset_id: &quot;example&quot; })
+const indicator = await client.Indicator().load({ account_id: &quot;example&quot; })
+const created = await client.Indicator().create({ account_id: &quot;example&quot;, dataset_id: &quot;example&quot;, completeness: {}, createdAt: &quot;example&quot;, durableObjectId: &quot;example&quot;, indicatorType: &quot;example&quot;, indicators: {}, message: &quot;example&quot;, pagination: {}, sources: [], updatedAt: &quot;example&quot;, uuid: &quot;example&quot;, value: &quot;example&quot; })
+const updated = await client.Indicator().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, dataset_id: &quot;example&quot; })
+await client.Indicator().remove({ account_id: &quot;example&quot;, dataset_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>completeness</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Completeness</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Updated confidence.</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional description for the indicator type</td>
+</tr>
+<tr>
+<td><code>durableObjectId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Durable Object Id</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The indicator type to create (for example, 'DOMAIN', 'IP', 'URL', 'HASH', 'EMAIL')</td>
+</tr>
+<tr>
+<td><code>indicators</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Indicators</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Message</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Updated metadata.</td>
+</tr>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Pagination</td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Related Events</td>
+</tr>
+<tr>
+<td><code>sources</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>RSS article sources from which this indicator was extracted.</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Tags</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Updated relationship type.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated At</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uuid</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Value</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</h3>
+<p>Operation ID: <code>post_IndicatorRelationshipCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Confidence score 0–100.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Arbitrary JSON metadata.</td>
+</tr>
+<tr>
+<td><code>targetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>UUID of the target entity.</td>
+</tr>
+<tr>
+<td><code>targetType</code></td>
+<td><code>enum: event, tag</code></td>
+<td>Yes</td>
+<td>Target type. &quot;indicator&quot; is not allowed (indicator↔indicator relationships are not supported).</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Relationship type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-the-created-relationship" class="status" data-status="2xx">200: Returns the created relationship</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-relationship-already-exists-for-this-source-target-and-type" class="status" data-status="4xx">409: Relationship already exists for this source, target, and type</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatortypescreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create</h3>
+<p>Operation ID: <code>post_IndicatorTypeCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional description for the indicator type</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The indicator type to create (for example, 'DOMAIN', 'IP', 'URL', 'HASH', 'EMAIL')</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-indicator-type-created-successfully" class="status" data-status="2xx">200: Indicator type created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>durableObjectId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-internal-server-error" class="status" data-status="5xx">500: Internal Server Error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>content.application/json.schema.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsbulk" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk</h3>
+<p>Operation ID: <code>post_IndicatorCreateBulk</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autoCreateType</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Global flag to automatically create indicator types if they don't exist. Individual indicators can override this with their own autoCreateType flag.</td>
+</tr>
+<tr>
+<td><code>indicators</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].autoCreateType</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.</td>
+</tr>
+<tr>
+<td><code>indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags</code></td>
+<td><code>array of string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</td>
+</tr>
+<tr>
+<td><code>indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-the-number-of-created-indicators" class="status" data-status="2xx">200: Returns the number of created indicators</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>number</code>.</p>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorscreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create</h3>
+<p>Operation ID: <code>post_IndicatorCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>autoCreateType</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, automatically create the indicator type if it doesn't exist. If false (default), throw an error when the indicator type doesn't exist.</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-the-created-indicator" class="status" data-status="2xx">200: Returns the created indicator</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsindicatorsaggregate" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/indicators/aggregate</h3>
+<p>Operation ID: <code>get_IndicatorAggregate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>aggregateBy</code> | <code>query</code> | <code>string</code> | Yes | Column(s) to aggregate by - single column or comma-separated list (for example, 'indicatorType', 'value', 'indicatorType,value') |
+| <code>measure</code> | <code>query</code> | <code>enum: indicators, relationships</code> | No | What to count per group: 'indicators' (catalog rows, default) or 'relationships' (linked events per indicator). Use 'relationships' for 'top indicator by event activity'. |
+| <code>tagUuid</code> | <code>query</code> | <code>string</code> | No | Scope to indicators associated with this tag/actor UUID. Combine with measure=relationships for 'top indicator for an actor'. |
+| <code>datasetIds</code> | <code>query</code> | <code>array of string</code> | No | Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible datasets, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, aggregates across all accessible datasets. |
+| <code>createdAfter</code> | <code>query</code> | <code>string (date-time) or string</code> | No | Filter indicators created after this date/datetime (ISO 8601, for example, '2024-01-01' or '2024-01-01T00:00:00Z') |
+| <code>createdBefore</code> | <code>query</code> | <code>string (date-time) or string</code> | No | Filter indicators created before this date/datetime (ISO 8601, for example, '2024-12-31' or '2024-12-31T23:59:59Z') |
+| <code>eventDateAfter</code> | <code>query</code> | <code>string</code> | No | For measure=relationships: only count indicator→event links whose relationship was created/observed on or after this date (ISO 8601). Bounds the activity view to recently-observed links. Note: this filters by the relationship's createdAt (link-observation time), not the underlying event's business date. |
+| <code>eventDateBefore</code> | <code>query</code> | <code>string</code> | No | For measure=relationships: only count indicator→event links whose relationship was created/observed on or before this date (ISO 8601). Bounds the activity view by the relationship's createdAt (link-observation time), not the underlying event's business date. |
+| <code>limit</code> | <code>query</code> | <code>number</code> | No | Maximum number of aggregation results to return (1-100) |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-returns-aggregated-indicator-data" class="status" data-status="2xx">200: Returns aggregated indicator data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aggregateBy</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Column(s) that were aggregated by</td>
+</tr>
+<tr>
+<td><code>aggregations</code></td>
+<td><code>array of object and object</code></td>
+<td>Yes</td>
+<td>Array of aggregation results with dynamic fields based on aggregateBy columns</td>
+</tr>
+<tr>
+<td><code>failedDatasets</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of datasets whose aggregation failed and were excluded from the result</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total count in the aggregation: indicator rows when measure=indicators, or linked-event rows when measure=relationships</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-4" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicators" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators</h3>
+<p>Operation ID: <code>get_IndicatorListLegacy</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>name</code> | <code>query</code> | <code>string</code> | No | Filter by indicator value (substring match) |
+| <code>indicatorType</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>relatedEvent</code> | <code>query</code> | <code>array of string</code> | No | Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter. |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-a-list-of-indicators" class="status" data-status="2xx">200: Returns a list of indicators</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>indicators</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].sources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>RSS article sources from which this indicator was extracted.</td>
+</tr>
+<tr>
+<td><code>indicators[].sources[].resourceId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].sources[].resourceType</code></td>
+<td><code>enum: article</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].sources[].system</code></td>
+<td><code>enum: threat-signals</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].sources[].title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Threat Signals article title; null for historical provenance without a stored title.</td>
+</tr>
+<tr>
+<td><code>indicators[].tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>indicators[].updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorstags" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags</h3>
+<p>Operation ID: <code>get_IndicatorTagsList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-returns-an-array-of-mirrored-tags" class="status" data-status="2xx">200: Returns an array of mirrored tags</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>array of object</code>.</p>
+<h5 id="400-bad-request-5" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsindicators" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/indicators</h3>
+<p>Operation ID: <code>get_IndicatorList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>datasetIds</code> | <code>query</code> | <code>array of string</code> | No | Dataset UUIDs to query, or one standalone scope value: 'all'/'<em>' for legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>array of object</code> | No | Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType, uuid. Supports operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use the 'in' operator with an array value to bulk-check up to 100 indicators in a single request, for example search=[{&quot;field&quot;:&quot;value&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;evil.com&quot;,&quot;bad.org&quot;]}]. Multiple conditions are AND'd together. Max 10 conditions per request. |
+| <code>name</code> | <code>query</code> | <code>string</code> | No | Filter indicators by value using substring match (LIKE). Legacy alternative to structured search. |
+| <code>indicatorType</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>relatedEvents</code> | <code>query</code> | <code>array of string</code> | No | Filter by related event IDs |
+| <code>tags</code> | <code>query</code> | <code>array of string</code> | No | Filter by tag values or UUIDs. Indicators must have at least one of the specified tags (OR logic). Supports both tag UUID and tag value. |
+| <code>tagSearch</code> | <code>query</code> | <code>array of object</code> | No | Structured tag-metadata filter as a JSON array of {field, op, value} objects. Operates against the per-dataset IndicatorTag mirror so you can find indicators by tag attributes (origin country, motive, sophistication, priority, etc.) without a separate Tags lookup. Common dashboard usage: drill from a country into indicators, for example tagSearch=[{&quot;field&quot;:&quot;originCountryISO&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;IR&quot;,&quot;CN&quot;]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (for example &quot;iran&quot;). Operators: equals, not, gt/gte/lt/lte (numeric only), contains/like/find/startsWith/endsWith (string only), in. AND-joined across entries; combined with <code>tags</code>, a matching tag must satisfy both. Max 10 entries per request, max 100 values per 'in'. Performance notes: <code>originCountryISO</code> uses its B-tree index for equals/not/in. <code>priority</code> uses its B-tree index for numeric comparisons. Other string columns (<code>actorCategory</code>, <code>motive</code>, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. <code>endsWith</code> and <code>aliasGroupNames</code> contains/like are leading-wildcard scans and slow on large result sets. <code>aliasGroupNames</code> matches on the JSON-encoded text, so substrings can cross alias boundaries (&quot;apt28&quot; also matches &quot;apt280&quot; when both appear in the same tag's alias list). |
+| <code>createdAfter</code> | <code>query</code> | <code>string (date-time)</code> | No | Filter indicators created on or after this date. Must use ISO 8601 format (for example, '2024-01-15T00:00:00Z'). |
+| <code>createdBefore</code> | <code>query</code> | <code>string (date-time)</code> | No | Filter indicators created on or before this date. Must use ISO 8601 format (for example, '2024-12-31T23:59:59Z'). |
+| <code>relatedEventsLimit</code> | <code>query</code> | <code>number</code> | No | Limit the number of related events returned per indicator. Default: 2. Set to 0 for none, -1 for all events. |
+| <code>includeTags</code> | <code>query</code> | <code>boolean</code> | No | Whether to include full tag details for each indicator. Defaults to true. |
+| <code>includeTotalCount</code> | <code>query</code> | <code>boolean</code> | No | Whether to compute total count via COUNT(</em>). Defaults to false for performance. <code>total_count</code> is null unless this is true and the complete fan-out succeeds. |
+| <code>format</code> | <code>query</code> | <code>enum: json, stix2, taxii</code> | No | Output format for indicator data. 'json' returns the default format, 'stix2' returns STIX 2.1 Indicator SDOs, 'taxii' returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1. |
+| <code>cache</code> | <code>query</code> | <code>enum: from-graph</code> | No | Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit. Cannot be combined with <code>cursor</code>. |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Opaque cursor from a previous response's <code>pagination.cursor</code>. When provided, all filters, datasetIds, page, <code>pageSize</code>, <code>includeTags</code> and <code>relatedEventsLimit</code> come from the cursor, do not resend them. Sending any filter, <code>page</code>, <code>pageSize</code>, <code>includeTags</code>, <code>relatedEventsLimit</code>, <code>includeTotalCount=true</code>, or <code>cache=from-graph</code> alongside a cursor yields a 400 <code>CursorFilterConflictError</code>. A cursor issued for a different entity, an unsupported version, or a dataset that has since been reconfigured as analytics-only yields a 400 <code>InvalidCursorError</code>. |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-indicators" class="status" data-status="2xx">200: Returns a paginated list of indicators</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.complete</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.complete.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedDatasets</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedDatasets.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedDatasets.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedShards</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedShards.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.failedShards.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.warnings</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.warnings.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.properties.warnings.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.completeness.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.sources</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>RSS article sources from which this indicator was extracted.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.sources[].resourceId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.sources[].resourceType</code></td>
+<td><code>enum: article</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.sources[].system</code></td>
+<td><code>enum: threat-signals</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.sources[].title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Threat Signals article title; null for historical provenance without a stored title.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.items.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.indicators.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.count</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.count.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.cursor</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.cursor.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.cursor.nullable</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.cursor.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.has_more</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.has_more.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.has_more.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.page</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.page.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.per_page</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.per_page.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count.nullable</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count_is_exact</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count_is_exact.description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.properties.total_count_is_exact.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.pagination.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-6" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationships" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships</h3>
+<p>Operation ID: <code>get_IndicatorRelationshipsList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |
+| <code>search</code> | <code>query</code> | <code>array of object</code> | No |  |
+| <code>expand</code> | <code>query</code> | <code>array of string</code> | No |  |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>integer</code> | No |  |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-returns-edges-optional-hydrated-entities-counts-and-pagination" class="status" data-status="2xx">200: Returns edges, optional hydrated entities, counts, and pagination</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.counts</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.entities</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.hasMore</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.hydrationErrors</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.relationships</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.relationships[].confidence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Confidence score 0–100, or null.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO 8601 creation timestamp.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset the relationship belongs to.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].entityId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>UUID of the related entity (other end).</td>
+</tr>
+<tr>
+<td><code>result.relationships[].entityType</code></td>
+<td><code>enum: event, indicator, tag</code></td>
+<td>Yes</td>
+<td>Type of the related entity.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].metadata</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Arbitrary JSON metadata, or null.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].relationshipUuid</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Relationship UUID (use for PATCH/DELETE).</td>
+</tr>
+<tr>
+<td><code>result.relationships[].type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Relationship type.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO 8601 last-update timestamp.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-7" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</h3>
+<p>Operation ID: <code>get_IndicatorRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-returns-the-indicator" class="status" data-status="2xx">200: Returns the indicator</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-1" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</h3>
+<p>Operation ID: <code>delete_IndicatorRelationshipDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |
+| <code>rel_uuid</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Relationship UUID. |</p>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-returns-whether-the-relationship-was-deleted" class="status" data-status="2xx">200: Returns whether the relationship was deleted</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.deleted</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-8" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</h3>
+<p>Operation ID: <code>delete_IndicatorDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |</p>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-indicator-deleted-successfully" class="status" data-status="2xx">200: Indicator deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-2" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_idrelationshipsrel_uuid" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}</h3>
+<p>Operation ID: <code>patch_IndicatorRelationshipUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |
+| <code>rel_uuid</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Relationship UUID. |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Updated confidence. null clears it.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Updated metadata. null clears it.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Updated relationship type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-returns-the-updated-relationship" class="status" data-status="2xx">200: Returns the updated relationship</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-9" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-not-found" class="status" data-status="4xx">404: Not Found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_idindicatorsindicator_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}</h3>
+<p>Operation ID: <code>patch_IndicatorUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |
+| <code>indicator_id</code> | <code>path</code> | <code>string</code> | Yes | Indicator UUID. |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. Case-insensitive on input, stored and returned as UPPERCASE. Allowed values: clear, green, amber, amber-strict, red, purple.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-returns-the-updated-indicator" class="status" data-status="2xx">200: Returns the updated indicator</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-10" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-3" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-the-updated-indicator-would-duplicate-an-existing-indicator" class="status" data-status="4xx">409: The updated indicator would duplicate an existing indicator</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

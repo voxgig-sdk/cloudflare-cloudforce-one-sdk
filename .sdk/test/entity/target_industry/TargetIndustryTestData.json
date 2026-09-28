@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "target_industry": {
+      "TARGET_INDUSTRY00": {
+        "type": "sa",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "id": "TARGET_INDUSTRY00"
+      },
+      "TARGET_INDUSTRY01": {
+        "type": "s14",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "id": "TARGET_INDUSTRY01"
+      },
+      "TARGET_INDUSTRY02": {
+        "type": "s1e",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "id": "TARGET_INDUSTRY02"
+      }
+    }
+  },
+  "new": {
+    "target_industry": {
+      "target_industry_ref01": {
+        "type": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/targetIndustries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

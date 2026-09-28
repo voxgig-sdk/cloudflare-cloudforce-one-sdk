@@ -1,0 +1,108 @@
+{
+  "existing": {
+    "category": {
+      "CATEGORY00": {
+        "id": "CATEGORY00",
+        "killChain": 71,
+        "mitreAttack": [],
+        "mitreCapec": [],
+        "name": "s4a",
+        "shortname": "s4b",
+        "uuid": "s4c",
+        "account_id": "ACCOUNT01",
+        "category_id": "CATEGORY01"
+      },
+      "CATEGORY01": {
+        "id": "CATEGORY01",
+        "killChain": 141,
+        "mitreAttack": [],
+        "mitreCapec": [],
+        "name": "s90",
+        "shortname": "s91",
+        "uuid": "s92",
+        "account_id": "ACCOUNT01",
+        "category_id": "CATEGORY01"
+      },
+      "CATEGORY02": {
+        "id": "CATEGORY02",
+        "killChain": 211,
+        "mitreAttack": [],
+        "mitreCapec": [],
+        "name": "sd6",
+        "shortname": "sd7",
+        "uuid": "sd8",
+        "account_id": "ACCOUNT01",
+        "category_id": "CATEGORY01"
+      }
+    }
+  },
+  "new": {
+    "category": {
+      "category_ref01": {
+        "killChain": 281,
+        "mitreAttack": [],
+        "mitreCapec": [],
+        "name": "s11c",
+        "shortname": "s11d",
+        "uuid": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/categories/create": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/categories/catalog": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

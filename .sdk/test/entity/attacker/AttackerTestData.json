@@ -1,0 +1,35 @@
+{
+  "existing": {
+    "attacker": {
+      "ATTACKER00": {
+        "type": "sa",
+        "account_id": "ACCOUNT01",
+        "id": "ATTACKER00"
+      },
+      "ATTACKER01": {
+        "type": "s14",
+        "account_id": "ACCOUNT01",
+        "id": "ATTACKER01"
+      },
+      "ATTACKER02": {
+        "type": "s1e",
+        "account_id": "ACCOUNT01",
+        "id": "ATTACKER02"
+      }
+    }
+  },
+  "new": {
+    "attacker": {
+      "attacker_ref01": {
+        "type": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/events/attackers": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

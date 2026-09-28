@@ -1,0 +1,111 @@
+# Entity: dashboard_user
+
+main: kit: entity: dashboard_user: {
+
+  alias: field: {}
+
+  fields: {
+    display_name: {
+      h: "Display Name"
+      n: "display_name"
+      r: false
+      sh: "User display name"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "Unique user ID"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "dashboard_user"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me"
+          q: {
+            exist: [
+              "account_id"
+              "request_id"
+            ]
+          }
+          r: {
+            param: {
+              project_type: "request_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "user"
+            }
+            {
+              lit: "me"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

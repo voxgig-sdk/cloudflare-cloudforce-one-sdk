@@ -1,0 +1,119 @@
+# BasicThreatSignalFlow
+
+main: kit: flow: BasicThreatSignalFlow:
+{
+  entity: "threat_signal",
+  kind: "basic",
+  name: "BasicThreatSignalFlow",
+  step: [
+    {
+      i: {
+        ref: "threat_signal_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        article_id: "article01",
+        skill_id: "skill01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "threat_signal_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "threat_signal_ref01",
+        srcdatavar: "threat_signal_ref01_data",
+        suffix: "_up0",
+        textfield: "category_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-threat_signal_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "threat_signal_ref01",
+        srcdatavar: "threat_signal_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "threat_signal01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-threat_signal_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "threat_signal_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "threat_signal01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "threat_signal_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicThreatSignalFlow"
+}

@@ -1,0 +1,113 @@
+{
+  "existing": {
+    "request": {
+      "REQUEST00": {
+        "completed_after": "sbe",
+        "completed_before": "sbf",
+        "content": "sc0",
+        "created_after": "sc1",
+        "created_before": "sc2",
+        "errors": [],
+        "id": "REQUEST00",
+        "messages": [],
+        "page": 198,
+        "per_page": 199,
+        "priority": "sc8",
+        "request_type": "sc9",
+        "result": {},
+        "sort_by": "scb",
+        "sort_order": "scc",
+        "status": "scd",
+        "success": true,
+        "summary": "scf",
+        "tlp": "sd0",
+        "account_id": "ACCOUNT01"
+      },
+      "REQUEST01": {
+        "completed_after": "s17c",
+        "completed_before": "s17d",
+        "content": "s17e",
+        "created_after": "s17f",
+        "created_before": "s180",
+        "errors": [],
+        "id": "REQUEST01",
+        "messages": [],
+        "page": 388,
+        "per_page": 389,
+        "priority": "s186",
+        "request_type": "s187",
+        "result": {},
+        "sort_by": "s189",
+        "sort_order": "s18a",
+        "status": "s18b",
+        "success": true,
+        "summary": "s18d",
+        "tlp": "s18e",
+        "account_id": "ACCOUNT01"
+      },
+      "REQUEST02": {
+        "completed_after": "s23a",
+        "completed_before": "s23b",
+        "content": "s23c",
+        "created_after": "s23d",
+        "created_before": "s23e",
+        "errors": [],
+        "id": "REQUEST02",
+        "messages": [],
+        "page": 578,
+        "per_page": 579,
+        "priority": "s244",
+        "request_type": "s245",
+        "result": {},
+        "sort_by": "s247",
+        "sort_order": "s248",
+        "status": "s249",
+        "success": true,
+        "summary": "s24b",
+        "tlp": "s24c",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "request": {
+      "request_ref01": {
+        "completed_after": "s2f8",
+        "completed_before": "s2f9",
+        "content": "s2fa",
+        "created_after": "s2fb",
+        "created_before": "s2fc",
+        "errors": [],
+        "messages": [],
+        "page": 768,
+        "per_page": 769,
+        "priority": "s302",
+        "request_type": "s303",
+        "result": {},
+        "sort_by": "s305",
+        "sort_order": "s306",
+        "status": "s307",
+        "success": true,
+        "summary": "s309",
+        "tlp": "s30a"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/requests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/{request_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

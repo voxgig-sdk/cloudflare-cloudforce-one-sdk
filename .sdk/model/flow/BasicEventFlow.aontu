@@ -1,0 +1,116 @@
+# BasicEventFlow
+
+main: kit: flow: BasicEventFlow:
+{
+  entity: "event",
+  kind: "basic",
+  name: "BasicEventFlow",
+  step: [
+    {
+      i: {
+        ref: "event_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        by_id_id: "by_id01",
+        dataset_id: "dataset01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "event_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "event_ref01",
+        srcdatavar: "event_ref01_data",
+        suffix: "_up0",
+        textfield: "attacker"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-event_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "event_ref01",
+        srcdatavar: "event_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "event01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-event_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "event_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "event01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "event_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicEventFlow"
+}

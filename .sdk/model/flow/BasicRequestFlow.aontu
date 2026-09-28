@@ -1,0 +1,68 @@
+# BasicRequestFlow
+
+main: kit: flow: BasicRequestFlow:
+{
+  entity: "request",
+  kind: "basic",
+  name: "BasicRequestFlow",
+  step: [
+    {
+      i: {
+        ref: "request_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "request_ref01",
+        srcdatavar: "request_ref01_data",
+        suffix: "_up0",
+        textfield: "content"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-request_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "request_ref01",
+        srcdatavar: "request_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "request01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-request_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRequestFlow"
+}

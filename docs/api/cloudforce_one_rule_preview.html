@@ -1,0 +1,1890 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CloudforceOneRulePreview | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a aria-current="page" href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onerulesstructuredidtest">POST /accounts/{account_id}/cloudforce-one/rules/structured/{id}/test</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onerulesstructured">POST /accounts/{account_id}/cloudforce-one/rules/structured</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerulesstructuredid">GET /accounts/{account_id}/cloudforce-one/rules/structured/{id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerulesid">GET /accounts/{account_id}/cloudforce-one/rules/{id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerulesstructuredid">PUT /accounts/{account_id}/cloudforce-one/rules/structured/{id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerulesid">PUT /accounts/{account_id}/cloudforce-one/rules/{id}</a></div>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="cloudforceonerulepreview">CloudforceOneRulePreview</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerulesstructuredidtest"><code>/accounts/{account_id}/cloudforce-one/rules/structured/{id}/test</code></a></td>
+<td><code>create</code></td>
+<td>Test result</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerulesstructured"><code>/accounts/{account_id}/cloudforce-one/rules/structured</code></a></td>
+<td><code>create</code></td>
+<td>Email rule created immediately when submitted by a customer with silent status and no compiler warnings</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerulesstructuredid"><code>/accounts/{account_id}/cloudforce-one/rules/structured/{id}</code></a></td>
+<td><code>load</code></td>
+<td>Rule details</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerulesid"><code>/accounts/{account_id}/cloudforce-one/rules/{id}</code></a></td>
+<td><code>load</code></td>
+<td>Rule details</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerulesstructuredid"><code>/accounts/{account_id}/cloudforce-one/rules/structured/{id}</code></a></td>
+<td><code>update</code></td>
+<td>Rule updated immediately when submitted by a customer with silent status and no compiler warnings</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerulesid"><code>/accounts/{account_id}/cloudforce-one/rules/{id}</code></a></td>
+<td><code>update</code></td>
+<td>Rule updated (non-email customer accounts, or silent warning-free customer email rules)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">cloudforce_one_rule_preview, err := client.CloudforceOneRulePreview(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(cloudforce_one_rule_preview)
+created, err := client.CloudforceOneRulePreview(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;condition&quot;: map[string]any{}, &quot;created_at&quot;: 1, &quot;created_by&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;, &quot;enabled&quot;: true, &quot;id&quot;: &quot;example&quot;, &quot;is_public&quot;: true, &quot;name&quot;: &quot;example&quot;, &quot;namespaces&quot;: []any{}, &quot;path&quot;: &quot;example&quot;, &quot;pending_approval_id&quot;: 1, &quot;pending_change&quot;: map[string]any{}, &quot;updated_at&quot;: 1, &quot;updated_by&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.CloudforceOneRulePreview(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;commit_message&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local cloudforce_one_rule_preview, err = client:CloudforceOneRulePreview():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:CloudforceOneRulePreview():create({ account_id = &quot;example&quot;, condition = {}, created_at = 1, created_by = &quot;example&quot;, description = &quot;example&quot;, enabled = true, id = &quot;example&quot;, is_public = true, name = &quot;example&quot;, namespaces = {}, path = &quot;example&quot;, pending_approval_id = 1, pending_change = {}, updated_at = 1, updated_by = &quot;example&quot; })
+local updated, err = client:CloudforceOneRulePreview():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, commit_message = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$cloudforce_one_rule_preview = $client-&gt;CloudforceOneRulePreview()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;CloudforceOneRulePreview()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;condition&quot; =&gt; [], &quot;created_at&quot; =&gt; 1, &quot;created_by&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;, &quot;enabled&quot; =&gt; true, &quot;id&quot; =&gt; &quot;example&quot;, &quot;is_public&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;namespaces&quot; =&gt; [], &quot;path&quot; =&gt; &quot;example&quot;, &quot;pending_approval_id&quot; =&gt; 1, &quot;pending_change&quot; =&gt; [], &quot;updated_at&quot; =&gt; 1, &quot;updated_by&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;CloudforceOneRulePreview()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;commit_message&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">cloudforce_one_rule_preview = client.CloudforceOneRulePreview().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.CloudforceOneRulePreview().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;condition&quot;: {}, &quot;created_at&quot;: 1, &quot;created_by&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;, &quot;enabled&quot;: True, &quot;id&quot;: &quot;example&quot;, &quot;is_public&quot;: True, &quot;name&quot;: &quot;example&quot;, &quot;namespaces&quot;: [], &quot;path&quot;: &quot;example&quot;, &quot;pending_approval_id&quot;: 1, &quot;pending_change&quot;: {}, &quot;updated_at&quot;: 1, &quot;updated_by&quot;: &quot;example&quot; })
+updated = client.CloudforceOneRulePreview().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;commit_message&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">cloudforce_one_rule_preview = client.CloudforceOneRulePreview.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.CloudforceOneRulePreview.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;condition&quot; =&gt; {}, &quot;created_at&quot; =&gt; 1, &quot;created_by&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;, &quot;enabled&quot; =&gt; true, &quot;id&quot; =&gt; &quot;example&quot;, &quot;is_public&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;namespaces&quot; =&gt; [], &quot;path&quot; =&gt; &quot;example&quot;, &quot;pending_approval_id&quot; =&gt; 1, &quot;pending_change&quot; =&gt; {}, &quot;updated_at&quot; =&gt; 1, &quot;updated_by&quot; =&gt; &quot;example&quot; })
+updated = client.CloudforceOneRulePreview.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;commit_message&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const cloudforce_one_rule_preview = await client.CloudforceOneRulePreview().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.CloudforceOneRulePreview().create({ account_id: &quot;example&quot;, condition: {}, created_at: 1, created_by: &quot;example&quot;, description: &quot;example&quot;, enabled: true, id: &quot;example&quot;, is_public: true, name: &quot;example&quot;, namespaces: [], path: &quot;example&quot;, pending_approval_id: 1, pending_change: {}, updated_at: 1, updated_by: &quot;example&quot; })
+const updated = await client.CloudforceOneRulePreview().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, commit_message: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commit_message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Human-readable justification for this change.</td>
+</tr>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Content</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created By</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable description of the rule.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta).</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Namespaces</td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Path change goes through approval workflow.</td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval.</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Disposition for matching email.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Strings</td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Updated At</td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated By</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onerulesstructuredidtest" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/rules/structured/{id}/test</h3>
+<p>Operation ID: <code>cloudforce-one-test-email-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | The unique identifier for the rule. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sample_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-test-result" class="status" data-status="2xx">200: Test result</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matched</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rules</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-validation-error" class="status" data-status="4xx">400: Validation error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-rule-not-found" class="status" data-status="4xx">404: Rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-onerulesstructured" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/rules/structured</h3>
+<p>Operation ID: <code>cloudforce-one-create-email-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>condition.conditions</code></td>
+<td><code>array of object or object or object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.operator</code></td>
+<td><code>enum: and, or</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.type</code></td>
+<td><code>enum: group</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: silent, blocking</code></td>
+<td>No</td>
+<td>Disposition for matching email. This emits status metadata with the selected value.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].identifier</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].match_type</code></td>
+<td><code>enum: text, hex, regex</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].modifiers</code></td>
+<td><code>array of enum: nocase, wide, ascii, fullword</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].type</code></td>
+<td><code>enum: string_match</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="201-email-rule-created-immediately-when-submitted-by-a-customer-with-silent-status-and-no-compiler-warnings" class="status" data-status="2xx">201: Email rule created immediately when submitted by a customer with silent status and no compiler warnings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].type</code></td>
+<td><code>enum: string, bool, int</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or boolean or number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</td>
+</tr>
+<tr>
+<td><code>pending_change.approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.type</code></td>
+<td><code>enum: update, delete</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="202-rule-pending-approval-internal-accounts-blocking-customer-rules-and-customer-rules-with-compiler-warnings" class="status" data-status="2xx">202: Rule pending approval (internal accounts, blocking customer rules, and customer rules with compiler warnings)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-validation-error-1" class="status" data-status="4xx">400: Validation error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onerulesstructuredid" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/rules/structured/{id}</h3>
+<p>Operation ID: <code>cloudforce-one-get-email-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | The unique identifier for the rule. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-rule-details" class="status" data-status="2xx">200: Rule details</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].type</code></td>
+<td><code>enum: string, bool, int</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or boolean or number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</td>
+</tr>
+<tr>
+<td><code>pending_change.approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.type</code></td>
+<td><code>enum: update, delete</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-validation-error-2" class="status" data-status="4xx">400: Validation error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-rule-not-found-1" class="status" data-status="4xx">404: Rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-onerulesid" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/rules/{id}</h3>
+<p>Operation ID: <code>cloudforce-one-get-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | The unique identifier for the rule. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-rule-details-1" class="status" data-status="2xx">200: Rule details</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].type</code></td>
+<td><code>enum: string, bool, int</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or boolean or number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</td>
+</tr>
+<tr>
+<td><code>pending_change.approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.type</code></td>
+<td><code>enum: update, delete</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized-1" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-rule-not-found-2" class="status" data-status="4xx">404: Rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onerulesstructuredid" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/rules/structured/{id}</h3>
+<p>Operation ID: <code>cloudforce-one-update-email-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | The unique identifier for the rule. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>condition.conditions</code></td>
+<td><code>array of object or object or object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.operator</code></td>
+<td><code>enum: and, or</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.type</code></td>
+<td><code>enum: group</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: silent, blocking</code></td>
+<td>No</td>
+<td>Disposition for matching email. This emits status metadata with the selected value.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].identifier</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].match_type</code></td>
+<td><code>enum: text, hex, regex</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].modifiers</code></td>
+<td><code>array of enum: nocase, wide, ascii, fullword</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].type</code></td>
+<td><code>enum: string_match</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-rule-updated-immediately-when-submitted-by-a-customer-with-silent-status-and-no-compiler-warnings" class="status" data-status="2xx">200: Rule updated immediately when submitted by a customer with silent status and no compiler warnings</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].type</code></td>
+<td><code>enum: string, bool, int</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or boolean or number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</td>
+</tr>
+<tr>
+<td><code>pending_change.approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.type</code></td>
+<td><code>enum: update, delete</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="202-update-pending-approval-internal-accounts-blocking-customer-rules-and-customer-rules-with-compiler-warnings" class="status" data-status="2xx">202: Update pending approval (internal accounts, blocking customer rules, and customer rules with compiler warnings)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-validation-error-3" class="status" data-status="4xx">400: Validation error</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized-2" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-rule-not-found-3" class="status" data-status="4xx">404: Rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-another-approval-is-already-pending-for-this-rule" class="status" data-status="4xx">409: Another approval is already pending for this rule</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><code>enum: approval_pending</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="put-accountsaccount_idcloudforce-onerulesid" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/rules/{id}</h3>
+<p>Operation ID: <code>cloudforce-one-update-rule</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | The unique identifier for the rule. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commit_message</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Human-readable justification for this change. Required for internal-account submissions; optional for customer accounts and automated sync.</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Human-readable description of the rule. Auto-extracted from YARA meta if present.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Adds YARA meta entries to the rule's meta block and stores them in <code>rule_meta</code> alongside content metadata. Use valid YARA identifiers for keys; exclude 'name', 'enabled', and 'description'. You may repeat keys.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Path change goes through approval workflow.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-rule-updated-non-email-customer-accounts-or-silent-warning-free-customer-email-rules" class="status" data-status="2xx">200: Rule updated (non-email customer accounts, or silent warning-free customer email rules)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is active for dice consumers.</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>is_public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this rule is visible to other internal accounts.</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured meta entries for the rule (parsed from content plus any request-supplied meta). Returned in source order.</td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].type</code></td>
+<td><code>enum: string, bool, int</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or boolean or number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>namespaces</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>ID of an open approval workflow targeting this rule, or null if none is pending.</td>
+</tr>
+<tr>
+<td><code>pending_change</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Proposed update or deletion awaiting approval. The other rule fields describe the currently applied version.</td>
+</tr>
+<tr>
+<td><code>pending_change.approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.requested_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pending_change.type</code></td>
+<td><code>enum: update, delete</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>structured_source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Original JSON payload for rules created via the structured rules API. Null for hand-written rules.</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updated_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="202-update-pending-approval-internal-accounts-blocking-customer-email-rules-and-customer-email-rules-with-compiler-warnings" class="status" data-status="2xx">202: Update pending approval (internal accounts, blocking customer email rules, and customer email rules with compiler warnings)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized-3" class="status" data-status="4xx">401: Unauthorized</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-rule-not-found-4" class="status" data-status="4xx">404: Rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-another-approval-is-already-pending-for-this-rule-1" class="status" data-status="4xx">409: Another approval is already pending for this rule</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>code</code></td>
+<td><code>enum: approval_pending</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

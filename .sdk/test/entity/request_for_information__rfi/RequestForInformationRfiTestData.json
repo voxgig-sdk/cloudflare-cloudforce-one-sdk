@@ -1,0 +1,130 @@
+{
+  "existing": {
+    "request_for_information__rfi": {
+      "REQUEST_FOR_INFORMATION__RFI00": {
+        "content": "s6e",
+        "errors": [],
+        "id": "REQUEST_FOR_INFORMATION__RFI00",
+        "messages": [],
+        "priority": "s72",
+        "request_type": "s73",
+        "result": [],
+        "source": "s75",
+        "success": true,
+        "summary": "s77",
+        "tlp": "s78",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01",
+        "message_id": "MESSAGE01"
+      },
+      "REQUEST_FOR_INFORMATION__RFI01": {
+        "content": "sdc",
+        "errors": [],
+        "id": "REQUEST_FOR_INFORMATION__RFI01",
+        "messages": [],
+        "priority": "se0",
+        "request_type": "se1",
+        "result": [],
+        "source": "se3",
+        "success": true,
+        "summary": "se5",
+        "tlp": "se6",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01",
+        "message_id": "MESSAGE01"
+      },
+      "REQUEST_FOR_INFORMATION__RFI02": {
+        "content": "s14a",
+        "errors": [],
+        "id": "REQUEST_FOR_INFORMATION__RFI02",
+        "messages": [],
+        "priority": "s14e",
+        "request_type": "s14f",
+        "result": [],
+        "source": "s151",
+        "success": true,
+        "summary": "s153",
+        "tlp": "s154",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01",
+        "message_id": "MESSAGE01"
+      }
+    }
+  },
+  "new": {
+    "request_for_information__rfi": {
+      "request_for_information__rfi_ref01": {
+        "content": "s1b8",
+        "errors": [],
+        "messages": [],
+        "priority": "s1bc",
+        "request_type": "s1bd",
+        "result": [],
+        "source": "s1bf",
+        "success": true,
+        "summary": "s1c1",
+        "tlp": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/requests/new": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/constants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/quota": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/types": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

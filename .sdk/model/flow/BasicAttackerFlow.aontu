@@ -1,0 +1,32 @@
+# BasicAttackerFlow
+
+main: kit: flow: BasicAttackerFlow:
+{
+  entity: "attacker",
+  kind: "basic",
+  name: "BasicAttackerFlow",
+  step: [
+    {
+      i: {
+        ref: "attacker_ref01",
+        srcdatavar: "attacker_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "attacker01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-attacker_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicAttackerFlow"
+}

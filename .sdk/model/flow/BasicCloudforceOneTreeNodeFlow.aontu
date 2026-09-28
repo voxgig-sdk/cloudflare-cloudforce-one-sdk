@@ -1,0 +1,26 @@
+# BasicCloudforceOneTreeNodeFlow
+
+main: kit: flow: BasicCloudforceOneTreeNodeFlow:
+{
+  entity: "cloudforce_one_tree_node",
+  kind: "basic",
+  name: "BasicCloudforceOneTreeNodeFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_tree_node_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneTreeNodeFlow"
+}

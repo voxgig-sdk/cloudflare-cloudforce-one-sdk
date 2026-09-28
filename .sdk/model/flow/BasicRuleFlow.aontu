@@ -1,0 +1,26 @@
+# BasicRuleFlow
+
+main: kit: flow: BasicRuleFlow:
+{
+  entity: "rule",
+  kind: "basic",
+  name: "BasicRuleFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "rule_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRuleFlow"
+}

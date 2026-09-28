@@ -1,0 +1,48 @@
+{
+  "existing": {
+    "cloudforce_one_success": {
+      "CLOUDFORCE_ONE_SUCCESS00": {
+        "id": "CLOUDFORCE_ONE_SUCCESS00",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_SUCCESS01": {
+        "id": "CLOUDFORCE_ONE_SUCCESS01",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_SUCCESS02": {
+        "id": "CLOUDFORCE_ONE_SUCCESS02",
+        "success": false,
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_success": {
+      "cloudforce_one_success_ref01": {
+        "success": false
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/approvals/{id}/cancel": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/rules/structured/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/rules/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "existing": {
+    "cloudforce_one_rule_approvals_list": {
+      "CLOUDFORCE_ONE_RULE_APPROVALS_LIST00": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 202,
+        "cancelled_by": "scb",
+        "change_description": "scc",
+        "change_type": "scd",
+        "commit_message": "sce",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVALS_LIST00",
+        "proposed_changes": "sd0",
+        "rejection_reason": "sd1",
+        "requested_at": 210,
+        "requested_by": "sd3",
+        "reviewed_at": 212,
+        "reviewer_scope": "sd5",
+        "revision_number": 214,
+        "rule_id": "RULE01",
+        "rule_name": "sd8",
+        "status": "sd9",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_RULE_APPROVALS_LIST01": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 402,
+        "cancelled_by": "s193",
+        "change_description": "s194",
+        "change_type": "s195",
+        "commit_message": "s196",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVALS_LIST01",
+        "proposed_changes": "s198",
+        "rejection_reason": "s199",
+        "requested_at": 410,
+        "requested_by": "s19b",
+        "reviewed_at": 412,
+        "reviewer_scope": "s19d",
+        "revision_number": 414,
+        "rule_id": "RULE01",
+        "rule_name": "s1a0",
+        "status": "s1a1",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_RULE_APPROVALS_LIST02": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 602,
+        "cancelled_by": "s25b",
+        "change_description": "s25c",
+        "change_type": "s25d",
+        "commit_message": "s25e",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVALS_LIST02",
+        "proposed_changes": "s260",
+        "rejection_reason": "s261",
+        "requested_at": 610,
+        "requested_by": "s263",
+        "reviewed_at": 612,
+        "reviewer_scope": "s265",
+        "revision_number": 614,
+        "rule_id": "RULE01",
+        "rule_name": "s268",
+        "status": "s269",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_rule_approvals_list": {
+      "cloudforce_one_rule_approvals_list_ref01": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 802,
+        "cancelled_by": "s323",
+        "change_description": "s324",
+        "change_type": "s325",
+        "commit_message": "s326",
+        "proposed_changes": "s328",
+        "rejection_reason": "s329",
+        "requested_at": 810,
+        "requested_by": "s32b",
+        "reviewed_at": 812,
+        "reviewer_scope": "s32d",
+        "revision_number": 814,
+        "rule_id": "RULE01",
+        "rule_name": "s330",
+        "status": "s331",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/approvals": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

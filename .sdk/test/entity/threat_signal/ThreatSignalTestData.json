@@ -1,0 +1,304 @@
+{
+  "existing": {
+    "threat_signal": {
+      "THREAT_SIGNAL00": {
+        "category_id": "CATEGORY01",
+        "category_uuids": [],
+        "config": "sf2",
+        "display_name": "sf3",
+        "display_order": 244,
+        "enabled": false,
+        "errors": [],
+        "feeds": [],
+        "is_active": true,
+        "message": "sf9",
+        "messages": [],
+        "name": "sfb",
+        "opted_out": true,
+        "output_schema": "sfd",
+        "poll_interval_s": 254,
+        "prompt": "sff",
+        "read": true,
+        "result": "s101",
+        "skill_ids": [],
+        "success": false,
+        "tag_id": "TAG01",
+        "title": "s105",
+        "url": "s106",
+        "why_valuable": "s107",
+        "account_id": "ACCOUNT01",
+        "article_id": "ARTICLE01",
+        "skill_id": "SKILL01",
+        "feed_id": "FEED01",
+        "curated_feed_id": "CURATED_FEED01",
+        "id": "THREAT_SIGNAL00"
+      },
+      "THREAT_SIGNAL01": {
+        "category_id": "CATEGORY01",
+        "category_uuids": [],
+        "config": "s1e2",
+        "display_name": "s1e3",
+        "display_order": 484,
+        "enabled": false,
+        "errors": [],
+        "feeds": [],
+        "is_active": true,
+        "message": "s1e9",
+        "messages": [],
+        "name": "s1eb",
+        "opted_out": true,
+        "output_schema": "s1ed",
+        "poll_interval_s": 494,
+        "prompt": "s1ef",
+        "read": true,
+        "result": "s1f1",
+        "skill_ids": [],
+        "success": false,
+        "tag_id": "TAG01",
+        "title": "s1f5",
+        "url": "s1f6",
+        "why_valuable": "s1f7",
+        "account_id": "ACCOUNT01",
+        "article_id": "ARTICLE01",
+        "skill_id": "SKILL01",
+        "feed_id": "FEED01",
+        "curated_feed_id": "CURATED_FEED01",
+        "id": "THREAT_SIGNAL01"
+      },
+      "THREAT_SIGNAL02": {
+        "category_id": "CATEGORY01",
+        "category_uuids": [],
+        "config": "s2d2",
+        "display_name": "s2d3",
+        "display_order": 724,
+        "enabled": false,
+        "errors": [],
+        "feeds": [],
+        "is_active": true,
+        "message": "s2d9",
+        "messages": [],
+        "name": "s2db",
+        "opted_out": true,
+        "output_schema": "s2dd",
+        "poll_interval_s": 734,
+        "prompt": "s2df",
+        "read": true,
+        "result": "s2e1",
+        "skill_ids": [],
+        "success": false,
+        "tag_id": "TAG01",
+        "title": "s2e5",
+        "url": "s2e6",
+        "why_valuable": "s2e7",
+        "account_id": "ACCOUNT01",
+        "article_id": "ARTICLE01",
+        "skill_id": "SKILL01",
+        "feed_id": "FEED01",
+        "curated_feed_id": "CURATED_FEED01",
+        "id": "THREAT_SIGNAL02"
+      }
+    }
+  },
+  "new": {
+    "threat_signal": {
+      "threat_signal_ref01": {
+        "category_id": "CATEGORY01",
+        "category_uuids": [],
+        "config": "s3c2",
+        "display_name": "s3c3",
+        "display_order": 964,
+        "enabled": false,
+        "errors": [],
+        "feeds": [],
+        "is_active": true,
+        "message": "s3c9",
+        "messages": [],
+        "name": "s3cb",
+        "opted_out": true,
+        "output_schema": "s3cd",
+        "poll_interval_s": 974,
+        "prompt": "s3cf",
+        "read": true,
+        "result": "s3d1",
+        "skill_ids": [],
+        "success": false,
+        "tag_id": "TAG01",
+        "title": "s3d5",
+        "url": "s3d6",
+        "why_valuable": "s3d7"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/threat-signals/health": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

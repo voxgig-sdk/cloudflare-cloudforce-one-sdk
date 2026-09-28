@@ -1,0 +1,7006 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Event | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a aria-current="page" href="../api/event.html">Event</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-oneevents">POST /accounts/{account_id}/cloudforce-one/events</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id">POST /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsevent_tagevent_idcreate">POST /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsevent_id">POST /accounts/{account_id}/cloudforce-one/events/{event_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsqueriesquery_id">POST /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsrelateevent_idcreate">POST /accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventscreate">POST /accounts/{account_id}/cloudforce-one/events/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventscreatebulk">POST /accounts/{account_id}/cloudforce-one/events/create/bulk</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventscreatebulkrelationships">POST /accounts/{account_id}/cloudforce-one/events/create/bulk/relationships</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsgraphql">POST /accounts/{account_id}/cloudforce-one/events/graphql</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsqueriescreate">POST /accounts/{account_id}/cloudforce-one/events/queries/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsrelationshipscreate">POST /accounts/{account_id}/cloudforce-one/events/relationships/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2eventsgraphql">POST /accounts/{account_id}/cloudforce-one/v2/events/graphql</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneevents">GET /accounts/{account_id}/cloudforce-one/events</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsby-idevent_idrelationships">GET /accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsgraph">GET /accounts/{account_id}/cloudforce-one/events/graph</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsevent_idrelationships">GET /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsaggregate">GET /accounts/{account_id}/cloudforce-one/events/aggregate</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsqueries">GET /accounts/{account_id}/cloudforce-one/events/queries</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsrawdataset_idevent_id">GET /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_ideventsevent_id">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetsdataset_ideventsevent_idraw">GET /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id">GET /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsevent_id">GET /accounts/{account_id}/cloudforce-one/events/{event_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsqueriesquery_id">GET /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsdatasetsdataset_idevents">DELETE /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsdataset_iddelete">DELETE /accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsevent_tagevent_id">DELETE /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsrelateevent_id">DELETE /accounts/{account_id}/cloudforce-one/events/relate/{event_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsqueriesquery_id">DELETE /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id">PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsevent_id">PATCH /accounts/{account_id}/cloudforce-one/events/{event_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsqueriesquery_id">PATCH /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsupdatebulk">PATCH /accounts/{account_id}/cloudforce-one/events/update/bulk</a></div>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="event">Event</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneevents"><code>/accounts/{account_id}/cloudforce-one/events</code></a></td>
+<td><code>create</code></td>
+<td>Returns a list of events</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the uuid of the updated raw event and its data</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsevent_tagevent_idcreate"><code>/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns success if operation succeeded</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsevent_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the updated event</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/events/queries/{query_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the updated event query</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsrelateevent_idcreate"><code>/accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns success if operation succeeded</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventscreate"><code>/accounts/{account_id}/cloudforce-one/events/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created event</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventscreatebulk"><code>/accounts/{account_id}/cloudforce-one/events/create/bulk</code></a></td>
+<td><code>create</code></td>
+<td>Accepted. Events created; indicators queued for async processing</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventscreatebulkrelationships"><code>/accounts/{account_id}/cloudforce-one/events/create/bulk/relationships</code></a></td>
+<td><code>create</code></td>
+<td>Returns the number of created bulk events with relationships</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsgraphql"><code>/accounts/{account_id}/cloudforce-one/events/graphql</code></a></td>
+<td><code>create</code></td>
+<td>GraphQL response payload (data and errors)</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsqueriescreate"><code>/accounts/{account_id}/cloudforce-one/events/queries/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created event query</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsrelationshipscreate"><code>/accounts/{account_id}/cloudforce-one/events/relationships/create</code></a></td>
+<td><code>create</code></td>
+<td>Relationship created successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2eventsgraphql"><code>/accounts/{account_id}/cloudforce-one/v2/events/graphql</code></a></td>
+<td><code>create</code></td>
+<td>GraphQL response payload (data and errors)</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneevents"><code>/accounts/{account_id}/cloudforce-one/events</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of events</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsby-idevent_idrelationships"><code>/accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of events related to the specified starting event</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsgraph"><code>/accounts/{account_id}/cloudforce-one/events/graph</code></a></td>
+<td><code>list</code></td>
+<td>Returns merged graph neighborhood from R2 Data Catalog</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsevent_idrelationships"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}/relationships</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of events related to the specified starting event</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsaggregate"><code>/accounts/{account_id}/cloudforce-one/events/aggregate</code></a></td>
+<td><code>list</code></td>
+<td>Returns aggregated event data</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsqueries"><code>/accounts/{account_id}/cloudforce-one/events/queries</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of event queries</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsrawdataset_idevent_id"><code>/accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the raw event data</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_ideventsevent_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the event</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetsdataset_ideventsevent_idraw"><code>/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw</code></a></td>
+<td><code>load</code></td>
+<td>Returns the raw event data</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the raw event</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsevent_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns an event</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/events/queries/{query_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the event query</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsdatasetsdataset_idevents"><code>/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the number of deleted events</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsdataset_iddelete"><code>/accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the number of deleted events</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsevent_tagevent_id"><code>/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns success if operation succeeded</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsrelateevent_id"><code>/accounts/{account_id}/cloudforce-one/events/relate/{event_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns success if operation succeeded</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/events/queries/{query_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Event query deleted successfully</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the uuid of the updated raw event and its data</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsevent_id"><code>/accounts/{account_id}/cloudforce-one/events/{event_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated event</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/events/queries/{query_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated event query</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsupdatebulk"><code>/accounts/{account_id}/cloudforce-one/events/update/bulk</code></a></td>
+<td><code>update</code></td>
+<td>Returns the count of updated events and any failures</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">events, err := client.Event(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(events)
+event, err := client.Event(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(event)
+created, err := client.Event(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;accountId&quot;: 1, &quot;alert_enabled&quot;: true, &quot;alert_rollup_enabled&quot;: true, &quot;attacker&quot;: &quot;example&quot;, &quot;attackerCountry&quot;: &quot;example&quot;, &quot;attackerCountryAlpha3&quot;: &quot;example&quot;, &quot;category&quot;: &quot;example&quot;, &quot;created&quot;: &quot;example&quot;, &quot;createdEventsCount&quot;: 1, &quot;createdIndicatorsCount&quot;: 1, &quot;createdRelationshipsCount&quot;: 1, &quot;created_at&quot;: &quot;example&quot;, &quot;data&quot;: &quot;example&quot;, &quot;datasetId&quot;: &quot;example&quot;, &quot;date&quot;: &quot;example&quot;, &quot;errorCount&quot;: 1, &quot;event&quot;: &quot;example&quot;, &quot;eventIds&quot;: []any{}, &quot;failedCount&quot;: 1, &quot;hasChildren&quot;: true, &quot;indicator&quot;: &quot;example&quot;, &quot;indicatorType&quot;: &quot;example&quot;, &quot;indicatorTypeId&quot;: 1, &quot;killChain&quot;: 1, &quot;message&quot;: &quot;example&quot;, &quot;mitreAttack&quot;: []any{}, &quot;mitreCapec&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;numReferenced&quot;: 1, &quot;numReferences&quot;: 1, &quot;parentId&quot;: &quot;example&quot;, &quot;query_json&quot;: &quot;example&quot;, &quot;rawId&quot;: &quot;example&quot;, &quot;referenced&quot;: []any{}, &quot;referencedIds&quot;: []any{}, &quot;references&quot;: []any{}, &quot;referencesIds&quot;: []any{}, &quot;relationshipType&quot;: &quot;example&quot;, &quot;relationships&quot;: []any{}, &quot;rule_enabled&quot;: true, &quot;source&quot;: &quot;example&quot;, &quot;success&quot;: true, &quot;tags&quot;: []any{}, &quot;targetCountry&quot;: &quot;example&quot;, &quot;targetCountryAlpha3&quot;: &quot;example&quot;, &quot;targetIndustry&quot;: &quot;example&quot;, &quot;tlp&quot;: &quot;example&quot;, &quot;updatedCount&quot;: 1, &quot;updated_at&quot;: &quot;example&quot;, &quot;updates&quot;: map[string]any{}, &quot;user_email&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Event(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;raw_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Event(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local events, err = client:Event():list({ account_id = &quot;example&quot; })
+local event, err = client:Event():load({ account_id = &quot;example&quot; })
+local created, err = client:Event():create({ account_id = &quot;example&quot;, accountId = 1, alert_enabled = true, alert_rollup_enabled = true, attacker = &quot;example&quot;, attackerCountry = &quot;example&quot;, attackerCountryAlpha3 = &quot;example&quot;, category = &quot;example&quot;, created = &quot;example&quot;, createdEventsCount = 1, createdIndicatorsCount = 1, createdRelationshipsCount = 1, created_at = &quot;example&quot;, data = &quot;example&quot;, datasetId = &quot;example&quot;, date = &quot;example&quot;, errorCount = 1, event = &quot;example&quot;, eventIds = {}, failedCount = 1, hasChildren = true, indicator = &quot;example&quot;, indicatorType = &quot;example&quot;, indicatorTypeId = 1, killChain = 1, message = &quot;example&quot;, mitreAttack = {}, mitreCapec = {}, name = &quot;example&quot;, numReferenced = 1, numReferences = 1, parentId = &quot;example&quot;, query_json = &quot;example&quot;, rawId = &quot;example&quot;, referenced = {}, referencedIds = {}, references = {}, referencesIds = {}, relationshipType = &quot;example&quot;, relationships = {}, rule_enabled = true, source = &quot;example&quot;, success = true, tags = {}, targetCountry = &quot;example&quot;, targetCountryAlpha3 = &quot;example&quot;, targetIndustry = &quot;example&quot;, tlp = &quot;example&quot;, updatedCount = 1, updated_at = &quot;example&quot;, updates = {}, user_email = &quot;example&quot;, uuid = &quot;example&quot; })
+local updated, err = client:Event():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, raw_id = &quot;example&quot; })
+local removed, err = client:Event():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$events = $client-&gt;Event()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$event = $client-&gt;Event()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;Event()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;accountId&quot; =&gt; 1, &quot;alert_enabled&quot; =&gt; true, &quot;alert_rollup_enabled&quot; =&gt; true, &quot;attacker&quot; =&gt; &quot;example&quot;, &quot;attackerCountry&quot; =&gt; &quot;example&quot;, &quot;attackerCountryAlpha3&quot; =&gt; &quot;example&quot;, &quot;category&quot; =&gt; &quot;example&quot;, &quot;created&quot; =&gt; &quot;example&quot;, &quot;createdEventsCount&quot; =&gt; 1, &quot;createdIndicatorsCount&quot; =&gt; 1, &quot;createdRelationshipsCount&quot; =&gt; 1, &quot;created_at&quot; =&gt; &quot;example&quot;, &quot;data&quot; =&gt; &quot;example&quot;, &quot;datasetId&quot; =&gt; &quot;example&quot;, &quot;date&quot; =&gt; &quot;example&quot;, &quot;errorCount&quot; =&gt; 1, &quot;event&quot; =&gt; &quot;example&quot;, &quot;eventIds&quot; =&gt; [], &quot;failedCount&quot; =&gt; 1, &quot;hasChildren&quot; =&gt; true, &quot;indicator&quot; =&gt; &quot;example&quot;, &quot;indicatorType&quot; =&gt; &quot;example&quot;, &quot;indicatorTypeId&quot; =&gt; 1, &quot;killChain&quot; =&gt; 1, &quot;message&quot; =&gt; &quot;example&quot;, &quot;mitreAttack&quot; =&gt; [], &quot;mitreCapec&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;numReferenced&quot; =&gt; 1, &quot;numReferences&quot; =&gt; 1, &quot;parentId&quot; =&gt; &quot;example&quot;, &quot;query_json&quot; =&gt; &quot;example&quot;, &quot;rawId&quot; =&gt; &quot;example&quot;, &quot;referenced&quot; =&gt; [], &quot;referencedIds&quot; =&gt; [], &quot;references&quot; =&gt; [], &quot;referencesIds&quot; =&gt; [], &quot;relationshipType&quot; =&gt; &quot;example&quot;, &quot;relationships&quot; =&gt; [], &quot;rule_enabled&quot; =&gt; true, &quot;source&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true, &quot;tags&quot; =&gt; [], &quot;targetCountry&quot; =&gt; &quot;example&quot;, &quot;targetCountryAlpha3&quot; =&gt; &quot;example&quot;, &quot;targetIndustry&quot; =&gt; &quot;example&quot;, &quot;tlp&quot; =&gt; &quot;example&quot;, &quot;updatedCount&quot; =&gt; 1, &quot;updated_at&quot; =&gt; &quot;example&quot;, &quot;updates&quot; =&gt; [], &quot;user_email&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Event()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;raw_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Event()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">events = client.Event().list({&quot;account_id&quot;: &quot;example&quot;})
+event = client.Event().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.Event().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;accountId&quot;: 1, &quot;alert_enabled&quot;: True, &quot;alert_rollup_enabled&quot;: True, &quot;attacker&quot;: &quot;example&quot;, &quot;attackerCountry&quot;: &quot;example&quot;, &quot;attackerCountryAlpha3&quot;: &quot;example&quot;, &quot;category&quot;: &quot;example&quot;, &quot;created&quot;: &quot;example&quot;, &quot;createdEventsCount&quot;: 1, &quot;createdIndicatorsCount&quot;: 1, &quot;createdRelationshipsCount&quot;: 1, &quot;created_at&quot;: &quot;example&quot;, &quot;data&quot;: &quot;example&quot;, &quot;datasetId&quot;: &quot;example&quot;, &quot;date&quot;: &quot;example&quot;, &quot;errorCount&quot;: 1, &quot;event&quot;: &quot;example&quot;, &quot;eventIds&quot;: [], &quot;failedCount&quot;: 1, &quot;hasChildren&quot;: True, &quot;indicator&quot;: &quot;example&quot;, &quot;indicatorType&quot;: &quot;example&quot;, &quot;indicatorTypeId&quot;: 1, &quot;killChain&quot;: 1, &quot;message&quot;: &quot;example&quot;, &quot;mitreAttack&quot;: [], &quot;mitreCapec&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;numReferenced&quot;: 1, &quot;numReferences&quot;: 1, &quot;parentId&quot;: &quot;example&quot;, &quot;query_json&quot;: &quot;example&quot;, &quot;rawId&quot;: &quot;example&quot;, &quot;referenced&quot;: [], &quot;referencedIds&quot;: [], &quot;references&quot;: [], &quot;referencesIds&quot;: [], &quot;relationshipType&quot;: &quot;example&quot;, &quot;relationships&quot;: [], &quot;rule_enabled&quot;: True, &quot;source&quot;: &quot;example&quot;, &quot;success&quot;: True, &quot;tags&quot;: [], &quot;targetCountry&quot;: &quot;example&quot;, &quot;targetCountryAlpha3&quot;: &quot;example&quot;, &quot;targetIndustry&quot;: &quot;example&quot;, &quot;tlp&quot;: &quot;example&quot;, &quot;updatedCount&quot;: 1, &quot;updated_at&quot;: &quot;example&quot;, &quot;updates&quot;: {}, &quot;user_email&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot; })
+updated = client.Event().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;raw_id&quot;: &quot;example&quot;})
+client.Event().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">events = client.Event.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+event = client.Event.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.Event.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;accountId&quot; =&gt; 1, &quot;alert_enabled&quot; =&gt; true, &quot;alert_rollup_enabled&quot; =&gt; true, &quot;attacker&quot; =&gt; &quot;example&quot;, &quot;attackerCountry&quot; =&gt; &quot;example&quot;, &quot;attackerCountryAlpha3&quot; =&gt; &quot;example&quot;, &quot;category&quot; =&gt; &quot;example&quot;, &quot;created&quot; =&gt; &quot;example&quot;, &quot;createdEventsCount&quot; =&gt; 1, &quot;createdIndicatorsCount&quot; =&gt; 1, &quot;createdRelationshipsCount&quot; =&gt; 1, &quot;created_at&quot; =&gt; &quot;example&quot;, &quot;data&quot; =&gt; &quot;example&quot;, &quot;datasetId&quot; =&gt; &quot;example&quot;, &quot;date&quot; =&gt; &quot;example&quot;, &quot;errorCount&quot; =&gt; 1, &quot;event&quot; =&gt; &quot;example&quot;, &quot;eventIds&quot; =&gt; [], &quot;failedCount&quot; =&gt; 1, &quot;hasChildren&quot; =&gt; true, &quot;indicator&quot; =&gt; &quot;example&quot;, &quot;indicatorType&quot; =&gt; &quot;example&quot;, &quot;indicatorTypeId&quot; =&gt; 1, &quot;killChain&quot; =&gt; 1, &quot;message&quot; =&gt; &quot;example&quot;, &quot;mitreAttack&quot; =&gt; [], &quot;mitreCapec&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;numReferenced&quot; =&gt; 1, &quot;numReferences&quot; =&gt; 1, &quot;parentId&quot; =&gt; &quot;example&quot;, &quot;query_json&quot; =&gt; &quot;example&quot;, &quot;rawId&quot; =&gt; &quot;example&quot;, &quot;referenced&quot; =&gt; [], &quot;referencedIds&quot; =&gt; [], &quot;references&quot; =&gt; [], &quot;referencesIds&quot; =&gt; [], &quot;relationshipType&quot; =&gt; &quot;example&quot;, &quot;relationships&quot; =&gt; [], &quot;rule_enabled&quot; =&gt; true, &quot;source&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true, &quot;tags&quot; =&gt; [], &quot;targetCountry&quot; =&gt; &quot;example&quot;, &quot;targetCountryAlpha3&quot; =&gt; &quot;example&quot;, &quot;targetIndustry&quot; =&gt; &quot;example&quot;, &quot;tlp&quot; =&gt; &quot;example&quot;, &quot;updatedCount&quot; =&gt; 1, &quot;updated_at&quot; =&gt; &quot;example&quot;, &quot;updates&quot; =&gt; {}, &quot;user_email&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot; })
+updated = client.Event.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;raw_id&quot; =&gt; &quot;example&quot; })
+client.Event.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const events = await client.Event().list({ account_id: &quot;example&quot; })
+const event = await client.Event().load({ account_id: &quot;example&quot; })
+const created = await client.Event().create({ account_id: &quot;example&quot;, accountId: 1, alert_enabled: true, alert_rollup_enabled: true, attacker: &quot;example&quot;, attackerCountry: &quot;example&quot;, attackerCountryAlpha3: &quot;example&quot;, category: &quot;example&quot;, created: &quot;example&quot;, createdEventsCount: 1, createdIndicatorsCount: 1, createdRelationshipsCount: 1, created_at: &quot;example&quot;, data: &quot;example&quot;, datasetId: &quot;example&quot;, date: &quot;example&quot;, errorCount: 1, event: &quot;example&quot;, eventIds: [], failedCount: 1, hasChildren: true, indicator: &quot;example&quot;, indicatorType: &quot;example&quot;, indicatorTypeId: 1, killChain: 1, message: &quot;example&quot;, mitreAttack: [], mitreCapec: [], name: &quot;example&quot;, numReferenced: 1, numReferences: 1, parentId: &quot;example&quot;, query_json: &quot;example&quot;, rawId: &quot;example&quot;, referenced: [], referencedIds: [], references: [], referencesIds: [], relationshipType: &quot;example&quot;, relationships: [], rule_enabled: true, source: &quot;example&quot;, success: true, tags: [], targetCountry: &quot;example&quot;, targetCountryAlpha3: &quot;example&quot;, targetIndustry: &quot;example&quot;, tlp: &quot;example&quot;, updatedCount: 1, updated_at: &quot;example&quot;, updates: {}, user_email: &quot;example&quot;, uuid: &quot;example&quot; })
+const updated = await client.Event().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, raw_id: &quot;example&quot; })
+await client.Event().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Account Id</td>
+</tr>
+<tr>
+<td><code>account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Attacker</td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Attacker Country</td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Attacker Country Alpha3</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Category</td>
+</tr>
+<tr>
+<td><code>childIds</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Array of child event UUIDs that were processed</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>createdEventsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of events created</td>
+</tr>
+<tr>
+<td><code>createdIndicatorsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of indicators created</td>
+</tr>
+<tr>
+<td><code>createdRelationshipsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of relationships created</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Cursor for pagination.</td>
+</tr>
+<tr>
+<td><code>custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Data</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset UUIDs to query, or one standalone scope value: 'all'/'*' for the legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Date</td>
+</tr>
+<tr>
+<td><code>errorCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of errors encountered</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Array of error details</td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Event</td>
+</tr>
+<tr>
+<td><code>eventIds</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>List of event UUIDs to update (1-100)</td>
+</tr>
+<tr>
+<td><code>failedCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Failed Count</td>
+</tr>
+<tr>
+<td><code>failures</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>List of events that failed to update with error messages</td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Has Children</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>includeCreatedEvents</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, response includes array of created event UUIDs and shard IDs.</td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Indicator</td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Indicator Type</td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Indicator Type Id</td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Insight</td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Kill Chain</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable message describing the operation result</td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Mitre Attack</td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Mitre Capec</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Num Referenced</td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Num References</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Order</td>
+</tr>
+<tr>
+<td><code>orderBy</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Order By</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Page</td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Page Size</td>
+</tr>
+<tr>
+<td><code>parentId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>UUID of the parent event that will be the source of the relationship</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Raw</td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Raw Id</td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Referenced</td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Referenced Ids</td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>References</td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>References Ids</td>
+</tr>
+<tr>
+<td><code>relationshipType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Type of relationship to create between parent and child events</td>
+</tr>
+<tr>
+<td><code>relationships</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Array of successfully created relationship objects</td>
+</tr>
+<tr>
+<td><code>relationshipsCreated</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Number of relationships that were successfully created</td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Releasability Id</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Structured search as a JSON array of {field, op, value} objects.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Source</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the relationship creation operation completed successfully</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Tags</td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Target Country</td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Target Country Alpha3</td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Target Industry</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Tlp</td>
+</tr>
+<tr>
+<td><code>updatedCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Updated Count</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>updates</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Fields to update on all specified events.</td>
+</tr>
+<tr>
+<td><code>user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uuid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-oneevents" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events</h3>
+<p>Operation ID: <code>post_EventList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>forceRefresh</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>format</code> | <code>query</code> | <code>enum: json, stix2, taxii</code> | No | Output format for event data. 'json' returns the default format, 'stix2' returns STIX 2.1 Sighting SROs with linked Indicator SDOs, Observed Data SDOs, and SCOs, 'taxii' returns a TAXII 2.1 Envelope with Content-Type application/taxii+json;version=2.1. |
+| <code>cache</code> | <code>query</code> | <code>enum: from-graph</code> | No | Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Cursor for pagination. When provided, filters are embedded in the cursor so you only need to pass cursor and pageSize.</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Dataset UUIDs to query, or one standalone scope value: 'all'/'*' for the legacy all-datasets behavior, 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset.</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>orderBy</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pageSize</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>array of object or object or object or object or object or object</code></td>
+<td>No</td>
+<td>Structured search as a JSON array of {field, op, value} objects. Use the 'in' operator with an array value to bulk-check up to 100 values. Multiple conditions are AND'd together. Max 10 conditions per request.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-a-list-of-events" class="status" data-status="2xx">200: Returns a list of events</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</h3>
+<p>Operation ID: <code>post_EventRawUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |
+| <code>raw_id</code> | <code>path</code> | <code>string</code> | Yes | Raw Event UUID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-the-uuid-of-the-updated-raw-event-and-its-data" class="status" data-status="2xx">200: Returns the uuid of the updated raw event and its data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsevent_tagevent_idcreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create</h3>
+<p>Operation ID: <code>post_EventTagCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-success-if-operation-succeeded" class="status" data-status="2xx">200: Returns success if operation succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsevent_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/{event_id}</h3>
+<p>Operation ID: <code>post_EventUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID containing the event to update.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-the-updated-event" class="status" data-status="2xx">200: Returns the updated event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsqueriesquery_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</h3>
+<p>Operation ID: <code>post_EventQueryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes | Event query ID |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable alerts for this query</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable alert rollup for this query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Unique name for the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable rule for this query</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-returns-the-updated-event-query" class="status" data-status="2xx">200: Returns the updated event query</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-4" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsrelateevent_idcreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create</h3>
+<p>Operation ID: <code>post_EventReferenceCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>events</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-success-if-operation-succeeded-1" class="status" data-status="2xx">200: Returns success if operation succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-5" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventscreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/create</h3>
+<p>Operation ID: <code>post_EventCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-6">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of indicators for this event. Supports multiple indicators per event for complex scenarios.</td>
+</tr>
+<tr>
+<td><code>indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The type of indicator (for example, DOMAIN, IP, JA3, HASH)</td>
+</tr>
+<tr>
+<td><code>indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The indicator value (for example, domain name, IP address, hash)</td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Controlled provenance for an event and its indicators derived from a Threat Signals article.</td>
+</tr>
+<tr>
+<td><code>source.resourceId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source.resourceType</code></td>
+<td><code>enum: article</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source.system</code></td>
+<td><code>enum: threat-signals</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source.title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Threat Signals article title; null for historical provenance without a stored title.</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-returns-the-created-event" class="status" data-status="2xx">200: Returns the created event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-6" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventscreatebulk" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/create/bulk</h3>
+<p>Operation ID: <code>post_EventCreateBulk</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-7">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].accountId</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].date</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicators</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of indicators for this event. Supports multiple indicators per event for complex scenarios.</td>
+</tr>
+<tr>
+<td><code>data[].indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The type of indicator (for example, DOMAIN, IP, JA3, HASH)</td>
+</tr>
+<tr>
+<td><code>data[].indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The indicator value (for example, domain name, IP address, hash)</td>
+</tr>
+<tr>
+<td><code>data[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>includeCreatedEvents</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>When true, response includes array of created event UUIDs and shard IDs. Useful for tracking which events were created and where.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-7">Responses</h4>
+<h5 id="202-accepted-events-created-indicators-queued-for-async-processing" class="status" data-status="2xx">202: Accepted. Events created; indicators queued for async processing</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createBulkEventsRequestId</code></td>
+<td><code>string (uuid)</code></td>
+<td>No</td>
+<td>Correlation ID for async indicator processing</td>
+</tr>
+<tr>
+<td><code>createdEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of created events with UUIDs and shard locations. Only present when includeCreatedEvents=true</td>
+</tr>
+<tr>
+<td><code>createdEvents[].eventIndex</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Original index in the input data array</td>
+</tr>
+<tr>
+<td><code>createdEvents[].shardId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID of the shard where the event was created</td>
+</tr>
+<tr>
+<td><code>createdEvents[].uuid</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>UUID of the created event</td>
+</tr>
+<tr>
+<td><code>createdEventsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of events created</td>
+</tr>
+<tr>
+<td><code>createdTagsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of new tags created in SoT</td>
+</tr>
+<tr>
+<td><code>errorCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of errors encountered</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of error details</td>
+</tr>
+<tr>
+<td><code>errors[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Error message</td>
+</tr>
+<tr>
+<td><code>errors[].eventIndex</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Index of the event that caused the error</td>
+</tr>
+<tr>
+<td><code>queuedIndicatorsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of indicators queued for async processing</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-7" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventscreatebulkrelationships" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/create/bulk/relationships</h3>
+<p>Operation ID: <code>post_DOSEventCreateBulkWithRelationships</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-8">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].accountId</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].date</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].indicators</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of indicators for this event. Supports multiple indicators per event for complex scenarios.</td>
+</tr>
+<tr>
+<td><code>data[].indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The type of indicator (for example, DOMAIN, IP, JA3, HASH)</td>
+</tr>
+<tr>
+<td><code>data[].indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The indicator value (for example, domain name, IP address, hash)</td>
+</tr>
+<tr>
+<td><code>data[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-returns-the-number-of-created-bulk-events-with-relationships" class="status" data-status="2xx">200: Returns the number of created bulk events with relationships</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdEventsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of events created</td>
+</tr>
+<tr>
+<td><code>createdIndicatorsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of indicators created</td>
+</tr>
+<tr>
+<td><code>createdRelationshipsCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of relationships created</td>
+</tr>
+<tr>
+<td><code>errorCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of errors encountered</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of error details</td>
+</tr>
+<tr>
+<td><code>errors[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Error message</td>
+</tr>
+<tr>
+<td><code>errors[].eventIndex</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Index of the event that caused the error</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-8" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsgraphql" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/graphql</h3>
+<p>Operation ID: <code>post_EventGraphQL</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-graphql-response-payload-data-and-errors" class="status" data-status="2xx">200: GraphQL response payload (data and errors)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-9" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsqueriescreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/queries/create</h3>
+<p>Operation ID: <code>post_EventQueryCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-9">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Enable alerts for this query</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Enable alert rollup for this query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique name for the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Enable rule for this query</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-returns-the-created-event-query" class="status" data-status="2xx">200: Returns the created event query</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-10" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsrelationshipscreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/relationships/create</h3>
+<p>Operation ID: <code>post_CreateEventRelationship</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-10">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>childIds</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>Yes</td>
+<td>Array of UUIDs for child events. Single child = 1:1 relationship, multiple = 1:many relationships</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset identifier where the events are stored</td>
+</tr>
+<tr>
+<td><code>parentId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>UUID of the parent event that will be the source of the relationship</td>
+</tr>
+<tr>
+<td><code>relationshipType</code></td>
+<td><code>enum: related_to, caused_by, attributed_to</code></td>
+<td>Yes</td>
+<td>Type of relationship to create between parent and child events</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-relationship-created-successfully" class="status" data-status="2xx">200: Relationship created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>childIds</code></td>
+<td><code>array of string (uuid)</code></td>
+<td>No</td>
+<td>Array of child event UUIDs that were processed</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of errors for relationships that failed to be created (only present if some relationships failed)</td>
+</tr>
+<tr>
+<td><code>errors[].childId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>UUID of the child event that failed to create a relationship</td>
+</tr>
+<tr>
+<td><code>errors[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Error message describing why the relationship creation failed</td>
+</tr>
+<tr>
+<td><code>errors[].errorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Type/category of the error that occurred</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable message describing the operation result</td>
+</tr>
+<tr>
+<td><code>relationships</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td>Array of successfully created relationship objects</td>
+</tr>
+<tr>
+<td><code>relationships[].childDatasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID where the child event resides</td>
+</tr>
+<tr>
+<td><code>relationships[].childId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>UUID of the child event in the relationship</td>
+</tr>
+<tr>
+<td><code>relationships[].parentDatasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID where the parent event resides</td>
+</tr>
+<tr>
+<td><code>relationships[].parentId</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>UUID of the parent event in the relationship</td>
+</tr>
+<tr>
+<td><code>relationships[].relationshipType</code></td>
+<td><code>enum: related_to, caused_by, attributed_to</code></td>
+<td>Yes</td>
+<td>Type of relationship between the events</td>
+</tr>
+<tr>
+<td><code>relationshipsCreated</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Number of relationships that were successfully created</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the relationship creation operation completed successfully</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-11" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-onev2eventsgraphql" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/events/graphql</h3>
+<p>Operation ID: <code>post_EventGraphQLV2</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-graphql-response-payload-data-and-errors-1" class="status" data-status="2xx">200: GraphQL response payload (data and errors)</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-12" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneevents" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events</h3>
+<p>Operation ID: <code>get_EventListGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>array of object or object or object or object or object or object</code> | No |  |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>orderBy</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>order</code> | <code>query</code> | <code>enum: asc, desc</code> | No |  |
+| <code>datasetId</code> | <code>query</code> | <code>array of string</code> | No |  |
+| <code>forceRefresh</code> | <code>query</code> | <code>boolean</code> | No |  |
+| <code>format</code> | <code>query</code> | <code>enum: json, stix2, taxii</code> | No |  |
+| <code>cache</code> | <code>query</code> | <code>enum: from-graph</code> | No |  |</p>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-returns-a-list-of-events-1" class="status" data-status="2xx">200: Returns a list of events</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-13" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsby-idevent_idrelationships" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships</h3>
+<p>Operation ID: <code>get_EventRelationships</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-14">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |
+| <code>direction</code> | <code>query</code> | <code>enum: ancestors, descendants, both</code> | No | The direction to traverse the graph. Defaults to 'both' to search all. |
+| <code>maxDepth</code> | <code>query</code> | <code>number</code> | No | The maximum depth to traverse. Defaults to 5. |
+| <code>relationshipTypes</code> | <code>query</code> | <code>string or array of string</code> | No | An optional array of relationship types to filter by. |
+| <code>indicatorTypeIds</code> | <code>query</code> | <code>array of string</code> | No | An optional array of indicator type IDs to filter the results by. |
+| <code>datasetId</code> | <code>query</code> | <code>string</code> | Yes | The dataset ID to search within. |
+| <code>includeParent</code> | <code>query</code> | <code>boolean</code> | No | Whether to include the starting event in the results. Defaults to true. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |</p>
+<h4 id="responses-14">Responses</h4>
+<h5 id="200-returns-a-list-of-events-related-to-the-specified-starting-event" class="status" data-status="2xx">200: Returns a list of events related to the specified starting event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-14" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsgraph" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/graph</h3>
+<p>Operation ID: <code>get_EventGraph</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-15">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>seeds</code> | <code>query</code> | <code>array of string</code> | No | Comma-separated compact seed ids (type:uuid). Example: seeds=event:550e8400-...,indicator:661fa920-... Provide 1–50 entries; omitting seeds returns 400. |
+| <code>direction</code> | <code>query</code> | <code>string</code> | No | Edge direction relative to each seed: out (seed→neighbors), in (neighbors→seed), both (default). |
+| <code>hydration</code> | <code>query</code> | <code>string</code> | No | Hydration strategy for neighbor nodes when expand=nodes is set. <code>r2_join</code> (default): use R2 JOIN query + DO fallback. <code>do_only</code>: use plain R2 query + hydrate all neighbors via Durable Objects. |
+| <code>limit</code> | <code>query</code> | <code>number</code> | No | Max neighbors per seed (default: 100, max: 1000). Values above 1000 return 400. |
+| <code>max_nodes</code> | <code>query</code> | <code>number</code> | No | Total accumulated node cap across all seeds (default: 500, max: 1000). Values above 1000 return 400. |
+| <code>relationshipTypes</code> | <code>query</code> | <code>array of string</code> | No | Comma-separated relationship types to filter by. Allowed: <code>tagged_with</code>, <code>appears_in</code>, <code>related_to</code>, <code>caused_by</code>, <code>attributed_to</code>. |
+| <code>datasetIds</code> | <code>query</code> | <code>array of string</code> | No | Comma-separated dataset UUIDs to restrict neighbor scope, or one standalone scope value: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Intersected with access grants. |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Opaque pagination token. Only valid when seeds has exactly 1 entry; 400 otherwise. |
+| <code>expand</code> | <code>query</code> | <code>array of string</code> | No | Comma-separated list of response sections to expand (hydrate). Allowed: <code>nodes</code>. Omitting <code>expand</code> returns identifier-only nodes. |</p>
+<h4 id="responses-15">Responses</h4>
+<h5 id="200-returns-merged-graph-neighborhood-from-r2-data-catalog" class="status" data-status="2xx">200: Returns merged graph neighborhood from R2 Data Catalog</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Deterministic composite edge id (source→target:relationshipType)</td>
+</tr>
+<tr>
+<td><code>result.edges[].relationshipType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges[].source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Compact id of the source node (type:uuid)</td>
+</tr>
+<tr>
+<td><code>result.edges[].sourceId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges[].sourceType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges[].target</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Compact id of the target node (type:uuid)</td>
+</tr>
+<tr>
+<td><code>result.edges[].targetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.edges[].targetType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.node</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Focal node object (legacy single-seed). Null when unavailable.</td>
+</tr>
+<tr>
+<td><code>result.nodes</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of nodes in result.nodes (seeds + neighbors)</td>
+</tr>
+<tr>
+<td><code>result_info.cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Opaque pagination cursor for the next page; null when exhausted or for multi-seed requests (single-seed only)</td>
+</tr>
+<tr>
+<td><code>result_info.depth_reached</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Traversal depth reached (always 1 for single-level)</td>
+</tr>
+<tr>
+<td><code>result_info.edge_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of edges in result.edges</td>
+</tr>
+<tr>
+<td><code>result_info.has_more</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>True when a cursor is available for the next page (single-seed only)</td>
+</tr>
+<tr>
+<td><code>result_info.query_time_ms</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total query time in milliseconds</td>
+</tr>
+<tr>
+<td><code>result_info.seeds</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Composite ids of the seed node(s) (type:uuid). Always an array, even for one seed.</td>
+</tr>
+<tr>
+<td><code>result_info.total_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total count of nodes (same as count for this endpoint)</td>
+</tr>
+<tr>
+<td><code>result_info.truncated</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>True when results were capped (per-seed limit or <code>max_nodes</code>)</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-15" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-1" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="503-bad-request" class="status" data-status="5xx">503: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsevent_idrelationships" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/{event_id}/relationships</h3>
+<p>Operation ID: <code>get_LegacyEventRelationships</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-16">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |
+| <code>direction</code> | <code>query</code> | <code>enum: ancestors, descendants, both</code> | No | The direction to traverse the graph. Defaults to 'both' to search all. |
+| <code>maxDepth</code> | <code>query</code> | <code>number</code> | No | The maximum depth to traverse. Defaults to 5. |
+| <code>relationshipTypes</code> | <code>query</code> | <code>string or array of string</code> | No | An optional array of relationship types to filter by. |
+| <code>indicatorTypeIds</code> | <code>query</code> | <code>array of string</code> | No | An optional array of indicator type IDs to filter the results by. |
+| <code>datasetId</code> | <code>query</code> | <code>string</code> | Yes | The dataset ID to search within. |
+| <code>includeParent</code> | <code>query</code> | <code>boolean</code> | No | Whether to include the starting event in the results. Defaults to true. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |</p>
+<h4 id="responses-16">Responses</h4>
+<h5 id="200-returns-a-list-of-events-related-to-the-specified-starting-event-1" class="status" data-status="2xx">200: Returns a list of events related to the specified starting event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-16" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsaggregate" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/aggregate</h3>
+<p>Operation ID: <code>get_EventAggregate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-17">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>aggregateBy</code> | <code>query</code> | <code>string</code> | Yes | Column(s) to aggregate by - single column or comma-separated list (for example, 'attacker', 'targetIndustry', 'attacker,targetIndustry') |
+| <code>datasetId</code> | <code>query</code> | <code>array of string</code> | No | Dataset UUIDs to filter by, or one standalone scope value: 'all'/'*' for all accessible non-analytics event datasets (analytics datasets are silently excluded), 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. If not provided, uses the default dataset. |
+| <code>startDate</code> | <code>query</code> | <code>string</code> | No | Start date for filtering (ISO 8601 format, for example, '2024-01-01') |
+| <code>endDate</code> | <code>query</code> | <code>string</code> | No | End date for filtering (ISO 8601 format, for example, '2024-12-31') |
+| <code>groupByDate</code> | <code>query</code> | <code>boolean</code> | No | Whether to group results by date (daily aggregation) |
+| <code>limit</code> | <code>query</code> | <code>number</code> | No | Maximum number of results to return |</p>
+<h4 id="responses-17">Responses</h4>
+<h5 id="200-returns-aggregated-event-data" class="status" data-status="2xx">200: Returns aggregated event data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>aggregateBy</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Column(s) that were aggregated by</td>
+</tr>
+<tr>
+<td><code>aggregations</code></td>
+<td><code>array of object and object</code></td>
+<td>Yes</td>
+<td>Array of aggregation results with dynamic fields based on aggregateBy columns</td>
+</tr>
+<tr>
+<td><code>dateRange</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Date range used for filtering</td>
+</tr>
+<tr>
+<td><code>dateRange.endDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dateRange.startDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total number of events in the aggregation</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-17" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsqueries" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/queries</h3>
+<p>Operation ID: <code>get_EventQueryList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-18">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="responses-18">Responses</h4>
+<h5 id="200-returns-a-list-of-event-queries" class="status" data-status="2xx">200: Returns a list of event queries</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>[].alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>[].alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>[].custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>[].id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>[].query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>[].rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>[].rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>[].rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>[].user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request-1" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsrawdataset_idevent_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}</h3>
+<p>Operation ID: <code>get_LegacyEventRawReadDS</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-19">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |</p>
+<h4 id="responses-19">Responses</h4>
+<h5 id="200-returns-the-raw-event-data" class="status" data-status="2xx">200: Returns the raw event data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-2" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request-2" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_ideventsevent_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}</h3>
+<p>Operation ID: <code>get_EventRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-20">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="responses-20">Responses</h4>
+<h5 id="200-returns-the-event" class="status" data-status="2xx">200: Returns the event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-3" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetsdataset_ideventsevent_idraw" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw</h3>
+<p>Operation ID: <code>get_EventRawReadDS</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-21">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID. |</p>
+<h4 id="responses-21">Responses</h4>
+<h5 id="200-returns-the-raw-event-data-1" class="status" data-status="2xx">200: Returns the raw event data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-4" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request-3" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</h3>
+<p>Operation ID: <code>get_EventRawRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-22">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |
+| <code>raw_id</code> | <code>path</code> | <code>string</code> | Yes | Raw Event UUID. |</p>
+<h4 id="responses-22">Responses</h4>
+<h5 id="200-returns-the-raw-event" class="status" data-status="2xx">200: Returns the raw event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accountId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-18" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsevent_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/{event_id}</h3>
+<p>Operation ID: <code>get_EventReadDeprecated</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-23">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="responses-23">Responses</h4>
+<h5 id="200-returns-an-event" class="status" data-status="2xx">200: Returns an event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-5" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsqueriesquery_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</h3>
+<p>Operation ID: <code>get_EventQueryRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-24">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes | Event query ID |</p>
+<h4 id="responses-24">Responses</h4>
+<h5 id="200-returns-the-event-query" class="status" data-status="2xx">200: Returns the event query</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-6" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsdatasetsdataset_idevents" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events</h3>
+<p>Operation ID: <code>delete_EventDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-25">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>eventIds</code> | <code>query</code> | <code>array of string</code> | Yes | Array of Event IDs to delete. |</p>
+<h4 id="responses-25">Responses</h4>
+<h5 id="200-returns-the-number-of-deleted-events" class="status" data-status="2xx">200: Returns the number of deleted events</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>number</code>.</p>
+<h5 id="400-bad-request-19" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsdataset_iddelete" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete</h3>
+<p>Operation ID: <code>delete_LegacyEventDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-26">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>eventIds</code> | <code>query</code> | <code>array of string</code> | Yes | Array of Event IDs to delete. |</p>
+<h4 id="responses-26">Responses</h4>
+<h5 id="200-returns-the-number-of-deleted-events-1" class="status" data-status="2xx">200: Returns the number of deleted events</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>number</code>.</p>
+<h5 id="400-bad-request-20" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsevent_tagevent_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}</h3>
+<p>Operation ID: <code>delete_EventTagDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-27">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-11">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-27">Responses</h4>
+<h5 id="200-returns-success-if-operation-succeeded-2" class="status" data-status="2xx">200: Returns success if operation succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-21" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsrelateevent_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/relate/{event_id}</h3>
+<p>Operation ID: <code>delete_EventReferenceDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-28">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-12">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>events</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-28">Responses</h4>
+<h5 id="200-returns-success-if-operation-succeeded-3" class="status" data-status="2xx">200: Returns success if operation succeeded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-22" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsqueriesquery_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</h3>
+<p>Operation ID: <code>delete_EventQueryDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-29">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes | Event query ID |</p>
+<h4 id="responses-29">Responses</h4>
+<h5 id="200-event-query-deleted-successfully" class="status" data-status="2xx">200: Event query deleted successfully</h5>
+<h5 id="404-bad-request-7" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsevent_idrawraw_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}</h3>
+<p>Operation ID: <code>patch_EventRawUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-30">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |
+| <code>raw_id</code> | <code>path</code> | <code>string</code> | Yes | Raw Event UUID. |</p>
+<h4 id="request-body-13">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-30">Responses</h4>
+<h5 id="200-returns-the-uuid-of-the-updated-raw-event-and-its-data-1" class="status" data-status="2xx">200: Returns the uuid of the updated raw event and its data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-23" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsevent_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/{event_id}</h3>
+<p>Operation ID: <code>patch_EventUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-31">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>event_id</code> | <code>path</code> | <code>string</code> | Yes | Event UUID. |</p>
+<h4 id="request-body-14">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID containing the event to update.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-31">Responses</h4>
+<h5 id="200-returns-the-updated-event-1" class="status" data-status="2xx">200: Returns the updated event</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attacker</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attackerCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>event</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>hasChildren</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicator</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicatorTypeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>killChain</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreAttack</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>mitreCapec</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferenced</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>numReferences</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>rawId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referenced</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencedIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>references</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>referencesIds</code></td>
+<td><code>array of number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>releasabilityId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetCountryAlpha3</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>targetIndustry</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-24" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsqueriesquery_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/queries/{query_id}</h3>
+<p>Operation ID: <code>patch_EventQueryUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-32">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes | Event query ID |</p>
+<h4 id="request-body-15">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable alerts for this query</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable alert rollup for this query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Unique name for the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enable rule for this query</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-32">Responses</h4>
+<h5 id="200-returns-the-updated-event-query-1" class="status" data-status="2xx">200: Returns the updated event query</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>alert_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alerts are enabled</td>
+</tr>
+<tr>
+<td><code>alert_rollup_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether alert rollup is enabled</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>custom_threat_feed_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Intel Indicator Feed ID (numeric)</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Unique identifier for the saved query</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name of the saved query</td>
+</tr>
+<tr>
+<td><code>query_json</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>JSON string containing the query parameters</td>
+</tr>
+<tr>
+<td><code>rule_enabled</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether rule is enabled</td>
+</tr>
+<tr>
+<td><code>rule_list_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>WAF rules list ID for blocking</td>
+</tr>
+<tr>
+<td><code>rule_scope</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Scope for the rule</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+<tr>
+<td><code>user_email</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Email of the user who created the query</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-25" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-8" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsupdatebulk" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/update/bulk</h3>
+<p>Operation ID: <code>patch_EventUpdateBulk</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-33">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-16">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID containing the events to update. Required to prevent cross-account modifications.</td>
+</tr>
+<tr>
+<td><code>eventIds</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>List of event UUIDs to update (1-100)</td>
+</tr>
+<tr>
+<td><code>updates</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Fields to update on all specified events. All fields including 'insight' are supported, except 'date' which requires shard migration.</td>
+</tr>
+<tr>
+<td><code>updates.attacker</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.attackerCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.category</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.event</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.indicator</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.indicatorType</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.insight</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.raw</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.raw.data</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.raw.source</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.raw.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.targetCountry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.targetIndustry</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updates.tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-33">Responses</h4>
+<h5 id="200-returns-the-count-of-updated-events-and-any-failures" class="status" data-status="2xx">200: Returns the count of updated events and any failures</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>failedCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>failures</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>List of events that failed to update with error messages</td>
+</tr>
+<tr>
+<td><code>failures[].error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>failures[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-26" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

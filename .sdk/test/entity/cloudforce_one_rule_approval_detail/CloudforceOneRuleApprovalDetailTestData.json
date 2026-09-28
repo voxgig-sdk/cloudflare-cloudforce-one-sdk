@@ -1,0 +1,123 @@
+{
+  "existing": {
+    "cloudforce_one_rule_approval_detail": {
+      "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL00": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 222,
+        "cancelled_by": "sdf",
+        "change_description": "se0",
+        "change_type": "se1",
+        "commit_message": "se2",
+        "compiler_warnings": [],
+        "current_rule": "se4",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL00",
+        "proposed_changes": "se6",
+        "rejection_reason": "se7",
+        "requested_at": 232,
+        "requested_by": "se9",
+        "reviewed_at": 234,
+        "reviewer_scope": "seb",
+        "revision_number": 236,
+        "rule_id": "RULE01",
+        "rule_name": "see",
+        "status": "sef",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL01": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 442,
+        "cancelled_by": "s1bb",
+        "change_description": "s1bc",
+        "change_type": "s1bd",
+        "commit_message": "s1be",
+        "compiler_warnings": [],
+        "current_rule": "s1c0",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL01",
+        "proposed_changes": "s1c2",
+        "rejection_reason": "s1c3",
+        "requested_at": 452,
+        "requested_by": "s1c5",
+        "reviewed_at": 454,
+        "reviewer_scope": "s1c7",
+        "revision_number": 456,
+        "rule_id": "RULE01",
+        "rule_name": "s1ca",
+        "status": "s1cb",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL02": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 662,
+        "cancelled_by": "s297",
+        "change_description": "s298",
+        "change_type": "s299",
+        "commit_message": "s29a",
+        "compiler_warnings": [],
+        "current_rule": "s29c",
+        "id": "CLOUDFORCE_ONE_RULE_APPROVAL_DETAIL02",
+        "proposed_changes": "s29e",
+        "rejection_reason": "s29f",
+        "requested_at": 672,
+        "requested_by": "s2a1",
+        "reviewed_at": 674,
+        "reviewer_scope": "s2a3",
+        "revision_number": 676,
+        "rule_id": "RULE01",
+        "rule_name": "s2a6",
+        "status": "s2a7",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01",
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_rule_approval_detail": {
+      "cloudforce_one_rule_approval_detail_ref01": {
+        "audit_log_id": "AUDIT_LOG01",
+        "can_review": false,
+        "cancelled_at": 882,
+        "cancelled_by": "s373",
+        "change_description": "s374",
+        "change_type": "s375",
+        "commit_message": "s376",
+        "compiler_warnings": [],
+        "current_rule": "s378",
+        "proposed_changes": "s37a",
+        "rejection_reason": "s37b",
+        "requested_at": 892,
+        "requested_by": "s37d",
+        "reviewed_at": 894,
+        "reviewer_scope": "s37f",
+        "revision_number": 896,
+        "rule_id": "RULE01",
+        "rule_name": "s382",
+        "status": "s383",
+        "superseded_by_approval_id": "SUPERSEDED_BY_APPROVAL01",
+        "supersedes_approval_id": "SUPERSEDES_APPROVAL01"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/approvals/{id}/resubmit": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/rules/approvals/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

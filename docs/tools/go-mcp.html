@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Go MCP server | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details open><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a aria-current="page" href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>Tools</div><h1 id="go-mcp-server">Go MCP server</h1>
+<p>Go MCP server</p>
+<h2 id="install">Install</h2>
+<p>Not published. Build from the go-mcp directory.</p>
+<h2 id="package">Package</h2>
+<p><code>github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk/go-mcp</code></p>
+<h2 id="api-reference">API reference</h2>
+<p>The API reference covers all entities. The tools section lists the operations this server exposes.</p>
+<table>
+<thead>
+<tr>
+<th>Entity</th>
+<th>Operations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../api/attacker.html">Attacker</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/bin_db.html">BinDb</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/brand_protection.html">BrandProtection</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/category.html">Category</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a></td>
+<td><code>create</code>, <code>list</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a></td>
+<td><code>create</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a></td>
+<td><code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a></td>
+<td><code>create</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/collection.html">Collection</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/collections_item.html">CollectionsItem</a></td>
+<td><code>create</code></td>
+</tr>
+<tr>
+<td><a href="../api/country.html">Country</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/dashboard_asset.html">DashboardAsset</a></td>
+<td><code>create</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/dashboard_user.html">DashboardUser</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/dataset.html">Dataset</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/event.html">Event</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/group.html">Group</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/indicator.html">Indicator</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/indicator_type.html">IndicatorType</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/permission.html">Permission</a></td>
+<td><code>create</code>, <code>list</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/priority.html">Priority</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/priority_intelligence.html">PriorityIntelligence</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a></td>
+<td><code>create</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a></td>
+<td><code>create</code>, <code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a></td>
+<td><code>create</code>, <code>list</code>, <code>remove</code></td>
+</tr>
+<tr>
+<td><a href="../api/request.html">Request</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/requests_dashboard.html">RequestsDashboard</a></td>
+<td><code>list</code>, <code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/rfi.html">Rfi</a></td>
+<td><code>create</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/rfi_message.html">RfiMessage</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/rule.html">Rule</a></td>
+<td><code>list</code></td>
+</tr>
+<tr>
+<td><a href="../api/scan.html">Scan</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tag.html">Tag</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/tag_category.html">TagCategory</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+<tr>
+<td><a href="../api/target_industry.html">TargetIndustry</a></td>
+<td><code>load</code></td>
+</tr>
+<tr>
+<td><a href="../api/threat_signal.html">ThreatSignal</a></td>
+<td><code>create</code>, <code>list</code>, <code>load</code>, <code>patch</code>, <code>remove</code>, <code>update</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="configuration">Configuration</h2>
+<p>Set the server URL and credentials for your environment. Enable only the features your application needs.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li><a href="../features/test.html">Test transport</a></li>
+</ul>
+<h2 id="tools">Tools</h2>
+<h3 id="cloudflare-cloudforce-one_list"><code>cloudflare-cloudforce-one_list</code></h3>
+<p>List records for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;attacker | bin_db | brand_protection | category | cloudforce_one_account_exemption | cloudforce_one_delete_all | cloudforce_one_edit_approval | cloudforce_one_email_rule_validation | cloudforce_one_email_rules_list | cloudforce_one_requests_api_response_common | cloudforce_one_rule | cloudforce_one_rule_approval_detail | cloudforce_one_rule_approvals_list | cloudforce_one_rule_preview | cloudforce_one_rules_preview_list | cloudforce_one_rules_search | cloudforce_one_stat | cloudforce_one_success | cloudforce_one_tree_node | cloudforce_one_validation | collection | collections_item | country | dashboard_asset | dashboard_user | dataset | event | group | indicator | indicator_type | permission | priority | priority_intelligence | priority_intelligence_requirement | priority_intelligence_requirements__pir | public_credential_monitor | request | request_for_information__rfi | requests_dashboard | rfi | rfi_message | rule | scan | tag | tag_category | target_industry | threat_signal&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>Supported entities: <code>brand_protection</code>, <code>category</code>, <code>cloudforce_one_account_exemption</code>, <code>cloudforce_one_email_rules_list</code>, <code>cloudforce_one_rule_approvals_list</code>, <code>cloudforce_one_rules_preview_list</code>, <code>cloudforce_one_rules_search</code>, <code>cloudforce_one_tree_node</code>, <code>collection</code>, <code>country</code>, <code>dataset</code>, <code>event</code>, <code>group</code>, <code>indicator</code>, <code>permission</code>, <code>priority_intelligence_requirements__pir</code>, <code>public_credential_monitor</code>, <code>request_for_information__rfi</code>, <code>requests_dashboard</code>, <code>rfi_message</code>, <code>rule</code>, <code>scan</code>, <code>tag</code>, <code>tag_category</code>, <code>threat_signal</code>.</p>
+<h3 id="cloudflare-cloudforce-one_load"><code>cloudflare-cloudforce-one_load</code></h3>
+<p>Load one record for an entity.</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;object&quot;,
+  &quot;required&quot;: [
+    &quot;entity&quot;
+  ],
+  &quot;properties&quot;: {
+    &quot;entity&quot;: {
+      &quot;type&quot;: &quot;string&quot;,
+      &quot;description&quot;: &quot;attacker | bin_db | brand_protection | category | cloudforce_one_account_exemption | cloudforce_one_delete_all | cloudforce_one_edit_approval | cloudforce_one_email_rule_validation | cloudforce_one_email_rules_list | cloudforce_one_requests_api_response_common | cloudforce_one_rule | cloudforce_one_rule_approval_detail | cloudforce_one_rule_approvals_list | cloudforce_one_rule_preview | cloudforce_one_rules_preview_list | cloudforce_one_rules_search | cloudforce_one_stat | cloudforce_one_success | cloudforce_one_tree_node | cloudforce_one_validation | collection | collections_item | country | dashboard_asset | dashboard_user | dataset | event | group | indicator | indicator_type | permission | priority | priority_intelligence | priority_intelligence_requirement | priority_intelligence_requirements__pir | public_credential_monitor | request | request_for_information__rfi | requests_dashboard | rfi | rfi_message | rule | scan | tag | tag_category | target_industry | threat_signal&quot;
+    },
+    &quot;query&quot;: {
+      &quot;type&quot;: &quot;object&quot;,
+      &quot;description&quot;: &quot;Optional match fields for the selected entity.&quot;
+    }
+  }
+}
+</code></pre>
+<p>Supported entities: <code>attacker</code>, <code>bin_db</code>, <code>brand_protection</code>, <code>category</code>, <code>cloudforce_one_rule_approval_detail</code>, <code>cloudforce_one_rule_preview</code>, <code>cloudforce_one_stat</code>, <code>collection</code>, <code>dashboard_asset</code>, <code>dashboard_user</code>, <code>dataset</code>, <code>event</code>, <code>group</code>, <code>indicator</code>, <code>indicator_type</code>, <code>priority</code>, <code>priority_intelligence</code>, <code>priority_intelligence_requirement</code>, <code>request</code>, <code>request_for_information__rfi</code>, <code>requests_dashboard</code>, <code>rfi</code>, <code>rfi_message</code>, <code>scan</code>, <code>tag</code>, <code>tag_category</code>, <code>target_industry</code>, <code>threat_signal</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

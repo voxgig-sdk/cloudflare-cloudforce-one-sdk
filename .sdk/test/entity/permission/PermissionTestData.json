@@ -1,0 +1,89 @@
+{
+  "existing": {
+    "permission": {
+      "PERMISSION00": {
+        "createdAt": "s6e",
+        "id": "PERMISSION00",
+        "message": "s70",
+        "resourceId": "s71",
+        "resourceType": "s72",
+        "role": "s73",
+        "subjectId": "s74",
+        "subjectType": "s75",
+        "success": true,
+        "updatedAt": "s77",
+        "uuid": "s78",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01"
+      },
+      "PERMISSION01": {
+        "createdAt": "sdc",
+        "id": "PERMISSION01",
+        "message": "sde",
+        "resourceId": "sdf",
+        "resourceType": "se0",
+        "role": "se1",
+        "subjectId": "se2",
+        "subjectType": "se3",
+        "success": true,
+        "updatedAt": "se5",
+        "uuid": "se6",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01"
+      },
+      "PERMISSION02": {
+        "createdAt": "s14a",
+        "id": "PERMISSION02",
+        "message": "s14c",
+        "resourceId": "s14d",
+        "resourceType": "s14e",
+        "role": "s14f",
+        "subjectId": "s150",
+        "subjectType": "s151",
+        "success": true,
+        "updatedAt": "s153",
+        "uuid": "s154",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01"
+      }
+    }
+  },
+  "new": {
+    "permission": {
+      "permission_ref01": {
+        "createdAt": "s1b8",
+        "message": "s1ba",
+        "resourceId": "s1bb",
+        "resourceType": "s1bc",
+        "role": "s1bd",
+        "subjectId": "s1be",
+        "subjectType": "s1bf",
+        "success": true,
+        "updatedAt": "s1c1",
+        "uuid": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

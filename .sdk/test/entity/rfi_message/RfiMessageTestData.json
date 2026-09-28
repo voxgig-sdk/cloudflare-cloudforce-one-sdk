@@ -1,0 +1,100 @@
+{
+  "existing": {
+    "rfi_message": {
+      "RFI_MESSAGE00": {
+        "attachment_asset_ids": [],
+        "attachments": [],
+        "author_id": "AUTHOR01",
+        "author_name": "s85",
+        "content": "s86",
+        "created": "s87",
+        "id": "RFI_MESSAGE00",
+        "is_cloudflare_team": false,
+        "is_published": true,
+        "publish": false,
+        "published": "s8c",
+        "tlp": "s8d",
+        "updated": "s8e",
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01"
+      },
+      "RFI_MESSAGE01": {
+        "attachment_asset_ids": [],
+        "attachments": [],
+        "author_id": "AUTHOR01",
+        "author_name": "s107",
+        "content": "s108",
+        "created": "s109",
+        "id": "RFI_MESSAGE01",
+        "is_cloudflare_team": false,
+        "is_published": true,
+        "publish": false,
+        "published": "s10e",
+        "tlp": "s10f",
+        "updated": "s110",
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01"
+      },
+      "RFI_MESSAGE02": {
+        "attachment_asset_ids": [],
+        "attachments": [],
+        "author_id": "AUTHOR01",
+        "author_name": "s189",
+        "content": "s18a",
+        "created": "s18b",
+        "id": "RFI_MESSAGE02",
+        "is_cloudflare_team": false,
+        "is_published": true,
+        "publish": false,
+        "published": "s190",
+        "tlp": "s191",
+        "updated": "s192",
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01"
+      }
+    }
+  },
+  "new": {
+    "rfi_message": {
+      "rfi_message_ref01": {
+        "attachment_asset_ids": [],
+        "attachments": [],
+        "author_id": "AUTHOR01",
+        "author_name": "s20b",
+        "content": "s20c",
+        "created": "s20d",
+        "is_cloudflare_team": false,
+        "is_published": true,
+        "publish": false,
+        "published": "s212",
+        "tlp": "s213",
+        "updated": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

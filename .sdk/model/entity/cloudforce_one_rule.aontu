@@ -1,0 +1,141 @@
+# Entity: cloudforce_one_rule
+
+main: kit: entity: cloudforce_one_rule: {
+
+  alias: field: {}
+
+  fields: {
+    actions: {
+      h: "Actions"
+      n: "actions"
+      r: false
+      t: "`$ARRAY`"
+      union: {
+        branches: 5
+        count: 1
+        depth: 4
+      }
+    }
+    commit_message: {
+      h: "Commit Message"
+      n: "commit_message"
+      r: false
+      sh: "Human-readable justification for this change."
+      t: "`$STRING`"
+    }
+    content: {
+      h: "Content"
+      n: "content"
+      r: true
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "Human-readable description of the rule."
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: false
+      sh: "Whether this rule is active for dice consumers."
+      t: "`$BOOLEAN`"
+    }
+    is_public: {
+      h: "Is Public"
+      n: "is_public"
+      r: false
+      sh: "Whether this rule is visible to other internal accounts."
+      t: "`$BOOLEAN`"
+    }
+    meta: {
+      h: "Meta"
+      n: "meta"
+      r: false
+      sh: "Adds YARA meta entries to the rule's meta block and stores them in rule_meta alongside content metadata."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 3
+      }
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    namespaces: {
+      h: "Namespaces"
+      n: "namespaces"
+      r: false
+      sh: "Optional WfP deployment tags (customer rules only)."
+      t: "`$ARRAY`"
+    }
+    path: {
+      h: "Path"
+      n: "path"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "cloudforce_one_rule"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/rules"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/rules"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,23 @@
+# BasicCollectionsItemFlow
+
+main: kit: flow: BasicCollectionsItemFlow:
+{
+  entity: "collections_item",
+  kind: "basic",
+  name: "BasicCollectionsItemFlow",
+  step: [
+    {
+      i: {
+        ref: "collections_item_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        collection_id: "collection01"
+      }
+
+      o: "create"
+    }
+  ],
+  "key$": "BasicCollectionsItemFlow"
+}

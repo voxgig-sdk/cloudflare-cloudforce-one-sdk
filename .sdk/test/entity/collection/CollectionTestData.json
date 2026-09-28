@@ -1,0 +1,150 @@
+{
+  "existing": {
+    "collection": {
+      "COLLECTION00": {
+        "columns": [],
+        "created_at": "s83",
+        "created_by": "s84",
+        "data": {},
+        "id": "COLLECTION00",
+        "item_count": 135,
+        "metadata": {},
+        "name": "s89",
+        "position": 138,
+        "required": false,
+        "status": "s8c",
+        "type": "s8d",
+        "updated_at": "s8e",
+        "account_id": "ACCOUNT01",
+        "item_id": "ITEM01",
+        "column_id": "COLUMN01"
+      },
+      "COLLECTION01": {
+        "columns": [],
+        "created_at": "s105",
+        "created_by": "s106",
+        "data": {},
+        "id": "COLLECTION01",
+        "item_count": 265,
+        "metadata": {},
+        "name": "s10b",
+        "position": 268,
+        "required": false,
+        "status": "s10e",
+        "type": "s10f",
+        "updated_at": "s110",
+        "account_id": "ACCOUNT01",
+        "item_id": "ITEM01",
+        "column_id": "COLUMN01"
+      },
+      "COLLECTION02": {
+        "columns": [],
+        "created_at": "s187",
+        "created_by": "s188",
+        "data": {},
+        "id": "COLLECTION02",
+        "item_count": 395,
+        "metadata": {},
+        "name": "s18d",
+        "position": 398,
+        "required": false,
+        "status": "s190",
+        "type": "s191",
+        "updated_at": "s192",
+        "account_id": "ACCOUNT01",
+        "item_id": "ITEM01",
+        "column_id": "COLUMN01"
+      }
+    }
+  },
+  "new": {
+    "collection": {
+      "collection_ref01": {
+        "columns": [],
+        "created_at": "s209",
+        "created_by": "s20a",
+        "data": {},
+        "item_count": 525,
+        "metadata": {},
+        "name": "s20f",
+        "position": 528,
+        "required": false,
+        "status": "s212",
+        "type": "s213",
+        "updated_at": "s214"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/collections": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/collections": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

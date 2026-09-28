@@ -1,0 +1,155 @@
+# Entity: rule
+
+main: kit: entity: rule: {
+
+  alias: field: {}
+
+  fields: {
+    arrays: {
+      h: "Arrays"
+      n: "arrays"
+      r: true
+      t: "`$ARRAY`"
+    }
+    headers: {
+      h: "Headers"
+      n: "headers"
+      r: true
+      t: "`$OBJECT`"
+    }
+    operators: {
+      h: "Operators"
+      n: "operators"
+      r: true
+      t: "`$OBJECT`"
+    }
+    scalars: {
+      h: "Scalars"
+      n: "scalars"
+      r: true
+      t: "`$ARRAY`"
+    }
+    string_arrays: {
+      h: "String Arrays"
+      n: "string_arrays"
+      r: true
+      t: "`$ARRAY`"
+    }
+    structs: {
+      h: "Structs"
+      n: "structs"
+      r: true
+      t: "`$ARRAY`"
+    }
+  }
+
+  name: "rule"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/rules/managed"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/rules/managed"
+          q: {
+            "$action": "managed"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              lit: "managed"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/rules/structured/schema"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/rules/structured/schema"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              lit: "structured"
+            }
+            {
+              lit: "schema"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

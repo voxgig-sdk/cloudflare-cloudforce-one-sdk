@@ -1,0 +1,87 @@
+# BasicRequestForInformationRfiFlow
+
+main: kit: flow: BasicRequestForInformationRfiFlow:
+{
+  entity: "request_for_information__rfi",
+  kind: "basic",
+  name: "BasicRequestForInformationRfiFlow",
+  step: [
+    {
+      i: {
+        ref: "request_for_information__rfi_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        request_id: "request01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "request_for_information__rfi_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01",
+        request_id: "request01"
+      }
+
+      i: {
+        ref: "request_for_information__rfi_ref01",
+        srcdatavar: "request_for_information__rfi_ref01_data",
+        suffix: "_up0",
+        textfield: "content"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-request_for_information__rfi_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "request_for_information__rfi_ref01",
+        srcdatavar: "request_for_information__rfi_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "request_for_information__rfi01",
+        request_id: "request01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-request_for_information__rfi_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRequestForInformationRfiFlow"
+}

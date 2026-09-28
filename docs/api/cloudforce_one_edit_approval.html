@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CloudforceOneEditApproval | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a aria-current="page" href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onerulesstructuredapprovalsidresubmit">POST /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerulesstructuredapprovalsid">PUT /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}</a></div>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="cloudforceoneeditapproval">CloudforceOneEditApproval</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerulesstructuredapprovalsidresubmit"><code>/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit</code></a></td>
+<td><code>create</code></td>
+<td>New approval revision submitted</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerulesstructuredapprovalsid"><code>/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}</code></a></td>
+<td><code>update</code></td>
+<td>Pending approval updated</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">created, err := client.CloudforceOneEditApproval(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;approval_id&quot;: &quot;example&quot;, &quot;condition&quot;: map[string]any{}, &quot;name&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.CloudforceOneEditApproval(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;module&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local created, err = client:CloudforceOneEditApproval():create({ account_id = &quot;example&quot;, approval_id = &quot;example&quot;, condition = {}, name = &quot;example&quot; })
+local updated, err = client:CloudforceOneEditApproval():update({ account_id = &quot;example&quot;, module = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$created = $client-&gt;CloudforceOneEditApproval()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;approval_id&quot; =&gt; &quot;example&quot;, &quot;condition&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;CloudforceOneEditApproval()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;module&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">created = client.CloudforceOneEditApproval().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;approval_id&quot;: &quot;example&quot;, &quot;condition&quot;: {}, &quot;name&quot;: &quot;example&quot; })
+updated = client.CloudforceOneEditApproval().update({&quot;account_id&quot;: &quot;example&quot;, &quot;module&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">created = client.CloudforceOneEditApproval.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;approval_id&quot; =&gt; &quot;example&quot;, &quot;condition&quot; =&gt; {}, &quot;name&quot; =&gt; &quot;example&quot; })
+updated = client.CloudforceOneEditApproval.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;module&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const created = await client.CloudforceOneEditApproval().create({ account_id: &quot;example&quot;, approval_id: &quot;example&quot;, condition: {}, name: &quot;example&quot; })
+const updated = await client.CloudforceOneEditApproval().update({ account_id: &quot;example&quot;, module: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Enabled</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Meta</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Disposition for matching email.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Strings</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onerulesstructuredapprovalsidresubmit" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit</h3>
+<p>Operation ID: <code>cloudforce-one-resubmit-email-rule-approval</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string</code> | Yes | The unique identifier for the approval. |
+| <code>module</code> | <code>query</code> | <code>enum: eml</code> | No | Structured rule module. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>condition.conditions</code></td>
+<td><code>array of object or object or object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.operator</code></td>
+<td><code>enum: and, or</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.type</code></td>
+<td><code>enum: group</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: silent, blocking</code></td>
+<td>No</td>
+<td>Disposition for matching email. This emits status metadata with the selected value.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].identifier</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].match_type</code></td>
+<td><code>enum: text, hex, regex</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].modifiers</code></td>
+<td><code>array of enum: nocase, wide, ascii, fullword</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].type</code></td>
+<td><code>enum: string_match</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="202-new-approval-revision-submitted" class="status" data-status="2xx">202: New approval revision submitted</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>requires_approval</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>revision_number</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>supersedes_approval_id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-structured-rule-validation-or-compilation-failed" class="status" data-status="4xx">400: Structured rule validation or compilation failed</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-not-authorized-to-resubmit-this-approval" class="status" data-status="4xx">403: Not authorized to resubmit this approval</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-approval-or-underlying-rule-not-found" class="status" data-status="4xx">404: Approval or underlying rule not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-approval-is-not-rejected-or-was-already-superseded" class="status" data-status="4xx">409: Approval is not rejected or was already superseded</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onerulesstructuredapprovalsid" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}</h3>
+<p>Operation ID: <code>cloudforce-one-update-pending-email-rule-approval</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Cloudflare account ID. |
+| <code>id</code> | <code>path</code> | <code>string</code> | Yes | The unique identifier for the approval. |
+| <code>module</code> | <code>query</code> | <code>enum: eml</code> | No | Structured rule module. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>condition</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Nested condition groups support up to 10 levels of depth.</td>
+</tr>
+<tr>
+<td><code>condition.conditions</code></td>
+<td><code>array of object or object or object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.operator</code></td>
+<td><code>enum: and, or</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>condition.type</code></td>
+<td><code>enum: group</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].key</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>meta[].value</code></td>
+<td><code>string or number or boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: silent, blocking</code></td>
+<td>No</td>
+<td>Disposition for matching email. This emits status metadata with the selected value.</td>
+</tr>
+<tr>
+<td><code>strings</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].identifier</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].match_type</code></td>
+<td><code>enum: text, hex, regex</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].modifiers</code></td>
+<td><code>array of enum: nocase, wide, ascii, fullword</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].type</code></td>
+<td><code>enum: string_match</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>strings[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-pending-approval-updated" class="status" data-status="2xx">200: Pending approval updated</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>approval</code></td>
+<td><code>object and object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-structured-rule-validation-or-compilation-failed-1" class="status" data-status="4xx">400: Structured rule validation or compilation failed</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-not-authorized-to-update-this-approval" class="status" data-status="4xx">403: Not authorized to update this approval</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-approval-not-found" class="status" data-status="4xx">404: Approval not found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-approval-is-not-pending-or-is-not-a-structured-eml-rule" class="status" data-status="4xx">409: Approval is not pending or is not a structured EML rule</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

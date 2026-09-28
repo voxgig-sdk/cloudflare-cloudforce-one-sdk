@@ -1,0 +1,4345 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Tag | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a aria-current="page" href="../api/tag.html">Tag</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships">POST /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventstagscreate">POST /accounts/{account_id}/cloudforce-one/events/tags/create</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idtagstag_uuidindicators">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuidindicators">GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventstags">GET /accounts/{account_id}/cloudforce-one/events/tags</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventstagscategoriesactors">GET /accounts/{account_id}/cloudforce-one/events/tags/categories/actors</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships">GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuid">GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid">DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventstagstag_uuid">DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid">PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventstagstag_uuid">PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</a></div>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="tag">Tag</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created relationship</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventstagscreate"><code>/accounts/{account_id}/cloudforce-one/events/tags/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created tag</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idtagstag_uuidindicators"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators</code></a></td>
+<td><code>list</code></td>
+<td>Returns a paginated list of indicators</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuidindicators"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators</code></a></td>
+<td><code>list</code></td>
+<td>Returns a paginated list of indicators</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventstags"><code>/accounts/{account_id}/cloudforce-one/events/tags</code></a></td>
+<td><code>list</code></td>
+<td>Returns a paginated list of tags</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventstagscategoriesactors"><code>/accounts/{account_id}/cloudforce-one/events/tags/categories/actors</code></a></td>
+<td><code>list</code></td>
+<td>Returns a paginated list of known Actors. Non-CFONE callers receive the public projection documented by this schema</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</code></a></td>
+<td><code>load</code></td>
+<td>Returns edges, optional hydrated entities, counts, and pagination</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventstagstag_uuid"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the tag</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns whether the relationship was deleted</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventstagstag_uuid"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the uuid of the deleted tag</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated relationship</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventstagstag_uuid"><code>/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated tag</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">tags, err := client.Tag(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(tags)
+tag, err := client.Tag(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(tag)
+created, err := client.Tag(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;activeDuration_annotated&quot;: map[string]any{}, &quot;actorCategory_annotated&quot;: map[string]any{}, &quot;attributionOrganization_annotated&quot;: map[string]any{}, &quot;motive_annotated&quot;: map[string]any{}, &quot;opsecLevel_annotated&quot;: map[string]any{}, &quot;originCountryISO_annotated&quot;: map[string]any{}, &quot;priority_annotated&quot;: map[string]any{}, &quot;sophisticationLevel_annotated&quot;: map[string]any{}, &quot;uuid&quot;: &quot;example&quot;, &quot;value&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Tag(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;rel_uuid&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Tag(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local tags, err = client:Tag():list({ account_id = &quot;example&quot; })
+local tag, err = client:Tag():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:Tag():create({ account_id = &quot;example&quot;, activeDuration_annotated = {}, actorCategory_annotated = {}, attributionOrganization_annotated = {}, motive_annotated = {}, opsecLevel_annotated = {}, originCountryISO_annotated = {}, priority_annotated = {}, sophisticationLevel_annotated = {}, uuid = &quot;example&quot;, value = &quot;example&quot; })
+local updated, err = client:Tag():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, rel_uuid = &quot;example&quot; })
+local removed, err = client:Tag():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$tags = $client-&gt;Tag()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$tag = $client-&gt;Tag()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;Tag()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;activeDuration_annotated&quot; =&gt; [], &quot;actorCategory_annotated&quot; =&gt; [], &quot;attributionOrganization_annotated&quot; =&gt; [], &quot;motive_annotated&quot; =&gt; [], &quot;opsecLevel_annotated&quot; =&gt; [], &quot;originCountryISO_annotated&quot; =&gt; [], &quot;priority_annotated&quot; =&gt; [], &quot;sophisticationLevel_annotated&quot; =&gt; [], &quot;uuid&quot; =&gt; &quot;example&quot;, &quot;value&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Tag()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;rel_uuid&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Tag()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">tags = client.Tag().list({&quot;account_id&quot;: &quot;example&quot;})
+tag = client.Tag().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.Tag().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;activeDuration_annotated&quot;: {}, &quot;actorCategory_annotated&quot;: {}, &quot;attributionOrganization_annotated&quot;: {}, &quot;motive_annotated&quot;: {}, &quot;opsecLevel_annotated&quot;: {}, &quot;originCountryISO_annotated&quot;: {}, &quot;priority_annotated&quot;: {}, &quot;sophisticationLevel_annotated&quot;: {}, &quot;uuid&quot;: &quot;example&quot;, &quot;value&quot;: &quot;example&quot; })
+updated = client.Tag().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;rel_uuid&quot;: &quot;example&quot;})
+client.Tag().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">tags = client.Tag.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+tag = client.Tag.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.Tag.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;activeDuration_annotated&quot; =&gt; {}, &quot;actorCategory_annotated&quot; =&gt; {}, &quot;attributionOrganization_annotated&quot; =&gt; {}, &quot;motive_annotated&quot; =&gt; {}, &quot;opsecLevel_annotated&quot; =&gt; {}, &quot;originCountryISO_annotated&quot; =&gt; {}, &quot;priority_annotated&quot; =&gt; {}, &quot;sophisticationLevel_annotated&quot; =&gt; {}, &quot;uuid&quot; =&gt; &quot;example&quot;, &quot;value&quot; =&gt; &quot;example&quot; })
+updated = client.Tag.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;rel_uuid&quot; =&gt; &quot;example&quot; })
+client.Tag.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const tags = await client.Tag().list({ account_id: &quot;example&quot; })
+const tag = await client.Tag().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.Tag().create({ account_id: &quot;example&quot;, activeDuration_annotated: {}, actorCategory_annotated: {}, attributionOrganization_annotated: {}, motive_annotated: {}, opsecLevel_annotated: {}, originCountryISO_annotated: {}, priority_annotated: {}, sophisticationLevel_annotated: {}, uuid: &quot;example&quot;, value: &quot;example&quot; })
+const updated = await client.Tag().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, rel_uuid: &quot;example&quot; })
+await client.Tag().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Active Duration</td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Active Duration Annotated</td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Actor Category</td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Actor Category Annotated</td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Alias Group Names</td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Alias Group Names Internal</td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }).</td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Attribution Organization</td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Attribution Organization Annotated</td>
+</tr>
+<tr>
+<td><code>categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Category Name</td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Tag type (category) UUID.</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Date of discovery (ISO YYYY-MM-DD).</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>External Reference Links</td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }).</td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>External References Annotated</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }).</td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Internal Description</td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Last Seen</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Updated metadata.</td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Motive</td>
+</tr>
+<tr>
+<td><code>motive_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Motive Annotated</td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Opsec Level</td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Opsec Level Annotated</td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3).</td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Origin Country Iso Annotated</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Priority</td>
+</tr>
+<tr>
+<td><code>priority_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Priority Annotated</td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Sophistication Level</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Sophistication Level Annotated</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Updated relationship type.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Updated At</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uuid</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Value</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Version</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</h3>
+<p>Operation ID: <code>post_TagRelationshipCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Confidence score 0–100.</td>
+</tr>
+<tr>
+<td><code>datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset UUID where the relationship row will be stored (locates the Indicators DO).</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Arbitrary JSON metadata.</td>
+</tr>
+<tr>
+<td><code>targetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>UUID of the target entity.</td>
+</tr>
+<tr>
+<td><code>targetType</code></td>
+<td><code>enum: event, indicator</code></td>
+<td>Yes</td>
+<td>Target type. &quot;tag&quot; is not allowed (tag↔tag relationships are not supported).</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Relationship type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-the-created-relationship" class="status" data-status="2xx">200: Returns the created relationship</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventstagscreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/tags/create</h3>
+<p>Operation ID: <code>post_TagCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Tag type (category) UUID. Optional, when present, <code>properties</code> is validated against this category's schema. When absent, the tag is typeless and properties are accepted free-form.</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10). Optional.</td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Date of discovery (ISO YYYY-MM-DD). Optional.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Structured metadata blob. Optional. When <code>categoryUuid</code> is given, validated against this category's schema on write. When typeless, accepted free-form. Use <code>&amp;#123;&amp;#125;</code> for a tag with no custom data.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking. Optional. Allowed values: red, amber, amber-strict, green, clear, purple, amber+strict.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-the-created-tag" class="status" data-status="2xx">200: Returns the created tag</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3). Normalized to uppercase on read. Null when stored value is blank/whitespace.</td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.value</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values. Null when the tag has no custom fields.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_idtagstag_uuidindicators" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators</h3>
+<p>Operation ID: <code>get_DatasetTagIndicatorsList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>indicatorType</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>relatedEvent</code> | <code>query</code> | <code>array of string</code> | No | Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter. |
+| <code>search</code> | <code>query</code> | <code>array of object</code> | No | Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Multiple conditions are AND'd together. Max 10 conditions per request. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-indicators" class="status" data-status="2xx">200: Returns a paginated list of indicators</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>indicators</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>indicators[].updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-1" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventstagstag_uuidindicators" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators</h3>
+<p>Operation ID: <code>get_TagIndicatorsList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |
+| <code>datasetIds</code> | <code>query</code> | <code>array of string</code> | No | Dataset UUIDs to scope to (repeat the param for multiple), or one standalone scope: 'all'/'*', 'analytics' for isAnalytics=true datasets, or 'operational' for isAnalytics=false datasets. Analytics datasets do not expose tag associations, so 'analytics' returns an empty result. Omit to search all readable datasets. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>indicatorType</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>relatedEvent</code> | <code>query</code> | <code>array of string</code> | No | Filter indicators by related event UUID(s). Multiple UUIDs can be provided by repeating the parameter. |
+| <code>search</code> | <code>query</code> | <code>array of object</code> | No | Structured search as a JSON array of {field, op, value} objects. Searchable fields: value, indicatorType. Multiple conditions are AND'd together. Max 10 conditions per request. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-indicators-1" class="status" data-status="2xx">200: Returns a paginated list of indicators</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>indicators</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].createdAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].datasetId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The dataset ID this indicator belongs to. Included in list responses.</td>
+</tr>
+<tr>
+<td><code>indicators[].indicatorType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO 8601 date of the related event. Null for legacy relationships created before event-date tracking was added.</td>
+</tr>
+<tr>
+<td><code>indicators[].relatedEvents[].eventId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>The UUID of the tag category, or null when the tag is uncategorized.</td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tags[].value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].tlp</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Traffic Light Protocol designation. UPPERCASE. Possible values: CLEAR, GREEN, AMBER, AMBER-STRICT, RED, PURPLE. Null when not set.</td>
+</tr>
+<tr>
+<td><code>indicators[].updatedAt</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>indicators[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-2" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request-1" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventstags" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/tags</h3>
+<p>Operation ID: <code>get_TagList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>string</code> | No | Free-text substring match on tag value AND custom-field properties. Searches case-insensitively inside both <code>Tag.value</code> and the serialized <code>Tag.properties</code> JSON blob (keys, values, and annotation metadata like confidence/tlp are all searchable). Same serialized-text tradeoff as <code>aliasGroupNames</code>, substrings can cross JSON boundaries. |
+| <code>categoryUuid</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>filters</code> | <code>query</code> | <code>array of object</code> | No | Structured filters as a JSON array of {field, op, value} objects. Searchable fields: uuid, value, categoryName, description, dateOfDiscovery, tlp, confidence, actorCategory, motive, attributionOrganization, originCountryISO, aliases, externalReferences, opsecLevel, sophisticationLevel, activeDuration, priority, lastSeen, aliasGroupNames. Operators: equals, not, contains, startsWith, endsWith, gt, lt, gte, lte, like, in, find. Use 'in' for bulk OR within a single field, for example filters=[{&quot;field&quot;:&quot;originCountryISO&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;IR&quot;,&quot;CN&quot;]}]. Multiple entries are AND-joined. Max 10 entries per request, max 100 values per 'in'. Per-field notes: <code>uuid</code> accepts only 'equals' and 'in' (other operators throw ValidationError), matched against the canonical lowercase storage but callers may pass either case (the server lowercases before comparison); index-backed by the column's UNIQUE constraint and intended for batched UUID → tag resolution. <code>originCountryISO</code> uses its B-tree index for equals/not/in. <code>priority</code> uses its B-tree index for numeric comparisons. Other string columns (<code>actorCategory</code>, <code>motive</code>, etc.) are case-insensitive and unindexed; current catalog size makes this a non-issue. <code>endsWith</code> and <code>aliasGroupNames</code> contains/like are leading-wildcard scans and slow on large result sets. <code>aliasGroupNames</code> matches on the JSON-encoded text, so substrings can cross alias boundaries (a search for &quot;apt28&quot; will also match &quot;apt280&quot; if both appear in the same tag's alias list). |
+| <code>cache</code> | <code>query</code> | <code>enum: from-graph</code> | No | Cache strategy. 'from-graph' serves results from the graph-node KV cache when all requested UUIDs are cached; falls back to normal path on partial/zero hit. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-tags" class="status" data-status="2xx">200: Returns a paginated list of tags</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].activeDuration</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].activeDuration_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].activeDuration_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].activeDuration_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].actorCategory</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].actorCategory_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].actorCategory_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].actorCategory_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].actorCategory_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].attributionOrganization</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].attributionOrganization_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].attributionOrganization_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].attributionOrganization_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].attributionOrganization_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>tags[].createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>tags[].internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].motive</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].motive_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].motive_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].motive_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].motive_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].opsecLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].opsecLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].opsecLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].opsecLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].opsecLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3). Normalized to uppercase on read. Null when stored value is blank/whitespace.</td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].priority</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].priority_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].priority_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].priority_annotated.value</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values. Null when the tag has no custom fields.</td>
+</tr>
+<tr>
+<td><code>tags[].sophisticationLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].sophisticationLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].sophisticationLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].sophisticationLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].sophisticationLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>tags[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].version</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-4" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventstagscategoriesactors" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/tags/categories/actors</h3>
+<p>Operation ID: <code>get_TaggedActorList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>value</code> | <code>query</code> | <code>string</code> | No | Free-text substring match on actor name (Tag.value). |
+| <code>filters</code> | <code>query</code> | <code>array of object</code> | No | Structured filters as a JSON array of {field, op, value} objects. Same shape as the events search API. Common use: filter actors by country with filters=[{&quot;field&quot;:&quot;originCountryISO&quot;,&quot;op&quot;:&quot;in&quot;,&quot;value&quot;:[&quot;IR&quot;,&quot;CN&quot;]}]. Country values may be passed as alpha-2, alpha-3, name, or alias (for example &quot;iran&quot;). Max 10 entries per request, max 100 values per 'in'. Non-CFONE callers may only filter on fields that are also public-readable (<code>value</code>, <code>categoryName</code>, <code>aliasGroupNames</code>, <code>originCountryISO</code>); filtering on a redacted field returns 400. Performance notes: <code>originCountryISO</code> uses its B-tree index for equals/in. <code>endsWith</code> and <code>aliasGroupNames</code> contains/like are leading-wildcard scans and slow on large result sets. <code>aliasGroupNames</code> matches on JSON-encoded text, so substrings can cross alias boundaries (&quot;apt28&quot; also matches &quot;apt280&quot; when both appear in the same tag's alias list). |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-known-actors-non-cfone-callers-receive-the-public-projection-documented-by-this-schema" class="status" data-status="2xx">200: Returns a paginated list of known Actors. Non-CFONE callers receive the public projection documented by this schema</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalCount</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>tags[].dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].externalReferences_annotated[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3). Normalized to uppercase on read. Null when stored value is blank/whitespace.</td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].originCountryISO_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values. Null when the tag has no custom fields.</td>
+</tr>
+<tr>
+<td><code>tags[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>tags[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tags[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-5" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationships" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships</h3>
+<p>Operation ID: <code>get_TagRelationshipsList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |
+| <code>datasets</code> | <code>query</code> | <code>array of string</code> | No |  |
+| <code>search</code> | <code>query</code> | <code>array of object</code> | No |  |
+| <code>expand</code> | <code>query</code> | <code>array of string</code> | No |  |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>integer</code> | No |  |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-returns-edges-optional-hydrated-entities-counts-and-pagination" class="status" data-status="2xx">200: Returns edges, optional hydrated entities, counts, and pagination</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.counts</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.entities</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.failedShardCount</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.hasMore</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.hydrationErrors</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.partialResults</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.relationships</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.relationships[].confidence</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Confidence score 0–100, or null.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO 8601 creation timestamp.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset the relationship belongs to.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].entityId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>UUID of the related entity (other end).</td>
+</tr>
+<tr>
+<td><code>result.relationships[].entityType</code></td>
+<td><code>enum: event, indicator, tag</code></td>
+<td>Yes</td>
+<td>Type of the related entity.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].metadata</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Arbitrary JSON metadata, or null.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].relationshipUuid</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td>Relationship UUID (use for PATCH/DELETE).</td>
+</tr>
+<tr>
+<td><code>result.relationships[].type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Relationship type.</td>
+</tr>
+<tr>
+<td><code>result.relationships[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO 8601 last-update timestamp.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-6" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="get-accountsaccount_idcloudforce-oneeventstagstag_uuid" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</h3>
+<p>Operation ID: <code>get_TagDetail</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-returns-the-tag" class="status" data-status="2xx">200: Returns the tag</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3). Normalized to uppercase on read. Null when stored value is blank/whitespace.</td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.value</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values. Null when the tag has no custom fields.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-3" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</h3>
+<p>Operation ID: <code>delete_TagRelationshipDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |
+| <code>rel_uuid</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Relationship UUID. |
+| <code>datasetId</code> | <code>query</code> | <code>string</code> | Yes | Dataset UUID containing the relationship. |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-returns-whether-the-relationship-was-deleted" class="status" data-status="2xx">200: Returns whether the relationship was deleted</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.deleted</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-7" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventstagstag_uuid" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</h3>
+<p>Operation ID: <code>delete_TagDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-returns-the-uuid-of-the-deleted-tag" class="status" data-status="2xx">200: Returns the uuid of the deleted tag</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-8" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-4" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventstagstag_uuidrelationshipsrel_uuid" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}</h3>
+<p>Operation ID: <code>patch_TagRelationshipUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |
+| <code>rel_uuid</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Relationship UUID. |
+| <code>datasetId</code> | <code>query</code> | <code>string</code> | Yes | Dataset UUID containing the relationship. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Updated confidence. null clears it.</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Updated metadata. null clears it.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Updated relationship type.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-returns-the-updated-relationship" class="status" data-status="2xx">200: Returns the updated relationship</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-9" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-not-found" class="status" data-status="4xx">404: Not Found</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventstagstag_uuid" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}</h3>
+<p>Operation ID: <code>patch_TagUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>tag_uuid</code> | <code>path</code> | <code>string</code> | Yes | Tag UUID. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Tag type (category) UUID. When changed, existing <code>properties</code> are re-validated against the new category's schema (400 on mismatch). Set to null to unlink (typeless; properties stop being validated).</td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10). Omit to preserve existing.</td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Date of discovery (ISO YYYY-MM-DD). Omit to preserve existing.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Custom field values blob. When omitted, the existing value is preserved. When provided, performs a shallow per-key merge over the stored value (unmentioned keys are retained). Setting an individual key to null deletes that key. Validation runs against the merged result, so a partial update may omit a schema-required key if the stored value supplies it.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string or object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP marking. Omit to preserve existing. Cannot be cleared to null.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-returns-the-updated-tag" class="status" data-status="2xx">200: Returns the updated tag</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>activeDuration</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>activeDuration_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>actorCategory_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNames</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliasGroupNamesInternal</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured aliases ({ value, confidence 1-10, tlp }). Public: returned to all accounts with per-entry TLP filtering (entries with tlp: purple are removed for non-CFONE accounts).</td>
+</tr>
+<tr>
+<td><code>aliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>aliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>attributionOrganization_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>categoryUuid</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Overall tag confidence (1-10).</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>dateOfDiscovery</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferenceLinks</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Structured external references ({ url, description }). Public: returned to all accounts.</td>
+</tr>
+<tr>
+<td><code>externalReferences[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences[].url</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>externalReferences_annotated[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Internal structured aliases ({ value, confidence 1-10, tlp }). CFONE-only: never returned to non-CFONE accounts.</td>
+</tr>
+<tr>
+<td><code>internalAliases[].confidence</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalAliases[].value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>internalDescription</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastSeen</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>motive_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>opsecLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>ISO country code (alpha-2 or alpha-3). Normalized to uppercase on read. Null when stored value is blank/whitespace.</td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>originCountryISO_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>priority_annotated.value</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Parsed custom field values. Null when the tag has no custom fields.</td>
+</tr>
+<tr>
+<td><code>sophisticationLevel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.confidence</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sophisticationLevel_annotated.value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: red, amber, amber-strict, green, clear, purple, ...</code></td>
+<td>No</td>
+<td>Tag-level TLP handling marking.</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-10" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-5" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

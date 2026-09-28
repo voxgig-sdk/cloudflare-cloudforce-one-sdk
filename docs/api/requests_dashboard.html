@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>RequestsDashboard | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a aria-current="page" href="../api/requests_dashboard.html">RequestsDashboard</a><div class="nav-sections"><a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_typemetadata">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestslegal-responseaccess-check">GET /accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_typeconstants">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_typequota">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_typetypes">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types</a></div>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="requestsdashboard">RequestsDashboard</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_typemetadata"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata</code></a></td>
+<td><code>list</code></td>
+<td>Metadata fields retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestslegal-responseaccess-check"><code>/accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check</code></a></td>
+<td><code>list</code></td>
+<td>Access decision for the JWT user</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_typeconstants"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants</code></a></td>
+<td><code>load</code></td>
+<td>Request constants retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_typequota"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota</code></a></td>
+<td><code>load</code></td>
+<td>Quota information</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_typetypes"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types</code></a></td>
+<td><code>load</code></td>
+<td>Request types listed successfully</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">requests_dashboards, err := client.RequestsDashboard(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(requests_dashboards)
+requests_dashboard, err := client.RequestsDashboard(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(requests_dashboard)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local requests_dashboards, err = client:RequestsDashboard():list({ account_id = &quot;example&quot; })
+local requests_dashboard, err = client:RequestsDashboard():load({ account_id = &quot;example&quot;, project_type = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$requests_dashboards = $client-&gt;RequestsDashboard()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$requests_dashboard = $client-&gt;RequestsDashboard()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">requests_dashboards = client.RequestsDashboard().list({&quot;account_id&quot;: &quot;example&quot;})
+requests_dashboard = client.RequestsDashboard().load({&quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">requests_dashboards = client.RequestsDashboard.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+requests_dashboard = client.RequestsDashboard.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const requests_dashboards = await client.RequestsDashboard().list({ account_id: &quot;example&quot; })
+const requests_dashboard = await client.RequestsDashboard().load({ account_id: &quot;example&quot;, project_type: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created</td>
+</tr>
+<tr>
+<td><code>defaultValue</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Default Value</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>displayOrder</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Display Order</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Always empty on success</td>
+</tr>
+<tr>
+<td><code>fieldLabel</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Field Label</td>
+</tr>
+<tr>
+<td><code>fieldName</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Field Name</td>
+</tr>
+<tr>
+<td><code>fieldType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Field Type</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Always empty on success</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Options</td>
+</tr>
+<tr>
+<td><code>projectType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Project Type</td>
+</tr>
+<tr>
+<td><code>project_type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Project Type</td>
+</tr>
+<tr>
+<td><code>public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Public</td>
+</tr>
+<tr>
+<td><code>request_types</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Request Types</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>sectionID</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Section Id</td>
+</tr>
+<tr>
+<td><code>sectionLabel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Section Label</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated</td>
+</tr>
+<tr>
+<td><code>validation</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Validation</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_typemetadata" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata</h3>
+<p>Operation ID: <code>get_DashboardMetadataFieldList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | Project type |
+| <code>request_type</code> | <code>query</code> | <code>string</code> | No | Filter fields to those applicable to this request type. Fields without request type restrictions are always included. |
+| <code>country</code> | <code>query</code> | <code>string</code> | No | Exclude fields restricted for this alpha-2 country code |</p>
+<h4 id="responses">Responses</h4>
+<h5 id="200-metadata-fields-retrieved-successfully" class="status" data-status="2xx">200: Metadata fields retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].defaultValue</code></td>
+<td><code>string or number or boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].displayOrder</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].fieldLabel</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].fieldName</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].fieldType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].options</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].projectType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].public</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].sectionID</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].sectionLabel</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].updated</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.max</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.maxLength</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.min</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.minLength</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.pattern</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>data[].validation.requiredWhen</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Require this field only when the predicate matches sibling values.</td>
+</tr>
+<tr>
+<td><code>data[].validation.visibility</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Controls which request types and countries this field is shown for.</td>
+</tr>
+<tr>
+<td><code>data[].validation.visibility.exclude_countries</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Hide this field for these alpha-2 country codes. If absent or empty, applies to all countries.</td>
+</tr>
+<tr>
+<td><code>data[].validation.visibility.include_request_types</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Show this field only for these request types. If absent or empty, applies to all request types.</td>
+</tr>
+<tr>
+<td><code>data[].validation.visibleWhen</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Show this field only when the predicate matches sibling values.</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-unauthorized" class="status" data-status="4xx">401: Unauthorized</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestslegal-responseaccess-check" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check</h3>
+<p>Operation ID: <code>get_LegalResponseAccessCheck</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID (used for JWT validation only) |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-access-decision-for-the-jwt-user" class="status" data-status="2xx">200: Access decision for the JWT user</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Always empty on success</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Always empty on success</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.allowed</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>True if the JWT user's email is on the legal-response allowlist</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="401-bad-request" class="status" data-status="4xx">401: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_typeconstants" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants</h3>
+<p>Operation ID: <code>get_RequestConstants</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | Project type |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-request-constants-retrieved-successfully" class="status" data-status="2xx">200: Request constants retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority_token_surcharge</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority_token_surcharge.additionalProperties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.priority_token_surcharge.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.status</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.status.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.status.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.tlp</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.tlp.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.properties.tlp.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.result.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.success</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.success.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_typequota" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota</h3>
+<p>Operation ID: <code>get_RequestQuota</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | RFI project type |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-quota-information" class="status" data-status="2xx">200: Quota information</h5>
+<h5 id="404-project-type-does-not-use-token-billing-or-account-not-found" class="status" data-status="4xx">404: Project type does not use token billing, or account not found</h5>
+<h5 id="422-account-has-an-invalid-anniversary-date" class="status" data-status="4xx">422: Account has an invalid anniversary date</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_typetypes" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types</h3>
+<p>Operation ID: <code>get_DashboardRequestTypesList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>project_type</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-request-types-listed-successfully" class="status" data-status="2xx">200: Request types listed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.project_type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].message_tokens</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].request_tokens</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].response_tokens</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].result</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.request_types[].source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-1">4XX: Client error response</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

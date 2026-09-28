@@ -1,0 +1,135 @@
+{
+  "existing": {
+    "cloudforce_one_rule_preview": {
+      "CLOUDFORCE_ONE_RULE_PREVIEW00": {
+        "commit_message": "sc8",
+        "condition": {},
+        "content": "sca",
+        "created_at": 203,
+        "created_by": "scc",
+        "description": "scd",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULE_PREVIEW00",
+        "is_public": true,
+        "meta": [],
+        "name": "sd2",
+        "namespaces": [],
+        "path": "sd4",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "status": "sd7",
+        "strings": [],
+        "structured_source": "sd9",
+        "updated_at": 218,
+        "updated_by": "sdb",
+        "account_id": "ACCOUNT01",
+        "structured_id": "STRUCTURED01"
+      },
+      "CLOUDFORCE_ONE_RULE_PREVIEW01": {
+        "commit_message": "s190",
+        "condition": {},
+        "content": "s192",
+        "created_at": 403,
+        "created_by": "s194",
+        "description": "s195",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULE_PREVIEW01",
+        "is_public": true,
+        "meta": [],
+        "name": "s19a",
+        "namespaces": [],
+        "path": "s19c",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "status": "s19f",
+        "strings": [],
+        "structured_source": "s1a1",
+        "updated_at": 418,
+        "updated_by": "s1a3",
+        "account_id": "ACCOUNT01",
+        "structured_id": "STRUCTURED01"
+      },
+      "CLOUDFORCE_ONE_RULE_PREVIEW02": {
+        "commit_message": "s258",
+        "condition": {},
+        "content": "s25a",
+        "created_at": 603,
+        "created_by": "s25c",
+        "description": "s25d",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULE_PREVIEW02",
+        "is_public": true,
+        "meta": [],
+        "name": "s262",
+        "namespaces": [],
+        "path": "s264",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "status": "s267",
+        "strings": [],
+        "structured_source": "s269",
+        "updated_at": 618,
+        "updated_by": "s26b",
+        "account_id": "ACCOUNT01",
+        "structured_id": "STRUCTURED01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_rule_preview": {
+      "cloudforce_one_rule_preview_ref01": {
+        "commit_message": "s320",
+        "condition": {},
+        "content": "s322",
+        "created_at": 803,
+        "created_by": "s324",
+        "description": "s325",
+        "enabled": true,
+        "is_public": true,
+        "meta": [],
+        "name": "s32a",
+        "namespaces": [],
+        "path": "s32c",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "status": "s32f",
+        "strings": [],
+        "structured_source": "s331",
+        "updated_at": 818,
+        "updated_by": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/structured/{id}/test": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/rules/structured": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/rules/structured/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/rules/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/rules/structured/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/rules/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "existing": {
+    "country": {
+      "COUNTRY00": {
+        "result": [],
+        "success": "s15",
+        "account_id": "ACCOUNT01"
+      },
+      "COUNTRY01": {
+        "result": [],
+        "success": "s29",
+        "account_id": "ACCOUNT01"
+      },
+      "COUNTRY02": {
+        "result": [],
+        "success": "s3d",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "country": {
+      "country_ref01": {
+        "result": [],
+        "success": "s51"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/events/countries": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

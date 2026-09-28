@@ -1,0 +1,90 @@
+{
+  "existing": {
+    "tag_category": {
+      "TAG_CATEGORY00": {
+        "createdAt": "s46",
+        "description": "s47",
+        "id": "TAG_CATEGORY00",
+        "name": "s49",
+        "schema": [],
+        "updatedAt": "s4b",
+        "uuid": "s4c",
+        "account_id": "ACCOUNT01"
+      },
+      "TAG_CATEGORY01": {
+        "createdAt": "s8c",
+        "description": "s8d",
+        "id": "TAG_CATEGORY01",
+        "name": "s8f",
+        "schema": [],
+        "updatedAt": "s91",
+        "uuid": "s92",
+        "account_id": "ACCOUNT01"
+      },
+      "TAG_CATEGORY02": {
+        "createdAt": "sd2",
+        "description": "sd3",
+        "id": "TAG_CATEGORY02",
+        "name": "sd5",
+        "schema": [],
+        "updatedAt": "sd7",
+        "uuid": "sd8",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "tag_category": {
+      "tag_category_ref01": {
+        "createdAt": "s118",
+        "description": "s119",
+        "name": "s11b",
+        "schema": [],
+        "updatedAt": "s11d",
+        "uuid": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/tags/categories/create": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/tags/categories": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

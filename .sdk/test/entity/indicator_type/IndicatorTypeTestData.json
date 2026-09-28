@@ -1,0 +1,40 @@
+{
+  "existing": {
+    "indicator_type": {
+      "INDICATOR_TYPE00": {
+        "type": "sa",
+        "account_id": "ACCOUNT01",
+        "id": "INDICATOR_TYPE00"
+      },
+      "INDICATOR_TYPE01": {
+        "type": "s14",
+        "account_id": "ACCOUNT01",
+        "id": "INDICATOR_TYPE01"
+      },
+      "INDICATOR_TYPE02": {
+        "type": "s1e",
+        "account_id": "ACCOUNT01",
+        "id": "INDICATOR_TYPE02"
+      }
+    }
+  },
+  "new": {
+    "indicator_type": {
+      "indicator_type_ref01": {
+        "type": "s28"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/events/indicator-types": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/indicatorTypes": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

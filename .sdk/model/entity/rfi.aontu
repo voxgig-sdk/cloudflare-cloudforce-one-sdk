@@ -1,0 +1,640 @@
+# Entity: rfi
+
+main: kit: entity: rfi: {
+
+  alias: field: {}
+
+  fields: {
+    account: {
+      h: "Account"
+      n: "account"
+      r: true
+      t: "`$OBJECT`"
+    }
+    assignee: {
+      h: "Assignee"
+      n: "assignee"
+      r: true
+      sh: "Assignee email"
+      t: "`$STRING`"
+    }
+    completed: {
+      fo: "date-time"
+      h: "Completed"
+      n: "completed"
+      r: true
+      sh: "Completion timestamp"
+      t: "`$STRING`"
+    }
+    created: {
+      fo: "date-time"
+      h: "Created"
+      n: "created"
+      r: true
+      sh: "Creation timestamp"
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      sh: "RFI description (optional)."
+      t: "`$STRING`"
+    }
+    eventId: {
+      h: "Event Id"
+      n: "eventId"
+      r: false
+      sh: "Optional related event ID"
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      sh: "RFI UUID"
+      t: "`$STRING`"
+    }
+    investigation_id: {
+      h: "Investigation Id"
+      n: "investigation_id"
+      r: true
+      sh: "Investigation UUID"
+      t: "`$STRING`"
+    }
+    is_free_request: {
+      h: "Is Free Request"
+      n: "is_free_request"
+      r: true
+      sh: "Whether this is a free request"
+      t: "`$BOOLEAN`"
+    }
+    message_tokens: {
+      h: "Message Tokens"
+      n: "message_tokens"
+      r: true
+      sh: "Total message tokens"
+      t: "`$NUMBER`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Optional metadata fields specific to the RFI type"
+      t: "`$OBJECT`"
+    }
+    pagination: {
+      h: "Pagination"
+      n: "pagination"
+      r: true
+      t: "`$OBJECT`"
+    }
+    priority: {
+      h: "Priority"
+      n: "priority"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Request priority"
+      t: "`$STRING`"
+    }
+    readable_id: {
+      h: "Readable Id"
+      n: "readable_id"
+      r: true
+      sh: "Human-readable ID"
+      t: "`$STRING`"
+    }
+    release_entitlements: {
+      h: "Release Entitlements"
+      n: "release_entitlements"
+      r: true
+      sh: "Release entitlements"
+      t: "`$STRING`"
+    }
+    report_id: {
+      h: "Report Id"
+      n: "report_id"
+      r: true
+      sh: "Report UUID"
+      t: "`$STRING`"
+    }
+    request: {
+      h: "Request"
+      n: "request"
+      r: true
+      t: "`$OBJECT`"
+    }
+    request_type: {
+      h: "Request Type"
+      n: "request_type"
+      r: false
+      sh: "Optional request type for the request"
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$ARRAY`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      sh: "RFI status."
+      t: "`$STRING`"
+    }
+    subtypeId: {
+      h: "Subtype Id"
+      n: "subtypeId"
+      r: false
+      sh: "Optional subtype ID"
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$STRING`"
+    }
+    summary: {
+      h: "Summary"
+      n: "summary"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "RFI summary"
+      t: "`$STRING`"
+    }
+    title: {
+      h: "Title"
+      n: "title"
+      r: false
+      sh: "RFI title (optional)."
+      t: "`$STRING`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "TLP classification"
+      t: "`$STRING`"
+    }
+    tokens: {
+      h: "Tokens"
+      n: "tokens"
+      r: true
+      sh: "Total tokens used"
+      t: "`$NUMBER`"
+    }
+    updated: {
+      fo: "date-time"
+      h: "Updated"
+      n: "updated"
+      r: true
+      sh: "Last update timestamp"
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+    parts: [
+      "project_type"
+      "request_id"
+    ]
+    sep: "/"
+  }
+
+  name: "rfi"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "account_id"
+                or: "account_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "assignee"
+                or: "assignee"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "created_by"
+                or: "created_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "metadata"
+                or: "metadata"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "priority"
+                or: "priority"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "readable_id"
+                or: "readable_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "request_type"
+                or: "request_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "summary"
+                or: "summary"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "tlp"
+                or: "tlp"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}"
+          q: {
+            exist: [
+              "account_id"
+              "assignee"
+              "created_by"
+              "id"
+              "metadata"
+              "order"
+              "order_by"
+              "page"
+              "page_size"
+              "priority"
+              "project_type"
+              "readable_id"
+              "request_type"
+              "search"
+              "status"
+              "summary"
+              "tlp"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

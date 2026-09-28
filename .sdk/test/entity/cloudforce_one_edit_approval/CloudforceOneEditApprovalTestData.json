@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "cloudforce_one_edit_approval": {
+      "CLOUDFORCE_ONE_EDIT_APPROVAL00": {
+        "condition": {},
+        "description": "s51",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EDIT_APPROVAL00",
+        "meta": [],
+        "name": "s55",
+        "status": "s56",
+        "strings": [],
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_EDIT_APPROVAL01": {
+        "condition": {},
+        "description": "sa1",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EDIT_APPROVAL01",
+        "meta": [],
+        "name": "sa5",
+        "status": "sa6",
+        "strings": [],
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      },
+      "CLOUDFORCE_ONE_EDIT_APPROVAL02": {
+        "condition": {},
+        "description": "sf1",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EDIT_APPROVAL02",
+        "meta": [],
+        "name": "sf5",
+        "status": "sf6",
+        "strings": [],
+        "account_id": "ACCOUNT01",
+        "approval_id": "APPROVAL01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_edit_approval": {
+      "cloudforce_one_edit_approval_ref01": {
+        "condition": {},
+        "description": "s141",
+        "enabled": true,
+        "meta": [],
+        "name": "s145",
+        "status": "s146",
+        "strings": []
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

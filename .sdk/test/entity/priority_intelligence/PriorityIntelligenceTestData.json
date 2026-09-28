@@ -1,0 +1,67 @@
+{
+  "existing": {
+    "priority_intelligence": {
+      "PRIORITY_INTELLIGENCE00": {
+        "id": "PRIORITY_INTELLIGENCE00",
+        "labels": [],
+        "priority": 52,
+        "requirement": "s35",
+        "tlp": "s36",
+        "account_id": "ACCOUNT01"
+      },
+      "PRIORITY_INTELLIGENCE01": {
+        "id": "PRIORITY_INTELLIGENCE01",
+        "labels": [],
+        "priority": 102,
+        "requirement": "s67",
+        "tlp": "s68",
+        "account_id": "ACCOUNT01"
+      },
+      "PRIORITY_INTELLIGENCE02": {
+        "id": "PRIORITY_INTELLIGENCE02",
+        "labels": [],
+        "priority": 152,
+        "requirement": "s99",
+        "tlp": "s9a",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "priority_intelligence": {
+      "priority_intelligence_ref01": {
+        "labels": [],
+        "priority": 202,
+        "requirement": "scb",
+        "tlp": "scc"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

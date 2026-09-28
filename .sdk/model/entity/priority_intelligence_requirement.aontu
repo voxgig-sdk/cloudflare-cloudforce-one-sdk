@@ -1,0 +1,689 @@
+# Entity: priority_intelligence_requirement
+
+main: kit: entity: priority_intelligence_requirement: {
+
+  alias: field: {}
+
+  fields: {
+    as_of: {
+      fo: "date-time"
+      h: "As Of"
+      n: "as_of"
+      r: false
+      t: "`$STRING`"
+    }
+    backtest_days: {
+      h: "Backtest Days"
+      n: "backtest_days"
+      r: false
+      t: "`$INTEGER`"
+    }
+    candidate_limit: {
+      h: "Candidate Limit"
+      n: "candidate_limit"
+      r: false
+      t: "`$INTEGER`"
+    }
+    dataset_ids: {
+      h: "Dataset Ids"
+      n: "dataset_ids"
+      r: false
+      t: "`$ARRAY`"
+    }
+    dimension: {
+      h: "Dimension"
+      n: "dimension"
+      r: true
+      t: "`$STRING`"
+    }
+    emerging_min_current_count: {
+      h: "Emerging Min Current Count"
+      n: "emerging_min_current_count"
+      r: false
+      t: "`$INTEGER`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    established_min_absolute_delta: {
+      h: "Established Min Absolute Delta"
+      n: "established_min_absolute_delta"
+      r: false
+      t: "`$INTEGER`"
+    }
+    established_min_prior_count: {
+      h: "Established Min Prior Count"
+      n: "established_min_prior_count"
+      r: false
+      t: "`$INTEGER`"
+    }
+    established_min_relative_delta: {
+      h: "Established Min Relative Delta"
+      n: "established_min_relative_delta"
+      r: false
+      t: "`$NUMBER`"
+    }
+    value: {
+      h: "Value"
+      n: "value"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    window_days: {
+      h: "Window Days"
+      n: "window_days"
+      r: false
+      t: "`$INTEGER`"
+    }
+  }
+
+  name: "priority_intelligence_requirement"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              lit: "backtests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              lit: "evaluations"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "quota"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "enabled"
+                or: "enabled"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 1
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                ex: 20
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests"
+          q: {
+            exist: [
+              "account_id"
+              "enabled"
+              "page"
+              "per_page"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "backtest_id"
+                or: "backtest_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}"
+          q: {
+            exist: [
+              "account_id"
+              "backtest_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              lit: "backtests"
+            }
+            {
+              var: "backtest_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "evaluation_id"
+                or: "evaluation_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}"
+          q: {
+            exist: [
+              "account_id"
+              "evaluation_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              lit: "evaluations"
+            }
+            {
+              var: "evaluation_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "constants"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "interest_id"
+                or: "interest_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}"
+          q: {
+            exist: [
+              "account_id"
+              "interest_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              var: "interest_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "interest_id"
+                or: "interest_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}"
+          q: {
+            exist: [
+              "account_id"
+              "interest_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "priority-intelligence"
+            }
+            {
+              lit: "interests"
+            }
+            {
+              var: "interest_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

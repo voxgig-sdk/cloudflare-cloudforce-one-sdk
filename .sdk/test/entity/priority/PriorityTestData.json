@@ -1,0 +1,81 @@
+{
+  "existing": {
+    "priority": {
+      "PRIORITY00": {
+        "errors": [],
+        "id": "PRIORITY00",
+        "labels": [],
+        "messages": [],
+        "page": 114,
+        "per_page": 115,
+        "priority": 116,
+        "requirement": "s75",
+        "result": "s76",
+        "success": false,
+        "tlp": "s78",
+        "account_id": "ACCOUNT01"
+      },
+      "PRIORITY01": {
+        "errors": [],
+        "id": "PRIORITY01",
+        "labels": [],
+        "messages": [],
+        "page": 224,
+        "per_page": 225,
+        "priority": 226,
+        "requirement": "se3",
+        "result": "se4",
+        "success": false,
+        "tlp": "se6",
+        "account_id": "ACCOUNT01"
+      },
+      "PRIORITY02": {
+        "errors": [],
+        "id": "PRIORITY02",
+        "labels": [],
+        "messages": [],
+        "page": 334,
+        "per_page": 335,
+        "priority": 336,
+        "requirement": "s151",
+        "result": "s152",
+        "success": false,
+        "tlp": "s154",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "priority": {
+      "priority_ref01": {
+        "errors": [],
+        "labels": [],
+        "messages": [],
+        "page": 444,
+        "per_page": 445,
+        "priority": 446,
+        "requirement": "s1bf",
+        "result": "s1c0",
+        "success": false,
+        "tlp": "s1c2"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/requests/priority": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PUT /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

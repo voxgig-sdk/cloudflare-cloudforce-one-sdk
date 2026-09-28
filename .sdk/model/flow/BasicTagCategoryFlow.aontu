@@ -1,0 +1,118 @@
+# BasicTagCategoryFlow
+
+main: kit: flow: BasicTagCategoryFlow:
+{
+  entity: "tag_category",
+  kind: "basic",
+  name: "BasicTagCategoryFlow",
+  step: [
+    {
+      i: {
+        ref: "tag_category_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "tag_category_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "tag_category_ref01",
+        srcdatavar: "tag_category_ref01_data",
+        suffix: "_up0",
+        textfield: "createdAt"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tag_category_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tag_category_ref01",
+        srcdatavar: "tag_category_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tag_category01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-tag_category_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "tag_category_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "tag_category01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "tag_category_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTagCategoryFlow"
+}

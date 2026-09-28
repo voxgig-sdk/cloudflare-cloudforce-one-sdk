@@ -1,0 +1,46 @@
+# BasicCloudforceOneEditApprovalFlow
+
+main: kit: flow: BasicCloudforceOneEditApprovalFlow:
+{
+  entity: "cloudforce_one_edit_approval",
+  kind: "basic",
+  name: "BasicCloudforceOneEditApprovalFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_edit_approval_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        approval_id: "approval01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "cloudforce_one_edit_approval_ref01",
+        srcdatavar: "cloudforce_one_edit_approval_ref01_data",
+        suffix: "_up0",
+        textfield: "description"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_edit_approval_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneEditApprovalFlow"
+}

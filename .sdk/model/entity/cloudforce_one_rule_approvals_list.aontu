@@ -1,0 +1,276 @@
+# Entity: cloudforce_one_rule_approvals_list
+
+main: kit: entity: cloudforce_one_rule_approvals_list: {
+
+  alias: field: {}
+
+  fields: {
+    audit_log_id: {
+      h: "Audit Log Id"
+      n: "audit_log_id"
+      r: true
+      t: "`$NUMBER`"
+    }
+    can_review: {
+      h: "Can Review"
+      n: "can_review"
+      r: true
+      sh: "Whether the authenticated user may approve or reject this pending change."
+      t: "`$BOOLEAN`"
+    }
+    cancelled_at: {
+      h: "Cancelled At"
+      n: "cancelled_at"
+      r: true
+      sh: "Time at which the requester cancelled the approval."
+      t: "`$NUMBER`"
+    }
+    cancelled_by: {
+      h: "Cancelled By"
+      n: "cancelled_by"
+      r: true
+      sh: "Requester who cancelled the pending approval."
+      t: "`$STRING`"
+    }
+    change_description: {
+      h: "Change Description"
+      n: "change_description"
+      r: true
+      t: "`$STRING`"
+    }
+    change_type: {
+      h: "Change Type"
+      n: "change_type"
+      r: true
+      t: "`$STRING`"
+    }
+    commit_message: {
+      h: "Commit Message"
+      n: "commit_message"
+      r: true
+      sh: "The requester supplies this human-readable justification with the change."
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$NUMBER`"
+    }
+    proposed_changes: {
+      h: "Proposed Changes"
+      n: "proposed_changes"
+      r: true
+      sh: "Contains structured proposed rule changes, or null for unresolved persisted data."
+      t: "`$ANY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 0
+      }
+    }
+    rejection_reason: {
+      h: "Rejection Reason"
+      n: "rejection_reason"
+      r: true
+      sh: "The reviewer may supply a reason when rejecting the change."
+      t: "`$STRING`"
+    }
+    requested_at: {
+      h: "Requested At"
+      n: "requested_at"
+      r: true
+      t: "`$NUMBER`"
+    }
+    requested_by: {
+      h: "Requested By"
+      n: "requested_by"
+      r: true
+      t: "`$STRING`"
+    }
+    reviewed_at: {
+      h: "Reviewed At"
+      n: "reviewed_at"
+      r: true
+      t: "`$NUMBER`"
+    }
+    reviewer_scope: {
+      h: "Reviewer Scope"
+      n: "reviewer_scope"
+      r: true
+      sh: "Review policy: general Nomos approvers for default; general approvers or Phishguard for email."
+      t: "`$STRING`"
+    }
+    revision_number: {
+      h: "Revision Number"
+      n: "revision_number"
+      r: true
+      sh: "Revision number within this approval request chain."
+      t: "`$INTEGER`"
+    }
+    rule_id: {
+      fo: "uuid"
+      h: "Rule Id"
+      n: "rule_id"
+      r: true
+      t: "`$STRING`"
+    }
+    rule_name: {
+      h: "Rule Name"
+      n: "rule_name"
+      r: true
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      r: true
+      t: "`$STRING`"
+    }
+    superseded_by_approval_id: {
+      h: "Superseded By Approval Id"
+      n: "superseded_by_approval_id"
+      r: true
+      sh: "Newer approval revision that replaced this approval."
+      t: "`$NUMBER`"
+    }
+    supersedes_approval_id: {
+      h: "Supersedes Approval Id"
+      n: "supersedes_approval_id"
+      r: true
+      sh: "This approval replaces the referenced approval revision."
+      t: "`$NUMBER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "cloudforce_one_rule_approvals_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/rules/approvals"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "create"
+                k: "query"
+                n: "change_type"
+                or: "change_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "true"
+                k: "query"
+                n: "latest_only"
+                or: "latest_only"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: "email"
+                k: "query"
+                n: "reviewer_scope"
+                or: "reviewer_scope"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "rule_id"
+                or: "rule_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: [
+                  "pending"
+                  "rejected"
+                ]
+                k: "query"
+                n: "status"
+                or: "status"
+                r: false
+                t: "`$ANY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/rules/approvals"
+          q: {
+            exist: [
+              "account_id"
+              "change_type"
+              "latest_only"
+              "limit"
+              "offset"
+              "reviewer_scope"
+              "rule_id"
+              "status"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              lit: "approvals"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.approvals`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

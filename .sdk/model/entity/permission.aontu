@@ -1,0 +1,387 @@
+# Entity: permission
+
+main: kit: entity: permission: {
+
+  alias: field: {}
+
+  fields: {
+    createdAt: {
+      fo: "date-time"
+      h: "Created At"
+      n: "createdAt"
+      r: true
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: false
+      t: "`$STRING`"
+    }
+    resourceId: {
+      h: "Resource Id"
+      n: "resourceId"
+      r: false
+      sh: "The resource ID this permission applies to account_id or group_id"
+      t: "`$STRING`"
+    }
+    resourceType: {
+      h: "Resource Type"
+      n: "resourceType"
+      r: true
+      t: "`$STRING`"
+    }
+    role: {
+      h: "Role"
+      n: "role"
+      r: true
+      t: "`$STRING`"
+    }
+    subjectId: {
+      h: "Subject Id"
+      n: "subjectId"
+      r: true
+      t: "`$STRING`"
+    }
+    subjectType: {
+      h: "Subject Type"
+      n: "subjectType"
+      r: true
+      t: "`$STRING`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    updatedAt: {
+      fo: "date-time"
+      h: "Updated At"
+      n: "updatedAt"
+      r: true
+      t: "`$STRING`"
+    }
+    uuid: {
+      h: "Uuid"
+      n: "uuid"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "permission"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "permissions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "permissions"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "12345678-1234-1234-1234-1234567890ab"
+                k: "param"
+                n: "id"
+                or: "grant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              grant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "permissions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "12345678-1234-1234-1234-1234567890ab"
+                k: "param"
+                n: "id"
+                or: "grant_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              grant_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "permissions"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.dataset")]
+  ]
+
+}

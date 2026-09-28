@@ -1,0 +1,26 @@
+# BasicCloudforceOneEmailRulesListFlow
+
+main: kit: flow: BasicCloudforceOneEmailRulesListFlow:
+{
+  entity: "cloudforce_one_email_rules_list",
+  kind: "basic",
+  name: "BasicCloudforceOneEmailRulesListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_email_rules_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneEmailRulesListFlow"
+}

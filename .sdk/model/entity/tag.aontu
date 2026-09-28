@@ -1,0 +1,1309 @@
+# Entity: tag
+
+main: kit: entity: tag: {
+
+  alias: field: {}
+
+  fields: {
+    activeDuration: {
+      h: "Active Duration"
+      n: "activeDuration"
+      r: false
+      t: "`$STRING`"
+    }
+    activeDuration_annotated: {
+      h: "Active Duration Annotated"
+      n: "activeDuration_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    actorCategory: {
+      h: "Actor Category"
+      n: "actorCategory"
+      r: false
+      t: "`$STRING`"
+    }
+    actorCategory_annotated: {
+      h: "Actor Category Annotated"
+      n: "actorCategory_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    aliasGroupNames: {
+      h: "Alias Group Names"
+      n: "aliasGroupNames"
+      r: false
+      t: "`$ARRAY`"
+    }
+    aliasGroupNamesInternal: {
+      h: "Alias Group Names Internal"
+      n: "aliasGroupNamesInternal"
+      r: false
+      t: "`$ARRAY`"
+    }
+    aliases: {
+      h: "Aliases"
+      n: "aliases"
+      r: false
+      sh: "Structured aliases ({ value, confidence 1-10, tlp })."
+      t: "`$ARRAY`"
+    }
+    attributionOrganization: {
+      h: "Attribution Organization"
+      n: "attributionOrganization"
+      r: false
+      t: "`$STRING`"
+    }
+    attributionOrganization_annotated: {
+      h: "Attribution Organization Annotated"
+      n: "attributionOrganization_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    categoryName: {
+      h: "Category Name"
+      n: "categoryName"
+      r: false
+      t: "`$STRING`"
+    }
+    categoryUuid: {
+      h: "Category Uuid"
+      n: "categoryUuid"
+      r: false
+      sh: "Tag type (category) UUID."
+      t: "`$STRING`"
+    }
+    confidence: {
+      h: "Confidence"
+      n: "confidence"
+      r: false
+      sh: "Overall tag confidence (1-10)."
+      t: "`$INTEGER`"
+    }
+    createdAt: {
+      h: "Created At"
+      n: "createdAt"
+      r: false
+      t: "`$STRING`"
+    }
+    dateOfDiscovery: {
+      h: "Date Of Discovery"
+      n: "dateOfDiscovery"
+      r: false
+      sh: "Date of discovery (ISO YYYY-MM-DD)."
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: false
+      t: "`$STRING`"
+    }
+    externalReferenceLinks: {
+      h: "External Reference Links"
+      n: "externalReferenceLinks"
+      r: false
+      t: "`$ARRAY`"
+    }
+    externalReferences: {
+      h: "External References"
+      n: "externalReferences"
+      r: false
+      sh: "Structured external references ({ url, description })."
+      t: "`$ARRAY`"
+    }
+    externalReferences_annotated: {
+      h: "External References Annotated"
+      n: "externalReferences_annotated"
+      r: false
+      t: "`$ARRAY`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: false
+      t: "`$STRING`"
+    }
+    internalAliases: {
+      h: "Internal Aliases"
+      n: "internalAliases"
+      r: false
+      sh: "Internal structured aliases ({ value, confidence 1-10, tlp })."
+      t: "`$ARRAY`"
+    }
+    internalDescription: {
+      h: "Internal Description"
+      n: "internalDescription"
+      r: false
+      t: "`$STRING`"
+    }
+    lastSeen: {
+      h: "Last Seen"
+      n: "lastSeen"
+      r: false
+      t: "`$STRING`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: false
+      sh: "Updated metadata."
+      t: "`$OBJECT`"
+    }
+    motive: {
+      h: "Motive"
+      n: "motive"
+      r: false
+      t: "`$STRING`"
+    }
+    motive_annotated: {
+      h: "Motive Annotated"
+      n: "motive_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    opsecLevel: {
+      h: "Opsec Level"
+      n: "opsecLevel"
+      r: false
+      t: "`$STRING`"
+    }
+    opsecLevel_annotated: {
+      h: "Opsec Level Annotated"
+      n: "opsecLevel_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    originCountryISO: {
+      h: "Origin Country Iso"
+      n: "originCountryISO"
+      r: false
+      sh: "ISO country code (alpha-2 or alpha-3)."
+      t: "`$STRING`"
+    }
+    originCountryISO_annotated: {
+      h: "Origin Country Iso Annotated"
+      n: "originCountryISO_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    priority: {
+      h: "Priority"
+      n: "priority"
+      r: false
+      t: "`$NUMBER`"
+    }
+    priority_annotated: {
+      h: "Priority Annotated"
+      n: "priority_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    properties: {
+      h: "Properties"
+      n: "properties"
+      r: false
+      sh: "Parsed custom field values."
+      t: "`$OBJECT`"
+    }
+    sophisticationLevel: {
+      h: "Sophistication Level"
+      n: "sophisticationLevel"
+      r: false
+      t: "`$STRING`"
+    }
+    sophisticationLevel_annotated: {
+      h: "Sophistication Level Annotated"
+      n: "sophisticationLevel_annotated"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      r: false
+      sh: "Tag-level TLP handling marking."
+      t: "`$STRING`"
+    }
+    type: {
+      h: "Type"
+      n: "type"
+      r: false
+      sh: "Updated relationship type."
+      t: "`$STRING`"
+    }
+    updatedAt: {
+      h: "Updated At"
+      n: "updatedAt"
+      r: false
+      t: "`$STRING`"
+    }
+    uuid: {
+      h: "Uuid"
+      n: "uuid"
+      r: true
+      t: "`$STRING`"
+    }
+    value: {
+      h: "Value"
+      n: "value"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    version: {
+      h: "Version"
+      n: "version"
+      r: false
+      t: "`$NUMBER`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "tag"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships"
+          q: {
+            "$action": "relationship"
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relationships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/events/tags/create"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/create"
+          q: {
+            "$action": "create"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              lit: "create"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "indicator_type"
+                or: "indicator_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "related_event"
+                or: "related_event"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators"
+          q: {
+            "$action": "indicator"
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+              "indicator_type"
+              "page"
+              "page_size"
+              "related_event"
+              "search"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "dataset"
+            }
+            {
+              var: "dataset_id"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "indicators"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "indicator_type"
+                or: "indicator_type"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "related_event"
+                or: "related_event"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators"
+          q: {
+            "$action": "indicator"
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+              "indicator_type"
+              "page"
+              "page_size"
+              "related_event"
+              "search"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "indicators"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/tags"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cache"
+                or: "cache"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "category_uuid"
+                or: "category_uuid"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags"
+          q: {
+            exist: [
+              "account_id"
+              "cache"
+              "category_uuid"
+              "filter"
+              "page"
+              "page_size"
+              "search"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/tags/categories/actors"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "filter"
+                or: "filter"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                k: "query"
+                n: "value"
+                or: "value"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/categories/actors"
+          q: {
+            exist: [
+              "account_id"
+              "filter"
+              "page"
+              "page_size"
+              "value"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              lit: "categories"
+            }
+            {
+              lit: "actors"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "cursor"
+                or: "cursor"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "dataset"
+                or: "dataset"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                k: "query"
+                n: "expand"
+                or: "expand"
+                r: false
+                t: "`$ARRAY`"
+              }
+              {
+                ex: 25
+                k: "query"
+                n: "page_size"
+                or: "page_size"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships"
+          q: {
+            "$action": "relationship"
+            exist: [
+              "account_id"
+              "cursor"
+              "dataset"
+              "expand"
+              "id"
+              "page_size"
+              "search"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relationships"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "rel_uuid"
+                or: "rel_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+              "rel_uuid"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relationships"
+            }
+            {
+              var: "rel_uuid"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "rel_uuid"
+                or: "rel_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "dataset_id"
+                or: "dataset_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}"
+          q: {
+            exist: [
+              "account_id"
+              "dataset_id"
+              "id"
+              "rel_uuid"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+            {
+              lit: "relationships"
+            }
+            {
+              var: "rel_uuid"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "tag_uuid"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+            ]
+          }
+          r: {
+            param: {
+              tag_uuid: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "events"
+            }
+            {
+              lit: "tags"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.dataset")]
+  ]
+
+}

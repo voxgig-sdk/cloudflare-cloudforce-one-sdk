@@ -1,0 +1,32 @@
+# BasicTargetIndustryFlow
+
+main: kit: flow: BasicTargetIndustryFlow:
+{
+  entity: "target_industry",
+  kind: "basic",
+  name: "BasicTargetIndustryFlow",
+  step: [
+    {
+      i: {
+        ref: "target_industry_ref01",
+        srcdatavar: "target_industry_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "target_industry01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-target_industry_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicTargetIndustryFlow"
+}

@@ -1,0 +1,70 @@
+<?php
+declare(strict_types=1);
+
+// CloudflareCloudforceOne SDK utility registration
+
+require_once __DIR__ . '/../core/UtilityType.php';
+require_once __DIR__ . '/Clean.php';
+require_once __DIR__ . '/Done.php';
+require_once __DIR__ . '/MakeError.php';
+require_once __DIR__ . '/FeatureAdd.php';
+require_once __DIR__ . '/FeatureHook.php';
+require_once __DIR__ . '/FeatureInit.php';
+require_once __DIR__ . '/Fetcher.php';
+require_once __DIR__ . '/MakeFetchDef.php';
+require_once __DIR__ . '/MakeContext.php';
+require_once __DIR__ . '/MakeOptions.php';
+require_once __DIR__ . '/MakeRequest.php';
+require_once __DIR__ . '/MakeResponse.php';
+require_once __DIR__ . '/MakeResult.php';
+require_once __DIR__ . '/MakePoint.php';
+require_once __DIR__ . '/MakeSpec.php';
+require_once __DIR__ . '/MakeUrl.php';
+require_once __DIR__ . '/Param.php';
+require_once __DIR__ . '/PrepareAuth.php';
+require_once __DIR__ . '/PrepareBody.php';
+require_once __DIR__ . '/Graphql.php';
+require_once __DIR__ . '/PrepareHeaders.php';
+require_once __DIR__ . '/PrepareMethod.php';
+require_once __DIR__ . '/PrepareParams.php';
+require_once __DIR__ . '/PreparePath.php';
+require_once __DIR__ . '/PrepareQuery.php';
+require_once __DIR__ . '/ResultBasic.php';
+require_once __DIR__ . '/ResultBody.php';
+require_once __DIR__ . '/ResultHeaders.php';
+require_once __DIR__ . '/TransformRequest.php';
+require_once __DIR__ . '/TransformResponse.php';
+
+CloudflareCloudforceOneUtility::setRegistrar(function (CloudflareCloudforceOneUtility $u): void {
+    $u->clean = [CloudflareCloudforceOneClean::class, 'call'];
+    $u->done = [CloudflareCloudforceOneDone::class, 'call'];
+    $u->make_error = [CloudflareCloudforceOneMakeError::class, 'call'];
+    $u->feature_add = [CloudflareCloudforceOneFeatureAdd::class, 'call'];
+    $u->feature_hook = [CloudflareCloudforceOneFeatureHook::class, 'call'];
+    $u->feature_init = [CloudflareCloudforceOneFeatureInit::class, 'call'];
+    $u->fetcher = [CloudflareCloudforceOneFetcher::class, 'call'];
+    $u->make_fetch_def = [CloudflareCloudforceOneMakeFetchDef::class, 'call'];
+    $u->make_context = [CloudflareCloudforceOneMakeContext::class, 'call'];
+    $u->make_options = [CloudflareCloudforceOneMakeOptions::class, 'call'];
+    $u->make_request = [CloudflareCloudforceOneMakeRequest::class, 'call'];
+    $u->make_response = [CloudflareCloudforceOneMakeResponse::class, 'call'];
+    $u->make_result = [CloudflareCloudforceOneMakeResult::class, 'call'];
+    $u->make_point = [CloudflareCloudforceOneMakePoint::class, 'call'];
+    $u->make_spec = [CloudflareCloudforceOneMakeSpec::class, 'call'];
+    $u->make_url = [CloudflareCloudforceOneMakeUrl::class, 'call'];
+    $u->param = [CloudflareCloudforceOneParam::class, 'call'];
+    $u->prepare_auth = [CloudflareCloudforceOnePrepareAuth::class, 'call'];
+    $u->prepare_body = [CloudflareCloudforceOnePrepareBody::class, 'call'];
+    $u->prepare_headers = [CloudflareCloudforceOnePrepareHeaders::class, 'call'];
+    $u->prepare_method = [CloudflareCloudforceOnePrepareMethod::class, 'call'];
+    $u->prepare_params = [CloudflareCloudforceOnePrepareParams::class, 'call'];
+    $u->prepare_path = [CloudflareCloudforceOnePreparePath::class, 'call'];
+    $u->prepare_query = [CloudflareCloudforceOnePrepareQuery::class, 'call'];
+    $u->graphql_body = [CloudflareCloudforceOneGraphql::class, 'body'];
+    $u->graphql_errors = [CloudflareCloudforceOneGraphql::class, 'errors'];
+    $u->result_basic = [CloudflareCloudforceOneResultBasic::class, 'call'];
+    $u->result_body = [CloudflareCloudforceOneResultBody::class, 'call'];
+    $u->result_headers = [CloudflareCloudforceOneResultHeaders::class, 'call'];
+    $u->transform_request = [CloudflareCloudforceOneTransformRequest::class, 'call'];
+    $u->transform_response = [CloudflareCloudforceOneTransformResponse::class, 'call'];
+});

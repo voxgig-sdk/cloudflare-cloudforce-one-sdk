@@ -1,0 +1,133 @@
+{
+  "existing": {
+    "priority_intelligence_requirement": {
+      "PRIORITY_INTELLIGENCE_REQUIREMENT00": {
+        "as_of": "s78",
+        "backtest_days": 121,
+        "candidate_limit": 122,
+        "dataset_ids": [],
+        "dimension": "s7c",
+        "emerging_min_current_count": 125,
+        "enabled": true,
+        "established_min_absolute_delta": 127,
+        "established_min_prior_count": 128,
+        "established_min_relative_delta": 129,
+        "value": "s82",
+        "window_days": 131,
+        "account_id": "ACCOUNT01",
+        "backtest_id": "BACKTEST01",
+        "evaluation_id": "EVALUATION01",
+        "interest_id": "INTEREST01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENT00"
+      },
+      "PRIORITY_INTELLIGENCE_REQUIREMENT01": {
+        "as_of": "sf0",
+        "backtest_days": 241,
+        "candidate_limit": 242,
+        "dataset_ids": [],
+        "dimension": "sf4",
+        "emerging_min_current_count": 245,
+        "enabled": true,
+        "established_min_absolute_delta": 247,
+        "established_min_prior_count": 248,
+        "established_min_relative_delta": 249,
+        "value": "sfa",
+        "window_days": 251,
+        "account_id": "ACCOUNT01",
+        "backtest_id": "BACKTEST01",
+        "evaluation_id": "EVALUATION01",
+        "interest_id": "INTEREST01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENT01"
+      },
+      "PRIORITY_INTELLIGENCE_REQUIREMENT02": {
+        "as_of": "s168",
+        "backtest_days": 361,
+        "candidate_limit": 362,
+        "dataset_ids": [],
+        "dimension": "s16c",
+        "emerging_min_current_count": 365,
+        "enabled": true,
+        "established_min_absolute_delta": 367,
+        "established_min_prior_count": 368,
+        "established_min_relative_delta": 369,
+        "value": "s172",
+        "window_days": 371,
+        "account_id": "ACCOUNT01",
+        "backtest_id": "BACKTEST01",
+        "evaluation_id": "EVALUATION01",
+        "interest_id": "INTEREST01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENT02"
+      }
+    }
+  },
+  "new": {
+    "priority_intelligence_requirement": {
+      "priority_intelligence_requirement_ref01": {
+        "as_of": "s1e0",
+        "backtest_days": 481,
+        "candidate_limit": 482,
+        "dataset_ids": [],
+        "dimension": "s1e4",
+        "emerging_min_current_count": 485,
+        "enabled": true,
+        "established_min_absolute_delta": 487,
+        "established_min_prior_count": 488,
+        "established_min_relative_delta": 489,
+        "value": "s1ea",
+        "window_days": 491
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

@@ -1,0 +1,202 @@
+
+
+import Path from 'node:path'
+import * as Fs from 'node:fs'
+
+import { test, describe, afterEach } from 'node:test'
+import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
+
+
+import { CloudflareCloudforceOneSDK, BaseFeature, stdutil } from '../../..'
+
+import {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  loadEnvLocal,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+  maybeSkipControl,
+} from '../../utility'
+
+
+loadEnvLocal(__dirname + '/../../../.env.local')
+
+
+describe('CategoryEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = CloudflareCloudforceOneSDK.test()
+    const ent = testsdk.Category()
+    assert(null != ent)
+  })
+
+
+  test('basic', async (t) => {
+
+    const live = 'TRUE' === process.env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE
+    for (const op of ['create', 'list', 'update', 'load', 'remove']) {
+      if (!live && maybeSkipControl(t, 'entityOp', 'category.' + op, live)) return
+    }
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"id":{"a":true,"h":"Id","n":"id","r":false,"t":"`$STRING`","key$":"id","index$":0},"killChain":{"a":true,"h":"Kill Chain","n":"killChain","op":{"create":{"req":false,"type":"`$NUMBER`"},"update":{"req":false,"type":"`$NUMBER`"}},"r":true,"t":"`$NUMBER`","key$":"killChain","index$":1},"mitreAttack":{"a":true,"h":"Mitre Attack","n":"mitreAttack","r":false,"t":"`$ARRAY`","key$":"mitreAttack","index$":2},"mitreCapec":{"a":true,"h":"Mitre Capec","n":"mitreCapec","r":false,"t":"`$ARRAY`","key$":"mitreCapec","index$":3},"name":{"a":true,"h":"Name","n":"name","op":{"create":{"req":false,"type":"`$STRING`"},"update":{"req":false,"type":"`$STRING`"}},"r":true,"t":"`$STRING`","key$":"name","index$":4},"shortname":{"a":true,"h":"Shortname","n":"shortname","r":false,"t":"`$STRING`","key$":"shortname","index$":5},"uuid":{"a":true,"h":"Uuid","n":"uuid","r":true,"t":"`$STRING`","key$":"uuid","index$":6}},"id":{"field":"id","name":"id"},"name":"category","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"category_id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","q":{"exist":["account_id","category_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"event-categories"},{"lit":"by-id"},{"var":"category_id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/events/categories/{category_id}","q":{"exist":["account_id","id"]},"r":{"param":{"category_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/events/categories/create","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/events/categories/create","q":{"$action":"create","exist":["account_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"lit":"create"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2}],"key$":"create"},"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/events/categories","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}],"query":[{"a":true,"k":"query","n":"dataset_id","or":"dataset_id","r":false,"t":"`$ARRAY`","index$":0}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/events/categories","q":{"exist":["account_id","dataset_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/events/categories/catalog","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/events/categories/catalog","q":{"$action":"catalog","exist":["account_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"lit":"catalog"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"list"},"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"category_id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","q":{"exist":["account_id","category_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"event-categories"},{"lit":"by-id"},{"var":"category_id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/events/categories/{category_id}","q":{"exist":["account_id","id"]},"r":{"param":{"category_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"load"},"remove":{"input":"data","name":"remove","points":[{"a":true,"co":{"id":"DELETE /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"category_id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"DELETE","o":"/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","q":{"exist":["account_id","category_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"event-categories"},{"lit":"by-id"},{"var":"category_id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"DELETE","o":"/accounts/{account_id}/cloudforce-one/events/categories/{category_id}","q":{"exist":["account_id","id"]},"r":{"param":{"category_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"remove"},"update":{"input":"data","name":"update","points":[{"a":true,"co":{"id":"PATCH /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"category_id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"PATCH","o":"/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}","q":{"exist":["account_id","category_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"event-categories"},{"lit":"by-id"},{"var":"category_id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"category_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"PATCH","o":"/accounts/{account_id}/cloudforce-one/events/categories/{category_id}","q":{"exist":["account_id","id"]},"r":{"param":{"category_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"events"},{"lit":"categories"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"update"}},"relations":{"ancestors":[]},"key$":"category","name__orig":"category","Name":"Category","name_":"category","name-":"category","NAME":"CATEGORY","index$":3}, {"active":true,"entity":"category","key$":"BasicCategoryFlow","kind":"basic","name":"BasicCategoryFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"category_ref01"},"m":{"account_id":"account01"},"o":"create","s":[],"v":[],"index$":0},{"a":true,"d":{},"i":{},"m":{"account_id":"account01"},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"category_ref01"}}],"index$":1},{"a":true,"d":{"account_id":"account01"},"i":{"ref":"category_ref01","srcdatavar":"category_ref01_data","suffix":"_up0","textfield":"name"},"m":{},"o":"update","s":[{"apply":"TextFieldMark","def":{"mark":"Mark01-category_ref01"}}],"v":[],"index$":2},{"a":true,"d":{},"i":{"ref":"category_ref01","srcdatavar":"category_ref01_data","suffix":"_dt0"},"m":{"account_id":"account01","id":"category01"},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-category_ref01"}}],"index$":3},{"a":true,"d":{},"i":{"ref":"category_ref01","suffix":"_rm0"},"m":{"account_id":"account01","id":"category01"},"o":"remove","s":[],"v":[],"index$":4},{"a":true,"d":{},"i":{"suffix":"_rt0"},"m":{"account_id":"account01"},"o":"list","s":[],"v":[{"apply":"ItemNotExists","def":{"ref":"category_ref01"}}],"index$":5}]}, 'Category', {"POST /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"killChain":{"type":"number","key$":"killChain"},"mitreAttack":{"type":"array","items":{"example":"T1234","type":"string"},"key$":"mitreAttack"},"mitreCapec":{"type":"array","items":{"example":"123","type":"string"},"key$":"mitreCapec"},"name":{"type":"string","example":"name","key$":"name"},"shortname":{"type":"string","example":"shortname","key$":"shortname"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"POST /accounts/{account_id}/cloudforce-one/events/categories/{category_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"killChain":{"type":"number","key$":"killChain"},"mitreAttack":{"type":"array","items":{"example":"T1234","type":"string"},"key$":"mitreAttack"},"mitreCapec":{"type":"array","items":{"example":"123","type":"string"},"key$":"mitreCapec"},"name":{"type":"string","example":"name","key$":"name"},"shortname":{"type":"string","example":"shortname","key$":"shortname"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"POST /accounts/{account_id}/cloudforce-one/events/categories/create":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"killChain":{"type":"number"},"mitreAttack":{"type":"array","items":{"example":"T1234","type":"string"}},"mitreCapec":{"type":"array","items":{"example":"123","type":"string"}},"name":{"type":"string","example":"name"},"shortname":{"type":"string","example":"shortname"}},"required":["name","killChain"]}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0}]},"GET /accounts/{account_id}/cloudforce-one/events/categories":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"datasetIds","in":"query","description":"Array of dataset IDs to query categories from. If not provided, uses the default dataset.","schema":{"description":"Array of dataset IDs to query categories from. If not provided, uses the default dataset.","type":"array","items":{"type":"string"}},"index$":1}]},"GET /accounts/{account_id}/cloudforce-one/events/categories/catalog":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0}]},"GET /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"GET /accounts/{account_id}/cloudforce-one/events/categories/{category_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"DELETE /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"DELETE /accounts/{account_id}/cloudforce-one/events/categories/{category_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"PATCH /accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"killChain":{"type":"number","key$":"killChain"},"mitreAttack":{"type":"array","items":{"example":"T1234","type":"string"},"key$":"mitreAttack"},"mitreCapec":{"type":"array","items":{"example":"123","type":"string"},"key$":"mitreCapec"},"name":{"type":"string","example":"name","key$":"name"},"shortname":{"type":"string","example":"shortname","key$":"shortname"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]},"PATCH /accounts/{account_id}/cloudforce-one/events/categories/{category_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"killChain":{"type":"number","key$":"killChain"},"mitreAttack":{"type":"array","items":{"example":"T1234","type":"string"},"key$":"mitreAttack"},"mitreCapec":{"type":"array","items":{"example":"123","type":"string"},"key$":"mitreCapec"},"name":{"type":"string","example":"name","key$":"name"},"shortname":{"type":"string","example":"shortname","key$":"shortname"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID.","required":true,"schema":{"description":"Account ID.","type":"string"},"index$":0},{"name":"category_id","in":"path","description":"Category UUID.","required":true,"schema":{"description":"Category UUID.","type":"string","format":"uuid"},"index$":1}]}})
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+
+    // CREATE
+    const category_ref01_ent = client.Category()
+    let category_ref01_data = setup.data.new.category['category_ref01']
+    category_ref01_data['account_id'] = setup.idmap['account01']
+
+    category_ref01_data = (await category_ref01_ent.create(category_ref01_data)).data()
+    assert(null != category_ref01_data.id)
+
+
+    // LIST
+    const category_ref01_match: any = {}
+    category_ref01_match['account_id'] = setup.idmap['account01']
+
+    const category_ref01_list = (await category_ref01_ent.list(category_ref01_match)).map((e: any) => e.data())
+
+    assert(!isempty(select(category_ref01_list, { id: category_ref01_data.id })))
+
+
+    // UPDATE
+    const category_ref01_data_up0: any = {}
+    category_ref01_data_up0.id = category_ref01_data.id
+    category_ref01_data_up0 ['account_id'] = setup.idmap['account_id']
+
+    const category_ref01_markdef_up0 = { name: 'name', value: 'Mark01-category_ref01_' + setup.now }
+    ;(category_ref01_data_up0 as any)[category_ref01_markdef_up0.name] = category_ref01_markdef_up0.value
+
+    const category_ref01_resdata_up0 = (await category_ref01_ent.update(category_ref01_data_up0)).data()
+    assert(category_ref01_resdata_up0.id === category_ref01_data_up0.id)
+
+    assert((category_ref01_resdata_up0 as any)[category_ref01_markdef_up0.name] === category_ref01_markdef_up0.value)
+
+
+    // LOAD
+    const category_ref01_match_dt0: any = {}
+    category_ref01_match_dt0.id = category_ref01_data.id
+    const category_ref01_data_dt0 = (await category_ref01_ent.load(category_ref01_match_dt0)).data()
+    assert(category_ref01_data_dt0.id === category_ref01_data.id)
+
+
+    // REMOVE
+    const category_ref01_match_rm0: any = { id: category_ref01_data.id }
+    await category_ref01_ent.remove(category_ref01_match_rm0)
+  
+
+    // LIST
+    const category_ref01_match_rt0: any = {}
+    category_ref01_match_rt0['account_id'] = setup.idmap['account01']
+
+    const category_ref01_list_rt0 = (await category_ref01_ent.list(category_ref01_match_rt0)).map((e: any) => e.data())
+
+    assert(isempty(select(category_ref01_list_rt0, { id: category_ref01_data.id })))
+
+
+  })
+})
+
+
+
+function basicSetup(extra?: any) {
+  // TODO: fix test def options
+  const options: any = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname, 
+      '../../../../.sdk/test/entity/category/CategoryTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = CloudflareCloudforceOneSDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['category01','category02','category03','account01'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_CATEGORY_ENTID': idmap,
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE': 'FALSE',
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_EXPLAIN': 'FALSE',
+    'CLOUDFLARE_CLOUDFORCE_ONE_APIKEY': '',
+  })
+
+  idmap = env['CLOUDFLARE_CLOUDFORCE_ONE_TEST_CATEGORY_ENTID']
+
+  const live = 'TRUE' === env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE
+
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['CLOUDFLARE_CLOUDFORCE_ONE_TEST_CATEGORY_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new CloudflareCloudforceOneSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+        apikey: env.CLOUDFLARE_CLOUDFORCE_ONE_APIKEY,
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when the
+      // last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey
+      // and server values above and handed the SDK undefined. Harmless
+      // while there was nothing in that object; not harmless now.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

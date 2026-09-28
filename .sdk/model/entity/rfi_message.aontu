@@ -1,0 +1,493 @@
+# Entity: rfi_message
+
+main: kit: entity: rfi_message: {
+
+  alias: field: {}
+
+  fields: {
+    attachment_asset_ids: {
+      h: "Attachment Asset Ids"
+      n: "attachment_asset_ids"
+      r: false
+      t: "`$ARRAY`"
+    }
+    attachments: {
+      h: "Attachments"
+      n: "attachments"
+      r: true
+      t: "`$ARRAY`"
+    }
+    author_id: {
+      h: "Author Id"
+      n: "author_id"
+      r: false
+      t: "`$STRING`"
+    }
+    author_name: {
+      h: "Author Name"
+      n: "author_name"
+      r: false
+      t: "`$STRING`"
+    }
+    content: {
+      h: "Content"
+      n: "content"
+      r: true
+      t: "`$STRING`"
+    }
+    created: {
+      h: "Created"
+      n: "created"
+      r: true
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    is_cloudflare_team: {
+      h: "Is Cloudflare Team"
+      n: "is_cloudflare_team"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    is_published: {
+      h: "Is Published"
+      n: "is_published"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    publish: {
+      h: "Publish"
+      n: "publish"
+      op: {
+        update: {
+          req: true
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    published: {
+      h: "Published"
+      n: "published"
+      r: true
+      t: "`$STRING`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    updated: {
+      h: "Updated"
+      n: "updated"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "rfi_message"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "idempotency_key"
+                or: "idempotency_key"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new"
+          q: {
+            exist: [
+              "account_id"
+              "idempotency_key"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "messages"
+            }
+            {
+              lit: "new"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "1"
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "10"
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages"
+          q: {
+            exist: [
+              "account_id"
+              "page"
+              "per_page"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "messages"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "message_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          r: {
+            param: {
+              message_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "messages"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            header: [
+              {
+                k: "header"
+                n: "idempotency_key"
+                or: "idempotency_key"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "id"
+                or: "message_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "idempotency_key"
+              "project_type"
+              "request_id"
+            ]
+          }
+          r: {
+            param: {
+              message_id: "id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "messages"
+            }
+            {
+              var: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.message`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

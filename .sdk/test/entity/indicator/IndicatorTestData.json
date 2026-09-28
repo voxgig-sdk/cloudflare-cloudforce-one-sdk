@@ -1,0 +1,178 @@
+{
+  "existing": {
+    "indicator": {
+      "INDICATOR00": {
+        "completeness": {},
+        "confidence": 201,
+        "createdAt": "sca",
+        "datasetId": "scb",
+        "description": "scc",
+        "durableObjectId": "scd",
+        "id": "INDICATOR00",
+        "indicatorType": "scf",
+        "indicators": {},
+        "message": "sd1",
+        "metadata": {},
+        "pagination": {},
+        "relatedEvents": [],
+        "sources": [],
+        "tags": [],
+        "tlp": "sd7",
+        "type": "sd8",
+        "updatedAt": "sd9",
+        "uuid": "sda",
+        "value": "sdb",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "rel_uuid": "REL_UUID01"
+      },
+      "INDICATOR01": {
+        "completeness": {},
+        "confidence": 401,
+        "createdAt": "s192",
+        "datasetId": "s193",
+        "description": "s194",
+        "durableObjectId": "s195",
+        "id": "INDICATOR01",
+        "indicatorType": "s197",
+        "indicators": {},
+        "message": "s199",
+        "metadata": {},
+        "pagination": {},
+        "relatedEvents": [],
+        "sources": [],
+        "tags": [],
+        "tlp": "s19f",
+        "type": "s1a0",
+        "updatedAt": "s1a1",
+        "uuid": "s1a2",
+        "value": "s1a3",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "rel_uuid": "REL_UUID01"
+      },
+      "INDICATOR02": {
+        "completeness": {},
+        "confidence": 601,
+        "createdAt": "s25a",
+        "datasetId": "s25b",
+        "description": "s25c",
+        "durableObjectId": "s25d",
+        "id": "INDICATOR02",
+        "indicatorType": "s25f",
+        "indicators": {},
+        "message": "s261",
+        "metadata": {},
+        "pagination": {},
+        "relatedEvents": [],
+        "sources": [],
+        "tags": [],
+        "tlp": "s267",
+        "type": "s268",
+        "updatedAt": "s269",
+        "uuid": "s26a",
+        "value": "s26b",
+        "account_id": "ACCOUNT01",
+        "dataset_id": "DATASET01",
+        "rel_uuid": "REL_UUID01"
+      }
+    }
+  },
+  "new": {
+    "indicator": {
+      "indicator_ref01": {
+        "completeness": {},
+        "confidence": 801,
+        "createdAt": "s322",
+        "datasetId": "s323",
+        "description": "s324",
+        "durableObjectId": "s325",
+        "indicatorType": "s327",
+        "indicators": {},
+        "message": "s329",
+        "metadata": {},
+        "pagination": {},
+        "relatedEvents": [],
+        "sources": [],
+        "tags": [],
+        "tlp": "s32f",
+        "type": "s330",
+        "updatedAt": "s331",
+        "uuid": "s332",
+        "value": "s333"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/indicators/aggregate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/indicators": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

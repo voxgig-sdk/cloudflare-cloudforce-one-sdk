@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "cloudforce_one_delete_all": {
+      "CLOUDFORCE_ONE_DELETE_ALL00": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_DELETE_ALL00"
+      },
+      "CLOUDFORCE_ONE_DELETE_ALL01": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_DELETE_ALL01"
+      },
+      "CLOUDFORCE_ONE_DELETE_ALL02": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_DELETE_ALL02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_delete_all": {
+      "cloudforce_one_delete_all_ref01": {}
+    }
+  },
+  "requests": {
+    "DELETE /accounts/{account_id}/cloudforce-one/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

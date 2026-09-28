@@ -1,0 +1,248 @@
+# Entity: cloudforce_one_rules_preview_list
+
+main: kit: entity: cloudforce_one_rules_preview_list: {
+
+  alias: field: {}
+
+  fields: {
+    content: {
+      h: "Content"
+      n: "content"
+      r: false
+      t: "`$STRING`"
+    }
+    created_at: {
+      h: "Created At"
+      n: "created_at"
+      r: true
+      t: "`$NUMBER`"
+    }
+    created_by: {
+      h: "Created By"
+      n: "created_by"
+      r: true
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      r: true
+      t: "`$STRING`"
+    }
+    enabled: {
+      h: "Enabled"
+      n: "enabled"
+      r: true
+      sh: "Whether this rule is active for dice consumers."
+      t: "`$BOOLEAN`"
+    }
+    id: {
+      fo: "uuid"
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$STRING`"
+    }
+    is_public: {
+      h: "Is Public"
+      n: "is_public"
+      r: true
+      sh: "Whether this rule is visible to other internal accounts."
+      t: "`$BOOLEAN`"
+    }
+    meta: {
+      h: "Meta"
+      n: "meta"
+      r: false
+      sh: "Structured meta entries for the rule (parsed from content plus any request-supplied meta)."
+      t: "`$ARRAY`"
+      union: {
+        branches: 3
+        count: 1
+        depth: 3
+      }
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    namespaces: {
+      h: "Namespaces"
+      n: "namespaces"
+      r: true
+      t: "`$ARRAY`"
+    }
+    path: {
+      h: "Path"
+      n: "path"
+      r: true
+      t: "`$STRING`"
+    }
+    pending_approval_id: {
+      h: "Pending Approval Id"
+      n: "pending_approval_id"
+      r: true
+      sh: "ID of an open approval workflow targeting this rule, or null if none is pending."
+      t: "`$NUMBER`"
+    }
+    pending_change: {
+      h: "Pending Change"
+      n: "pending_change"
+      r: true
+      sh: "Proposed update or deletion awaiting approval."
+      t: "`$OBJECT`"
+    }
+    structured_source: {
+      h: "Structured Source"
+      n: "structured_source"
+      r: false
+      sh: "Original JSON payload for rules created via the structured rules API."
+      t: "`$STRING`"
+    }
+    updated_at: {
+      h: "Updated At"
+      n: "updated_at"
+      r: true
+      t: "`$NUMBER`"
+    }
+    updated_by: {
+      h: "Updated By"
+      n: "updated_by"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "cloudforce_one_rules_preview_list"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/rules"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                ex: "true"
+                k: "query"
+                n: "is_public"
+                or: "is_public"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: 50
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: [
+                  "yara/workers"
+                  "yara/dns_record"
+                ]
+                k: "query"
+                n: "namespace"
+                or: "namespace"
+                r: false
+                t: "`$ANY`"
+              }
+              {
+                ex: 0
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$NUMBER`"
+              }
+              {
+                ex: [
+                  "yara/workers"
+                ]
+                k: "query"
+                n: "path"
+                or: "path"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "true"
+                k: "query"
+                n: "recursive"
+                or: "recursive"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "malicious"
+                k: "query"
+                n: "search"
+                or: "search"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/rules"
+          q: {
+            exist: [
+              "account_id"
+              "is_public"
+              "limit"
+              "namespace"
+              "offset"
+              "path"
+              "recursive"
+              "search"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.rules`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

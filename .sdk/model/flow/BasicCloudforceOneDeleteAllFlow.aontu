@@ -1,0 +1,9 @@
+# BasicCloudforceOneDeleteAllFlow
+
+main: kit: flow: BasicCloudforceOneDeleteAllFlow:
+{
+  entity: "cloudforce_one_delete_all",
+  kind: "basic",
+  name: "BasicCloudforceOneDeleteAllFlow",
+  "key$": "BasicCloudforceOneDeleteAllFlow"
+}

@@ -1,0 +1,38 @@
+# BasicPriorityIntelligenceRequirementsPirFlow
+
+main: kit: flow: BasicPriorityIntelligenceRequirementsPirFlow:
+{
+  entity: "priority_intelligence_requirements__pir",
+  kind: "basic",
+  name: "BasicPriorityIntelligenceRequirementsPirFlow",
+  step: [
+    {
+      i: {
+        ref: "priority_intelligence_requirements__pir_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "priority_intelligence_requirements__pir_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPriorityIntelligenceRequirementsPirFlow"
+}

@@ -1,0 +1,344 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Priority | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a aria-current="page" href="../api/priority.html">Priority</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onerequestspriority">POST /accounts/{account_id}/cloudforce-one/requests/priority</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onerequestsprioritypriority_id">GET /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onerequestsprioritypriority_id">PUT /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</a></div>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="priority">Priority</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onerequestspriority"><code>/accounts/{account_id}/cloudforce-one/requests/priority</code></a></td>
+<td><code>create</code></td>
+<td>List priorities response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onerequestsprioritypriority_id"><code>/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</code></a></td>
+<td><code>load</code></td>
+<td>Get priority response</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onerequestsprioritypriority_id"><code>/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</code></a></td>
+<td><code>update</code></td>
+<td>Update priority response</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">priority, err := client.Priority(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(priority)
+created, err := client.Priority(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;labels&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;page&quot;: 1, &quot;per_page&quot;: 1, &quot;priority&quot;: 1, &quot;requirement&quot;: &quot;example&quot;, &quot;success&quot;: true, &quot;tlp&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Priority(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local priority, err = client:Priority():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:Priority():create({ account_id = &quot;example&quot;, errors = {}, labels = {}, messages = {}, page = 1, per_page = 1, priority = 1, requirement = &quot;example&quot;, success = true, tlp = &quot;example&quot; })
+local updated, err = client:Priority():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, errors = {} })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$priority = $client-&gt;Priority()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;Priority()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;labels&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;page&quot; =&gt; 1, &quot;per_page&quot; =&gt; 1, &quot;priority&quot; =&gt; 1, &quot;requirement&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true, &quot;tlp&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Priority()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; []]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">priority = client.Priority().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.Priority().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;labels&quot;: [], &quot;messages&quot;: [], &quot;page&quot;: 1, &quot;per_page&quot;: 1, &quot;priority&quot;: 1, &quot;requirement&quot;: &quot;example&quot;, &quot;success&quot;: True, &quot;tlp&quot;: &quot;example&quot; })
+updated = client.Priority().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">priority = client.Priority.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.Priority.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;labels&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;page&quot; =&gt; 1, &quot;per_page&quot; =&gt; 1, &quot;priority&quot; =&gt; 1, &quot;requirement&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; true, &quot;tlp&quot; =&gt; &quot;example&quot; })
+updated = client.Priority.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [] })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const priority = await client.Priority().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.Priority().create({ account_id: &quot;example&quot;, errors: [], labels: [], messages: [], page: 1, per_page: 1, priority: 1, requirement: &quot;example&quot;, success: true, tlp: &quot;example&quot; })
+const updated = await client.Priority().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, errors: [] })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>labels</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>List of labels.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Page number of results.</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of results per page.</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Priority.</td>
+</tr>
+<tr>
+<td><code>requirement</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Requirement.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>any</code></td>
+<td>No</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the API call was successful.</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>The CISA defined Traffic Light Protocol (TLP).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onerequestspriority" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/requests/priority</h3>
+<p>Operation ID: <code>cloudforce-one-priority-list</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Page number of results.</td>
+</tr>
+<tr>
+<td><code>per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Number of results per page.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-list-priorities-response" class="status" data-status="2xx">200: List priorities response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-priorities-response-failure">4XX: List priorities response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onerequestsprioritypriority_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</h3>
+<p>Operation ID: <code>cloudforce-one-priority-get</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>priority_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-get-priority-response" class="status" data-status="2xx">200: Get priority response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-get-priority-response-failure">4XX: Get priority response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onerequestsprioritypriority_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}</h3>
+<p>Operation ID: <code>cloudforce-one-priority-update</code>.</p>
+<p>Authentication: API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>priority_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>labels</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>List of labels.</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Priority.</td>
+</tr>
+<tr>
+<td><code>requirement</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Requirement.</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, amber, amber-strict, green, red</code></td>
+<td>Yes</td>
+<td>The CISA defined Traffic Light Protocol (TLP).</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-update-priority-response" class="status" data-status="2xx">200: Update priority response</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-priority-response-failure">4XX: Update priority response failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

@@ -1,0 +1,59 @@
+{
+  "existing": {
+    "cloudforce_one_validation": {
+      "CLOUDFORCE_ONE_VALIDATION00": {
+        "content": "s46",
+        "error": "s47",
+        "excludeRuleId": "s48",
+        "name": "s49",
+        "namespaces": [],
+        "path": "s4b",
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_VALIDATION00"
+      },
+      "CLOUDFORCE_ONE_VALIDATION01": {
+        "content": "s8c",
+        "error": "s8d",
+        "excludeRuleId": "s8e",
+        "name": "s8f",
+        "namespaces": [],
+        "path": "s91",
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_VALIDATION01"
+      },
+      "CLOUDFORCE_ONE_VALIDATION02": {
+        "content": "sd2",
+        "error": "sd3",
+        "excludeRuleId": "sd4",
+        "name": "sd5",
+        "namespaces": [],
+        "path": "sd7",
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_VALIDATION02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_validation": {
+      "cloudforce_one_validation_ref01": {
+        "content": "s118",
+        "error": "s119",
+        "excludeRuleId": "s11a",
+        "name": "s11b",
+        "namespaces": [],
+        "path": "s11d",
+        "valid": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

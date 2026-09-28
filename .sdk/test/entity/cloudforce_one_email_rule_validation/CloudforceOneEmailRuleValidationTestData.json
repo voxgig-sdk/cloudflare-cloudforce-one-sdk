@@ -1,0 +1,75 @@
+{
+  "existing": {
+    "cloudforce_one_email_rule_validation": {
+      "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION00": {
+        "compiled_yara": "s6e",
+        "condition": {},
+        "description": "s70",
+        "enabled": false,
+        "error": "s72",
+        "existing_rule_id": "EXISTING_RULE01",
+        "meta": [],
+        "name": "s75",
+        "status": "s76",
+        "strings": [],
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION00"
+      },
+      "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION01": {
+        "compiled_yara": "sdc",
+        "condition": {},
+        "description": "sde",
+        "enabled": false,
+        "error": "se0",
+        "existing_rule_id": "EXISTING_RULE01",
+        "meta": [],
+        "name": "se3",
+        "status": "se4",
+        "strings": [],
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION01"
+      },
+      "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION02": {
+        "compiled_yara": "s14a",
+        "condition": {},
+        "description": "s14c",
+        "enabled": false,
+        "error": "s14e",
+        "existing_rule_id": "EXISTING_RULE01",
+        "meta": [],
+        "name": "s151",
+        "status": "s152",
+        "strings": [],
+        "valid": true,
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_EMAIL_RULE_VALIDATION02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_email_rule_validation": {
+      "cloudforce_one_email_rule_validation_ref01": {
+        "compiled_yara": "s1b8",
+        "condition": {},
+        "description": "s1ba",
+        "enabled": false,
+        "error": "s1bc",
+        "existing_rule_id": "EXISTING_RULE01",
+        "meta": [],
+        "name": "s1bf",
+        "status": "s1c0",
+        "strings": [],
+        "valid": true
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules/structured/validate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

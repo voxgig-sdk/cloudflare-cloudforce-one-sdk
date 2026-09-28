@@ -1,0 +1,26 @@
+# BasicCloudforceOneRulesPreviewListFlow
+
+main: kit: flow: BasicCloudforceOneRulesPreviewListFlow:
+{
+  entity: "cloudforce_one_rules_preview_list",
+  kind: "basic",
+  name: "BasicCloudforceOneRulesPreviewListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_rules_preview_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneRulesPreviewListFlow"
+}

@@ -1,0 +1,92 @@
+# Entity: cloudforce_one_tree_node
+
+main: kit: entity: cloudforce_one_tree_node: {
+
+  alias: field: {}
+
+  fields: {
+    children: {
+      h: "Children"
+      n: "children"
+      r: true
+      t: "`$ARRAY`"
+    }
+    count: {
+      h: "Count"
+      n: "count"
+      r: true
+      t: "`$NUMBER`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    path: {
+      h: "Path"
+      n: "path"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "cloudforce_one_tree_node"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/rules/tree"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/rules/tree"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              lit: "tree"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.tree`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

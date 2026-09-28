@@ -1,0 +1,33 @@
+{
+  "existing": {
+    "collections_item": {
+      "COLLECTIONS_ITEM00": {
+        "account_id": "ACCOUNT01",
+        "collection_id": "COLLECTION01",
+        "id": "COLLECTIONS_ITEM00"
+      },
+      "COLLECTIONS_ITEM01": {
+        "account_id": "ACCOUNT01",
+        "collection_id": "COLLECTION01",
+        "id": "COLLECTIONS_ITEM01"
+      },
+      "COLLECTIONS_ITEM02": {
+        "account_id": "ACCOUNT01",
+        "collection_id": "COLLECTION01",
+        "id": "COLLECTIONS_ITEM02"
+      }
+    }
+  },
+  "new": {
+    "collections_item": {
+      "collections_item_ref01": {}
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

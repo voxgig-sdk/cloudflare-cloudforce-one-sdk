@@ -1,0 +1,95 @@
+{
+  "existing": {
+    "dataset": {
+      "DATASET00": {
+        "deletedAt": "s46",
+        "id": "DATASET00",
+        "indicatorWriteMode": "s48",
+        "isAnalytics": false,
+        "isPublic": true,
+        "name": "s4b",
+        "uuid": "s4c",
+        "account_id": "ACCOUNT01"
+      },
+      "DATASET01": {
+        "deletedAt": "s8c",
+        "id": "DATASET01",
+        "indicatorWriteMode": "s8e",
+        "isAnalytics": false,
+        "isPublic": true,
+        "name": "s91",
+        "uuid": "s92",
+        "account_id": "ACCOUNT01"
+      },
+      "DATASET02": {
+        "deletedAt": "sd2",
+        "id": "DATASET02",
+        "indicatorWriteMode": "sd4",
+        "isAnalytics": false,
+        "isPublic": true,
+        "name": "sd7",
+        "uuid": "sd8",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "dataset": {
+      "dataset_ref01": {
+        "deletedAt": "s118",
+        "indicatorWriteMode": "s11a",
+        "isAnalytics": false,
+        "isPublic": true,
+        "name": "s11d",
+        "uuid": "s11e"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/dataset/create": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "POST /accounts/{account_id}/cloudforce-one/events/datasets/populate": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

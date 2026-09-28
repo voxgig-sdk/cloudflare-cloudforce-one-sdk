@@ -1,0 +1,1402 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Rfi | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a aria-current="page" href="../api/rfi.html">Rfi</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2requestsproject_type">POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_type">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id">GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id">PUT /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</a></div>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="rfi">Rfi</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2requestsproject_type"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created RFI</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_type"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</code></a></td>
+<td><code>load</code></td>
+<td>Returns a paginated list of RFIs</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns the RFI details with related data</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id"><code>/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated RFI</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">rfi, err := client.Rfi(nil).Load(map[string]any{&quot;project_type&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(rfi)
+created, err := client.Rfi(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;, &quot;account&quot;: map[string]any{}, &quot;assignee&quot;: &quot;example&quot;, &quot;completed&quot;: &quot;example&quot;, &quot;created&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;investigation_id&quot;: &quot;example&quot;, &quot;is_free_request&quot;: true, &quot;message_tokens&quot;: 1, &quot;pagination&quot;: map[string]any{}, &quot;priority&quot;: &quot;example&quot;, &quot;readable_id&quot;: &quot;example&quot;, &quot;release_entitlements&quot;: &quot;example&quot;, &quot;report_id&quot;: &quot;example&quot;, &quot;request&quot;: map[string]any{}, &quot;result&quot;: []any{}, &quot;status&quot;: &quot;example&quot;, &quot;success&quot;: &quot;example&quot;, &quot;summary&quot;: &quot;example&quot;, &quot;tlp&quot;: &quot;example&quot;, &quot;tokens&quot;: 1, &quot;updated&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Rfi(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local rfi, err = client:Rfi():load({ project_type = &quot;example&quot; })
+local created, err = client:Rfi():create({ account_id = &quot;example&quot;, project_type = &quot;example&quot;, account = {}, assignee = &quot;example&quot;, completed = &quot;example&quot;, created = &quot;example&quot;, id = &quot;example&quot;, investigation_id = &quot;example&quot;, is_free_request = true, message_tokens = 1, pagination = {}, priority = &quot;example&quot;, readable_id = &quot;example&quot;, release_entitlements = &quot;example&quot;, report_id = &quot;example&quot;, request = {}, result = {}, status = &quot;example&quot;, success = &quot;example&quot;, summary = &quot;example&quot;, tlp = &quot;example&quot;, tokens = 1, updated = &quot;example&quot; })
+local updated, err = client:Rfi():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, project_type = &quot;example&quot;, request_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$rfi = $client-&gt;Rfi()-&gt;load([&quot;project_type&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;Rfi()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; [], &quot;assignee&quot; =&gt; &quot;example&quot;, &quot;completed&quot; =&gt; &quot;example&quot;, &quot;created&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;investigation_id&quot; =&gt; &quot;example&quot;, &quot;is_free_request&quot; =&gt; true, &quot;message_tokens&quot; =&gt; 1, &quot;pagination&quot; =&gt; [], &quot;priority&quot; =&gt; &quot;example&quot;, &quot;readable_id&quot; =&gt; &quot;example&quot;, &quot;release_entitlements&quot; =&gt; &quot;example&quot;, &quot;report_id&quot; =&gt; &quot;example&quot;, &quot;request&quot; =&gt; [], &quot;result&quot; =&gt; [], &quot;status&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; &quot;example&quot;, &quot;summary&quot; =&gt; &quot;example&quot;, &quot;tlp&quot; =&gt; &quot;example&quot;, &quot;tokens&quot; =&gt; 1, &quot;updated&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Rfi()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">rfi = client.Rfi().load({&quot;project_type&quot;: &quot;example&quot;})
+created = client.Rfi().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;, &quot;account&quot;: {}, &quot;assignee&quot;: &quot;example&quot;, &quot;completed&quot;: &quot;example&quot;, &quot;created&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;investigation_id&quot;: &quot;example&quot;, &quot;is_free_request&quot;: True, &quot;message_tokens&quot;: 1, &quot;pagination&quot;: {}, &quot;priority&quot;: &quot;example&quot;, &quot;readable_id&quot;: &quot;example&quot;, &quot;release_entitlements&quot;: &quot;example&quot;, &quot;report_id&quot;: &quot;example&quot;, &quot;request&quot;: {}, &quot;result&quot;: [], &quot;status&quot;: &quot;example&quot;, &quot;success&quot;: &quot;example&quot;, &quot;summary&quot;: &quot;example&quot;, &quot;tlp&quot;: &quot;example&quot;, &quot;tokens&quot;: 1, &quot;updated&quot;: &quot;example&quot; })
+updated = client.Rfi().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;project_type&quot;: &quot;example&quot;, &quot;request_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">rfi = client.Rfi.load({ &quot;project_type&quot; =&gt; &quot;example&quot; })
+created = client.Rfi.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot;, &quot;account&quot; =&gt; {}, &quot;assignee&quot; =&gt; &quot;example&quot;, &quot;completed&quot; =&gt; &quot;example&quot;, &quot;created&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;investigation_id&quot; =&gt; &quot;example&quot;, &quot;is_free_request&quot; =&gt; true, &quot;message_tokens&quot; =&gt; 1, &quot;pagination&quot; =&gt; {}, &quot;priority&quot; =&gt; &quot;example&quot;, &quot;readable_id&quot; =&gt; &quot;example&quot;, &quot;release_entitlements&quot; =&gt; &quot;example&quot;, &quot;report_id&quot; =&gt; &quot;example&quot;, &quot;request&quot; =&gt; {}, &quot;result&quot; =&gt; [], &quot;status&quot; =&gt; &quot;example&quot;, &quot;success&quot; =&gt; &quot;example&quot;, &quot;summary&quot; =&gt; &quot;example&quot;, &quot;tlp&quot; =&gt; &quot;example&quot;, &quot;tokens&quot; =&gt; 1, &quot;updated&quot; =&gt; &quot;example&quot; })
+updated = client.Rfi.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;project_type&quot; =&gt; &quot;example&quot;, &quot;request_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const rfi = await client.Rfi().load({ project_type: &quot;example&quot; })
+const created = await client.Rfi().create({ account_id: &quot;example&quot;, project_type: &quot;example&quot;, account: {}, assignee: &quot;example&quot;, completed: &quot;example&quot;, created: &quot;example&quot;, id: &quot;example&quot;, investigation_id: &quot;example&quot;, is_free_request: true, message_tokens: 1, pagination: {}, priority: &quot;example&quot;, readable_id: &quot;example&quot;, release_entitlements: &quot;example&quot;, report_id: &quot;example&quot;, request: {}, result: [], status: &quot;example&quot;, success: &quot;example&quot;, summary: &quot;example&quot;, tlp: &quot;example&quot;, tokens: 1, updated: &quot;example&quot; })
+const updated = await client.Rfi().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, project_type: &quot;example&quot;, request_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Account</td>
+</tr>
+<tr>
+<td><code>assignee</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Assignee email</td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Completion timestamp</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI description (optional).</td>
+</tr>
+<tr>
+<td><code>eventId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional related event ID</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI UUID</td>
+</tr>
+<tr>
+<td><code>investigation_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Investigation UUID</td>
+</tr>
+<tr>
+<td><code>is_free_request</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this is a free request</td>
+</tr>
+<tr>
+<td><code>message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total message tokens</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Optional metadata fields specific to the RFI type</td>
+</tr>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Pagination</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request priority</td>
+</tr>
+<tr>
+<td><code>readable_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable ID</td>
+</tr>
+<tr>
+<td><code>release_entitlements</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Release entitlements</td>
+</tr>
+<tr>
+<td><code>report_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Report UUID</td>
+</tr>
+<tr>
+<td><code>request</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Request</td>
+</tr>
+<tr>
+<td><code>request_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional request type for the request</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI status.</td>
+</tr>
+<tr>
+<td><code>subtypeId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional subtype ID</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI summary</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI title (optional).</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>TLP classification</td>
+</tr>
+<tr>
+<td><code>tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total tokens used</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onev2requestsproject_type" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</h3>
+<p>Operation ID: <code>post_RequestCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | RFI project type |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI description (optional). Defaults to an empty string when omitted.</td>
+</tr>
+<tr>
+<td><code>eventId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional related event ID</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Optional metadata fields specific to the RFI type</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>enum: low, routine, high, urgent, unknown, medium, ...</code></td>
+<td>No</td>
+<td>RFI priority. Four-level projects use <code>low</code>, <code>routine</code>, <code>high</code>, <code>urgent</code>; existing projects retain legacy <code>low</code>-&gt;routine compatibility. <code>medium</code>, <code>critical</code>, and <code>unknown</code> remain accepted legacy aliases. Defaults to <code>routine</code>.</td>
+</tr>
+<tr>
+<td><code>request_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional request type for the request</td>
+</tr>
+<tr>
+<td><code>subtypeId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional subtype ID</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI title (optional). When omitted, the server generates a summary from the request type and readable ID.</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, green, amber, amber-strict, red, purple, ...</code></td>
+<td>No</td>
+<td>Traffic Light Protocol level. Canonical values are <code>clear</code>, <code>green</code>, <code>amber</code>, <code>amber-strict</code>, <code>red</code>, <code>purple</code>. <code>white</code> and <code>amber+strict</code> are accepted input aliases; responses always use the canonical spelling.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="201-returns-the-created-rfi" class="status" data-status="2xx">201: Returns the created RFI</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>account.anniversary</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Account anniversary</td>
+</tr>
+<tr>
+<td><code>account.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account UUID</td>
+</tr>
+<tr>
+<td><code>account.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td><code>assignee</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Assignee email</td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Completion timestamp</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI UUID</td>
+</tr>
+<tr>
+<td><code>investigation_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Investigation UUID</td>
+</tr>
+<tr>
+<td><code>is_free_request</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this is a free request</td>
+</tr>
+<tr>
+<td><code>message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total message tokens</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>enum: unknown, low, routine, medium, high, urgent, ...</code></td>
+<td>Yes</td>
+<td>Request priority</td>
+</tr>
+<tr>
+<td><code>readable_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable ID</td>
+</tr>
+<tr>
+<td><code>release_entitlements</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Release entitlements</td>
+</tr>
+<tr>
+<td><code>report_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Report UUID</td>
+</tr>
+<tr>
+<td><code>request</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request.category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request category</td>
+</tr>
+<tr>
+<td><code>request.message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Message tokens used</td>
+</tr>
+<tr>
+<td><code>request.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request type name</td>
+</tr>
+<tr>
+<td><code>request.request_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Request tokens used</td>
+</tr>
+<tr>
+<td><code>request.response_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Response tokens used</td>
+</tr>
+<tr>
+<td><code>request.result</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Expected result type</td>
+</tr>
+<tr>
+<td><code>request.source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request source</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, submitted, accepted, in_progress, awaiting_customer, awaiting_external, ...</code></td>
+<td>Yes</td>
+<td>RFI status. Project-specific dashboard surfaces may return a narrowed customer-facing vocabulary.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI summary</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, green, amber, red</code></td>
+<td>Yes</td>
+<td>TLP classification</td>
+</tr>
+<tr>
+<td><code>tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total tokens used</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="500-bad-request" class="status" data-status="5xx">500: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_type" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}</h3>
+<p>Operation ID: <code>get_RequestList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | RFI project type |
+| <code>page</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>pageSize</code> | <code>query</code> | <code>number</code> | No |  |
+| <code>status</code> | <code>query</code> | <code>string</code> | No | Status filter. Projects with a narrowed dashboard vocabulary accept only their customer-facing values. |
+| <code>search</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>createdBy</code> | <code>query</code> | <code>string</code> | No | Filter by creator email. NOTE: For the <code>legal-response</code> project type this query parameter is <strong>rejected with HTTP 400</strong>, the server derives the filter from the authenticated user's JWT automatically and does not accept a client-supplied value. Requests to <code>legal-response</code> with no valid JWT identity are rejected with HTTP 401. |
+| <code>assignee</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>requestType</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>priority</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>tlp</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>id</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>readableId</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>summary</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>accountId</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>metadata</code> | <code>query</code> | <code>string</code> | No | JSON string object of metadata filters. Supports two formats: 1) Simple values for exact match (backward compatible): {&quot;status&quot;: &quot;open&quot;} 2) Operator objects for advanced filtering: {&quot;identifiers&quot;: {&quot;operator&quot;: &quot;<code>contains_line</code>&quot;, &quot;value&quot;: &quot;blah.com&quot;}}. Available operators: 'eq' (exact match, default), 'contains' (substring match), '<code>contains_line</code>' (match complete line in newline-separated text). Date fields are automatically normalized to YYYY-MM-DD format. |
+| <code>orderBy</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>order</code> | <code>query</code> | <code>string</code> | No |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-a-paginated-list-of-rfis" class="status" data-status="2xx">200: Returns a paginated list of RFIs</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Current page</td>
+</tr>
+<tr>
+<td><code>pagination.pageSize</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Items per page</td>
+</tr>
+<tr>
+<td><code>pagination.total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total items</td>
+</tr>
+<tr>
+<td><code>pagination.totalPages</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total pages</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].accountId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account ID</td>
+</tr>
+<tr>
+<td><code>result[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO timestamp</td>
+</tr>
+<tr>
+<td><code>result[].createdBy</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Creator email</td>
+</tr>
+<tr>
+<td><code>result[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI description</td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI UUID</td>
+</tr>
+<tr>
+<td><code>result[].projectType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Project type</td>
+</tr>
+<tr>
+<td><code>result[].status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI status</td>
+</tr>
+<tr>
+<td><code>result[].title</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI title</td>
+</tr>
+<tr>
+<td><code>result[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>ISO timestamp</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</h3>
+<p>Operation ID: <code>get_RequestRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes | RFI UUID |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-the-rfi-details-with-related-data" class="status" data-status="2xx">200: Returns the RFI details with related data</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>account.anniversary</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Account anniversary</td>
+</tr>
+<tr>
+<td><code>account.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account UUID</td>
+</tr>
+<tr>
+<td><code>account.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td><code>assignee</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Assignee email</td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Completion timestamp</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI UUID</td>
+</tr>
+<tr>
+<td><code>investigation_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Investigation UUID</td>
+</tr>
+<tr>
+<td><code>is_free_request</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this is a free request</td>
+</tr>
+<tr>
+<td><code>message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total message tokens</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>enum: unknown, low, routine, medium, high, urgent, ...</code></td>
+<td>Yes</td>
+<td>Request priority</td>
+</tr>
+<tr>
+<td><code>readable_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable ID</td>
+</tr>
+<tr>
+<td><code>release_entitlements</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Release entitlements</td>
+</tr>
+<tr>
+<td><code>report_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Report UUID</td>
+</tr>
+<tr>
+<td><code>request</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request.category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request category</td>
+</tr>
+<tr>
+<td><code>request.message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Message tokens used</td>
+</tr>
+<tr>
+<td><code>request.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request type name</td>
+</tr>
+<tr>
+<td><code>request.request_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Request tokens used</td>
+</tr>
+<tr>
+<td><code>request.response_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Response tokens used</td>
+</tr>
+<tr>
+<td><code>request.result</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Expected result type</td>
+</tr>
+<tr>
+<td><code>request.source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request source</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, submitted, accepted, in_progress, awaiting_customer, awaiting_external, ...</code></td>
+<td>Yes</td>
+<td>RFI status. Project-specific dashboard surfaces may return a narrowed customer-facing vocabulary.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI summary</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, green, amber, red</code></td>
+<td>Yes</td>
+<td>TLP classification</td>
+</tr>
+<tr>
+<td><code>tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total tokens used</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onev2requestsproject_typerequest_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}</h3>
+<p>Operation ID: <code>put_RequestUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>project_type</code> | <code>path</code> | <code>enum: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, ...</code> | Yes | RFI project type. Valid values: threat-intelligence, incident-response, ir-emergency-response, table-top, pentest, irp, threat-hunting, cybersecurity-assessment, react-general, legal-response, soc-alerts, demo |
+| <code>request_id</code> | <code>path</code> | <code>string</code> | Yes | RFI UUID |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI description</td>
+</tr>
+<tr>
+<td><code>eventId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional related event ID</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>enum: low, routine, high, urgent, unknown, medium, ...</code></td>
+<td>No</td>
+<td>RFI priority. Four-level projects use a distinct <code>low</code> level; existing projects retain legacy <code>low</code>-&gt;routine compatibility. <code>medium</code>, <code>critical</code>, and <code>unknown</code> remain accepted legacy aliases.</td>
+</tr>
+<tr>
+<td><code>request_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Request type. May only be changed while the request is still open; changing it recalculates the request's token cost.</td>
+</tr>
+<tr>
+<td><code>subtypeId</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional subtype ID</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI summary</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>RFI title (alias for summary field)</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, green, amber, amber-strict, red, purple, ...</code></td>
+<td>No</td>
+<td>Traffic Light Protocol level. <code>white</code> and <code>amber+strict</code> are accepted input aliases; responses always use the canonical spelling.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-the-updated-rfi" class="status" data-status="2xx">200: Returns the updated RFI</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>account</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>account.anniversary</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Account anniversary</td>
+</tr>
+<tr>
+<td><code>account.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account UUID</td>
+</tr>
+<tr>
+<td><code>account.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td><code>assignee</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Assignee email</td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Completion timestamp</td>
+</tr>
+<tr>
+<td><code>created</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Creation timestamp</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI UUID</td>
+</tr>
+<tr>
+<td><code>investigation_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Investigation UUID</td>
+</tr>
+<tr>
+<td><code>is_free_request</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether this is a free request</td>
+</tr>
+<tr>
+<td><code>message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total message tokens</td>
+</tr>
+<tr>
+<td><code>priority</code></td>
+<td><code>enum: unknown, low, routine, medium, high, urgent, ...</code></td>
+<td>Yes</td>
+<td>Request priority</td>
+</tr>
+<tr>
+<td><code>readable_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Human-readable ID</td>
+</tr>
+<tr>
+<td><code>release_entitlements</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Release entitlements</td>
+</tr>
+<tr>
+<td><code>report_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Report UUID</td>
+</tr>
+<tr>
+<td><code>request</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>request.category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request category</td>
+</tr>
+<tr>
+<td><code>request.message_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Message tokens used</td>
+</tr>
+<tr>
+<td><code>request.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request type name</td>
+</tr>
+<tr>
+<td><code>request.request_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Request tokens used</td>
+</tr>
+<tr>
+<td><code>request.response_tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Response tokens used</td>
+</tr>
+<tr>
+<td><code>request.result</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Expected result type</td>
+</tr>
+<tr>
+<td><code>request.source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Request source</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, submitted, accepted, in_progress, awaiting_customer, awaiting_external, ...</code></td>
+<td>Yes</td>
+<td>RFI status. Project-specific dashboard surfaces may return a narrowed customer-facing vocabulary.</td>
+</tr>
+<tr>
+<td><code>summary</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>RFI summary</td>
+</tr>
+<tr>
+<td><code>tlp</code></td>
+<td><code>enum: clear, green, amber, red</code></td>
+<td>Yes</td>
+<td>TLP classification</td>
+</tr>
+<tr>
+<td><code>tokens</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total tokens used</td>
+</tr>
+<tr>
+<td><code>updated</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td>Last update timestamp</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request-1" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

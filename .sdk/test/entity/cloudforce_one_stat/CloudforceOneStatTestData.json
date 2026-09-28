@@ -1,0 +1,30 @@
+{
+  "existing": {
+    "cloudforce_one_stat": {
+      "CLOUDFORCE_ONE_STAT00": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_STAT00"
+      },
+      "CLOUDFORCE_ONE_STAT01": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_STAT01"
+      },
+      "CLOUDFORCE_ONE_STAT02": {
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_STAT02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_stat": {
+      "cloudforce_one_stat_ref01": {}
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/stats": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

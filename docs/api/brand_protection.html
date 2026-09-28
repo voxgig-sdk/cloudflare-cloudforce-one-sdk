@@ -1,0 +1,3570 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>BrandProtection | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a aria-current="page" href="../api/brand_protection.html">BrandProtection</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionlogosearch">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_iddismiss">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_idundismiss">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomainmatchesbulk-dismiss">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomaintrial">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionlettergenerate">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticeslookup">POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiondomainmatches">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectionlogomatches">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatesexamples">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontotal-queries">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_idpdf">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id">GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id">PATCH /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id">DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id">DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id">DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2brand-protectionlogoqueriesquery_id">DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id">DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id">PUT /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</a>
+<a class="nav-section" href="#put-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id">PUT /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</a></div>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="brandprotection">BrandProtection</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionlogosearch"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search</code></a></td>
+<td><code>create</code></td>
+<td>Scanned images search completed successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_iddismiss"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss</code></a></td>
+<td><code>create</code></td>
+<td>Match dismissed successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_idundismiss"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss</code></a></td>
+<td><code>create</code></td>
+<td>Match undismissed successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</code></a></td>
+<td><code>create</code></td>
+<td>Takedown letter created successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomainmatchesbulk-dismiss"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss</code></a></td>
+<td><code>create</code></td>
+<td>Bulk dismiss/undismiss results</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</code></a></td>
+<td><code>create</code></td>
+<td>Query inserted successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiondomaintrial"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial</code></a></td>
+<td><code>create</code></td>
+<td>Domain analysis results</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionlettergenerate"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate</code></a></td>
+<td><code>create</code></td>
+<td>Letter generated successfully. When format=text, returns V4 JSON with { result: { letter: string } }. When format=pdf, returns binary with Content-Type: application/pdf</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</code></a></td>
+<td><code>create</code></td>
+<td>Template created successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</code></a></td>
+<td><code>create</code></td>
+<td>Logo query inserted successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</code></a></td>
+<td><code>create</code></td>
+<td>Takedown notice created successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticeslookup"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup</code></a></td>
+<td><code>create</code></td>
+<td>Takedown notice lookup results</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiondomainmatches"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches</code></a></td>
+<td><code>list</code></td>
+<td>Successfully retrieved query matches</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectionlogomatches"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches</code></a></td>
+<td><code>list</code></td>
+<td>Successfully retrieved logo matches</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</code></a></td>
+<td><code>list</code></td>
+<td>Successfully retrieved queries</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</code></a></td>
+<td><code>list</code></td>
+<td>Successfully retrieved logo queries</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</code></a></td>
+<td><code>list</code></td>
+<td>Takedown letters listed successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</code></a></td>
+<td><code>list</code></td>
+<td>Templates listed successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatesexamples"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples</code></a></td>
+<td><code>list</code></td>
+<td>Example templates listed successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</code></a></td>
+<td><code>list</code></td>
+<td>Takedown notices listed successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontotal-queries"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries</code></a></td>
+<td><code>list</code></td>
+<td>Successfully retrieved total query count</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</code></a></td>
+<td><code>load</code></td>
+<td>Takedown letter retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_idpdf"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf</code></a></td>
+<td><code>load</code></td>
+<td>Takedown letter PDF downloaded successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</code></a></td>
+<td><code>load</code></td>
+<td>Takedown notice retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</code></a></td>
+<td><code>load</code></td>
+<td>Template retrieved successfully</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</code></a></td>
+<td><code>patch</code></td>
+<td>Domain query updated successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Takedown letter deleted successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Takedown notice deleted successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Domain query deleted successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2brand-protectionlogoqueriesquery_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Logo query deleted successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Template deleted successfully</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</code></a></td>
+<td><code>update</code></td>
+<td>Takedown notice updated successfully</td>
+</tr>
+<tr>
+<td><code>PUT</code></td>
+<td><a href="#put-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id"><code>/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</code></a></td>
+<td><code>update</code></td>
+<td>Template updated successfully</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">brand_protections, err := client.BrandProtection(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(brand_protections)
+brand_protection, err := client.BrandProtection(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(brand_protection)
+created, err := client.BrandProtection(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;action&quot;: &quot;example&quot;, &quot;body&quot;: &quot;example&quot;, &quot;brand&quot;: &quot;example&quot;, &quot;category&quot;: &quot;example&quot;, &quot;createdAt&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;, &quot;dismissed&quot;: true, &quot;domain&quot;: &quot;example&quot;, &quot;domain_id&quot;: 1, &quot;domains&quot;: []any{}, &quot;errors&quot;: []any{}, &quot;fields&quot;: map[string]any{}, &quot;first_seen&quot;: &quot;example&quot;, &quot;id&quot;: 1, &quot;image_data&quot;: &quot;example&quot;, &quot;letterText&quot;: &quot;example&quot;, &quot;letterType&quot;: &quot;example&quot;, &quot;matchId&quot;: 1, &quot;matchType&quot;: &quot;example&quot;, &quot;matched_at&quot;: &quot;example&quot;, &quot;matches&quot;: []any{}, &quot;message&quot;: &quot;example&quot;, &quot;messages&quot;: []any{}, &quot;name&quot;: &quot;example&quot;, &quot;noticeParams&quot;: map[string]any{}, &quot;notices&quot;: []any{}, &quot;public_scans&quot;: map[string]any{}, &quot;queryId&quot;: 1, &quot;r2_path&quot;: &quot;example&quot;, &quot;registrar&quot;: &quot;example&quot;, &quot;result&quot;: &quot;example&quot;, &quot;result_info&quot;: map[string]any{}, &quot;scan_status&quot;: &quot;example&quot;, &quot;scan_submission_id&quot;: 1, &quot;similarity_score&quot;: 1, &quot;similarity_threshold&quot;: 1, &quot;source&quot;: &quot;example&quot;, &quot;status&quot;: &quot;example&quot;, &quot;string_matches&quot;: []any{}, &quot;success&quot;: true, &quot;tag&quot;: &quot;example&quot;, &quot;takedownNoticeId&quot;: 1, &quot;templateId&quot;: &quot;example&quot;, &quot;total_analyzed&quot;: 1, &quot;total_matches&quot;: 1, &quot;truncated&quot;: true, &quot;updatedAt&quot;: &quot;example&quot;, &quot;uploaded_at&quot;: &quot;example&quot;, &quot;url_scan_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.BrandProtection(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;notice_id&quot;: 1}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.BrandProtection(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local brand_protections, err = client:BrandProtection():list({ account_id = &quot;example&quot; })
+local brand_protection, err = client:BrandProtection():load({ account_id = &quot;example&quot; })
+local created, err = client:BrandProtection():create({ account_id = &quot;example&quot;, action = &quot;example&quot;, body = &quot;example&quot;, brand = &quot;example&quot;, category = &quot;example&quot;, createdAt = &quot;example&quot;, description = &quot;example&quot;, dismissed = true, domain = &quot;example&quot;, domain_id = 1, domains = {}, errors = {}, fields = {}, first_seen = &quot;example&quot;, id = 1, image_data = &quot;example&quot;, letterText = &quot;example&quot;, letterType = &quot;example&quot;, matchId = 1, matchType = &quot;example&quot;, matched_at = &quot;example&quot;, matches = {}, message = &quot;example&quot;, messages = {}, name = &quot;example&quot;, noticeParams = {}, notices = {}, public_scans = {}, queryId = 1, r2_path = &quot;example&quot;, registrar = &quot;example&quot;, result = &quot;example&quot;, result_info = {}, scan_status = &quot;example&quot;, scan_submission_id = 1, similarity_score = 1, similarity_threshold = 1, source = &quot;example&quot;, status = &quot;example&quot;, string_matches = {}, success = true, tag = &quot;example&quot;, takedownNoticeId = 1, templateId = &quot;example&quot;, total_analyzed = 1, total_matches = 1, truncated = true, updatedAt = &quot;example&quot;, uploaded_at = &quot;example&quot;, url_scan_id = &quot;example&quot; })
+local updated, err = client:BrandProtection():update({ account_id = &quot;example&quot;, notice_id = 1 })
+local removed, err = client:BrandProtection():remove({ account_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$brand_protections = $client-&gt;BrandProtection()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$brand_protection = $client-&gt;BrandProtection()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;BrandProtection()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;action&quot; =&gt; &quot;example&quot;, &quot;body&quot; =&gt; &quot;example&quot;, &quot;brand&quot; =&gt; &quot;example&quot;, &quot;category&quot; =&gt; &quot;example&quot;, &quot;createdAt&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;, &quot;dismissed&quot; =&gt; true, &quot;domain&quot; =&gt; &quot;example&quot;, &quot;domain_id&quot; =&gt; 1, &quot;domains&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;fields&quot; =&gt; [], &quot;first_seen&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; 1, &quot;image_data&quot; =&gt; &quot;example&quot;, &quot;letterText&quot; =&gt; &quot;example&quot;, &quot;letterType&quot; =&gt; &quot;example&quot;, &quot;matchId&quot; =&gt; 1, &quot;matchType&quot; =&gt; &quot;example&quot;, &quot;matched_at&quot; =&gt; &quot;example&quot;, &quot;matches&quot; =&gt; [], &quot;message&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;noticeParams&quot; =&gt; [], &quot;notices&quot; =&gt; [], &quot;public_scans&quot; =&gt; [], &quot;queryId&quot; =&gt; 1, &quot;r2_path&quot; =&gt; &quot;example&quot;, &quot;registrar&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; &quot;example&quot;, &quot;result_info&quot; =&gt; [], &quot;scan_status&quot; =&gt; &quot;example&quot;, &quot;scan_submission_id&quot; =&gt; 1, &quot;similarity_score&quot; =&gt; 1, &quot;similarity_threshold&quot; =&gt; 1, &quot;source&quot; =&gt; &quot;example&quot;, &quot;status&quot; =&gt; &quot;example&quot;, &quot;string_matches&quot; =&gt; [], &quot;success&quot; =&gt; true, &quot;tag&quot; =&gt; &quot;example&quot;, &quot;takedownNoticeId&quot; =&gt; 1, &quot;templateId&quot; =&gt; &quot;example&quot;, &quot;total_analyzed&quot; =&gt; 1, &quot;total_matches&quot; =&gt; 1, &quot;truncated&quot; =&gt; true, &quot;updatedAt&quot; =&gt; &quot;example&quot;, &quot;uploaded_at&quot; =&gt; &quot;example&quot;, &quot;url_scan_id&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;BrandProtection()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;notice_id&quot; =&gt; 1]);
+$client-&gt;BrandProtection()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">brand_protections = client.BrandProtection().list({&quot;account_id&quot;: &quot;example&quot;})
+brand_protection = client.BrandProtection().load({&quot;account_id&quot;: &quot;example&quot;})
+created = client.BrandProtection().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;action&quot;: &quot;example&quot;, &quot;body&quot;: &quot;example&quot;, &quot;brand&quot;: &quot;example&quot;, &quot;category&quot;: &quot;example&quot;, &quot;createdAt&quot;: &quot;example&quot;, &quot;description&quot;: &quot;example&quot;, &quot;dismissed&quot;: True, &quot;domain&quot;: &quot;example&quot;, &quot;domain_id&quot;: 1, &quot;domains&quot;: [], &quot;errors&quot;: [], &quot;fields&quot;: {}, &quot;first_seen&quot;: &quot;example&quot;, &quot;id&quot;: 1, &quot;image_data&quot;: &quot;example&quot;, &quot;letterText&quot;: &quot;example&quot;, &quot;letterType&quot;: &quot;example&quot;, &quot;matchId&quot;: 1, &quot;matchType&quot;: &quot;example&quot;, &quot;matched_at&quot;: &quot;example&quot;, &quot;matches&quot;: [], &quot;message&quot;: &quot;example&quot;, &quot;messages&quot;: [], &quot;name&quot;: &quot;example&quot;, &quot;noticeParams&quot;: {}, &quot;notices&quot;: [], &quot;public_scans&quot;: {}, &quot;queryId&quot;: 1, &quot;r2_path&quot;: &quot;example&quot;, &quot;registrar&quot;: &quot;example&quot;, &quot;result&quot;: &quot;example&quot;, &quot;result_info&quot;: {}, &quot;scan_status&quot;: &quot;example&quot;, &quot;scan_submission_id&quot;: 1, &quot;similarity_score&quot;: 1, &quot;similarity_threshold&quot;: 1, &quot;source&quot;: &quot;example&quot;, &quot;status&quot;: &quot;example&quot;, &quot;string_matches&quot;: [], &quot;success&quot;: True, &quot;tag&quot;: &quot;example&quot;, &quot;takedownNoticeId&quot;: 1, &quot;templateId&quot;: &quot;example&quot;, &quot;total_analyzed&quot;: 1, &quot;total_matches&quot;: 1, &quot;truncated&quot;: True, &quot;updatedAt&quot;: &quot;example&quot;, &quot;uploaded_at&quot;: &quot;example&quot;, &quot;url_scan_id&quot;: &quot;example&quot; })
+updated = client.BrandProtection().update({&quot;account_id&quot;: &quot;example&quot;, &quot;notice_id&quot;: 1})
+client.BrandProtection().remove({&quot;account_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">brand_protections = client.BrandProtection.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+brand_protection = client.BrandProtection.load({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+created = client.BrandProtection.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;action&quot; =&gt; &quot;example&quot;, &quot;body&quot; =&gt; &quot;example&quot;, &quot;brand&quot; =&gt; &quot;example&quot;, &quot;category&quot; =&gt; &quot;example&quot;, &quot;createdAt&quot; =&gt; &quot;example&quot;, &quot;description&quot; =&gt; &quot;example&quot;, &quot;dismissed&quot; =&gt; true, &quot;domain&quot; =&gt; &quot;example&quot;, &quot;domain_id&quot; =&gt; 1, &quot;domains&quot; =&gt; [], &quot;errors&quot; =&gt; [], &quot;fields&quot; =&gt; {}, &quot;first_seen&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; 1, &quot;image_data&quot; =&gt; &quot;example&quot;, &quot;letterText&quot; =&gt; &quot;example&quot;, &quot;letterType&quot; =&gt; &quot;example&quot;, &quot;matchId&quot; =&gt; 1, &quot;matchType&quot; =&gt; &quot;example&quot;, &quot;matched_at&quot; =&gt; &quot;example&quot;, &quot;matches&quot; =&gt; [], &quot;message&quot; =&gt; &quot;example&quot;, &quot;messages&quot; =&gt; [], &quot;name&quot; =&gt; &quot;example&quot;, &quot;noticeParams&quot; =&gt; {}, &quot;notices&quot; =&gt; [], &quot;public_scans&quot; =&gt; {}, &quot;queryId&quot; =&gt; 1, &quot;r2_path&quot; =&gt; &quot;example&quot;, &quot;registrar&quot; =&gt; &quot;example&quot;, &quot;result&quot; =&gt; &quot;example&quot;, &quot;result_info&quot; =&gt; {}, &quot;scan_status&quot; =&gt; &quot;example&quot;, &quot;scan_submission_id&quot; =&gt; 1, &quot;similarity_score&quot; =&gt; 1, &quot;similarity_threshold&quot; =&gt; 1, &quot;source&quot; =&gt; &quot;example&quot;, &quot;status&quot; =&gt; &quot;example&quot;, &quot;string_matches&quot; =&gt; [], &quot;success&quot; =&gt; true, &quot;tag&quot; =&gt; &quot;example&quot;, &quot;takedownNoticeId&quot; =&gt; 1, &quot;templateId&quot; =&gt; &quot;example&quot;, &quot;total_analyzed&quot; =&gt; 1, &quot;total_matches&quot; =&gt; 1, &quot;truncated&quot; =&gt; true, &quot;updatedAt&quot; =&gt; &quot;example&quot;, &quot;uploaded_at&quot; =&gt; &quot;example&quot;, &quot;url_scan_id&quot; =&gt; &quot;example&quot; })
+updated = client.BrandProtection.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;notice_id&quot; =&gt; 1 })
+client.BrandProtection.remove({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const brand_protections = await client.BrandProtection().list({ account_id: &quot;example&quot; })
+const brand_protection = await client.BrandProtection().load({ account_id: &quot;example&quot; })
+const created = await client.BrandProtection().create({ account_id: &quot;example&quot;, action: &quot;example&quot;, body: &quot;example&quot;, brand: &quot;example&quot;, category: &quot;example&quot;, createdAt: &quot;example&quot;, description: &quot;example&quot;, dismissed: true, domain: &quot;example&quot;, domain_id: 1, domains: [], errors: [], fields: {}, first_seen: &quot;example&quot;, id: 1, image_data: &quot;example&quot;, letterText: &quot;example&quot;, letterType: &quot;example&quot;, matchId: 1, matchType: &quot;example&quot;, matched_at: &quot;example&quot;, matches: [], message: &quot;example&quot;, messages: [], name: &quot;example&quot;, noticeParams: {}, notices: [], public_scans: {}, queryId: 1, r2_path: &quot;example&quot;, registrar: &quot;example&quot;, result: &quot;example&quot;, result_info: {}, scan_status: &quot;example&quot;, scan_submission_id: 1, similarity_score: 1, similarity_threshold: 1, source: &quot;example&quot;, status: &quot;example&quot;, string_matches: [], success: true, tag: &quot;example&quot;, takedownNoticeId: 1, templateId: &quot;example&quot;, total_analyzed: 1, total_matches: 1, truncated: true, updatedAt: &quot;example&quot;, uploaded_at: &quot;example&quot;, url_scan_id: &quot;example&quot; })
+const updated = await client.BrandProtection().update({ account_id: &quot;example&quot;, notice_id: 1 })
+await client.BrandProtection().remove({ account_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Action</td>
+</tr>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Body</td>
+</tr>
+<tr>
+<td><code>brand</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Brand</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Category</td>
+</tr>
+<tr>
+<td><code>content_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MIME type of the image (only present when download=true)</td>
+</tr>
+<tr>
+<td><code>createNotice</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Create Notice</td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Description</td>
+</tr>
+<tr>
+<td><code>dismissed</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether the match is dismissed.</td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Domain</td>
+</tr>
+<tr>
+<td><code>domain_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Domain Id</td>
+</tr>
+<tr>
+<td><code>domains</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Domains</td>
+</tr>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Fields</td>
+</tr>
+<tr>
+<td><code>first_seen</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>First Seen</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Format</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>image_data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Base64 encoded image data.</td>
+</tr>
+<tr>
+<td><code>letterText</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Letter Text</td>
+</tr>
+<tr>
+<td><code>letterType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Letter Type</td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Match Id</td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Match Type</td>
+</tr>
+<tr>
+<td><code>match_details</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Per-match detail objects with query metadata and individual dismissed state.</td>
+</tr>
+<tr>
+<td><code>match_ids</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Match Ids</td>
+</tr>
+<tr>
+<td><code>matched_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Matched At</td>
+</tr>
+<tr>
+<td><code>matches</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Matches</td>
+</tr>
+<tr>
+<td><code>max_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Max Time</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Message</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>min_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Min Time</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Name</td>
+</tr>
+<tr>
+<td><code>noticeParams</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Notice Params</td>
+</tr>
+<tr>
+<td><code>notices</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Notices</td>
+</tr>
+<tr>
+<td><code>public_scans</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Public Scans</td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Query Id</td>
+</tr>
+<tr>
+<td><code>queryIds</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Query Ids</td>
+</tr>
+<tr>
+<td><code>query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Query Id</td>
+</tr>
+<tr>
+<td><code>r2_path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>R2 Path</td>
+</tr>
+<tr>
+<td><code>registrar</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Registrar</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>any</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Present on paginated list responses when page or <code>per_page</code> is supplied.</td>
+</tr>
+<tr>
+<td><code>scan</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Scan</td>
+</tr>
+<tr>
+<td><code>scan_matches</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Scan Matches</td>
+</tr>
+<tr>
+<td><code>scan_status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Scan Status</td>
+</tr>
+<tr>
+<td><code>scan_submission_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td>Scan Submission Id</td>
+</tr>
+<tr>
+<td><code>score_threshold</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Minimum similarity score threshold for matches (0-1, default: 0)</td>
+</tr>
+<tr>
+<td><code>search_lookback</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, search recent domain lookback entries for matches</td>
+</tr>
+<tr>
+<td><code>similarity_score</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Similarity Score</td>
+</tr>
+<tr>
+<td><code>similarity_threshold</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Minimum similarity score (0-1) required for visual matches</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Source</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Status</td>
+</tr>
+<tr>
+<td><code>string_matches</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>String Matches</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the logo query</td>
+</tr>
+<tr>
+<td><code>takedownNoticeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Takedown Notice Id</td>
+</tr>
+<tr>
+<td><code>templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Template Id</td>
+</tr>
+<tr>
+<td><code>top_k</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Number of closest matches to return (1-100, default: 10)</td>
+</tr>
+<tr>
+<td><code>total_analyzed</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total Analyzed</td>
+</tr>
+<tr>
+<td><code>total_matches</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Total Matches</td>
+</tr>
+<tr>
+<td><code>truncated</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Truncated</td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated At</td>
+</tr>
+<tr>
+<td><code>uploaded_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uploaded At</td>
+</tr>
+<tr>
+<td><code>url_scan_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Url Scan Id</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionlogosearch" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search</h3>
+<p>Operation ID: <code>post_SearchLogoSimilarity</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>showHistoric</code> | <code>query</code> | <code>string</code> | No | Include scanned images without domain metadata (historic data). Default: false (only show images with domain) |
+| <code>download</code> | <code>query</code> | <code>string</code> | No | If true, include base64-encoded image data in the response |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image_data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Base64 encoded image data. Can include data URI prefix (for example, 'data:image/png;base64,...') or just the base64 string.</td>
+</tr>
+<tr>
+<td><code>score_threshold</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Minimum similarity score threshold for matches (0-1, default: 0)</td>
+</tr>
+<tr>
+<td><code>top_k</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td>Number of closest matches to return (1-100, default: 10)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-scanned-images-search-completed-successfully" class="status" data-status="2xx">200: Scanned images search completed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].account_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].content_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MIME type of the image (only present when download=true)</td>
+</tr>
+<tr>
+<td><code>matches[].domain</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].image_data</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Base64-encoded image data (only present when download=true)</td>
+</tr>
+<tr>
+<td><code>matches[].query_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].r2_path</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].similarity_score</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].similarity_threshold</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].tag</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].timestamp</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].url_scan_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].vector_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_iddismiss" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss</h3>
+<p>Operation ID: <code>post_DismissMatch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>domain_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-match-dismissed-successfully" class="status" data-status="2xx">200: Match dismissed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.dismissed</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.domain_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-1">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionqueriesquery_idmatchesdomain_idundismiss" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss</h3>
+<p>Operation ID: <code>post_UndismissMatch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>query_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>domain_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-match-undismissed-successfully" class="status" data-status="2xx">200: Match undismissed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.dismissed</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.domain_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-2">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</h3>
+<p>Operation ID: <code>post_TakedownLetterCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.discoveryDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.domain</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.generationDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.jurisdiction</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrantEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrar</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrarEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.resolutionByDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderCompany</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderTitle</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkNumber</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkOwner</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-takedown-letter-created-successfully" class="status" data-status="2xx">200: Takedown letter created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letterText</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letterType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>takedownNoticeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-3">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiondomainmatchesbulk-dismiss" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss</h3>
+<p>Operation ID: <code>post_BulkDismissMatches</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td><code>enum: dismiss, undismiss</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>match_ids</code></td>
+<td><code>array of integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].domain_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-bulk-dismissundismiss-results" class="status" data-status="2xx">200: Bulk dismiss/undismiss results</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object or object</code>.</p>
+<h5 id="4xx-client-error-response-4">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</h3>
+<p>Operation ID: <code>post_InsertDomainQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>min_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scan</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scan_matches</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>search_lookback</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, search recent domain lookback entries for matches</td>
+</tr>
+<tr>
+<td><code>string_matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>string_matches[].pattern</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-query-inserted-successfully" class="status" data-status="2xx">200: Query inserted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-5">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiondomaintrial" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial</h3>
+<p>Operation ID: <code>post_DomainTrial</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>brand</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-domain-analysis-results" class="status" data-status="2xx">200: Domain analysis results</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].confidence</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].domain_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].first_seen</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].reason</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>total_analyzed</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>total_matches</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>truncated</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="403-brand-is-not-a-zone-belonging-to-this-account" class="status" data-status="4xx">403: Brand is not a zone belonging to this account</h5>
+<h5 id="502-zone-ownership-check-failed-upstream-error" class="status" data-status="5xx">502: Zone ownership check failed (upstream error)</h5>
+<h5 id="503-zone-ownership-check-is-not-configured" class="status" data-status="5xx">503: Zone ownership check is not configured</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionlettergenerate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate</h3>
+<p>Operation ID: <code>post_LetterGenerate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createNotice</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.discoveryDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.domain</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.generationDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.jurisdiction</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrantEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrar</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.registrarEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.resolutionByDate</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderCompany</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderEmail</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.senderTitle</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkName</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkNumber</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>fields.trademarkOwner</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>enum: text, pdf</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noticeParams</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noticeParams.domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noticeParams.queryId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>noticeParams.status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-letter-generated-successfully-when-formattext-returns-v4-json-with-123-result-123-letter-string-125-125-when-formatpdf-returns-binary-with-content-type-applicationpdf" class="status" data-status="2xx">200: Letter generated successfully. When format=text, returns V4 JSON with { result: { letter: string } }. When format=pdf, returns binary with Content-Type: application/pdf</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>letter</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letterId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notice.updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>application/pdf</code></p>
+<p>The response is <code>string (binary)</code>.</p>
+<h5 id="4xx-client-error-response-6">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</h3>
+<p>Operation ID: <code>post_LetterTemplateCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-6">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-template-created-successfully" class="status" data-status="2xx">200: Template created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>enum: system, user</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-7">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</h3>
+<p>Operation ID: <code>post_InsertLogoQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-7">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image_data</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Base64 encoded image data. Can include data URI prefix (for example, 'data:image/png;base64,...') or just the base64 string.</td>
+</tr>
+<tr>
+<td><code>search_lookback</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, search historic scanned images for matches above the similarity threshold</td>
+</tr>
+<tr>
+<td><code>similarity_threshold</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Minimum similarity score (0-1) required for visual matches</td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Unique identifier for the logo query</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-logo-query-inserted-successfully" class="status" data-status="2xx">200: Logo query inserted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-8">4XX: Client error response</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</h3>
+<p>Operation ID: <code>post_TakedownNoticeCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-8">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-takedown-notice-created-successfully" class="status" data-status="2xx">200: Takedown notice created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-a-takedown-notice-already-exists-for-this-domain" class="status" data-status="4xx">409: A takedown notice already exists for this domain</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticeslookup" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup</h3>
+<p>Operation ID: <code>post_TakedownNoticeLookup</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-9">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domains</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryIds</code></td>
+<td><code>array of integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-takedown-notice-lookup-results" class="status" data-status="2xx">200: Takedown notice lookup results</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>notices</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].notice.updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-9">4XX: Client error response</h5>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiondomainmatches" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches</h3>
+<p>Operation ID: <code>get_DomainMatchList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>offset</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>limit</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>query_id</code> | <code>query</code> | <code>array of string</code> | Yes |  |
+| <code>include_domain_id</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>include_dismissed</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>domain_search</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>orderBy</code> | <code>query</code> | <code>enum: domain, first_seen, registrar</code> | No |  |
+| <code>order</code> | <code>query</code> | <code>enum: asc, desc</code> | No |  |</p>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-successfully-retrieved-query-matches" class="status" data-status="2xx">200: Successfully retrieved query matches</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].dismissed</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether the match is dismissed. Only present for single-query requests. For multi-query requests, use the dismissed field in each <code>match_details</code> entry.</td>
+</tr>
+<tr>
+<td><code>matches[].domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].first_seen</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].match_details</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Per-match detail objects with query metadata and individual dismissed state. Only present when multiple <code>query_ids</code> are requested.</td>
+</tr>
+<tr>
+<td><code>matches[].match_details[].dismissed</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Individual dismissed state for this specific match.</td>
+</tr>
+<tr>
+<td><code>matches[].match_details[].match_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].match_details[].query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].match_details[].query_tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Tag associated with the query, if one exists.</td>
+</tr>
+<tr>
+<td><code>matches[].public_scans</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].public_scans.submission_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].registrar</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].scan_status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].scan_submission_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].source</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-10">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectionlogomatches" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches</h3>
+<p>Operation ID: <code>get_LogoMatchList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>offset</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>limit</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>query_id</code> | <code>query</code> | <code>string</code> | Yes |  |
+| <code>download</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>orderBy</code> | <code>query</code> | <code>enum: matchedAt, domain, similarityScore, registrar</code> | No |  |
+| <code>order</code> | <code>query</code> | <code>enum: asc, desc</code> | No |  |</p>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-successfully-retrieved-logo-matches" class="status" data-status="2xx">200: Successfully retrieved logo matches</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].content_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].image_data</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].matched_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].query_id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].registrar</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].similarity_score</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matches[].url_scan_id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-11">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiondomainqueries" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries</h3>
+<p>Operation ID: <code>get_GetDomainQueries</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-14">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>id</code> | <code>query</code> | <code>string</code> | No |  |
+| <code>page</code> | <code>query</code> | <code>integer</code> | No |  |
+| <code>per_page</code> | <code>query</code> | <code>integer</code> | No |  |</p>
+<h4 id="responses-14">Responses</h4>
+<h5 id="200-successfully-retrieved-queries" class="status" data-status="2xx">200: Successfully retrieved queries</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].code</code></td>
+<td><code>string or number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].code</code></td>
+<td><code>string or number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object or object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Present on paginated list responses when page or <code>per_page</code> is supplied.</td>
+</tr>
+<tr>
+<td><code>result_info.count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.per_page</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result_info.total_count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-12">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectionlogoqueries" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries</h3>
+<p>Operation ID: <code>get_GetLogoQueries</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-15">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>id</code> | <code>query</code> | <code>string</code> | No | Optional query ID to retrieve a specific logo query |
+| <code>download</code> | <code>query</code> | <code>string</code> | No | If true, include base64-encoded image data in the response |</p>
+<h4 id="responses-15">Responses</h4>
+<h5 id="200-successfully-retrieved-logo-queries" class="status" data-status="2xx">200: Successfully retrieved logo queries</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].content_type</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>MIME type of the image (only present when download=true)</td>
+</tr>
+<tr>
+<td><code>[].id</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].image_data</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Base64-encoded image data (only present when download=true)</td>
+</tr>
+<tr>
+<td><code>[].r2_path</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].similarity_threshold</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uploaded_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-13">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idletters" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters</h3>
+<p>Operation ID: <code>get_TakedownLetterList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-16">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-16">Responses</h4>
+<h5 id="200-takedown-letters-listed-successfully" class="status" data-status="2xx">200: Takedown letters listed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>letters</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letters[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letters[].id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letters[].letterType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letters[].takedownNoticeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letters[].templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-14">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplates" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates</h3>
+<p>Operation ID: <code>get_LetterTemplateList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-17">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-17">Responses</h4>
+<h5 id="200-templates-listed-successfully" class="status" data-status="2xx">200: Templates listed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>templates</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].source</code></td>
+<td><code>enum: system, user</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-15">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatesexamples" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples</h3>
+<p>Operation ID: <code>get_LetterTemplateExamples</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-18">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-18">Responses</h4>
+<h5 id="200-example-templates-listed-successfully" class="status" data-status="2xx">200: Example templates listed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>templates</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].source</code></td>
+<td><code>enum: system, user</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templates[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-16">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-notices" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices</h3>
+<p>Operation ID: <code>get_TakedownNoticeList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-19">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-19">Responses</h4>
+<h5 id="200-takedown-notices-listed-successfully" class="status" data-status="2xx">200: Takedown notices listed successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>notices</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>notices[].updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-17">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontotal-queries" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries</h3>
+<p>Operation ID: <code>get_TotalQueries</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-20">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-20">Responses</h4>
+<h5 id="200-successfully-retrieved-total-query-count" class="status" data-status="2xx">200: Successfully retrieved total query count</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].total_queries</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-18">4XX: Client error response</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</h3>
+<p>Operation ID: <code>get_TakedownLetterGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-21">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>letter_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-21">Responses</h4>
+<h5 id="200-takedown-letter-retrieved-successfully" class="status" data-status="2xx">200: Takedown letter retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letterText</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>letterType</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>takedownNoticeId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>templateId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-19">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_idpdf" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf</h3>
+<p>Operation ID: <code>get_TakedownLetterPdfGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-22">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>letter_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-22">Responses</h4>
+<h5 id="200-takedown-letter-pdf-downloaded-successfully" class="status" data-status="2xx">200: Takedown letter PDF downloaded successfully</h5>
+<p><code>application/pdf</code></p>
+<p>The response is <code>string (binary)</code>.</p>
+<h5 id="4xx-client-error-response-20">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</h3>
+<p>Operation ID: <code>get_TakedownNoticeGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-23">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-23">Responses</h4>
+<h5 id="200-takedown-notice-retrieved-successfully" class="status" data-status="2xx">200: Takedown notice retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-21">4XX: Client error response</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</h3>
+<p>Operation ID: <code>get_LetterTemplateGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-24">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>template_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-24">Responses</h4>
+<h5 id="200-template-retrieved-successfully" class="status" data-status="2xx">200: Template retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>enum: system, user</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-22">4XX: Client error response</h5>
+<h2 id="patch">patch</h2>
+<h3 id="patch-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</h3>
+<p>Operation ID: <code>patch_UpdateDomainQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-25">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>query_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-10">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>max_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>min_time</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scan</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>scan_matches</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>search_lookback</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>If true, search recent domain lookback entries for matches</td>
+</tr>
+<tr>
+<td><code>string_matches</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>string_matches[].pattern</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>tag</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-25">Responses</h4>
+<h5 id="200-domain-query-updated-successfully" class="status" data-status="2xx">200: Domain query updated successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>query_id</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-23">4XX: Client error response</h5>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_idlettersletter_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}</h3>
+<p>Operation ID: <code>delete_TakedownLetterDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-26">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |
+| <code>letter_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-26">Responses</h4>
+<h5 id="200-takedown-letter-deleted-successfully" class="status" data-status="2xx">200: Takedown letter deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-24">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</h3>
+<p>Operation ID: <code>delete_TakedownNoticeDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-27">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="responses-27">Responses</h4>
+<h5 id="200-takedown-notice-deleted-successfully" class="status" data-status="2xx">200: Takedown notice deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-25">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2brand-protectiondomainqueriesquery_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}</h3>
+<p>Operation ID: <code>delete_DeleteDomainQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-28">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>query_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-28">Responses</h4>
+<h5 id="200-domain-query-deleted-successfully" class="status" data-status="2xx">200: Domain query deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-26">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2brand-protectionlogoqueriesquery_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}</h3>
+<p>Operation ID: <code>delete_DeleteLogoQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-29">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>query_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-29">Responses</h4>
+<h5 id="200-logo-query-deleted-successfully" class="status" data-status="2xx">200: Logo query deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-27">4XX: Client error response</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</h3>
+<p>Operation ID: <code>delete_LetterTemplateDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-30">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>template_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-30">Responses</h4>
+<h5 id="200-template-deleted-successfully" class="status" data-status="2xx">200: Template deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-28">4XX: Client error response</h5>
+<h2 id="update">update</h2>
+<h3 id="put-accountsaccount_idcloudforce-onev2brand-protectiontakedown-noticesnotice_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}</h3>
+<p>Operation ID: <code>put_TakedownNoticeUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-31">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>notice_id</code> | <code>path</code> | <code>integer</code> | Yes |  |</p>
+<h4 id="request-body-11">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-31">Responses</h4>
+<h5 id="200-takedown-notice-updated-successfully" class="status" data-status="2xx">200: Takedown notice updated successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>domain</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>matchType</code></td>
+<td><code>enum: logo, domain</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>queryId</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>enum: draft, sent, resolved, expired</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="409-a-takedown-notice-already-exists-for-the-target-domain" class="status" data-status="4xx">409: A takedown notice already exists for the target domain</h5>
+<h3 id="put-accountsaccount_idcloudforce-onev2brand-protectionlettertemplatestemplate_id" class="operation" data-method="put"><code>PUT</code> /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}</h3>
+<p>Operation ID: <code>put_LetterTemplateUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-32">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>template_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-12">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-32">Responses</h4>
+<h5 id="200-template-updated-successfully" class="status" data-status="2xx">200: Template updated successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>createdAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td><code>enum: system, user</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>updatedAt</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response-29">4XX: Client error response</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

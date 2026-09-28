@@ -1,0 +1,57 @@
+{
+  "existing": {
+    "rule": {
+      "RULE00": {
+        "arrays": [],
+        "headers": {},
+        "operators": {},
+        "scalars": [],
+        "string_arrays": [],
+        "structs": [],
+        "account_id": "ACCOUNT01"
+      },
+      "RULE01": {
+        "arrays": [],
+        "headers": {},
+        "operators": {},
+        "scalars": [],
+        "string_arrays": [],
+        "structs": [],
+        "account_id": "ACCOUNT01"
+      },
+      "RULE02": {
+        "arrays": [],
+        "headers": {},
+        "operators": {},
+        "scalars": [],
+        "string_arrays": [],
+        "structs": [],
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "rule": {
+      "rule_ref01": {
+        "arrays": [],
+        "headers": {},
+        "operators": {},
+        "scalars": [],
+        "string_arrays": [],
+        "structs": []
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/managed": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/rules/structured/schema": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

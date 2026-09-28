@@ -1,0 +1,100 @@
+# BasicPermissionFlow
+
+main: kit: flow: BasicPermissionFlow:
+{
+  entity: "permission",
+  kind: "basic",
+  name: "BasicPermissionFlow",
+  step: [
+    {
+      i: {
+        ref: "permission_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        dataset_id: "dataset01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01",
+        dataset_id: "dataset01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "permission_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01",
+        dataset_id: "dataset01"
+      }
+
+      i: {
+        ref: "permission_ref01",
+        srcdatavar: "permission_ref01_data",
+        suffix: "_up0",
+        textfield: "createdAt"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-permission_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "permission_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        dataset_id: "dataset01",
+        id: "permission01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01",
+        dataset_id: "dataset01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "permission_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicPermissionFlow"
+}

@@ -1,0 +1,99 @@
+{
+  "existing": {
+    "cloudforce_one_rules_search": {
+      "CLOUDFORCE_ONE_RULES_SEARCH00": {
+        "content": "sb4",
+        "created_at": 181,
+        "created_by": "sb6",
+        "description": "sb7",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULES_SEARCH00",
+        "is_public": true,
+        "meta": [],
+        "name": "sbc",
+        "namespaces": [],
+        "path": "sbe",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "score": 193,
+        "scoring_details": {},
+        "structured_source": "sc3",
+        "updated_at": 196,
+        "updated_by": "sc5",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_RULES_SEARCH01": {
+        "content": "s168",
+        "created_at": 361,
+        "created_by": "s16a",
+        "description": "s16b",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULES_SEARCH01",
+        "is_public": true,
+        "meta": [],
+        "name": "s170",
+        "namespaces": [],
+        "path": "s172",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "score": 373,
+        "scoring_details": {},
+        "structured_source": "s177",
+        "updated_at": 376,
+        "updated_by": "s179",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_RULES_SEARCH02": {
+        "content": "s21c",
+        "created_at": 541,
+        "created_by": "s21e",
+        "description": "s21f",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_RULES_SEARCH02",
+        "is_public": true,
+        "meta": [],
+        "name": "s224",
+        "namespaces": [],
+        "path": "s226",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "score": 553,
+        "scoring_details": {},
+        "structured_source": "s22b",
+        "updated_at": 556,
+        "updated_by": "s22d",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_rules_search": {
+      "cloudforce_one_rules_search_ref01": {
+        "content": "s2d0",
+        "created_at": 721,
+        "created_by": "s2d2",
+        "description": "s2d3",
+        "enabled": true,
+        "is_public": true,
+        "meta": [],
+        "name": "s2d8",
+        "namespaces": [],
+        "path": "s2da",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "score": 733,
+        "scoring_details": {},
+        "structured_source": "s2df",
+        "updated_at": 736,
+        "updated_by": "s2e1"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/search": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

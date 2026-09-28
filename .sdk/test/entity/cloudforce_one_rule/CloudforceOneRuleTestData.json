@@ -1,0 +1,71 @@
+{
+  "existing": {
+    "cloudforce_one_rule": {
+      "CLOUDFORCE_ONE_RULE00": {
+        "actions": [],
+        "commit_message": "s65",
+        "content": "s66",
+        "description": "s67",
+        "enabled": true,
+        "is_public": false,
+        "meta": [],
+        "name": "s6b",
+        "namespaces": [],
+        "path": "s6d",
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_RULE00"
+      },
+      "CLOUDFORCE_ONE_RULE01": {
+        "actions": [],
+        "commit_message": "sc9",
+        "content": "sca",
+        "description": "scb",
+        "enabled": true,
+        "is_public": false,
+        "meta": [],
+        "name": "scf",
+        "namespaces": [],
+        "path": "sd1",
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_RULE01"
+      },
+      "CLOUDFORCE_ONE_RULE02": {
+        "actions": [],
+        "commit_message": "s12d",
+        "content": "s12e",
+        "description": "s12f",
+        "enabled": true,
+        "is_public": false,
+        "meta": [],
+        "name": "s133",
+        "namespaces": [],
+        "path": "s135",
+        "account_id": "ACCOUNT01",
+        "id": "CLOUDFORCE_ONE_RULE02"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_rule": {
+      "cloudforce_one_rule_ref01": {
+        "actions": [],
+        "commit_message": "s191",
+        "content": "s192",
+        "description": "s193",
+        "enabled": true,
+        "is_public": false,
+        "meta": [],
+        "name": "s197",
+        "namespaces": [],
+        "path": "s199"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/rules": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

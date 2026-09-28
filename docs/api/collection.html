@@ -1,0 +1,1706 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Collection | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a aria-current="page" href="../api/collection.html">Collection</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2collectionscollection_idcolumns">POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2collectionscollection_idsearch">POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-onev2collections">POST /accounts/{account_id}/cloudforce-one/v2/collections</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2collectionscollection_iditems">GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2collections">GET /accounts/{account_id}/cloudforce-one/v2/collections</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2collectionscollection_idexport">GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id">GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onev2collectionscollection_id">GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id">DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id">DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_id">DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id">PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id">PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_id">PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</a></div>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="collection">Collection</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2collectionscollection_idcolumns"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns</code></a></td>
+<td><code>create</code></td>
+<td>Column added successfully</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2collectionscollection_idsearch"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search</code></a></td>
+<td><code>create</code></td>
+<td>Items matching search criteria</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onev2collections"><code>/accounts/{account_id}/cloudforce-one/v2/collections</code></a></td>
+<td><code>create</code></td>
+<td>Collection created successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2collectionscollection_iditems"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items</code></a></td>
+<td><code>list</code></td>
+<td>Items retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2collections"><code>/accounts/{account_id}/cloudforce-one/v2/collections</code></a></td>
+<td><code>list</code></td>
+<td>Collections retrieved successfully</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2collectionscollection_idexport"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export</code></a></td>
+<td><code>load</code></td>
+<td>Streaming export response</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</code></a></td>
+<td><code>load</code></td>
+<td>Item retrieved</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onev2collectionscollection_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</code></a></td>
+<td><code>load</code></td>
+<td>Collection retrieved successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Column deleted successfully</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Item deleted</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onev2collectionscollection_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Collection deleted successfully</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</code></a></td>
+<td><code>update</code></td>
+<td>Column updated successfully</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</code></a></td>
+<td><code>update</code></td>
+<td>Item updated</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onev2collectionscollection_id"><code>/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</code></a></td>
+<td><code>update</code></td>
+<td>Collection updated successfully</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">collections, err := client.Collection(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(collections)
+collection, err := client.Collection(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(collection)
+created, err := client.Collection(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;columns&quot;: []any{}, &quot;created_at&quot;: &quot;example&quot;, &quot;created_by&quot;: &quot;example&quot;, &quot;data&quot;: map[string]any{}, &quot;id&quot;: &quot;example&quot;, &quot;item_count&quot;: 1, &quot;name&quot;: &quot;example&quot;, &quot;position&quot;: 1, &quot;required&quot;: true, &quot;status&quot;: &quot;example&quot;, &quot;type&quot;: &quot;example&quot;, &quot;updated_at&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Collection(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;column_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Collection(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local collections, err = client:Collection():list({ account_id = &quot;example&quot; })
+local collection, err = client:Collection():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:Collection():create({ account_id = &quot;example&quot;, columns = {}, created_at = &quot;example&quot;, created_by = &quot;example&quot;, data = {}, id = &quot;example&quot;, item_count = 1, name = &quot;example&quot;, position = 1, required = true, status = &quot;example&quot;, type = &quot;example&quot;, updated_at = &quot;example&quot; })
+local updated, err = client:Collection():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, column_id = &quot;example&quot; })
+local removed, err = client:Collection():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$collections = $client-&gt;Collection()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$collection = $client-&gt;Collection()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;Collection()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;columns&quot; =&gt; [], &quot;created_at&quot; =&gt; &quot;example&quot;, &quot;created_by&quot; =&gt; &quot;example&quot;, &quot;data&quot; =&gt; [], &quot;id&quot; =&gt; &quot;example&quot;, &quot;item_count&quot; =&gt; 1, &quot;name&quot; =&gt; &quot;example&quot;, &quot;position&quot; =&gt; 1, &quot;required&quot; =&gt; true, &quot;status&quot; =&gt; &quot;example&quot;, &quot;type&quot; =&gt; &quot;example&quot;, &quot;updated_at&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Collection()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;column_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Collection()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">collections = client.Collection().list({&quot;account_id&quot;: &quot;example&quot;})
+collection = client.Collection().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.Collection().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;columns&quot;: [], &quot;created_at&quot;: &quot;example&quot;, &quot;created_by&quot;: &quot;example&quot;, &quot;data&quot;: {}, &quot;id&quot;: &quot;example&quot;, &quot;item_count&quot;: 1, &quot;name&quot;: &quot;example&quot;, &quot;position&quot;: 1, &quot;required&quot;: True, &quot;status&quot;: &quot;example&quot;, &quot;type&quot;: &quot;example&quot;, &quot;updated_at&quot;: &quot;example&quot; })
+updated = client.Collection().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;column_id&quot;: &quot;example&quot;})
+client.Collection().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">collections = client.Collection.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+collection = client.Collection.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.Collection.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;columns&quot; =&gt; [], &quot;created_at&quot; =&gt; &quot;example&quot;, &quot;created_by&quot; =&gt; &quot;example&quot;, &quot;data&quot; =&gt; {}, &quot;id&quot; =&gt; &quot;example&quot;, &quot;item_count&quot; =&gt; 1, &quot;name&quot; =&gt; &quot;example&quot;, &quot;position&quot; =&gt; 1, &quot;required&quot; =&gt; true, &quot;status&quot; =&gt; &quot;example&quot;, &quot;type&quot; =&gt; &quot;example&quot;, &quot;updated_at&quot; =&gt; &quot;example&quot; })
+updated = client.Collection.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;column_id&quot; =&gt; &quot;example&quot; })
+client.Collection.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const collections = await client.Collection().list({ account_id: &quot;example&quot; })
+const collection = await client.Collection().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.Collection().create({ account_id: &quot;example&quot;, columns: [], created_at: &quot;example&quot;, created_by: &quot;example&quot;, data: {}, id: &quot;example&quot;, item_count: 1, name: &quot;example&quot;, position: 1, required: true, status: &quot;example&quot;, type: &quot;example&quot;, updated_at: &quot;example&quot; })
+const updated = await client.Collection().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, column_id: &quot;example&quot; })
+await client.Collection().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>columns</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Columns</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created At</td>
+</tr>
+<tr>
+<td><code>created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Created By</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Data</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>item_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Item Count</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td>Metadata</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>New column name (must be unique)</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Column display order</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Whether column is required</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Status</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Column type: text, number, boolean, or date</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Updated At</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onev2collectionscollection_idcolumns" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns</h3>
+<p>Operation ID: <code>post_ColumnAdd</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>default</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum: text, number, boolean, date</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-column-added-successfully" class="status" data-status="2xx">200: Column added successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.position</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.type</code></td>
+<td><code>enum: text, number, boolean, date</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-not-found" class="status" data-status="4xx">404: Collection not found</h5>
+<h5 id="409-column-with-this-name-already-exists" class="status" data-status="4xx">409: Column with this name already exists</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2collectionscollection_idsearch" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search</h3>
+<p>Operation ID: <code>post_ItemSearch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cursor</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td><code>object or object or object</code></td>
+<td>No</td>
+<td>Recursive filter supporting AND/OR nesting of conditions. Can be either a leaf condition (field/op/value) or a logical group (and/or array of nested filters).</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td><code>integer</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>q</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking.</td>
+</tr>
+<tr>
+<td><code>sort</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>sort.field</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Column name to sort by</td>
+</tr>
+<tr>
+<td><code>sort.order</code></td>
+<td><code>enum: asc, desc</code></td>
+<td>No</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-items-matching-search-criteria" class="status" data-status="2xx">200: Items matching search criteria</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.current</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.first</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.next</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.prev</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.limit</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-filter-syntax-or-cursor" class="status" data-status="4xx">400: Invalid filter syntax or cursor</h5>
+<h5 id="404-collection-not-found-1" class="status" data-status="4xx">404: Collection not found</h5>
+<h3 id="post-accountsaccount_idcloudforce-onev2collections" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/v2/collections</h3>
+<p>Operation ID: <code>post_CollectionCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<p>The request body is <code>object or object or object</code>.</p>
+<p><code>multipart/form-data</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional description</td>
+</tr>
+<tr>
+<td><code>file</code></td>
+<td><code>string (binary)</code></td>
+<td>Yes</td>
+<td>File to upload (CSV, JSON, or JSONL)</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional custom metadata as JSON object (for example, '{&quot;key&quot;:&quot;value&quot;}')</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Collection name (alphanumeric with underscores)</td>
+</tr>
+<tr>
+<td><code>project_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional project ID</td>
+</tr>
+<tr>
+<td><code>tags</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Optional tags as JSON array (for example, '[&quot;tag1&quot;,&quot;tag2&quot;]')</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="201-collection-created-successfully" class="status" data-status="2xx">201: Collection created successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].default_value</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].position</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].type</code></td>
+<td><code>enum: text, number, boolean, date</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string (uuid)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.item_count</code></td>
+<td><code>integer</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.project_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.status</code></td>
+<td><code>enum: ready, processing, failed</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string (date-time)</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-request---validation-failed" class="status" data-status="4xx">400: Invalid request - validation failed</h5>
+<h5 id="409-collection-with-this-name-already-exists" class="status" data-status="4xx">409: Collection with this name already exists</h5>
+<h5 id="413-file-too-large-max-10mb-or-too-many-rows-max-300000" class="status" data-status="4xx">413: File too large (max 10MB) or too many rows (max 300,000)</h5>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2collectionscollection_iditems" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items</h3>
+<p>Operation ID: <code>get_ItemQuery</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |
+| <code>cursor</code> | <code>query</code> | <code>string</code> | No | Opaque pagination cursor from a previous response. Omit for the first page. |
+| <code>limit</code> | <code>query</code> | <code>number</code> | No | Items per page |
+| <code>q</code> | <code>query</code> | <code>string</code> | No | Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-items-retrieved-successfully" class="status" data-status="2xx">200: Items retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.current</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.first</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.next</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.cursors.prev</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.limit</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-cursor" class="status" data-status="4xx">400: Invalid cursor</h5>
+<h5 id="404-collection-not-found-2" class="status" data-status="4xx">404: Collection not found</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2collections" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/collections</h3>
+<p>Operation ID: <code>get_CollectionList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>page</code> | <code>query</code> | <code>number</code> | No | Page number |
+| <code>limit</code> | <code>query</code> | <code>number</code> | No | Items per page |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-collections-retrieved-successfully" class="status" data-status="2xx">200: Collections retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pagination</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.limit</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.page</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>pagination.total</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].item_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result[].updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-client-error-response">4XX: Client error response</h5>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onev2collectionscollection_idexport" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export</h3>
+<p>Operation ID: <code>get_CollectionExportEndpoint</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID (hex format) |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |
+| <code>include_ids</code> | <code>query</code> | <code>boolean</code> | No | Include item IDs in export (default: false) |
+| <code>accept</code> | <code>header</code> | <code>string</code> | No | Requested format: text/csv (default), application/x-ndjson, text/markdown |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-streaming-export-response" class="status" data-status="2xx">200: Streaming export response</h5>
+<p><code>application/x-ndjson</code></p>
+<p>The response is <code>string</code>.</p>
+<p><code>text/csv</code></p>
+<p>The response is <code>string</code>.</p>
+<p><code>text/markdown</code></p>
+<p>The response is <code>string</code>.</p>
+<h5 id="404-collection-not-found-3" class="status" data-status="4xx">404: Collection not found</h5>
+<h5 id="406-unsupported-format-requested" class="status" data-status="4xx">406: Unsupported format requested</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</h3>
+<p>Operation ID: <code>get_ItemGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>item_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-item-retrieved" class="status" data-status="2xx">200: Item retrieved</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-or-item-not-found" class="status" data-status="4xx">404: Collection or item not found</h5>
+<h3 id="get-accountsaccount_idcloudforce-onev2collectionscollection_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</h3>
+<p>Operation ID: <code>get_CollectionGet</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-collection-retrieved-successfully" class="status" data-status="2xx">200: Collection retrieved successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].default</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].position</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.columns[].type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.item_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-not-found-4" class="status" data-status="4xx">404: Collection not found</h5>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</h3>
+<p>Operation ID: <code>delete_ColumnDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>column_id</code> | <code>path</code> | <code>string</code> | Yes | Column UUID |</p>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-column-deleted-successfully" class="status" data-status="2xx">200: Column deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.position</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-cannot-delete-imported-column" class="status" data-status="4xx">400: Cannot delete imported column</h5>
+<h5 id="404-collection-or-column-not-found" class="status" data-status="4xx">404: Collection or column not found</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</h3>
+<p>Operation ID: <code>delete_ItemDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-9">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>item_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="responses-9">Responses</h4>
+<h5 id="200-item-deleted" class="status" data-status="2xx">200: Item deleted</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.deleted</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-or-item-not-found-1" class="status" data-status="4xx">404: Collection or item not found</h5>
+<h3 id="delete-accountsaccount_idcloudforce-onev2collectionscollection_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</h3>
+<p>Operation ID: <code>delete_CollectionDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-10">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |</p>
+<h4 id="responses-10">Responses</h4>
+<h5 id="200-collection-deleted-successfully" class="status" data-status="2xx">200: Collection deleted successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-not-found-5" class="status" data-status="4xx">404: Collection not found</h5>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-onev2collectionscollection_idcolumnscolumn_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}</h3>
+<p>Operation ID: <code>patch_ColumnUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-11">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>column_id</code> | <code>path</code> | <code>string</code> | Yes | Column UUID |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>New column name (must be unique)</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Column display order</td>
+</tr>
+<tr>
+<td><code>required</code></td>
+<td><code>boolean</code></td>
+<td>No</td>
+<td>Whether column is required</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>enum: text, number, boolean, date</code></td>
+<td>No</td>
+<td>Column type: text, number, boolean, or date</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-11">Responses</h4>
+<h5 id="200-column-updated-successfully" class="status" data-status="2xx">200: Column updated successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.position</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.required</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-invalid-request-validation-error" class="status" data-status="4xx">400: Invalid request (validation error)</h5>
+<h5 id="404-collection-or-column-not-found-1" class="status" data-status="4xx">404: Collection or column not found</h5>
+<h5 id="409-new-column-name-conflicts-with-existing-column" class="status" data-status="4xx">409: New column name conflicts with existing column</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2collectionscollection_iditemsitem_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}</h3>
+<p>Operation ID: <code>patch_ItemUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-12">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes |  |
+| <code>item_id</code> | <code>path</code> | <code>string</code> | Yes |  |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-12">Responses</h4>
+<h5 id="200-item-updated" class="status" data-status="2xx">200: Item updated</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.data</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-validation-error" class="status" data-status="4xx">400: Validation error</h5>
+<h5 id="404-collection-or-item-not-found-2" class="status" data-status="4xx">404: Collection or item not found</h5>
+<h3 id="patch-accountsaccount_idcloudforce-onev2collectionscollection_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}</h3>
+<p>Operation ID: <code>patch_CollectionUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-13">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID |
+| <code>collection_id</code> | <code>path</code> | <code>string</code> | Yes | Collection UUID |</p>
+<h4 id="request-body-5">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>metadata.description</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Collection description</td>
+</tr>
+<tr>
+<td><code>metadata.project_id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Project ID</td>
+</tr>
+<tr>
+<td><code>metadata.tags</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Collection name</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-13">Responses</h4>
+<h5 id="200-collection-updated-successfully" class="status" data-status="2xx">200: Collection updated successfully</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.created_by</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.id</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.item_count</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.metadata</code></td>
+<td><code>object</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.status</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.updated_at</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>enum: true</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-collection-not-found-6" class="status" data-status="4xx">404: Collection not found</h5>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

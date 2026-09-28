@@ -1,0 +1,68 @@
+# BasicCloudforceOneRulePreviewFlow
+
+main: kit: flow: BasicCloudforceOneRulePreviewFlow:
+{
+  entity: "cloudforce_one_rule_preview",
+  kind: "basic",
+  name: "BasicCloudforceOneRulePreviewFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_rule_preview_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "cloudforce_one_rule_preview_ref01",
+        srcdatavar: "cloudforce_one_rule_preview_ref01_data",
+        suffix: "_up0",
+        textfield: "commit_message"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_rule_preview_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "cloudforce_one_rule_preview_ref01",
+        srcdatavar: "cloudforce_one_rule_preview_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "cloudforce_one_rule_preview01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_rule_preview_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneRulePreviewFlow"
+}

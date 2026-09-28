@@ -1,0 +1,32 @@
+# BasicCloudforceOneStatFlow
+
+main: kit: flow: BasicCloudforceOneStatFlow:
+{
+  entity: "cloudforce_one_stat",
+  kind: "basic",
+  name: "BasicCloudforceOneStatFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_stat_ref01",
+        srcdatavar: "cloudforce_one_stat_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "cloudforce_one_stat01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_stat_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneStatFlow"
+}

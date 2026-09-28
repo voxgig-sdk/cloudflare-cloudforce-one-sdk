@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Scan | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a href="../api/dataset.html">Dataset</a>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a aria-current="page" href="../api/scan.html">Scan</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-onescansconfig">POST /accounts/{account_id}/cloudforce-one/scans/config</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onescansconfig">GET /accounts/{account_id}/cloudforce-one/scans/config</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onebannerconfig_id">GET /accounts/{account_id}/cloudforce-one/banner/{config_id}</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-onescansresultsconfig_id">GET /accounts/{account_id}/cloudforce-one/scans/results/{config_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-onescansconfigconfig_id">DELETE /accounts/{account_id}/cloudforce-one/scans/config/{config_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-onescansconfigconfig_id">PATCH /accounts/{account_id}/cloudforce-one/scans/config/{config_id}</a></div>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="scan">Scan</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-onescansconfig"><code>/accounts/{account_id}/cloudforce-one/scans/config</code></a></td>
+<td><code>create</code></td>
+<td>Returns the created config</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onescansconfig"><code>/accounts/{account_id}/cloudforce-one/scans/config</code></a></td>
+<td><code>list</code></td>
+<td>Returns all Scan Configs</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onebannerconfig_id"><code>/accounts/{account_id}/cloudforce-one/banner/{config_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns Current Banner Grab Result</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-onescansresultsconfig_id"><code>/accounts/{account_id}/cloudforce-one/scans/results/{config_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns Current Open Ports</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-onescansconfigconfig_id"><code>/accounts/{account_id}/cloudforce-one/scans/config/{config_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Delete a Scan Config</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-onescansconfigconfig_id"><code>/accounts/{account_id}/cloudforce-one/scans/config/{config_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns the updated config</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">scans, err := client.Scan(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(scans)
+scan, err := client.Scan(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(scan)
+created, err := client.Scan(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: []any{}, &quot;messages&quot;: []any{}, &quot;result&quot;: map[string]any{}, &quot;success&quot;: true}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Scan(nil).Update(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Scan(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local scans, err = client:Scan():list({ account_id = &quot;example&quot; })
+local scan, err = client:Scan():load({ account_id = &quot;example&quot;, config_id = &quot;example&quot; })
+local created, err = client:Scan():create({ account_id = &quot;example&quot;, errors = {}, messages = {}, result = {}, success = true })
+local updated, err = client:Scan():update({ account_id = &quot;example&quot;, config_id = &quot;example&quot; })
+local removed, err = client:Scan():remove({ account_id = &quot;example&quot;, config_id = &quot;example&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$scans = $client-&gt;Scan()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$scan = $client-&gt;Scan()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot;]);
+$created = $client-&gt;Scan()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; [], &quot;success&quot; =&gt; true]);
+$updated = $client-&gt;Scan()-&gt;update([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Scan()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">scans = client.Scan().list({&quot;account_id&quot;: &quot;example&quot;})
+scan = client.Scan().load({&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;})
+created = client.Scan().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;errors&quot;: [], &quot;messages&quot;: [], &quot;result&quot;: {}, &quot;success&quot;: True })
+updated = client.Scan().update({&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;})
+client.Scan().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;config_id&quot;: &quot;example&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">scans = client.Scan.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+scan = client.Scan.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot; })
+created = client.Scan.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;errors&quot; =&gt; [], &quot;messages&quot; =&gt; [], &quot;result&quot; =&gt; {}, &quot;success&quot; =&gt; true })
+updated = client.Scan.update({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot; })
+client.Scan.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;config_id&quot; =&gt; &quot;example&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const scans = await client.Scan().list({ account_id: &quot;example&quot; })
+const scan = await client.Scan().load({ account_id: &quot;example&quot;, config_id: &quot;example&quot; })
+const created = await client.Scan().create({ account_id: &quot;example&quot;, errors: [], messages: [], result: {}, success: true })
+const updated = await client.Scan().update({ account_id: &quot;example&quot;, config_id: &quot;example&quot; })
+await client.Scan().remove({ account_id: &quot;example&quot;, config_id: &quot;example&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Errors</td>
+</tr>
+<tr>
+<td><code>frequency</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Defines the number of days between each scan (0 = One-off scan).</td>
+</tr>
+<tr>
+<td><code>ips</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Defines a list of IP addresses or CIDR blocks to scan.</td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array</code></td>
+<td>Yes</td>
+<td>Messages</td>
+</tr>
+<tr>
+<td><code>ports</code></td>
+<td><code>array</code></td>
+<td>No</td>
+<td>Defines a list of ports to scan.</td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td>Result</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Success</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-onescansconfig" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/scans/config</h3>
+<p>Operation ID: <code>post_ConfigCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frequency</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Defines the number of days between each scan (0 = One-off scan).</td>
+</tr>
+<tr>
+<td><code>ips</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td>Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.</td>
+</tr>
+<tr>
+<td><code>ports</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Defines a list of ports to scan. Valid values are:&quot;default&quot;, &quot;all&quot;, or a comma-separated list of ports or range of ports (for example [&quot;1-80&quot;, &quot;443&quot;]). &quot;default&quot; scans the 100 most commonly open ports.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-the-created-config" class="status" data-status="2xx">200: Returns the created config</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-create-a-new-scan-config-failure">4XX: Create a new Scan Config failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-onescansconfig" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/scans/config</h3>
+<p>Operation ID: <code>get_ConfigFetch</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |</p>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-all-scan-configs" class="status" data-status="2xx">200: Returns all Scan Configs</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-list-scan-configs-failure">4XX: List Scan Configs failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-onebannerconfig_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/banner/{config_id}</h3>
+<p>Operation ID: <code>get_GetBanners</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |
+| <code>config_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Config ID. |</p>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-current-banner-grab-result" class="status" data-status="2xx">200: Returns Current Banner Grab Result</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].number</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].proto</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-the-latest-banner-grab-result-failure">4XX: Get the Latest Banner Grab Result failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h3 id="get-accountsaccount_idcloudforce-onescansresultsconfig_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/scans/results/{config_id}</h3>
+<p>Operation ID: <code>get_GetOpenPorts</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |
+| <code>config_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Config ID. |</p>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-current-open-ports" class="status" data-status="2xx">200: Returns Current Open Ports</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].number</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].proto</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result.1.1.1.1[].status</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-get-the-latest-scan-result-failure">4XX: Get the Latest Scan Result failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-onescansconfigconfig_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/scans/config/{config_id}</h3>
+<p>Operation ID: <code>delete_DeleteScans</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |
+| <code>config_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Config ID. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-delete-a-scan-config" class="status" data-status="2xx">200: Delete a Scan Config</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>messages</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="4xx-delete-a-scan-config-failure">4XX: Delete a Scan Config failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-onescansconfigconfig_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/scans/config/{config_id}</h3>
+<p>Operation ID: <code>post_ConfigUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>) or API key in the header (<code>api_email</code>) or API key in the header (<code>api_key</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Account ID. |
+| <code>config_id</code> | <code>path</code> | <code>string</code> | Yes | Defines the Config ID. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frequency</code></td>
+<td><code>number</code></td>
+<td>No</td>
+<td>Defines the number of days between each scan (0 = One-off scan).</td>
+</tr>
+<tr>
+<td><code>ips</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Defines a list of IP addresses or CIDR blocks to scan. The maximum number of total IP addresses allowed is 5000.</td>
+</tr>
+<tr>
+<td><code>ports</code></td>
+<td><code>array of string</code></td>
+<td>No</td>
+<td>Defines a list of ports to scan. Valid values are:&quot;default&quot;, &quot;all&quot;, or a comma-separated list of ports or range of ports (for example [&quot;1-80&quot;, &quot;443&quot;]). &quot;default&quot; scans the 100 most commonly open ports.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-the-updated-config" class="status" data-status="2xx">200: Returns the updated config</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+<h5 id="4xx-update-an-existing-scan-config-failure">4XX: Update an Existing Scan Config failure</h5>
+<p><code>application/json</code></p>
+<p>The response is <code>object and object</code>.</p>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

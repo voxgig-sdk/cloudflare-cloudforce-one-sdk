@@ -1,0 +1,32 @@
+# BasicIndicatorTypeFlow
+
+main: kit: flow: BasicIndicatorTypeFlow:
+{
+  entity: "indicator_type",
+  kind: "basic",
+  name: "BasicIndicatorTypeFlow",
+  step: [
+    {
+      i: {
+        ref: "indicator_type_ref01",
+        srcdatavar: "indicator_type_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "indicator_type01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-indicator_type_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicIndicatorTypeFlow"
+}

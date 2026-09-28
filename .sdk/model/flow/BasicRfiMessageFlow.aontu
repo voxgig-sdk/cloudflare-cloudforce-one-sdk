@@ -1,0 +1,92 @@
+# BasicRfiMessageFlow
+
+main: kit: flow: BasicRfiMessageFlow:
+{
+  entity: "rfi_message",
+  kind: "basic",
+  name: "BasicRfiMessageFlow",
+  step: [
+    {
+      i: {
+        ref: "rfi_message_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        project_type: "project_type01",
+        request_id: "request01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01",
+        project_type: "project_type01",
+        request_id: "request01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "rfi_message_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      d: {
+        account_id: "account01",
+        project_type: "project_type01",
+        request_id: "request01"
+      }
+
+      i: {
+        ref: "rfi_message_ref01",
+        srcdatavar: "rfi_message_ref01_data",
+        suffix: "_up0",
+        textfield: "author_id"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-rfi_message_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "rfi_message_ref01",
+        srcdatavar: "rfi_message_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "rfi_message01",
+        project_type: "project_type01",
+        request_id: "request01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-rfi_message_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicRfiMessageFlow"
+}

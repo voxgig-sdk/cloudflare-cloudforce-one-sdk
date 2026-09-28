@@ -1,0 +1,202 @@
+
+
+import Path from 'node:path'
+import * as Fs from 'node:fs'
+
+import { test, describe, afterEach } from 'node:test'
+import assert from 'node:assert'
+import { createLiveTransport } from '../../live-runner'
+import { runLiveEntity } from '../../live-entity'
+
+
+import { CloudflareCloudforceOneSDK, BaseFeature, stdutil } from '../../..'
+
+import {
+  envOverride,
+  liveClientOptions,
+  liveDelay,
+  loadEnvLocal,
+  makeCtrl,
+  makeMatch,
+  makeReqdata,
+  makeStepData,
+  makeValid,
+  maybeSkipControl,
+} from '../../utility'
+
+
+loadEnvLocal(__dirname + '/../../../.env.local')
+
+
+describe('CollectionEntity', async () => {
+
+  // Per-test live pacing. Delay is read from sdk-test-control.json's
+  // `test.live.delayMs`; only sleeps when CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE=TRUE.
+  afterEach(liveDelay('CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE'))
+
+  test('instance', async () => {
+    const testsdk = CloudflareCloudforceOneSDK.test()
+    const ent = testsdk.Collection()
+    assert(null != ent)
+  })
+
+
+  test('basic', async (t) => {
+
+    const live = 'TRUE' === process.env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE
+    for (const op of ['create', 'list', 'update', 'load', 'remove']) {
+      if (!live && maybeSkipControl(t, 'entityOp', 'collection.' + op, live)) return
+    }
+
+    
+    const setup = basicSetup()
+    if (setup.live) {
+      return runLiveEntity(setup, {"active":true,"alias":{"field":{}},"fields":{"columns":{"a":true,"h":"Columns","n":"columns","r":true,"t":"`$ARRAY`","key$":"columns","index$":0},"created_at":{"a":true,"h":"Created At","n":"created_at","r":true,"t":"`$STRING`","key$":"created_at","index$":1},"created_by":{"a":true,"h":"Created By","n":"created_by","r":true,"t":"`$STRING`","key$":"created_by","index$":2},"data":{"a":true,"h":"Data","n":"data","r":true,"t":"`$OBJECT`","key$":"data","index$":3},"id":{"a":true,"h":"Id","n":"id","r":true,"t":"`$STRING`","key$":"id","index$":4},"item_count":{"a":true,"h":"Item Count","n":"item_count","r":true,"t":"`$NUMBER`","key$":"item_count","index$":5},"metadata":{"a":true,"h":"Metadata","n":"metadata","r":false,"t":"`$OBJECT`","key$":"metadata","index$":6},"name":{"a":true,"h":"Name","n":"name","op":{"update":{"req":false,"type":"`$STRING`"}},"r":true,"sh":"New column name (must be unique)","t":"`$STRING`","key$":"name","index$":7},"position":{"a":true,"h":"Position","n":"position","op":{"update":{"req":false,"type":"`$NUMBER`"}},"r":true,"sh":"Column display order","t":"`$NUMBER`","key$":"position","index$":8},"required":{"a":true,"h":"Required","n":"required","op":{"update":{"req":false,"type":"`$BOOLEAN`"}},"r":true,"sh":"Whether column is required","t":"`$BOOLEAN`","key$":"required","index$":9},"status":{"a":true,"h":"Status","n":"status","r":true,"t":"`$STRING`","key$":"status","index$":10},"type":{"a":true,"h":"Type","n":"type","op":{"update":{"req":false,"type":"`$STRING`"}},"r":true,"sh":"Column type: text, number, boolean, or date","t":"`$STRING`","key$":"type","index$":11},"updated_at":{"a":true,"h":"Updated At","n":"updated_at","r":true,"t":"`$STRING`","key$":"updated_at","index$":12}},"id":{"field":"id","name":"id"},"name":"collection","op":{"create":{"input":"data","name":"create","points":[{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns","source":"openapi3","version":2},"g":{"params":[{"a":true,"ex":"10d79d097895ae7ed7942a2b3832186c","k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"ex":"550e8400-e29b-41d4-a716-446655440000","k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns","q":{"$action":"column","exist":["account_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"columns"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":0},{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search","q":{"$action":"search","exist":["account_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"search"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1},{"a":true,"co":{"id":"POST /accounts/{account_id}/cloudforce-one/v2/collections","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}]},"k":"http","m":"POST","o":"/accounts/{account_id}/cloudforce-one/v2/collections","q":{"exist":["account_id"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":2}],"key$":"create"},"list":{"input":"data","name":"list","points":[{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}],"query":[{"a":true,"k":"query","n":"cursor","or":"cursor","r":false,"t":"`$STRING`","index$":0},{"a":true,"k":"query","n":"limit","or":"limit","r":false,"t":"`$NUMBER`","index$":1},{"a":true,"k":"query","n":"q","or":"q","r":false,"t":"`$STRING`","index$":2}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items","q":{"$action":"item","exist":["account_id","cursor","id","limit","q"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"items"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/v2/collections","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0}],"query":[{"a":true,"k":"query","n":"limit","or":"limit","r":false,"t":"`$NUMBER`","index$":0},{"a":true,"k":"query","n":"page","or":"page","r":false,"t":"`$NUMBER`","index$":1}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/v2/collections","q":{"exist":["account_id","limit","page"]},"r":{},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":1}],"key$":"list"},"load":{"input":"data","name":"load","points":[{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export","source":"openapi3","version":2},"g":{"header":[{"a":true,"k":"header","n":"accept","or":"accept","r":false,"t":"`$STRING`","index$":0}],"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}],"query":[{"a":true,"k":"query","n":"include_id","or":"include_id","r":false,"t":"`$BOOLEAN`","index$":0}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export","q":{"$action":"export","exist":["accept","account_id","id","include_id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"export"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":0},{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"param","n":"item_id","or":"item_id","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","q":{"exist":["account_id","id","item_id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"items"},{"var":"item_id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":1},{"a":true,"co":{"id":"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"GET","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","q":{"exist":["account_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":2}],"key$":"load"},"remove":{"input":"data","name":"remove","points":[{"a":true,"co":{"id":"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"column_id","or":"column_id","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"DELETE","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}","q":{"exist":["account_id","column_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"columns"},{"var":"column_id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":0},{"a":true,"co":{"id":"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"param","n":"item_id","or":"item_id","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"DELETE","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","q":{"exist":["account_id","id","item_id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"items"},{"var":"item_id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":1},{"a":true,"co":{"id":"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"DELETE","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","q":{"exist":["account_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body`"},"index$":2}],"key$":"remove"},"update":{"input":"data","name":"update","points":[{"a":true,"co":{"id":"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"column_id","or":"column_id","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"PATCH","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}","q":{"exist":["account_id","column_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"columns"},{"var":"column_id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":0},{"a":true,"co":{"id":"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1},{"a":true,"k":"param","n":"item_id","or":"item_id","r":true,"t":"`$STRING`","index$":2}]},"k":"http","m":"PATCH","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}","q":{"exist":["account_id","id","item_id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"},{"lit":"items"},{"var":"item_id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":1},{"a":true,"co":{"id":"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","source":"openapi3","version":2},"g":{"params":[{"a":true,"k":"param","n":"account_id","or":"account_id","r":true,"t":"`$STRING`","index$":0},{"a":true,"k":"param","n":"id","or":"collection_id","r":true,"t":"`$STRING`","index$":1}]},"k":"http","m":"PATCH","o":"/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}","q":{"exist":["account_id","id"]},"r":{"param":{"collection_id":"id"}},"s":[{"lit":"accounts"},{"var":"account_id"},{"lit":"cloudforce-one"},{"lit":"v2"},{"lit":"collections"},{"var":"id"}],"t":{"req":"`reqdata`","res":"`body.result`"},"index$":2}],"key$":"update"}},"relations":{"ancestors":[]},"key$":"collection","name__orig":"collection","Name":"Collection","name_":"collection","name-":"collection","NAME":"COLLECTION","index$":20}, {"active":true,"entity":"collection","key$":"BasicCollectionFlow","kind":"basic","name":"BasicCollectionFlow","param":{},"step":[{"a":true,"d":{},"i":{"ref":"collection_ref01"},"m":{"account_id":"account01"},"o":"create","s":[],"v":[],"index$":0},{"a":true,"d":{},"i":{},"m":{"account_id":"account01"},"o":"list","s":[],"v":[{"apply":"ItemExists","def":{"ref":"collection_ref01"}}],"index$":1},{"a":true,"d":{"account_id":"account01"},"i":{"ref":"collection_ref01","srcdatavar":"collection_ref01_data","suffix":"_up0","textfield":"created_at"},"m":{},"o":"update","s":[{"apply":"TextFieldMark","def":{"mark":"Mark01-collection_ref01"}}],"v":[],"index$":2},{"a":true,"d":{},"i":{"ref":"collection_ref01","srcdatavar":"collection_ref01_data","suffix":"_dt0"},"m":{"account_id":"account01","id":"collection01"},"o":"load","s":[],"v":[{"apply":"TextFieldMark","def":{"mark":"Mark01-collection_ref01"}}],"index$":3},{"a":true,"d":{},"i":{"ref":"collection_ref01","suffix":"_rm0"},"m":{"account_id":"account01","id":"collection01"},"o":"remove","s":[],"v":[],"index$":4},{"a":true,"d":{},"i":{"suffix":"_rt0"},"m":{"account_id":"account01"},"o":"list","s":[],"v":[{"apply":"ItemNotExists","def":{"ref":"collection_ref01"}}],"index$":5}]}, 'Collection', {"POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"default":{"type":"object","nullable":true},"name":{"type":"string","maxLength":64,"minLength":1,"pattern":"^[a-zA-Z0-9_]+$"},"required":{"type":"boolean","default":false},"type":{"type":"string","enum":["text","number","boolean","date"]}},"required":["name","type"]}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string","example":"10d79d097895ae7ed7942a2b3832186c"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string","example":"550e8400-e29b-41d4-a716-446655440000"},"index$":1}]},"POST /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"cursor":{"type":"string"},"filter":{"description":"Recursive filter supporting AND/OR nesting of conditions. Can be either a leaf condition (field/op/value) or a logical group (and/or array of nested filters).","type":"object","oneOf":[{"description":"Leaf filter condition","properties":{"field":{},"op":{},"value":{}},"required":["field","op"],"type":"object"},{"properties":{"and":{}},"required":["and"],"type":"object"},{"properties":{"or":{}},"required":["or"],"type":"object"}]},"limit":{"type":"integer","default":20,"maximum":100,"minimum":1},"q":{"description":"Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking.","type":"string","maxLength":500,"minLength":1},"sort":{"type":"object","properties":{"field":{"description":"Column name to sort by","type":"string"},"order":{"type":"string","default":"asc","enum":["asc","desc"]}},"required":["field"]}}}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1}]},"POST /accounts/{account_id}/cloudforce-one/v2/collections":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"anyOf":[{"properties":{"columns":{"type":"array","items":{"properties":{},"required":[],"type":"object"},"maxItems":100,"minItems":1},"description":{"type":"string","maxLength":500},"metadata":{"type":"object","additionalProperties":true},"name":{"type":"string","maxLength":64,"minLength":1,"pattern":"^[a-zA-Z0-9_]+$"},"project_id":{"type":"string"},"tags":{"type":"array","items":{"type":"string"}}},"required":["name","columns"],"type":"object"},{"properties":{"description":{"type":"string","maxLength":500},"metadata":{"type":"object","additionalProperties":true},"name":{"type":"string","maxLength":64,"minLength":1,"pattern":"^[a-zA-Z0-9_]+$"},"project_id":{"type":"string"},"rows":{"type":"array","items":{"additionalProperties":true,"type":"object"},"maxItems":1000,"minItems":1},"tags":{"type":"array","items":{"type":"string"}}},"required":["name","rows"],"type":"object"},{"properties":{"columns":{"type":"array","items":{"properties":{},"required":[],"type":"object"},"maxItems":100,"minItems":1},"description":{"type":"string","maxLength":500},"metadata":{"type":"object","additionalProperties":true},"name":{"type":"string","maxLength":64,"minLength":1,"pattern":"^[a-zA-Z0-9_]+$"},"project_id":{"type":"string"},"rows":{"type":"array","items":{"additionalProperties":true,"type":"object"},"maxItems":1000,"minItems":1},"tags":{"type":"array","items":{"type":"string"}}},"required":["name","columns","rows"],"type":"object"}],"index$":1}},"multipart/form-data":{"schema":{"type":"object","properties":{"description":{"description":"Optional description","type":"string"},"file":{"description":"File to upload (CSV, JSON, or JSONL)","type":"string","format":"binary"},"metadata":{"description":"Optional custom metadata as JSON object (e.g., '{\"key\":\"value\"}')","type":"string"},"name":{"description":"Collection name (alphanumeric with underscores)","type":"string"},"project_id":{"description":"Optional project ID","type":"string"},"tags":{"description":"Optional tags as JSON array (e.g., '[\"tag1\",\"tag2\"]')","type":"string"}},"required":["name","file"]}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0}]},"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1},{"name":"cursor","in":"query","description":"Opaque pagination cursor from a previous response. Omit for the first page.","schema":{"description":"Opaque pagination cursor from a previous response. Omit for the first page.","type":"string"},"index$":2},{"name":"limit","in":"query","description":"Items per page","schema":{"description":"Items per page","type":"number"},"index$":3},{"name":"q","in":"query","description":"Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking.","schema":{"description":"Case-insensitive substring search across all columns. Matches any column containing the term. No relevance ranking.","type":"string","maxLength":500,"minLength":1},"index$":4}]},"GET /accounts/{account_id}/cloudforce-one/v2/collections":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"page","in":"query","description":"Page number","schema":{"description":"Page number","type":"number"},"index$":1},{"name":"limit","in":"query","description":"Items per page","schema":{"description":"Items per page","type":"number"},"index$":2}]},"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID (hex format)","required":true,"schema":{"description":"Account ID (hex format)","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1},{"name":"include_ids","in":"query","description":"Include item IDs in export (default: false)","schema":{"description":"Include item IDs in export (default: false)","type":"boolean"},"index$":2},{"name":"accept","in":"header","description":"Requested format: text/csv (default), application/x-ndjson, text/markdown","schema":{"description":"Requested format: text/csv (default), application/x-ndjson, text/markdown","type":"string"},"index$":3}]},"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","required":true,"schema":{"type":"string"},"index$":0},{"name":"collection_id","in":"path","required":true,"schema":{"type":"string"},"index$":1},{"name":"item_id","in":"path","required":true,"schema":{"type":"string"},"index$":2}]},"GET /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1}]},"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","required":true,"schema":{"type":"string"},"index$":0},{"name":"collection_id","in":"path","required":true,"schema":{"type":"string"},"index$":1},{"name":"column_id","in":"path","description":"Column UUID","required":true,"schema":{"description":"Column UUID","type":"string"},"index$":2}]},"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","required":true,"schema":{"type":"string"},"index$":0},{"name":"collection_id","in":"path","required":true,"schema":{"type":"string"},"index$":1},{"name":"item_id","in":"path","required":true,"schema":{"type":"string"},"index$":2}]},"DELETE /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}":{"protocol":"http","parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1}]},"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"description":"New column name (must be unique)","type":"string","key$":"name"},"position":{"description":"Column display order","type":"number","key$":"position"},"required":{"description":"Whether column is required","type":"boolean","key$":"required"},"type":{"description":"Column type: text, number, boolean, or date","type":"string","enum":["text","number","boolean","date"],"key$":"type"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","required":true,"schema":{"type":"string"},"index$":0},{"name":"collection_id","in":"path","required":true,"schema":{"type":"string"},"index$":1},{"name":"column_id","in":"path","description":"Column UUID","required":true,"schema":{"description":"Column UUID","type":"string"},"index$":2}]},"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"data":{"type":"object","additionalProperties":true,"key$":"data"}},"required":["data"],"index$":1}}}},"parameters":[{"name":"account_id","in":"path","required":true,"schema":{"type":"string"},"index$":0},{"name":"collection_id","in":"path","required":true,"schema":{"type":"string"},"index$":1},{"name":"item_id","in":"path","required":true,"schema":{"type":"string"},"index$":2}]},"PATCH /accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}":{"protocol":"http","requestBody":{"content":{"application/json":{"schema":{"type":"object","properties":{"metadata":{"type":"object","properties":{"description":{"description":"Collection description","type":"string"},"project_id":{"description":"Project ID","type":"string"},"tags":{"type":"array","items":{"type":"string"}}},"key$":"metadata"},"name":{"description":"Collection name","type":"string","key$":"name"}},"index$":1}}}},"parameters":[{"name":"account_id","in":"path","description":"Account ID","required":true,"schema":{"description":"Account ID","type":"string"},"index$":0},{"name":"collection_id","in":"path","description":"Collection UUID","required":true,"schema":{"description":"Collection UUID","type":"string"},"index$":1}]}})
+    }
+    const client = setup.client
+    const struct = setup.struct
+
+    const isempty = struct.isempty
+    const select = struct.select
+
+
+    // CREATE
+    const collection_ref01_ent = client.Collection()
+    let collection_ref01_data = setup.data.new.collection['collection_ref01']
+    collection_ref01_data['account_id'] = setup.idmap['account01']
+
+    collection_ref01_data = (await collection_ref01_ent.create(collection_ref01_data)).data()
+    assert(null != collection_ref01_data.id)
+
+
+    // LIST
+    const collection_ref01_match: any = {}
+    collection_ref01_match['account_id'] = setup.idmap['account01']
+
+    const collection_ref01_list = (await collection_ref01_ent.list(collection_ref01_match)).map((e: any) => e.data())
+
+    assert(!isempty(select(collection_ref01_list, { id: collection_ref01_data.id })))
+
+
+    // UPDATE
+    const collection_ref01_data_up0: any = {}
+    collection_ref01_data_up0.id = collection_ref01_data.id
+    collection_ref01_data_up0 ['account_id'] = setup.idmap['account_id']
+
+    const collection_ref01_markdef_up0 = { name: 'created_at', value: 'Mark01-collection_ref01_' + setup.now }
+    ;(collection_ref01_data_up0 as any)[collection_ref01_markdef_up0.name] = collection_ref01_markdef_up0.value
+
+    const collection_ref01_resdata_up0 = (await collection_ref01_ent.update(collection_ref01_data_up0)).data()
+    assert(collection_ref01_resdata_up0.id === collection_ref01_data_up0.id)
+
+    assert((collection_ref01_resdata_up0 as any)[collection_ref01_markdef_up0.name] === collection_ref01_markdef_up0.value)
+
+
+    // LOAD
+    const collection_ref01_match_dt0: any = {}
+    collection_ref01_match_dt0.id = collection_ref01_data.id
+    const collection_ref01_data_dt0 = (await collection_ref01_ent.load(collection_ref01_match_dt0)).data()
+    assert(collection_ref01_data_dt0.id === collection_ref01_data.id)
+
+
+    // REMOVE
+    const collection_ref01_match_rm0: any = { id: collection_ref01_data.id }
+    await collection_ref01_ent.remove(collection_ref01_match_rm0)
+  
+
+    // LIST
+    const collection_ref01_match_rt0: any = {}
+    collection_ref01_match_rt0['account_id'] = setup.idmap['account01']
+
+    const collection_ref01_list_rt0 = (await collection_ref01_ent.list(collection_ref01_match_rt0)).map((e: any) => e.data())
+
+    assert(isempty(select(collection_ref01_list_rt0, { id: collection_ref01_data.id })))
+
+
+  })
+})
+
+
+
+function basicSetup(extra?: any) {
+  // TODO: fix test def options
+  const options: any = {} // null
+
+  // TODO: needs test utility to resolve path
+  const entityDataFile =
+    Path.resolve(__dirname, 
+      '../../../../.sdk/test/entity/collection/CollectionTestData.json')
+
+  // TODO: file ready util needed?
+  const entityDataSource = Fs.readFileSync(entityDataFile).toString('utf8')
+
+  // TODO: need a xlang JSON parse utility in voxgig/struct with better error msgs
+  const entityData = JSON.parse(entityDataSource)
+
+  options.entity = entityData.existing
+
+  let client = CloudflareCloudforceOneSDK.test(options, extra)
+  const struct = client.utility().struct
+  const merge = struct.merge
+  const transform = struct.transform
+
+  let idmap = transform(
+    ['collection01','collection02','collection03','account01'],
+    {
+      '`$PACK`': ['', {
+        '`$KEY`': '`$COPY`',
+        '`$VAL`': ['`$FORMAT`', 'upper', '`$COPY`']
+      }]
+    })
+
+  const env = envOverride({
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_COLLECTION_ENTID': idmap,
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE': 'FALSE',
+    'CLOUDFLARE_CLOUDFORCE_ONE_TEST_EXPLAIN': 'FALSE',
+    'CLOUDFLARE_CLOUDFORCE_ONE_APIKEY': '',
+  })
+
+  idmap = env['CLOUDFLARE_CLOUDFORCE_ONE_TEST_COLLECTION_ENTID']
+
+  const live = 'TRUE' === env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_LIVE
+
+  const transport = createLiveTransport()
+  if (live) {
+    const rawIds = process.env['CLOUDFLARE_CLOUDFORCE_ONE_TEST_COLLECTION_ENTID']
+    idmap = rawIds && rawIds.trim() ? JSON.parse(rawIds) : {}
+    if (!idmap || Array.isArray(idmap) || typeof idmap !== 'object') {
+      throw new Error('Live ENTID must be a JSON object')
+    }
+    client = new CloudflareCloudforceOneSDK(merge([
+      // FIRST, so the generated fields below win: sdk-test-control.json's
+      // test.client.options adds to the live client, it does not redirect it.
+      liveClientOptions(),
+      {
+        apikey: env.CLOUDFLARE_CLOUDFORCE_ONE_APIKEY,
+      },
+      // 'extra || {}', not a bare 'extra': struct.merge returns UNDEFINED when the
+      // last entry is undefined, and basicSetup is normally called with no
+      // argument at all - so a bare 'extra' silently discarded the apikey
+      // and server values above and handed the SDK undefined. Harmless
+      // while there was nothing in that object; not harmless now.
+      extra || {},
+      { system: { fetch: transport.fetch } }
+    ]))
+  }
+
+  const setup = {
+    idmap,
+    env,
+    options,
+    client,
+    struct,
+    data: entityData,
+    explain: 'TRUE' === env.CLOUDFLARE_CLOUDFORCE_ONE_TEST_EXPLAIN,
+    live,
+    transport,
+    now: Date.now(),
+  }
+
+  return setup
+}
+  

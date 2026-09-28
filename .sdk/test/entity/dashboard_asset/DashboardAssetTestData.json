@@ -1,0 +1,102 @@
+{
+  "existing": {
+    "dashboard_asset": {
+      "DASHBOARD_ASSET00": {
+        "assets": {},
+        "contentType": {},
+        "count": {},
+        "downloadable": {},
+        "expiresAt": {},
+        "fileName": {},
+        "fileSize": {},
+        "id": "DASHBOARD_ASSET00",
+        "is_cloudflare_team": {},
+        "metadata": {},
+        "origin": {},
+        "state": {},
+        "tlp": {},
+        "uploadedAt": {},
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01"
+      },
+      "DASHBOARD_ASSET01": {
+        "assets": {},
+        "contentType": {},
+        "count": {},
+        "downloadable": {},
+        "expiresAt": {},
+        "fileName": {},
+        "fileSize": {},
+        "id": "DASHBOARD_ASSET01",
+        "is_cloudflare_team": {},
+        "metadata": {},
+        "origin": {},
+        "state": {},
+        "tlp": {},
+        "uploadedAt": {},
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01"
+      },
+      "DASHBOARD_ASSET02": {
+        "assets": {},
+        "contentType": {},
+        "count": {},
+        "downloadable": {},
+        "expiresAt": {},
+        "fileName": {},
+        "fileSize": {},
+        "id": "DASHBOARD_ASSET02",
+        "is_cloudflare_team": {},
+        "metadata": {},
+        "origin": {},
+        "state": {},
+        "tlp": {},
+        "uploadedAt": {},
+        "account_id": "ACCOUNT01",
+        "project_type": "PROJECT_TYPE01",
+        "request_id": "REQUEST01",
+        "asset_id": "ASSET01"
+      }
+    }
+  },
+  "new": {
+    "dashboard_asset": {
+      "dashboard_asset_ref01": {
+        "assets": {},
+        "contentType": {},
+        "count": {},
+        "downloadable": {},
+        "expiresAt": {},
+        "fileName": {},
+        "fileSize": {},
+        "is_cloudflare_team": {},
+        "metadata": {},
+        "origin": {},
+        "state": {},
+        "tlp": {},
+        "uploadedAt": {}
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

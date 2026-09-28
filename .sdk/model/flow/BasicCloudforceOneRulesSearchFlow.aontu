@@ -1,0 +1,26 @@
+# BasicCloudforceOneRulesSearchFlow
+
+main: kit: flow: BasicCloudforceOneRulesSearchFlow:
+{
+  entity: "cloudforce_one_rules_search",
+  kind: "basic",
+  name: "BasicCloudforceOneRulesSearchFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_rules_search_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneRulesSearchFlow"
+}

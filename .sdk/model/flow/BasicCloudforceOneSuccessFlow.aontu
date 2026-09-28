@@ -1,0 +1,37 @@
+# BasicCloudforceOneSuccessFlow
+
+main: kit: flow: BasicCloudforceOneSuccessFlow:
+{
+  entity: "cloudforce_one_success",
+  kind: "basic",
+  name: "BasicCloudforceOneSuccessFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_success_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        approval_id: "approval01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "cloudforce_one_success_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "cloudforce_one_success01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicCloudforceOneSuccessFlow"
+}

@@ -1,0 +1,1013 @@
+# Generated from the API definition and overwritten on every build: do not
+# edit this file. Put customizations in the guide entry file, which includes
+# this one and overrides its defaults:
+#   guide.aontu
+
+guide: {
+  metrics: count: entity: 47
+  metrics: count: path: 193
+  metrics: count: method: 285
+
+  entity: attacker: {
+    path: "/accounts/{account_id}/cloudforce-one/events/attackers": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: bin_db: {
+    path: "/accounts/{account_id}/cloudforce-one/binary": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/binary/{hash}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: brand_protection: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}": {
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.notice`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates": {
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.templates`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.templates`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss": {
+      rename: param: "domain_id": *"match_id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss": {
+      rename: param: "domain_id": *"match_id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices": {
+      action: "takedown_notice": {}
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.notices`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}": {
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters": {
+      rename: param: "notice_id": *"takedown_notice_id"
+      op: create: method: *POST
+      op: list: method: *GET
+      op: list: transform: res: *("`body.letters`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}": {
+      rename: param: "notice_id": *"takedown_notice_id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf": {
+      rename: param: "notice_id": *"takedown_notice_id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries": {
+      action: "total_query": {}
+      op: list: method: *GET
+    }
+  }
+
+  entity: category: {
+    path: "/accounts/{account_id}/cloudforce-one/events/categories": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/categories/catalog": {
+      action: "catalog": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/categories/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/categories/{category_id}": {
+      rename: param: "category_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/event-categories/by-id/{category_id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: cloudforce_one_account_exemption: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/exemptions": {
+      op: create: method: *POST
+      op: create: transform: req: "namespace": *("`reqdata.namespace`")|top
+      op: create: transform: req: "tag_match": *("`reqdata.tag_match`")|top
+      op: create: transform: req: "worker_name": *("`reqdata.worker_name`")|top
+      op: list: method: *GET
+      op: remove: method: *DELETE
+      op: remove: transform: req: "namespace": *("`reqdata.namespace`")|top
+      op: remove: transform: req: "tag_match": *("`reqdata.tag_match`")|top
+      op: remove: transform: req: "worker_name": *("`reqdata.worker_name`")|top
+      op: update: method: *PUT
+      op: update: transform: req: "namespace": *("`reqdata.namespace`")|top
+      op: update: transform: req: "tag_match": *("`reqdata.tag_match`")|top
+      op: update: transform: req: "worker_name": *("`reqdata.worker_name`")|top
+    }
+  }
+
+  entity: cloudforce_one_delete_all: {
+    path: "/accounts/{account_id}/cloudforce-one/rules": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: cloudforce_one_edit_approval: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}": {
+      op: update: method: *PUT
+      op: update: transform: res: *("`body.approval`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/approvals/{id}/resubmit": {
+      action: "resubmit": {}
+      rename: param: "id": *"approval_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: cloudforce_one_email_rule_validation: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/validate": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: cloudforce_one_email_rules_list: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.rules`")|top
+    }
+  }
+
+  entity: cloudforce_one_requests_api_response_common: {
+    path: "/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: cloudforce_one_rule: {
+    path: "/accounts/{account_id}/cloudforce-one/rules": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: cloudforce_one_rule_approval_detail: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/approvals/{id}": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.approval`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/resubmit": {
+      action: "resubmit": {}
+      rename: param: "id": *"approval_id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: cloudforce_one_rule_approvals_list: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/approvals": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.approvals`")|top
+    }
+  }
+
+  entity: cloudforce_one_rule_preview: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/{id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/{id}/test": {
+      action: "test": {}
+      rename: param: "id": *"structured_id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/{id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: cloudforce_one_rules_preview_list: {
+    path: "/accounts/{account_id}/cloudforce-one/rules": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.rules`")|top
+    }
+  }
+
+  entity: cloudforce_one_rules_search: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/search": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: cloudforce_one_stat: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/stats": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.rules_by_namespace`")|top
+    }
+  }
+
+  entity: cloudforce_one_success: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/approvals/{id}/cancel": {
+      rename: param: "id": *"approval_id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/{id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/{id}": {
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: cloudforce_one_tree_node: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/tree": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.tree`")|top
+    }
+  }
+
+  entity: cloudforce_one_validation: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/validate": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: collection: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}": {
+      rename: param: "collection_id": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.result`")|top
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns": {
+      action: "column": {}
+      rename: param: "collection_id": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/columns/{column_id}": {
+      rename: param: "collection_id": *"id"
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.result`")|top
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/export": {
+      action: "export": {}
+      rename: param: "collection_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items": {
+      action: "item": {}
+      rename: param: "collection_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items/{item_id}": {
+      rename: param: "collection_id": *"id"
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.result`")|top
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/search": {
+      action: "search": {}
+      rename: param: "collection_id": *"id"
+      op: create: method: *POST
+    }
+  }
+
+  entity: collections_item: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/collections/{collection_id}/items": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: country: {
+    path: "/accounts/{account_id}/cloudforce-one/events/countries": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: dashboard_asset: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.properties`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.properties`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: dashboard_user: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me": {
+      rename: param: "project_type": *"request_id"
+      op: load: method: *GET
+    }
+  }
+
+  entity: dataset: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}": {
+      rename: param: "dataset_id": *"id"
+      op: create: method: *POST
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy": {
+      action: "copy": {}
+      rename: param: "dataset_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move": {
+      action: "move": {}
+      rename: param: "dataset_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/datasets/populate": {
+      action: "populate": {}
+      op: create: method: *POST
+      op: create: transform: res: *("`body.properties`")|top
+    }
+  }
+
+  entity: event: {
+    path: "/accounts/{account_id}/cloudforce-one/events": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/aggregate": {
+      action: "aggregate": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/by-id/{event_id}/relationships": {
+      rename: param: "event_id": *"by_id_id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/create": {
+      action: "create": {}
+      op: create: method: *POST
+      op: create: transform: req: "event": *("`reqdata`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/create/bulk": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/create/bulk/relationships": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/events/{event_id}": {
+      rename: param: "event_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/datasets/{dataset_id}/events/{event_id}/raw": {
+      action: "raw": {}
+      rename: param: "event_id": *"id"
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}": {
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/event_tag/{event_id}/create": {
+      action: "create": {}
+      rename: param: "event_id": *"event_tag_id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/graph": {
+      action: "graph": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/graphql": {
+      action: "graphql": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/queries": {
+      action: "query": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/queries/create": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/queries/{query_id}": {
+      op: create: method: *POST
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/raw/{dataset_id}/{event_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/relate/{event_id}": {
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/relate/{event_id}/create": {
+      action: "create": {}
+      rename: param: "event_id": *"relate_id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/relationships/create": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/update/bulk": {
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/{dataset_id}/delete": {
+      action: "delete": {}
+      rename: param: "dataset_id": *"id"
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/{event_id}": {
+      rename: param: "event_id": *"id"
+      op: create: method: *POST
+      op: create: transform: req: "event": *("`reqdata`")|top
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: patch: transform: req: "event": *("`reqdata`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/{event_id}/raw/{raw_id}": {
+      rename: param: "event_id": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.data`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.data`")|top
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.data`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/{event_id}/relationships": {
+      action: "relationship": {}
+      rename: param: "event_id": *"id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/events/graphql": {
+      action: "graphql": {}
+      op: create: method: *POST
+    }
+  }
+
+  entity: group: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/-/groups": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}": {
+      rename: param: "group_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members": {
+      action: "member": {}
+      rename: param: "group_id": *"id"
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/-/groups/{group_id}/members/{member_id}": {
+      rename: param: "group_id": *"id"
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: indicator: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicatorTypes/create": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/bulk": {
+      action: "bulk": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/tags": {
+      action: "tag": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}": {
+      rename: param: "indicator_id": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships": {
+      action: "relationship": {}
+      rename: param: "indicator_id": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/indicators/{indicator_id}/relationships/{rel_uuid}": {
+      rename: param: "indicator_id": *"id"
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.result`")|top
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/indicators": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.properties`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/indicators/aggregate": {
+      action: "aggregate": {}
+      op: list: method: *GET
+      op: list: transform: res: *("`body.aggregations`")|top
+    }
+  }
+
+  entity: indicator_type: {
+    path: "/accounts/{account_id}/cloudforce-one/events/indicator-types": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/indicatorTypes": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: permission: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions": {
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/permissions/{grant_id}": {
+      rename: param: "grant_id": *"id"
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: priority: {
+    path: "/accounts/{account_id}/cloudforce-one/requests/priority": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}": {
+      rename: param: "priority_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+      op: update: transform: req: "priority": *("`reqdata`")|top
+    }
+  }
+
+  entity: priority_intelligence: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/{priority_id}": {
+      rename: param: "priority_id": *"id"
+      op: load: method: *GET
+      op: remove: method: *DELETE
+      op: update: method: *PUT
+    }
+  }
+
+  entity: priority_intelligence_requirement: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/constants": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/backtests/{backtest_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/evaluations/{evaluation_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/interests/{interest_id}": {
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/priority-intelligence/quota": {
+      op: create: method: *POST
+    }
+  }
+
+  entity: priority_intelligence_requirements__pir: {
+    path: "/accounts/{account_id}/cloudforce-one/requests/priority/new": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/priority/quota": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: public_credential_monitor: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains": {
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/credential-monitor/domains/{id}": {
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/credential-monitor/matches": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: request: {
+    path: "/accounts/{account_id}/cloudforce-one/requests": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}": {
+      rename: param: "request_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: request_for_information__rfi: {
+    path: "/accounts/{account_id}/cloudforce-one/requests/constants": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/new": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/quota": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/types": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset": {
+      action: "asset": {}
+      rename: param: "request_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/new": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/message": {
+      action: "message": {}
+      rename: param: "request_id": *"id"
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/new": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}": {
+      op: update: method: *PUT
+    }
+  }
+
+  entity: requests_dashboard: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/legal-response/access-check": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/constants": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.properties`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/metadata": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.data`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/quota": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/types": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+    }
+  }
+
+  entity: rfi: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}": {
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+  entity: rfi_message: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/new": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/messages/{message_id}": {
+      rename: param: "message_id": *"id"
+      op: load: method: *GET
+      op: update: method: *PUT
+      op: update: transform: res: *("`body.message`")|top
+    }
+  }
+
+  entity: rule: {
+    path: "/accounts/{account_id}/cloudforce-one/rules/managed": {
+      action: "managed": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/rules/structured/schema": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: scan: {
+    path: "/accounts/{account_id}/cloudforce-one/banner/{config_id}": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/scans/config": {
+      action: "config": {}
+      op: create: method: *POST
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/scans/config/{config_id}": {
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/scans/results/{config_id}": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: tag: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/tags/{tag_uuid}/indicators": {
+      action: "indicator": {}
+      rename: param: "tag_uuid": *"id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/categories/actors": {
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/create": {
+      action: "create": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}": {
+      rename: param: "tag_uuid": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/indicators": {
+      action: "indicator": {}
+      rename: param: "tag_uuid": *"id"
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships": {
+      action: "relationship": {}
+      rename: param: "tag_uuid": *"id"
+      op: create: method: *POST
+      op: create: transform: res: *("`body.result`")|top
+      op: load: method: *GET
+      op: load: transform: res: *("`body.result`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/{tag_uuid}/relationships/{rel_uuid}": {
+      rename: param: "tag_uuid": *"id"
+      op: patch: method: *PATCH
+      op: patch: transform: res: *("`body.result`")|top
+      op: remove: method: *DELETE
+      op: remove: transform: res: *("`body.result`")|top
+    }
+  }
+
+  entity: tag_category: {
+    path: "/accounts/{account_id}/cloudforce-one/events/tag-categories/{category_uuid}": {
+      rename: param: "category_uuid": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/categories": {
+      op: list: method: *GET
+      op: list: transform: res: *("`body.categories`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/categories/create": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/tags/categories/{category_uuid}": {
+      rename: param: "category_uuid": *"id"
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+  }
+
+  entity: target_industry: {
+    path: "/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/targetIndustries": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/targetIndustries": {
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+    path: "/accounts/{account_id}/cloudforce-one/events/targetIndustries/catalog": {
+      action: "catalog": {}
+      op: load: method: *GET
+      op: load: transform: res: *("`body.items`")|top
+    }
+  }
+
+  entity: threat_signal: {
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles": {
+      action: "article": {}
+      op: list: method: *GET
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/content": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/diagnostic": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/skills/{skill_id}/output": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tag": {
+      action: "tag": {}
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/articles/{article_id}/tags/{tag_id}": {
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/categories": {
+      action: "category": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds": {
+      action: "curated_feed": {}
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/bulk": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/opt-out": {
+      op: patch: method: *PATCH
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/curated-feeds/{curated_feed_id}": {
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds": {
+      action: "feed": {}
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/poll": {
+      op: create: method: *POST
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}": {
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/raw": {
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/feeds/{feed_id}/skills": {
+      op: load: method: *GET
+      op: update: method: *PUT
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/health": {
+      action: "health": {}
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/indicators": {
+      action: "indicator": {}
+      op: list: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills": {
+      action: "skill": {}
+      op: create: method: *POST
+      op: load: method: *GET
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}": {
+      op: load: method: *GET
+      op: patch: method: *PATCH
+      op: remove: method: *DELETE
+    }
+    path: "/accounts/{account_id}/cloudforce-one/v2/threat-signals/skills/{skill_id}/tag-categories": {
+      op: list: method: *GET
+      op: update: method: *PUT
+    }
+  }
+
+}

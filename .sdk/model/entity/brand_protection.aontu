@@ -1,0 +1,2710 @@
+# Entity: brand_protection
+
+main: kit: entity: brand_protection: {
+
+  alias: field: {}
+
+  fields: {
+    action: {
+      h: "Action"
+      n: "action"
+      r: true
+      t: "`$STRING`"
+    }
+    body: {
+      h: "Body"
+      n: "body"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    brand: {
+      h: "Brand"
+      n: "brand"
+      r: true
+      t: "`$STRING`"
+    }
+    category: {
+      h: "Category"
+      n: "category"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    content_type: {
+      h: "Content Type"
+      n: "content_type"
+      r: false
+      sh: "MIME type of the image (only present when download=true)"
+      t: "`$STRING`"
+    }
+    createNotice: {
+      h: "Create Notice"
+      n: "createNotice"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    createdAt: {
+      h: "Created At"
+      n: "createdAt"
+      r: true
+      t: "`$STRING`"
+    }
+    description: {
+      h: "Description"
+      n: "description"
+      op: {
+        create: {
+          req: false
+          type: "`$STRING`"
+        }
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    dismissed: {
+      h: "Dismissed"
+      n: "dismissed"
+      op: {
+        list: {
+          req: false
+          type: "`$BOOLEAN`"
+        }
+      }
+      r: true
+      sh: "Whether the match is dismissed."
+      t: "`$BOOLEAN`"
+    }
+    domain: {
+      h: "Domain"
+      n: "domain"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    domain_id: {
+      h: "Domain Id"
+      n: "domain_id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    domains: {
+      h: "Domains"
+      n: "domains"
+      r: true
+      t: "`$ARRAY`"
+    }
+    errors: {
+      h: "Errors"
+      n: "errors"
+      r: true
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 3
+      }
+    }
+    fields: {
+      h: "Fields"
+      n: "fields"
+      r: true
+      t: "`$OBJECT`"
+    }
+    first_seen: {
+      h: "First Seen"
+      n: "first_seen"
+      r: true
+      t: "`$STRING`"
+    }
+    format: {
+      h: "Format"
+      n: "format"
+      r: false
+      t: "`$STRING`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$NUMBER`"
+    }
+    image_data: {
+      h: "Image Data"
+      n: "image_data"
+      op: {
+        list: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      sh: "Base64 encoded image data."
+      t: "`$STRING`"
+    }
+    letterText: {
+      h: "Letter Text"
+      n: "letterText"
+      r: true
+      t: "`$STRING`"
+    }
+    letterType: {
+      h: "Letter Type"
+      n: "letterType"
+      r: true
+      t: "`$STRING`"
+    }
+    matchId: {
+      h: "Match Id"
+      n: "matchId"
+      op: {
+        update: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      t: "`$NUMBER`"
+    }
+    matchType: {
+      h: "Match Type"
+      n: "matchType"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    match_details: {
+      h: "Match Details"
+      n: "match_details"
+      r: false
+      sh: "Per-match detail objects with query metadata and individual dismissed state."
+      t: "`$ARRAY`"
+    }
+    match_ids: {
+      h: "Match Ids"
+      n: "match_ids"
+      r: false
+      t: "`$ARRAY`"
+    }
+    matched_at: {
+      h: "Matched At"
+      n: "matched_at"
+      r: true
+      t: "`$STRING`"
+    }
+    matches: {
+      h: "Matches"
+      n: "matches"
+      op: {
+        create: {
+          req: false
+          type: "`$ARRAY`"
+        }
+      }
+      r: true
+      t: "`$ARRAY`"
+    }
+    max_time: {
+      h: "Max Time"
+      n: "max_time"
+      r: false
+      t: "`$STRING`"
+    }
+    message: {
+      h: "Message"
+      n: "message"
+      r: true
+      t: "`$STRING`"
+    }
+    messages: {
+      h: "Messages"
+      n: "messages"
+      r: true
+      t: "`$ARRAY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 3
+      }
+    }
+    min_time: {
+      h: "Min Time"
+      n: "min_time"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    noticeParams: {
+      h: "Notice Params"
+      n: "noticeParams"
+      r: true
+      t: "`$OBJECT`"
+    }
+    notices: {
+      h: "Notices"
+      n: "notices"
+      r: true
+      t: "`$ARRAY`"
+    }
+    public_scans: {
+      h: "Public Scans"
+      n: "public_scans"
+      r: true
+      t: "`$OBJECT`"
+    }
+    queryId: {
+      h: "Query Id"
+      n: "queryId"
+      op: {
+        create: {
+          req: false
+          type: "`$INTEGER`"
+        }
+        update: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      t: "`$NUMBER`"
+    }
+    queryIds: {
+      h: "Query Ids"
+      n: "queryIds"
+      r: false
+      t: "`$ARRAY`"
+    }
+    query_id: {
+      h: "Query Id"
+      n: "query_id"
+      op: {
+        create: {
+          req: false
+          type: "`$INTEGER`"
+        }
+        patch: {
+          req: false
+          type: "`$INTEGER`"
+        }
+      }
+      r: true
+      t: "`$INTEGER`"
+    }
+    r2_path: {
+      h: "R2 Path"
+      n: "r2_path"
+      r: true
+      t: "`$STRING`"
+    }
+    registrar: {
+      h: "Registrar"
+      n: "registrar"
+      r: true
+      t: "`$STRING`"
+    }
+    result: {
+      h: "Result"
+      n: "result"
+      r: true
+      t: "`$ANY`"
+      union: {
+        branches: 2
+        count: 1
+        depth: 0
+      }
+    }
+    result_info: {
+      h: "Result Info"
+      n: "result_info"
+      r: true
+      sh: "Present on paginated list responses when page or per_page is supplied."
+      t: "`$OBJECT`"
+    }
+    scan: {
+      h: "Scan"
+      n: "scan"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    scan_matches: {
+      h: "Scan Matches"
+      n: "scan_matches"
+      r: false
+      t: "`$BOOLEAN`"
+    }
+    scan_status: {
+      h: "Scan Status"
+      n: "scan_status"
+      r: true
+      t: "`$STRING`"
+    }
+    scan_submission_id: {
+      h: "Scan Submission Id"
+      n: "scan_submission_id"
+      r: true
+      t: "`$INTEGER`"
+    }
+    score_threshold: {
+      h: "Score Threshold"
+      n: "score_threshold"
+      r: false
+      sh: "Minimum similarity score threshold for matches (0-1, default: 0)"
+      t: "`$NUMBER`"
+    }
+    search_lookback: {
+      h: "Search Lookback"
+      n: "search_lookback"
+      r: false
+      sh: "If true, search recent domain lookback entries for matches"
+      t: "`$BOOLEAN`"
+    }
+    similarity_score: {
+      h: "Similarity Score"
+      n: "similarity_score"
+      r: true
+      t: "`$NUMBER`"
+    }
+    similarity_threshold: {
+      h: "Similarity Threshold"
+      n: "similarity_threshold"
+      r: true
+      sh: "Minimum similarity score (0-1) required for visual matches"
+      t: "`$NUMBER`"
+    }
+    source: {
+      h: "Source"
+      n: "source"
+      r: true
+      t: "`$STRING`"
+    }
+    status: {
+      h: "Status"
+      n: "status"
+      op: {
+        update: {
+          req: false
+          type: "`$STRING`"
+        }
+      }
+      r: true
+      t: "`$STRING`"
+    }
+    string_matches: {
+      h: "String Matches"
+      n: "string_matches"
+      r: true
+      t: "`$ARRAY`"
+    }
+    success: {
+      h: "Success"
+      n: "success"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    tag: {
+      h: "Tag"
+      n: "tag"
+      r: true
+      sh: "Unique identifier for the logo query"
+      t: "`$STRING`"
+    }
+    takedownNoticeId: {
+      h: "Takedown Notice Id"
+      n: "takedownNoticeId"
+      r: true
+      t: "`$NUMBER`"
+    }
+    templateId: {
+      h: "Template Id"
+      n: "templateId"
+      r: true
+      t: "`$STRING`"
+    }
+    top_k: {
+      h: "Top K"
+      n: "top_k"
+      r: false
+      sh: "Number of closest matches to return (1-100, default: 10)"
+      t: "`$INTEGER`"
+    }
+    total_analyzed: {
+      h: "Total Analyzed"
+      n: "total_analyzed"
+      r: true
+      t: "`$NUMBER`"
+    }
+    total_matches: {
+      h: "Total Matches"
+      n: "total_matches"
+      r: true
+      t: "`$NUMBER`"
+    }
+    truncated: {
+      h: "Truncated"
+      n: "truncated"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+    updatedAt: {
+      h: "Updated At"
+      n: "updatedAt"
+      r: true
+      t: "`$STRING`"
+    }
+    uploaded_at: {
+      h: "Uploaded At"
+      n: "uploaded_at"
+      r: true
+      t: "`$STRING`"
+    }
+    url_scan_id: {
+      h: "Url Scan Id"
+      n: "url_scan_id"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "brand_protection"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "download"
+                or: "download"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "false"
+                k: "query"
+                n: "show_historic"
+                or: "show_historic"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/search"
+          q: {
+            exist: [
+              "account_id"
+              "download"
+              "show_historic"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "logo"
+            }
+            {
+              lit: "search"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "match_id"
+                or: "domain_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/dismiss"
+          q: {
+            exist: [
+              "account_id"
+              "match_id"
+              "query_id"
+            ]
+          }
+          r: {
+            param: {
+              domain_id: "match_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+            {
+              lit: "matches"
+            }
+            {
+              var: "match_id"
+            }
+            {
+              lit: "dismiss"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "match_id"
+                or: "domain_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/queries/{query_id}/matches/{domain_id}/undismiss"
+          q: {
+            exist: [
+              "account_id"
+              "match_id"
+              "query_id"
+            ]
+          }
+          r: {
+            param: {
+              domain_id: "match_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+            {
+              lit: "matches"
+            }
+            {
+              var: "match_id"
+            }
+            {
+              lit: "undismiss"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.result`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "takedown_notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters"
+          q: {
+            exist: [
+              "account_id"
+              "takedown_notice_id"
+            ]
+          }
+          r: {
+            param: {
+              notice_id: "takedown_notice_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "takedown_notice_id"
+            }
+            {
+              lit: "letters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches/bulk-dismiss"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "matches"
+            }
+            {
+              lit: "bulk-dismiss"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/trial"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "trial"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/generate"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "generate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.notice`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "logo"
+            }
+            {
+              lit: "queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices"
+          q: {
+            "$action": "takedown_notice"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/lookup"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              lit: "lookup"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    list: {
+      name: "list"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "domain_search"
+                or: "domain_search"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "include_dismissed"
+                or: "include_dismissed"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "false"
+                k: "query"
+                n: "include_domain_id"
+                or: "include_domain_id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "50"
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0"
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$ARRAY`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/matches"
+          q: {
+            exist: [
+              "account_id"
+              "domain_search"
+              "include_dismissed"
+              "include_domain_id"
+              "limit"
+              "offset"
+              "order"
+              "order_by"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "matches"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.matches`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "download"
+                or: "download"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "50"
+                k: "query"
+                n: "limit"
+                or: "limit"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0"
+                k: "query"
+                n: "offset"
+                or: "offset"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order"
+                or: "order"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "order_by"
+                or: "order_by"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/matches"
+          q: {
+            exist: [
+              "account_id"
+              "download"
+              "limit"
+              "offset"
+              "order"
+              "order_by"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "logo"
+            }
+            {
+              lit: "matches"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.matches`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "page"
+                or: "page"
+                r: false
+                t: "`$INTEGER`"
+              }
+              {
+                k: "query"
+                n: "per_page"
+                or: "per_page"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries"
+          q: {
+            exist: [
+              "account_id"
+              "id"
+              "page"
+              "per_page"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+            query: [
+              {
+                k: "query"
+                n: "download"
+                or: "download"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                k: "query"
+                n: "id"
+                or: "id"
+                r: false
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries"
+          q: {
+            exist: [
+              "account_id"
+              "download"
+              "id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "logo"
+            }
+            {
+              lit: "queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "takedown_notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters"
+          q: {
+            exist: [
+              "account_id"
+              "takedown_notice_id"
+            ]
+          }
+          r: {
+            param: {
+              notice_id: "takedown_notice_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "takedown_notice_id"
+            }
+            {
+              lit: "letters"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.letters`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.templates`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/examples"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+            {
+              lit: "examples"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.templates`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices"
+          q: {
+            "$action": "takedown_notice"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.notices`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/total-queries"
+          q: {
+            "$action": "total_query"
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "total-queries"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "letter_id"
+                or: "letter_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "takedown_notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}"
+          q: {
+            exist: [
+              "account_id"
+              "letter_id"
+              "takedown_notice_id"
+            ]
+          }
+          r: {
+            param: {
+              notice_id: "takedown_notice_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "takedown_notice_id"
+            }
+            {
+              lit: "letters"
+            }
+            {
+              var: "letter_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "letter_id"
+                or: "letter_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "takedown_notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}/pdf"
+          q: {
+            exist: [
+              "account_id"
+              "letter_id"
+              "takedown_notice_id"
+            ]
+          }
+          r: {
+            param: {
+              notice_id: "takedown_notice_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "takedown_notice_id"
+            }
+            {
+              lit: "letters"
+            }
+            {
+              var: "letter_id"
+            }
+            {
+              lit: "pdf"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+          q: {
+            exist: [
+              "account_id"
+              "notice_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "notice_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "template_id"
+                or: "template_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+          q: {
+            exist: [
+              "account_id"
+              "template_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+            {
+              var: "template_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    patch: {
+      name: "patch"
+      points: [
+        {
+          co: {
+            id: "PATCH /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PATCH"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "letter_id"
+                or: "letter_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                k: "param"
+                n: "takedown_notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}/letters/{letter_id}"
+          q: {
+            exist: [
+              "account_id"
+              "letter_id"
+              "takedown_notice_id"
+            ]
+          }
+          r: {
+            param: {
+              notice_id: "takedown_notice_id"
+            }
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "takedown_notice_id"
+            }
+            {
+              lit: "letters"
+            }
+            {
+              var: "letter_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+          q: {
+            exist: [
+              "account_id"
+              "notice_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "notice_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/domain/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "domain"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "query_id"
+                or: "query_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/logo/queries/{query_id}"
+          q: {
+            exist: [
+              "account_id"
+              "query_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "logo"
+            }
+            {
+              lit: "queries"
+            }
+            {
+              var: "query_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "template_id"
+                or: "template_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+          q: {
+            exist: [
+              "account_id"
+              "template_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+            {
+              var: "template_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    update: {
+      name: "update"
+      points: [
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "notice_id"
+                or: "notice_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/takedown-notices/{notice_id}"
+          q: {
+            exist: [
+              "account_id"
+              "notice_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "takedown-notices"
+            }
+            {
+              var: "notice_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "PUT /accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "template_id"
+                or: "template_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "PUT"
+          o: "/accounts/{account_id}/cloudforce-one/v2/brand-protection/letter/templates/{template_id}"
+          q: {
+            exist: [
+              "account_id"
+              "template_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "brand-protection"
+            }
+            {
+              lit: "letter"
+            }
+            {
+              lit: "templates"
+            }
+            {
+              var: "template_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

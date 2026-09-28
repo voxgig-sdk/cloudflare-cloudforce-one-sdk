@@ -1,0 +1,81 @@
+# BasicPriorityIntelligenceRequirementFlow
+
+main: kit: flow: BasicPriorityIntelligenceRequirementFlow:
+{
+  entity: "priority_intelligence_requirement",
+  kind: "basic",
+  name: "BasicPriorityIntelligenceRequirementFlow",
+  step: [
+    {
+      i: {
+        ref: "priority_intelligence_requirement_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      d: {
+        account_id: "account01"
+      }
+
+      i: {
+        ref: "priority_intelligence_requirement_ref01",
+        srcdatavar: "priority_intelligence_requirement_ref01_data",
+        suffix: "_up0",
+        textfield: "as_of"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-priority_intelligence_requirement_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "priority_intelligence_requirement_ref01",
+        srcdatavar: "priority_intelligence_requirement_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        id: "priority_intelligence_requirement01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-priority_intelligence_requirement_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "priority_intelligence_requirement_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "priority_intelligence_requirement01"
+      }
+
+      o: "remove"
+    }
+  ],
+  "key$": "BasicPriorityIntelligenceRequirementFlow"
+}

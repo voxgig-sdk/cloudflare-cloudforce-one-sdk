@@ -1,0 +1,38 @@
+{
+  "existing": {
+    "dashboard_user": {
+      "DASHBOARD_USER00": {
+        "display_name": "s14",
+        "id": "DASHBOARD_USER00",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01"
+      },
+      "DASHBOARD_USER01": {
+        "display_name": "s28",
+        "id": "DASHBOARD_USER01",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01"
+      },
+      "DASHBOARD_USER02": {
+        "display_name": "s3c",
+        "id": "DASHBOARD_USER02",
+        "account_id": "ACCOUNT01",
+        "request_id": "REQUEST01"
+      }
+    }
+  },
+  "new": {
+    "dashboard_user": {
+      "dashboard_user_ref01": {
+        "display_name": "s50"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/user/me": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

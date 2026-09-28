@@ -1,0 +1,355 @@
+# Entity: dashboard_asset
+
+main: kit: entity: dashboard_asset: {
+
+  alias: field: {}
+
+  fields: {
+    assets: {
+      h: "Assets"
+      n: "assets"
+      r: true
+      t: "`$OBJECT`"
+    }
+    contentType: {
+      h: "Content Type"
+      n: "contentType"
+      r: true
+      t: "`$OBJECT`"
+    }
+    count: {
+      h: "Count"
+      n: "count"
+      r: true
+      t: "`$OBJECT`"
+    }
+    downloadable: {
+      h: "Downloadable"
+      n: "downloadable"
+      r: true
+      t: "`$OBJECT`"
+    }
+    expiresAt: {
+      h: "Expires At"
+      n: "expiresAt"
+      r: true
+      t: "`$OBJECT`"
+    }
+    fileName: {
+      h: "File Name"
+      n: "fileName"
+      r: true
+      t: "`$OBJECT`"
+    }
+    fileSize: {
+      h: "File Size"
+      n: "fileSize"
+      r: true
+      t: "`$OBJECT`"
+    }
+    id: {
+      h: "Id"
+      n: "id"
+      r: true
+      t: "`$OBJECT`"
+    }
+    is_cloudflare_team: {
+      h: "Is Cloudflare Team"
+      n: "is_cloudflare_team"
+      r: true
+      t: "`$OBJECT`"
+    }
+    metadata: {
+      h: "Metadata"
+      n: "metadata"
+      r: true
+      t: "`$OBJECT`"
+    }
+    origin: {
+      h: "Origin"
+      n: "origin"
+      r: true
+      t: "`$OBJECT`"
+    }
+    state: {
+      h: "State"
+      n: "state"
+      r: true
+      t: "`$OBJECT`"
+    }
+    tlp: {
+      h: "Tlp"
+      n: "tlp"
+      r: true
+      t: "`$OBJECT`"
+    }
+    uploadedAt: {
+      h: "Uploaded At"
+      n: "uploadedAt"
+      r: true
+      t: "`$OBJECT`"
+    }
+  }
+
+  id: {
+    field: "id"
+    name: "id"
+  }
+
+  name: "dashboard_asset"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/upload"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "assets"
+            }
+            {
+              lit: "upload"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.properties`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "asset_id"
+                or: "asset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/{asset_id}/download"
+          q: {
+            exist: [
+              "account_id"
+              "asset_id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "assets"
+            }
+            {
+              var: "asset_id"
+            }
+            {
+              lit: "download"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "threat-intelligence"
+                k: "param"
+                n: "project_type"
+                or: "project_type"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/v2/requests/{project_type}/{request_id}/assets/list"
+          q: {
+            exist: [
+              "account_id"
+              "project_type"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "v2"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "project_type"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "assets"
+            }
+            {
+              lit: "list"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body.properties`"
+          }
+        }
+      ]
+    }
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.request")]
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

@@ -1,0 +1,283 @@
+# Entity: cloudforce_one_requests_api_response_common
+
+main: kit: entity: cloudforce_one_requests_api_response_common: {
+
+  alias: field: {}
+
+  name: "cloudforce_one_requests_api_response_common"
+  op: {
+    remove: {
+      name: "remove"
+      points: [
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "asset_id"
+                or: "asset_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/asset/{asset_id}"
+          q: {
+            exist: [
+              "account_id"
+              "asset_id"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "asset"
+            }
+            {
+              var: "asset_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "message_id"
+                or: "message_id"
+                r: true
+                t: "`$INTEGER`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/requests/{request_id}/message/{message_id}"
+          q: {
+            exist: [
+              "account_id"
+              "message_id"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "request_id"
+            }
+            {
+              lit: "message"
+            }
+            {
+              var: "message_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "priority_id"
+                or: "priority_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/requests/priority/{priority_id}"
+          q: {
+            exist: [
+              "account_id"
+              "priority_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              lit: "priority"
+            }
+            {
+              var: "priority_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          co: {
+            id: "DELETE /accounts/{account_id}/cloudforce-one/requests/{request_id}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                ex: "f174e90a-fafe-4643-bbbc-4a0ed4fc8415"
+                k: "param"
+                n: "request_id"
+                or: "request_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "DELETE"
+          o: "/accounts/{account_id}/cloudforce-one/requests/{request_id}"
+          q: {
+            exist: [
+              "account_id"
+              "request_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "requests"
+            }
+            {
+              var: "request_id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+  fields: {
+  }
+
+
+  relations: ancestors: [
+    [path("$.main.kit.entity.priority")]
+    [path("$.main.kit.entity.request")]
+    [path("$.main.kit.entity.request")]
+    [path("$.main.kit.entity.request")]
+  ]
+
+}

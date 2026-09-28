@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Dataset | Cloudflare Cloudforce One</title><link rel="stylesheet" href="../assets/style.css"></head>
+<body><a class="skip" href="#content">Skip to content</a>
+<header class="site-header"><a class="site-title" href="../index.html">Cloudflare Cloudforce One<span>SDK documentation</span></a><div class="site-links"><a class="repo-link" href="https://github.com/voxgig-sdk/cloudflare-cloudforce-one-sdk">voxgig-sdk/cloudflare-cloudforce-one-sdk</a></div></header>
+<div class="site-notice" role="note"></div>
+<div class="shell"><nav class="site-nav" aria-label="Documentation"><div class="search"><label for="search">Search documentation</label><input id="search" type="search" data-base="../" placeholder="Find a guide or reference"><div id="results" aria-live="polite"></div></div><details><summary>Overview</summary><a href="../index.html">Cloudflare Cloudforce One</a></details>
+<details open><summary>API</summary><a href="../api/index.html">API overview</a>
+<a href="../api/attacker.html">Attacker</a>
+<a href="../api/bin_db.html">BinDb</a>
+<a href="../api/brand_protection.html">BrandProtection</a>
+<a href="../api/category.html">Category</a>
+<a href="../api/cloudforce_one_account_exemption.html">CloudforceOneAccountExemption</a>
+<a href="../api/cloudforce_one_delete_all.html">CloudforceOneDeleteAll</a>
+<a href="../api/cloudforce_one_edit_approval.html">CloudforceOneEditApproval</a>
+<a href="../api/cloudforce_one_email_rule_validation.html">CloudforceOneEmailRuleValidation</a>
+<a href="../api/cloudforce_one_email_rules_list.html">CloudforceOneEmailRulesList</a>
+<a href="../api/cloudforce_one_requests_api_response_common.html">CloudforceOneRequestsApiResponseCommon</a>
+<a href="../api/cloudforce_one_rule.html">CloudforceOneRule</a>
+<a href="../api/cloudforce_one_rule_approval_detail.html">CloudforceOneRuleApprovalDetail</a>
+<a href="../api/cloudforce_one_rule_approvals_list.html">CloudforceOneRuleApprovalsList</a>
+<a href="../api/cloudforce_one_rule_preview.html">CloudforceOneRulePreview</a>
+<a href="../api/cloudforce_one_rules_preview_list.html">CloudforceOneRulesPreviewList</a>
+<a href="../api/cloudforce_one_rules_search.html">CloudforceOneRulesSearch</a>
+<a href="../api/cloudforce_one_stat.html">CloudforceOneStat</a>
+<a href="../api/cloudforce_one_success.html">CloudforceOneSuccess</a>
+<a href="../api/cloudforce_one_tree_node.html">CloudforceOneTreeNode</a>
+<a href="../api/cloudforce_one_validation.html">CloudforceOneValidation</a>
+<a href="../api/collection.html">Collection</a>
+<a href="../api/collections_item.html">CollectionsItem</a>
+<a href="../api/country.html">Country</a>
+<a href="../api/dashboard_asset.html">DashboardAsset</a>
+<a href="../api/dashboard_user.html">DashboardUser</a>
+<a aria-current="page" href="../api/dataset.html">Dataset</a><div class="nav-sections"><a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idcopy">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idmove">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_id">POST /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetcreate">POST /accounts/{account_id}/cloudforce-one/events/dataset/create</a>
+<a class="nav-section" href="#post-accountsaccount_idcloudforce-oneeventsdatasetspopulate">POST /accounts/{account_id}/cloudforce-one/events/datasets/populate</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdataset">GET /accounts/{account_id}/cloudforce-one/events/dataset</a>
+<a class="nav-section" href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_id">GET /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</a>
+<a class="nav-section" href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_id">DELETE /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</a>
+<a class="nav-section" href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_id">PATCH /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</a></div>
+<a href="../api/event.html">Event</a>
+<a href="../api/group.html">Group</a>
+<a href="../api/indicator.html">Indicator</a>
+<a href="../api/indicator_type.html">IndicatorType</a>
+<a href="../api/permission.html">Permission</a>
+<a href="../api/priority.html">Priority</a>
+<a href="../api/priority_intelligence.html">PriorityIntelligence</a>
+<a href="../api/priority_intelligence_requirement.html">PriorityIntelligenceRequirement</a>
+<a href="../api/priority_intelligence_requirements__pir.html">PriorityIntelligenceRequirementsPir</a>
+<a href="../api/public_credential_monitor.html">PublicCredentialMonitor</a>
+<a href="../api/request.html">Request</a>
+<a href="../api/request_for_information__rfi.html">RequestForInformationRfi</a>
+<a href="../api/requests_dashboard.html">RequestsDashboard</a>
+<a href="../api/rfi.html">Rfi</a>
+<a href="../api/rfi_message.html">RfiMessage</a>
+<a href="../api/rule.html">Rule</a>
+<a href="../api/scan.html">Scan</a>
+<a href="../api/tag.html">Tag</a>
+<a href="../api/tag_category.html">TagCategory</a>
+<a href="../api/target_industry.html">TargetIndustry</a>
+<a href="../api/threat_signal.html">ThreatSignal</a></details>
+<details><summary>Guides</summary><a href="../guides/authentication.html">Authentication</a>
+<a href="../guides/first-call.html">Make your first API call</a>
+<a href="../guides/errors.html">Handle errors</a>
+<a href="../guides/concepts.html">Entities, SDKs, and tools</a></details>
+<details><summary>SDKs</summary><a href="../sdks/go.html">Golang</a>
+<a href="../sdks/lua.html">Lua</a>
+<a href="../sdks/php.html">PHP</a>
+<a href="../sdks/py.html">Python</a>
+<a href="../sdks/rb.html">Ruby</a>
+<a href="../sdks/ts.html">TypeScript</a></details>
+<details><summary>Tools</summary><a href="../tools/go-cli.html">Go CLI</a>
+<a href="../tools/go-mcp.html">Go MCP server</a></details>
+<details><summary>Features</summary><a href="../features/test.html">Test transport</a></details></nav><main id="content"><div class="page-context"><span class="section-dot" aria-hidden="true"></span>API</div><h1 id="dataset">Dataset</h1>
+<h2 id="operations">Operations</h2>
+<p>Every route this entity exposes. Each route links to its own reference on this page.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Route</th>
+<th>SDK operation</th>
+<th>Returns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idcopy"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy</code></a></td>
+<td><code>create</code></td>
+<td>Returns the number of copied events</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idmove"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move</code></a></td>
+<td><code>create</code></td>
+<td>Returns the number of moved events</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetdataset_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</code></a></td>
+<td><code>create</code></td>
+<td>Returns dataset information</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetcreate"><code>/accounts/{account_id}/cloudforce-one/events/dataset/create</code></a></td>
+<td><code>create</code></td>
+<td>Returns dataset information</td>
+</tr>
+<tr>
+<td><code>POST</code></td>
+<td><a href="#post-accountsaccount_idcloudforce-oneeventsdatasetspopulate"><code>/accounts/{account_id}/cloudforce-one/events/datasets/populate</code></a></td>
+<td><code>create</code></td>
+<td>Returns population results with counts and any errors</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdataset"><code>/accounts/{account_id}/cloudforce-one/events/dataset</code></a></td>
+<td><code>list</code></td>
+<td>Returns a list of dataset in an account</td>
+</tr>
+<tr>
+<td><code>GET</code></td>
+<td><a href="#get-accountsaccount_idcloudforce-oneeventsdatasetdataset_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</code></a></td>
+<td><code>load</code></td>
+<td>Returns a dataset</td>
+</tr>
+<tr>
+<td><code>DELETE</code></td>
+<td><a href="#delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</code></a></td>
+<td><code>remove</code></td>
+<td>Returns the uuid and name of the deleted dataset</td>
+</tr>
+<tr>
+<td><code>PATCH</code></td>
+<td><a href="#patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_id"><code>/accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</code></a></td>
+<td><code>update</code></td>
+<td>Returns dataset information</td>
+</tr>
+</tbody>
+</table>
+<h2 id="examples">Examples</h2>
+<p>One example per SDK, generated from the API model. The argument names are the parameters and fields of this entity, and the values are placeholders. The examples are not compiled or executed.</p>
+<h3 id="golang">Golang</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/go.html#set-up-the-client">Golang setup</a>, then call the operations:</p>
+<pre><code class="language-go">datasets, err := client.Dataset(nil).List(map[string]any{&quot;account_id&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(datasets)
+dataset, err := client.Dataset(nil).Load(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(dataset)
+created, err := client.Dataset(nil).Create(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;indicatorWriteMode&quot;: &quot;example&quot;, &quot;isAnalytics&quot;: true, &quot;isPublic&quot;: true, &quot;name&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(created)
+updated, err := client.Dataset(nil).Update(map[string]any{&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;deletedAt&quot;: &quot;example&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(updated)
+removed, err := client.Dataset(nil).Remove(map[string]any{&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;}, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(removed)
+</code></pre>
+<h3 id="lua">Lua</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/lua.html#set-up-the-client">Lua setup</a>, then call the operations:</p>
+<pre><code class="language-lua">local datasets, err = client:Dataset():list({ account_id = &quot;example&quot; })
+local dataset, err = client:Dataset():load({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+local created, err = client:Dataset():create({ account_id = &quot;example&quot;, id = &quot;example&quot;, indicatorWriteMode = &quot;example&quot;, isAnalytics = true, isPublic = true, name = &quot;example&quot;, uuid = &quot;example&quot; })
+local updated, err = client:Dataset():update({ id = &quot;example_id&quot;, account_id = &quot;example&quot;, deletedAt = &quot;example&quot; })
+local removed, err = client:Dataset():remove({ account_id = &quot;example&quot;, id = &quot;example_id&quot; })
+</code></pre>
+<h3 id="php">PHP</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/php.html#set-up-the-client">PHP setup</a>, then call the operations:</p>
+<pre><code class="language-php">$datasets = $client-&gt;Dataset()-&gt;list([&quot;account_id&quot; =&gt; &quot;example&quot;]);
+$dataset = $client-&gt;Dataset()-&gt;load([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+$created = $client-&gt;Dataset()-&gt;create([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;indicatorWriteMode&quot; =&gt; &quot;example&quot;, &quot;isAnalytics&quot; =&gt; true, &quot;isPublic&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot;]);
+$updated = $client-&gt;Dataset()-&gt;update([&quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;deletedAt&quot; =&gt; &quot;example&quot;]);
+$client-&gt;Dataset()-&gt;remove([&quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot;]);
+</code></pre>
+<h3 id="python">Python</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/py.html#set-up-the-client">Python setup</a>, then call the operations:</p>
+<pre><code class="language-py">datasets = client.Dataset().list({&quot;account_id&quot;: &quot;example&quot;})
+dataset = client.Dataset().load({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+created = client.Dataset().create({ &quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example&quot;, &quot;indicatorWriteMode&quot;: &quot;example&quot;, &quot;isAnalytics&quot;: True, &quot;isPublic&quot;: True, &quot;name&quot;: &quot;example&quot;, &quot;uuid&quot;: &quot;example&quot; })
+updated = client.Dataset().update({&quot;id&quot;: &quot;example_id&quot;, &quot;account_id&quot;: &quot;example&quot;, &quot;deletedAt&quot;: &quot;example&quot;})
+client.Dataset().remove({&quot;account_id&quot;: &quot;example&quot;, &quot;id&quot;: &quot;example_id&quot;})
+</code></pre>
+<h3 id="ruby">Ruby</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/rb.html#set-up-the-client">Ruby setup</a>, then call the operations:</p>
+<pre><code class="language-rb">datasets = client.Dataset.list({ &quot;account_id&quot; =&gt; &quot;example&quot; })
+dataset = client.Dataset.load({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+created = client.Dataset.create({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example&quot;, &quot;indicatorWriteMode&quot; =&gt; &quot;example&quot;, &quot;isAnalytics&quot; =&gt; true, &quot;isPublic&quot; =&gt; true, &quot;name&quot; =&gt; &quot;example&quot;, &quot;uuid&quot; =&gt; &quot;example&quot; })
+updated = client.Dataset.update({ &quot;id&quot; =&gt; &quot;example_id&quot;, &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;deletedAt&quot; =&gt; &quot;example&quot; })
+client.Dataset.remove({ &quot;account_id&quot; =&gt; &quot;example&quot;, &quot;id&quot; =&gt; &quot;example_id&quot; })
+</code></pre>
+<h3 id="typescript">TypeScript</h3>
+<p>Construct <code>client</code> as shown in the <a href="../sdks/ts.html#set-up-the-client">TypeScript setup</a>, then call the operations:</p>
+<pre><code class="language-ts">const datasets = await client.Dataset().list({ account_id: &quot;example&quot; })
+const dataset = await client.Dataset().load({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+const created = await client.Dataset().create({ account_id: &quot;example&quot;, id: &quot;example&quot;, indicatorWriteMode: &quot;example&quot;, isAnalytics: true, isPublic: true, name: &quot;example&quot;, uuid: &quot;example&quot; })
+const updated = await client.Dataset().update({ id: &quot;example_id&quot;, account_id: &quot;example&quot;, deletedAt: &quot;example&quot; })
+await client.Dataset().remove({ account_id: &quot;example&quot;, id: &quot;example_id&quot; })
+</code></pre>
+<h2 id="fields">Fields</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deletedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Deleted At</td>
+</tr>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td>Id</td>
+</tr>
+<tr>
+<td><code>indicatorWriteMode</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Effective indicator mutation capability after account/dataset authorization and dataset storage capability are applied.</td>
+</tr>
+<tr>
+<td><code>isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>Is Analytics</td>
+</tr>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, then anyone can search the dataset.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Used to describe the dataset within the account context.</td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Uuid</td>
+</tr>
+</tbody>
+</table>
+<h2 id="create">create</h2>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idcopy" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/copy</h3>
+<p>Operation ID: <code>post_EventCopyToNewDS</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>keepRawData</code> | <code>query</code> | <code>boolean</code> | No | If true, copies raw data to the destination dataset. Default is false (raw data is stripped/not copied). |</p>
+<h4 id="request-body">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>destDatasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>eventIds</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses">Responses</h4>
+<h5 id="200-returns-the-number-of-copied-events" class="status" data-status="2xx">200: Returns the number of copied events</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>copied</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of events successfully copied</td>
+</tr>
+<tr>
+<td><code>indicatorsCopied</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of indicators successfully copied</td>
+</tr>
+<tr>
+<td><code>insertFailures</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of events that failed to insert into destination</td>
+</tr>
+<tr>
+<td><code>insertFailures[].index</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Index of the event that failed to insert</td>
+</tr>
+<tr>
+<td><code>insertFailures[].reason</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Reason for the failure</td>
+</tr>
+<tr>
+<td><code>relationshipsCopied</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of relationships successfully copied</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_idmove" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}/move</h3>
+<p>Operation ID: <code>post_EventMoveToNewDS</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-1">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset UUID. |
+| <code>keepRawData</code> | <code>query</code> | <code>boolean</code> | No | If true, copies raw data to the destination dataset. Default is false (raw data is stripped/not copied). Raw data is always deleted from the source. |</p>
+<h4 id="request-body-1">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>destDatasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>eventIds</code></td>
+<td><code>array of string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-1">Responses</h4>
+<h5 id="200-returns-the-number-of-moved-events" class="status" data-status="2xx">200: Returns the number of moved events</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>deletionFailures</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of source datasets where deletion failed</td>
+</tr>
+<tr>
+<td><code>deletionFailures[].datasetId</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Dataset ID where deletion failed</td>
+</tr>
+<tr>
+<td><code>deletionFailures[].reason</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Reason for the deletion failure</td>
+</tr>
+<tr>
+<td><code>indicatorsCopied</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of indicators successfully copied</td>
+</tr>
+<tr>
+<td><code>insertFailures</code></td>
+<td><code>array of object</code></td>
+<td>No</td>
+<td>Array of events that failed to insert into destination</td>
+</tr>
+<tr>
+<td><code>insertFailures[].index</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Index of the event that failed to insert</td>
+</tr>
+<tr>
+<td><code>insertFailures[].reason</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Reason for the failure</td>
+</tr>
+<tr>
+<td><code>moved</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of events successfully moved</td>
+</tr>
+<tr>
+<td><code>relationshipsCopied</code></td>
+<td><code>number</code></td>
+<td>Yes</td>
+<td>Number of relationships successfully copied</td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-1" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetdataset_id" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</h3>
+<p>Operation ID: <code>post_DatasetUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-2">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset ID. |</p>
+<h4 id="request-body-2">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, then anyone can search the dataset. If false, then its limited to the account.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Used to describe the dataset within the account context.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-2">Responses</h4>
+<h5 id="200-returns-dataset-information" class="status" data-status="2xx">200: Returns dataset information</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-2" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetcreate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/dataset/create</h3>
+<p>Operation ID: <code>post_DatasetCreate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-3">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="request-body-3">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, then anyone can search the dataset. If false, then its limited to the account.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Used to describe the dataset within the account context.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-3">Responses</h4>
+<h5 id="200-returns-dataset-information-1" class="status" data-status="2xx">200: Returns dataset information</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-3" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="post-accountsaccount_idcloudforce-oneeventsdatasetspopulate" class="operation" data-method="post"><code>POST</code> /accounts/{account_id}/cloudforce-one/events/datasets/populate</h3>
+<p>Operation ID: <code>post_DatasetPopulate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-4">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |</p>
+<h4 id="responses-4">Responses</h4>
+<h5 id="200-returns-population-results-with-counts-and-any-errors" class="status" data-status="2xx">200: Returns population results with counts and any errors</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.accountId</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.accountId.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.attackers</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.categories</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.datasetId</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.indicatorTypes</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.processingTimeMs</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.targetIndustries</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.properties.totalProcessed</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.items.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.datasets.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.errors</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.errors.items</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.errors.items.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.errors.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.failedDatasets</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.failedDatasets.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.successfulDatasets</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.successfulDatasets.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalDatasets</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalDatasets.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalIndicatorTypes</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalIndicatorTypes.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalProcessingTimeMs</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.properties.totalProcessingTimeMs.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>properties.summary.type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-4" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="list">list</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdataset" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset</h3>
+<p>Operation ID: <code>get_DatasetList</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-5">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>includeDeleted</code> | <code>query</code> | <code>boolean</code> | No | When true, include soft-deleted datasets in the response. Each item includes a <code>deletedAt</code> field (ISO 8601 or null). Default: false. |</p>
+<h4 id="responses-5">Responses</h4>
+<h5 id="200-returns-a-list-of-dataset-in-an-account" class="status" data-status="2xx">200: Returns a list of dataset in an account</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>[].deletedAt</code></td>
+<td><code>string</code></td>
+<td>No</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].indicatorWriteMode</code></td>
+<td><code>enum: read_only, create_only, full</code></td>
+<td>Yes</td>
+<td>Effective indicator mutation capability after account/dataset authorization and dataset storage capability are applied. API Gateway method permissions are separate and must also allow the requested operation.</td>
+</tr>
+<tr>
+<td><code>[].isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>[].uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-5" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="load">load</h2>
+<h3 id="get-accountsaccount_idcloudforce-oneeventsdatasetdataset_id" class="operation" data-method="get"><code>GET</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</h3>
+<p>Operation ID: <code>get_DatasetRead</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-6">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset ID. |</p>
+<h4 id="responses-6">Responses</h4>
+<h5 id="200-returns-a-dataset" class="status" data-status="2xx">200: Returns a dataset</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-6" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="remove">remove</h2>
+<h3 id="delete-accountsaccount_idcloudforce-oneeventsdatasetdataset_id" class="operation" data-method="delete"><code>DELETE</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</h3>
+<p>Operation ID: <code>delete_DatasetDelete</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-7">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string</code> | Yes | Dataset ID to delete |</p>
+<h4 id="responses-7">Responses</h4>
+<h5 id="200-returns-the-uuid-and-name-of-the-deleted-dataset" class="status" data-status="2xx">200: Returns the uuid and name of the deleted dataset</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-7" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="404-bad-request" class="status" data-status="4xx">404: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="update">update</h2>
+<h3 id="patch-accountsaccount_idcloudforce-oneeventsdatasetdataset_id" class="operation" data-method="patch"><code>PATCH</code> /accounts/{account_id}/cloudforce-one/events/dataset/{dataset_id}</h3>
+<p>Operation ID: <code>patch_DatasetUpdate</code>.</p>
+<p>Authentication: bearer token (<code>api_token</code>).</p>
+<h4 id="parameters-8">Parameters</h4>
+<p>| Parameter | In | Type | Required | Description |
+| --- | --- | --- | --- |
+| <code>account_id</code> | <code>path</code> | <code>string</code> | Yes | Account ID. |
+| <code>dataset_id</code> | <code>path</code> | <code>string (uuid)</code> | Yes | Dataset ID. |</p>
+<h4 id="request-body-4">Request body</h4>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td>If true, then anyone can search the dataset. If false, then its limited to the account.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td>Used to describe the dataset within the account context.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="responses-8">Responses</h4>
+<h5 id="200-returns-dataset-information-2" class="status" data-status="2xx">200: Returns dataset information</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>isAnalytics</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>isPublic</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>uuid</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5 id="400-bad-request-8" class="status" data-status="4xx">400: Bad Request</h5>
+<p><code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>errors</code></td>
+<td><code>array of object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>errors[].message</code></td>
+<td><code>string</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>result</code></td>
+<td><code>object</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>boolean</code></td>
+<td>Yes</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</main></div>
+<script src="../assets/search.js" defer></script></body></html>

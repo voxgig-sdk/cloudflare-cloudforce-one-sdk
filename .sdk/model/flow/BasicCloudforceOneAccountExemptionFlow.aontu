@@ -1,0 +1,89 @@
+# BasicCloudforceOneAccountExemptionFlow
+
+main: kit: flow: BasicCloudforceOneAccountExemptionFlow:
+{
+  entity: "cloudforce_one_account_exemption",
+  kind: "basic",
+  name: "BasicCloudforceOneAccountExemptionFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_account_exemption_ref01"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "create"
+    }
+
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_account_exemption_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "cloudforce_one_account_exemption_ref01",
+        srcdatavar: "cloudforce_one_account_exemption_ref01_data",
+        suffix: "_up0"
+      }
+
+      o: "update",
+      s: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_account_exemption_ref01"
+          }
+        }
+      ]
+    }
+
+    {
+      i: {
+        ref: "cloudforce_one_account_exemption_ref01",
+        suffix: "_rm0"
+      }
+
+      m: {
+        id: "cloudforce_one_account_exemption01"
+      }
+
+      o: "remove"
+    }
+
+    {
+      i: {
+        suffix: "_rt0"
+      }
+
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemNotExists",
+          def: {
+            ref: "cloudforce_one_account_exemption_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneAccountExemptionFlow"
+}

@@ -1,0 +1,33 @@
+# BasicDashboardUserFlow
+
+main: kit: flow: BasicDashboardUserFlow:
+{
+  entity: "dashboard_user",
+  kind: "basic",
+  name: "BasicDashboardUserFlow",
+  step: [
+    {
+      i: {
+        ref: "dashboard_user_ref01",
+        srcdatavar: "dashboard_user_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "dashboard_user01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-dashboard_user_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicDashboardUserFlow"
+}

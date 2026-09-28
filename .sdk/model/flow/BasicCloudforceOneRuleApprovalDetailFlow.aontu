@@ -1,0 +1,46 @@
+# BasicCloudforceOneRuleApprovalDetailFlow
+
+main: kit: flow: BasicCloudforceOneRuleApprovalDetailFlow:
+{
+  entity: "cloudforce_one_rule_approval_detail",
+  kind: "basic",
+  name: "BasicCloudforceOneRuleApprovalDetailFlow",
+  step: [
+    {
+      i: {
+        ref: "cloudforce_one_rule_approval_detail_ref01"
+      }
+
+      m: {
+        account_id: "account01",
+        approval_id: "approval01"
+      }
+
+      o: "create"
+    }
+
+    {
+      i: {
+        ref: "cloudforce_one_rule_approval_detail_ref01",
+        srcdatavar: "cloudforce_one_rule_approval_detail_ref01_data",
+        suffix: "_dt0"
+      }
+
+      m: {
+        account_id: "account01",
+        id: "cloudforce_one_rule_approval_detail01"
+      }
+
+      o: "load",
+      v: [
+        {
+          apply: "TextFieldMark",
+          def: {
+            mark: "Mark01-cloudforce_one_rule_approval_detail_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneRuleApprovalDetailFlow"
+}

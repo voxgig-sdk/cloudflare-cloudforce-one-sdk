@@ -1,0 +1,68 @@
+{
+  "existing": {
+    "priority_intelligence_requirements__pir": {
+      "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR00": {
+        "errors": [],
+        "labels": [],
+        "messages": [],
+        "priority": 83,
+        "requirement": "s54",
+        "result": "s55",
+        "success": true,
+        "tlp": "s57",
+        "account_id": "ACCOUNT01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR00"
+      },
+      "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR01": {
+        "errors": [],
+        "labels": [],
+        "messages": [],
+        "priority": 163,
+        "requirement": "sa4",
+        "result": "sa5",
+        "success": true,
+        "tlp": "sa7",
+        "account_id": "ACCOUNT01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR01"
+      },
+      "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR02": {
+        "errors": [],
+        "labels": [],
+        "messages": [],
+        "priority": 243,
+        "requirement": "sf4",
+        "result": "sf5",
+        "success": true,
+        "tlp": "sf7",
+        "account_id": "ACCOUNT01",
+        "id": "PRIORITY_INTELLIGENCE_REQUIREMENTS__PIR02"
+      }
+    }
+  },
+  "new": {
+    "priority_intelligence_requirements__pir": {
+      "priority_intelligence_requirements__pir_ref01": {
+        "errors": [],
+        "labels": [],
+        "messages": [],
+        "priority": 323,
+        "requirement": "s144",
+        "result": "s145",
+        "success": true,
+        "tlp": "s147"
+      }
+    }
+  },
+  "requests": {
+    "POST /accounts/{account_id}/cloudforce-one/requests/priority/new": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    },
+    "GET /accounts/{account_id}/cloudforce-one/requests/priority/quota": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}

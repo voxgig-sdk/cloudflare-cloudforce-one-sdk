@@ -1,0 +1,26 @@
+# BasicCloudforceOneRuleApprovalsListFlow
+
+main: kit: flow: BasicCloudforceOneRuleApprovalsListFlow:
+{
+  entity: "cloudforce_one_rule_approvals_list",
+  kind: "basic",
+  name: "BasicCloudforceOneRuleApprovalsListFlow",
+  step: [
+    {
+      m: {
+        account_id: "account01"
+      }
+
+      o: "list",
+      v: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "cloudforce_one_rule_approvals_list_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicCloudforceOneRuleApprovalsListFlow"
+}

@@ -1,0 +1,147 @@
+# Entity: bin_db
+
+main: kit: entity: bin_db: {
+
+  alias: field: {}
+
+  fields: {
+    content_type: {
+      h: "Content Type"
+      n: "content_type"
+      r: true
+      t: "`$STRING`"
+    }
+    md5: {
+      h: "Md5"
+      n: "md5"
+      r: true
+      t: "`$STRING`"
+    }
+    sha1: {
+      h: "Sha1"
+      n: "sha1"
+      r: true
+      t: "`$STRING`"
+    }
+    sha256: {
+      h: "Sha256"
+      n: "sha256"
+      r: true
+      t: "`$STRING`"
+    }
+  }
+
+  name: "bin_db"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/binary"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/binary"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "binary"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /accounts/{account_id}/cloudforce-one/binary/{hash}"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+              {
+                k: "param"
+                n: "hash"
+                or: "hash"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/accounts/{account_id}/cloudforce-one/binary/{hash}"
+          q: {
+            exist: [
+              "account_id"
+              "hash"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "binary"
+            }
+            {
+              var: "hash"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

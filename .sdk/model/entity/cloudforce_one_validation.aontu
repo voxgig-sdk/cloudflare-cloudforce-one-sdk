@@ -1,0 +1,111 @@
+# Entity: cloudforce_one_validation
+
+main: kit: entity: cloudforce_one_validation: {
+
+  alias: field: {}
+
+  fields: {
+    content: {
+      h: "Content"
+      n: "content"
+      r: true
+      t: "`$STRING`"
+    }
+    error: {
+      h: "Error"
+      n: "error"
+      r: false
+      t: "`$STRING`"
+    }
+    excludeRuleId: {
+      fo: "uuid"
+      h: "Exclude Rule Id"
+      n: "excludeRuleId"
+      r: false
+      t: "`$STRING`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: true
+      t: "`$STRING`"
+    }
+    namespaces: {
+      h: "Namespaces"
+      n: "namespaces"
+      r: false
+      t: "`$ARRAY`"
+    }
+    path: {
+      h: "Path"
+      n: "path"
+      r: false
+      t: "`$STRING`"
+    }
+    valid: {
+      h: "Valid"
+      n: "valid"
+      r: true
+      t: "`$BOOLEAN`"
+    }
+  }
+
+  name: "cloudforce_one_validation"
+  op: {
+    create: {
+      name: "create"
+      points: [
+        {
+          co: {
+            id: "POST /accounts/{account_id}/cloudforce-one/rules/validate"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            params: [
+              {
+                ex: "023e105f4ecef8ad9ca31a8372d0c353"
+                k: "param"
+                n: "account_id"
+                or: "account_id"
+                r: true
+                t: "`$STRING`"
+              }
+            ]
+          }
+          m: "POST"
+          o: "/accounts/{account_id}/cloudforce-one/rules/validate"
+          q: {
+            exist: [
+              "account_id"
+            ]
+          }
+          s: [
+            {
+              lit: "accounts"
+            }
+            {
+              var: "account_id"
+            }
+            {
+              lit: "cloudforce-one"
+            }
+            {
+              lit: "rules"
+            }
+            {
+              lit: "validate"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

@@ -1,0 +1,91 @@
+{
+  "existing": {
+    "cloudforce_one_email_rules_list": {
+      "CLOUDFORCE_ONE_EMAIL_RULES_LIST00": {
+        "content": "sa0",
+        "created_at": 161,
+        "created_by": "sa2",
+        "description": "sa3",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EMAIL_RULES_LIST00",
+        "is_public": true,
+        "meta": [],
+        "name": "sa8",
+        "namespaces": [],
+        "path": "saa",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "structured_source": "sad",
+        "updated_at": 174,
+        "updated_by": "saf",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_EMAIL_RULES_LIST01": {
+        "content": "s140",
+        "created_at": 321,
+        "created_by": "s142",
+        "description": "s143",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EMAIL_RULES_LIST01",
+        "is_public": true,
+        "meta": [],
+        "name": "s148",
+        "namespaces": [],
+        "path": "s14a",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "structured_source": "s14d",
+        "updated_at": 334,
+        "updated_by": "s14f",
+        "account_id": "ACCOUNT01"
+      },
+      "CLOUDFORCE_ONE_EMAIL_RULES_LIST02": {
+        "content": "s1e0",
+        "created_at": 481,
+        "created_by": "s1e2",
+        "description": "s1e3",
+        "enabled": true,
+        "id": "CLOUDFORCE_ONE_EMAIL_RULES_LIST02",
+        "is_public": true,
+        "meta": [],
+        "name": "s1e8",
+        "namespaces": [],
+        "path": "s1ea",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "structured_source": "s1ed",
+        "updated_at": 494,
+        "updated_by": "s1ef",
+        "account_id": "ACCOUNT01"
+      }
+    }
+  },
+  "new": {
+    "cloudforce_one_email_rules_list": {
+      "cloudforce_one_email_rules_list_ref01": {
+        "content": "s280",
+        "created_at": 641,
+        "created_by": "s282",
+        "description": "s283",
+        "enabled": true,
+        "is_public": true,
+        "meta": [],
+        "name": "s288",
+        "namespaces": [],
+        "path": "s28a",
+        "pending_approval_id": "PENDING_APPROVAL01",
+        "pending_change": {},
+        "structured_source": "s28d",
+        "updated_at": 654,
+        "updated_by": "s28f"
+      }
+    }
+  },
+  "requests": {
+    "GET /accounts/{account_id}/cloudforce-one/rules/structured": {
+      "provenance": "operation-contract",
+      "version": 2,
+      "source": "openapi3"
+    }
+  }
+}
